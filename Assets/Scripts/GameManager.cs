@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         //Loading Panels
         if (LoadPanel)
         {
-            Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position, Time.deltaTime * 5);
+            Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-2, 0, 0), Time.deltaTime * 5);
         }
 
         else
