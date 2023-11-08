@@ -8,7 +8,8 @@ public class ObjectClick : MonoBehaviour
 {
     public TMP_Text dialogueText; // Reference to the TextMeshPro Text component for dialogue
     public GameObject dialogueBox; // Reference to the dialogue box UI GameObject
-    public Button continueButton; // Reference to the "Continue" button (make sure you've added the UI.Button namespace)
+    public Button continueButton; // Reference to the "Continue" button 
+    public Image grimoireBox; // Reference to the Image for the dialogue 
 
 
     // all the game objects in the scene go here
@@ -19,6 +20,7 @@ public class ObjectClick : MonoBehaviour
         if (dialogueBox != null)
         {
             dialogueBox.SetActive(false);
+            grimoireBox.gameObject.SetActive(false);
         }
 
         // add the objects here with ("objectTag", "Dialogue...");
@@ -51,6 +53,9 @@ public class ObjectClick : MonoBehaviour
                     // set the dialouge box to active
                     dialogueBox.SetActive(true);
 
+                    // set the image to active
+                    grimoireBox.gameObject.SetActive(true);
+
                     // and show the dialouge
                     dialogueText.text = objectDialogues[objectName];
 
@@ -65,5 +70,6 @@ public class ObjectClick : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         continueButton.gameObject.SetActive(false);
+        grimoireBox.gameObject.SetActive(false);
     }
 }
