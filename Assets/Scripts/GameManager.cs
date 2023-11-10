@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -18,9 +19,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject currentRoom;
 
+    public GameObject SallyButton;
+    public SpriteRenderer SallyButtonColor;
+
 
     //Initialize variables
     bool LoadPanel = false;
+    bool sus = false;
     bool walkMode = true;
     public List<GameObject> walkButtons = new List<GameObject>(); //List of game objects to be iterated through when walkmode is turned on
 
@@ -28,16 +33,19 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         walkModeToggle();
+        SallyButtonColor = SallyButton.GetComponent<SpriteRenderer>();
     }
 
     //Main Method
     private void Update()
     {
+        
         transform.position = currentRoom.transform.position;
+        
         //Loading Panels
         if (LoadPanel)
         {
-            Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-2, 0, 0), Time.deltaTime * 5);
+            Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(0.1f, 0, 0), Time.deltaTime * 5);
         }
 
         else
@@ -46,12 +54,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     //Coroutine for screen transition
     //Loops for 2 seconds, lowering opacity, swaps currentRoom object, and makes the new object visible.
     IEnumerator roomTransition(GameObject room)
     {
         Time.timeScale = 0;
-        for (float i = 1; i >= 0; i -= Time.unscaledDeltaTime/3*2)
+        for (float i = 1; i >= 0; i -= Time.unscaledDeltaTime*2)
         {
             currentRoom.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, i);
             yield return null;
@@ -65,12 +74,21 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    //Method to move from room to room
     public void moveToRoom(GameObject room)
     {
         StartCoroutine(roomTransition(room));
     }
-    //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
 
+    //Method to add suspicion
+    public void Suspicion()
+    {
+        sus = !sus;
+        if (sus) { SallyButtonColor.color = Color.red; }
+        if (!sus) { SallyButtonColor.color = Color.white; }
+    }
+
+    //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
     public void walkModeToggle()
     {
         walkMode = !walkMode;
@@ -81,7 +99,6 @@ public class GameManager : MonoBehaviour
     }
 
     //Method to Load the UI Panels
-
     public void UnloadPanel()
     {
         LoadPanel = false;
