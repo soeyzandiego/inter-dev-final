@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 14e8ce5466ed78c47a606a633f2935bd
+guid: df3f7ae1e8d93604da1ce14bd7b07262
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: researcher_talking_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 42
+        width: 992
+        height: 1610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f275da79ece12043a31061df75dcebd
+      internalID: -897023593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: researcher_talking_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 30
+        width: 798
+        height: 1564
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7c0f341d3571b41942b71a47eb9476
+      internalID: 2085956812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: researcher_talking_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 38
+        width: 934
+        height: 1594
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8ffb072acc480b49b8ae694a4023531
+      internalID: 1347729004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: researcher_talking_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 2946
+        y: 42
+        width: 1098
+        height: 1516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d8d39c54a1905458008ea0244e03c9
+      internalID: 702062870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +210,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      researcher_talking_sprite_0: -897023593
+      researcher_talking_sprite_1: 2085956812
+      researcher_talking_sprite_2: 1347729004
+      researcher_talking_sprite_3: 702062870
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

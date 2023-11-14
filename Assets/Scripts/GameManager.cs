@@ -16,16 +16,13 @@ public class GameManager : MonoBehaviour
     public GameObject CluesPanel;
     public GameObject MapPanel;
     public GameObject SallyPanel;
+    public GameObject ResearcherPanel;
 
     public GameObject currentRoom;
-
-    public GameObject SallyButton;
-    public SpriteRenderer SallyButtonColor;
 
 
     //Initialize variables
     bool LoadPanel = false;
-    bool sus = false;
     bool walkMode = true;
     public List<GameObject> walkButtons = new List<GameObject>(); //List of game objects to be iterated through when walkmode is turned on
 
@@ -33,7 +30,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         walkModeToggle();
-        SallyButtonColor = SallyButton.GetComponent<SpriteRenderer>();
     }
 
     //Main Method
@@ -80,14 +76,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(roomTransition(room));
     }
 
-    //Method to add suspicion
-    public void Suspicion()
-    {
-        sus = !sus;
-        if (sus) { SallyButtonColor.color = Color.red; }
-        if (!sus) { SallyButtonColor.color = Color.white; }
-    }
-
     //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
     public void walkModeToggle()
     {
@@ -106,6 +94,7 @@ public class GameManager : MonoBehaviour
         CluesPanel.SetActive(false);
         MapPanel.SetActive(false);
         SallyPanel.SetActive(false);
+        ResearcherPanel.SetActive(false);
     }
 
     public void LoadProfilePanel()
@@ -115,6 +104,7 @@ public class GameManager : MonoBehaviour
         CluesPanel.SetActive(false);
         MapPanel.SetActive(false);
         SallyPanel.SetActive(false);
+        ResearcherPanel.SetActive(false);
 
     }
 
@@ -125,6 +115,7 @@ public class GameManager : MonoBehaviour
         MapPanel.SetActive(false);
         ProfilePanel.SetActive(false);
         SallyPanel.SetActive(false);
+        ResearcherPanel.SetActive(false);
 
     }
 
@@ -135,6 +126,7 @@ public class GameManager : MonoBehaviour
         CluesPanel.SetActive(false);
         ProfilePanel.SetActive(false);
         SallyPanel.SetActive(false);
+        ResearcherPanel.SetActive(false);
 
     }
 
@@ -145,6 +137,18 @@ public class GameManager : MonoBehaviour
         MapPanel.SetActive(false);
         CluesPanel.SetActive(false);
         ProfilePanel.SetActive(false);
+        ResearcherPanel.SetActive(false);
+
+    }
+
+    public void LoadResearcherPanel()
+    {
+        LoadPanel = true;
+        ResearcherPanel.SetActive(true);
+        MapPanel.SetActive(false);
+        CluesPanel.SetActive(false);
+        ProfilePanel.SetActive(false);
+        SallyPanel.SetActive (false);
 
     }
 }
