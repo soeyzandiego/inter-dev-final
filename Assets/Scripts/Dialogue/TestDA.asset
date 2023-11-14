@@ -15,13 +15,23 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: This is a test dialogue
-    locked: 0
+    choices: []
+    unlockSection: {fileID: 0}
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: This is the next line
-    locked: 0
+    choices: []
+    unlockSection: {fileID: 0}
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
     dialogue: New character!
-    locked: 0
-  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: So I heard you ...
-    locked: 1
+    choices:
+    - text: This is choice 1
+      nextSection: {fileID: 11400000, guid: 95d123a380734ad4f8cdd2e624de2a12, type: 2}
+    - text: This is choice 2
+      nextSection: {fileID: 11400000, guid: 95d123a380734ad4f8cdd2e624de2a12, type: 2}
+    - text: This is choice 3
+      nextSection: {fileID: 11400000, guid: 95d123a380734ad4f8cdd2e624de2a12, type: 2}
+    unlockSection: {fileID: 0}
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: Test
+    choices: []
+    unlockSection: {fileID: 0}

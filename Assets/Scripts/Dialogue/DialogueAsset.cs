@@ -10,11 +10,17 @@ public class DialogueAsset : ScriptableObject
     [System.Serializable]
     public class DialogueLine
     {
-        public string lineID;
-        [Space(5)]
         public DialogueCharacter character;
         [TextArea(6, 6)] public string dialogue;
-        public bool locked = false;
+        public DialogueChoice[] choices; // can be null
+        public DialogueAsset unlockSection; // can be null
+    }
+
+    [System.Serializable]
+    public class DialogueChoice
+    {
+        public string text;
+        public DialogueAsset nextSection;
     }
 
     public DialogueLine[] lines;
