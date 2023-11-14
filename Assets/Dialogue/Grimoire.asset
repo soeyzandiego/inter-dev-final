@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcb127578a2813a4f945b8220acc81fe, type: 3}
+  m_Name: Grimoire
+  m_EditorClassIdentifier: 
+  charName: Grimoire
+  sprites:
+  - {fileID: -1559246386, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
+  - {fileID: 1668212323, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
+  - {fileID: -441646306, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
+  - {fileID: 1958345891, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
