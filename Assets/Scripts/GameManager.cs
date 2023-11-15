@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     bool walkMode = true;
     public List<GameObject> walkButtons = new List<GameObject>(); //List of game objects to be iterated through when walkmode is turned on
 
+
     //deactivate all walk buttons on game start.
     private void Start()
     {
@@ -35,7 +36,6 @@ public class GameManager : MonoBehaviour
     //Main Method
     private void Update()
     {
-        
         transform.position = currentRoom.transform.position;
         
         //Loading Panels
