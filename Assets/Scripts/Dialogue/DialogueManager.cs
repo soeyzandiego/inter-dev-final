@@ -29,6 +29,7 @@ public class DialogueManager : MonoBehaviour
     string textToPlay = "";
     List<int> spacePositions = new List<int>(); // will store the positions of each space to find the starts/ends of words
     bool typing = false;
+    Coroutine typeLine;
 
     public enum DialogueStates
     {
@@ -68,7 +69,8 @@ public class DialogueManager : MonoBehaviour
                     typing = true;
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
                     SeparateWords();
-                    StartCoroutine(WriteText());
+                    typeLine = StartCoroutine(WriteText());
+
                 }
 
                 nameText.text = curAsset.lines[curLineIndex].character.charName;
@@ -78,8 +80,8 @@ public class DialogueManager : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(0)) 
                 { 
-                    NextLine();
-                    StopCoroutine(WriteText());
+                    //NextLine();
+                    StopCoroutine(typeLine);
                     bodyText.text = textToPlay;
                 }
             break;
