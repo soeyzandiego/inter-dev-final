@@ -8,6 +8,7 @@ public class DialogueClick : MonoBehaviour
     public DialogueAsset asset;
 
     public DialogueAsset yourJobAsset;
+    public DialogueAsset lesterBeaumontAsset;
     // challenege conversation to be unlocked
     public DialogueAsset[] toUnlock;
 
