@@ -14,15 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: This is a test dialogue
+    dialogue: This is a test dialogue. I'm making it longer to test a few different
+      things
     choices: []
     unlockSection: {fileID: 0}
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: This is the next line
+    dialogue: This is the next line in the dialogue testing more stuff and the skipping
+      and whatnot
     choices: []
     unlockSection: {fileID: 0}
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: New character!
+    dialogue: New character! Her name is Sally but you know that already this is
+      just more test text
     choices:
     - text: This is choice 1
       nextSection: {fileID: 11400000, guid: 95d123a380734ad4f8cdd2e624de2a12, type: 2}

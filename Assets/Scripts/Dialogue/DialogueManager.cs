@@ -29,7 +29,8 @@ public class DialogueManager : MonoBehaviour
     string textToPlay = "";
     List<int> spacePositions = new List<int>(); // will store the positions of each space to find the starts/ends of words
     bool typing = false;
-    Coroutine typeLine;
+    Coroutine typeCo; // current typing coroutine
+    Coroutine endCo; // current end coroutine to move to next line
 
     public enum DialogueStates
     {
@@ -69,8 +70,7 @@ public class DialogueManager : MonoBehaviour
                     typing = true;
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
                     SeparateWords();
-                    typeLine = StartCoroutine(WriteText());
-
+                    typeCo = StartCoroutine(WriteText());
                 }
 
                 nameText.text = curAsset.lines[curLineIndex].character.charName;
@@ -79,10 +79,20 @@ public class DialogueManager : MonoBehaviour
                 characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
 
                 if (Input.GetMouseButtonDown(0)) 
-                { 
-                    //NextLine();
-                    StopCoroutine(typeLine);
-                    bodyText.text = textToPlay;
+                {
+                    if (bodyText.text != textToPlay)
+                    {
+                        Debug.Log("Skipped");
+                        StopCoroutine(typeCo);
+                        endCo = StartCoroutine(EndText());
+                        bodyText.text = textToPlay;
+                    }
+                    else
+                    {
+                        StopCoroutine(endCo);
+                        NextLine();
+                    }
+                    
                 }
             break;
 
@@ -182,6 +192,14 @@ public class DialogueManager : MonoBehaviour
         state = DialogueStates.TALKING;
     }
 
+    public void LesterBeaumont()
+    {
+        curAsset = talkingTo.lesterBeaumontAsset;
+
+        curLineIndex = 0;
+        state = DialogueStates.TALKING;
+    }
+
     void SeparateWords()
     {
         spacePositions.Clear();
@@ -193,33 +211,39 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator WriteText()
     {
+        bodyText.text = "";
         int wordIndex = -1;
         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
         {
-            if (textToPlay[charIndex].ToString() == " ")
-            {
-                wordIndex++;
-                // if it's the last word, use the total text length bc there's no space at the end to check
-                if (wordIndex == spacePositions.Count - 1)
-                {
-                    int wordLength = textToPlay.Length - spacePositions[wordIndex];
-                    // if the word isn't going to fit, start a new line
-                    if (bodyText.text.Length + wordLength > maxCharacters) { bodyText.text += "\n"; }
-                    else { bodyText.text += textToPlay[charIndex]; }
-                }
-                else
-                {
-                    int wordLength = spacePositions[wordIndex + 1] - spacePositions[wordIndex];
-                    // if the word isn't going to fit, start a new line
-                    if (bodyText.text.Length + wordLength > maxCharacters) { bodyText.text += "\n"; }
-                    else { bodyText.text += textToPlay[charIndex]; }
-                }
-            }
-            else
-            {
-                if (bodyText.text.Length < maxCharacters) { bodyText.text += textToPlay[charIndex]; }
-                else { bodyText.text = textToPlay[charIndex].ToString(); }
-            }
+            bodyText.text += textToPlay[charIndex];
+            //if (textToPlay[charIndex].ToString() == " ")
+            //{
+            //    wordIndex++;
+            //    // if it's the last word, use the total text length bc there's no space at the end to check
+            //    if (wordIndex == spacePositions.Count - 1)
+            //    {
+            //        int wordLength = textToPlay.Length - spacePositions[wordIndex];
+            //        // TODO fix... right now it just clears the line and starts writing the next part
+            //        // if the word isn't going to fit, start a new line
+            //        //if (bodyText.text.Length + wordLength > maxCharacters) { bodyText.text += "\n"; }
+            //        //else { bodyText.text += textToPlay[charIndex]; }
+            //        bodyText.text += textToPlay[charIndex];
+            //    }
+            //    else
+            //    {
+            //        int wordLength = spacePositions[wordIndex + 1] - spacePositions[wordIndex];
+            //        // TODO fix... right now it just clears the line and starts writing the next part
+            //        // if the word isn't going to fit, start a new line
+            //        //if (bodyText.text.Length + wordLength > maxCharacters) { bodyText.text += "\n"; }
+            //        //else { bodyText.text += textToPlay[charIndex]; }
+            //        bodyText.text += textToPlay[charIndex];
+            //    }
+            //}
+            //else
+            //{
+            //    if (bodyText.text.Length < maxCharacters) { bodyText.text += textToPlay[charIndex]; }
+            //    //else { bodyText.text = textToPlay[charIndex].ToString(); }
+            //}
             if (charIndex == textToPlay.Length - 1) { StartCoroutine(EndText()); }  // close text after last letter
             yield return new WaitForSecondsRealtime(delayTime);
         }
