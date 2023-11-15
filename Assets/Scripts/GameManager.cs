@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject currentRoom;
 
+    public GameObject SallyButton;
+
 
     //Initialize variables
     bool LoadPanel = false;
@@ -36,6 +38,9 @@ public class GameManager : MonoBehaviour
     //Main Method
     private void Update()
     {
+        if (DialogueClick.sallyDiscovered) { SallyButton.SetActive(true); }
+        if (!DialogueClick.sallyDiscovered) { SallyButton.SetActive(false); }
+        Debug.Log(DialogueClick.sallyDiscovered);
         transform.position = currentRoom.transform.position;
         
         //Loading Panels
