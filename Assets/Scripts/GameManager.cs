@@ -20,27 +20,26 @@ public class GameManager : MonoBehaviour
 
     public GameObject currentRoom;
 
-    public GameObject SallyButton;
-
 
     //Initialize variables
     bool LoadPanel = false;
     bool walkMode = true;
     public List<GameObject> walkButtons = new List<GameObject>(); //List of game objects to be iterated through when walkmode is turned on
 
+    [Header("List of Buttons")]
+    Button[] buttons;
+
 
     //deactivate all walk buttons on game start.
     private void Start()
     {
+        buttons = FindObjectsOfType<Button>();
         walkModeToggle();
     }
 
     //Main Method
     private void Update()
     {
-        if (DialogueClick.sallyDiscovered) { SallyButton.SetActive(true); }
-        if (!DialogueClick.sallyDiscovered) { SallyButton.SetActive(false); }
-        Debug.Log(DialogueClick.sallyDiscovered);
         transform.position = currentRoom.transform.position;
         
         //Loading Panels
@@ -60,6 +59,11 @@ public class GameManager : MonoBehaviour
     //Loops for 2 seconds, lowering opacity, swaps currentRoom object, and makes the new object visible.
     IEnumerator roomTransition(GameObject room)
     {
+        walkModeToggle();
+        foreach(Button button in buttons)
+        {
+            button.interactable = false;
+        }
         Time.timeScale = 0;
         for (float i = 1; i >= 0; i -= Time.unscaledDeltaTime*2)
         {
@@ -73,6 +77,10 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         Time.timeScale = 1;
+        foreach (Button button in buttons)
+        {
+            button.interactable = true;
+        }
     }
 
     //Method to move from room to room
