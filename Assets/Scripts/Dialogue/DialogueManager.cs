@@ -76,7 +76,12 @@ public class DialogueManager : MonoBehaviour
                 // set sprite based on current line's character
                 characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
 
-                if (Input.GetMouseButtonDown(0)) { NextLine(); }
+                if (Input.GetMouseButtonDown(0)) 
+                { 
+                    NextLine();
+                    StopCoroutine(WriteText());
+                    bodyText.text = textToPlay;
+                }
             break;
 
             case DialogueStates.CHOOSING:
