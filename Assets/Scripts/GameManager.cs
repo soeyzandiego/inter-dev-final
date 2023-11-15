@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     //Initialize variables
     bool LoadPanel = false;
     bool walkMode = true;
-    public List<GameObject> walkButtons = new List<GameObject>(); //List of game objects to be iterated through when walkmode is turned on
+    List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
 
     [Header("List of Buttons")]
     Button[] buttons;
@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         buttons = FindObjectsOfType<Button>();
+        GameObject[] temp = GameObject.FindGameObjectsWithTag("WalkButton");
+        foreach(GameObject g in temp)
+        {
+            walkButtons.Add(g.GetComponent<Button>());
+        }
         walkModeToggle();
     }
 
@@ -60,7 +65,7 @@ public class GameManager : MonoBehaviour
     IEnumerator roomTransition(GameObject room)
     {
         walkModeToggle();
-        foreach(Button button in buttons)
+        foreach (Button button in buttons)
         {
             button.interactable = false;
         }
@@ -93,10 +98,16 @@ public class GameManager : MonoBehaviour
     public void walkModeToggle()
     {
         walkMode = !walkMode;
-        foreach (GameObject button in walkButtons)
+        foreach (Button button in buttons)
         {
-            button.SetActive(walkMode);
+            button.interactable = !walkMode;
         }
+        foreach (Button button in walkButtons)
+        {
+            button.gameObject.SetActive(walkMode);
+            button.interactable = walkMode;
+        }
+        GameObject.FindGameObjectWithTag("WalkModeToggle").GetComponent<Button>().interactable = true;
     }
 
     //Method to Load the UI Panels
