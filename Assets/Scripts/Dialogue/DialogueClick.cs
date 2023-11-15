@@ -10,11 +10,11 @@ public class DialogueClick : MonoBehaviour
     public DialogueAsset yourJobAsset;
     // challenege conversation to be unlocked
     public DialogueAsset[] toUnlock;
-    
+
     Dictionary<DialogueAsset, bool> lockedDialogue = new Dictionary<DialogueAsset, bool>();
     int lineIndex = 0;
 
-    public static bool sallyDiscovered = false;
+    public GameObject sidebarButton;
 
     void Start()
     {
@@ -34,7 +34,10 @@ public class DialogueClick : MonoBehaviour
 
     void StartDialogue()
     {
-        sallyDiscovered = true;
+        if(sidebarButton.activeSelf)
+        {
+            sidebarButton.SetActive(false);
+        }
         DialogueManager.PlayDialogue(asset, lineIndex, this);
     }
 
