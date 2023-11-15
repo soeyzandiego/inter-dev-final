@@ -6,6 +6,7 @@ TagManager:
   tags:
   - rock
   - WalkButton
+  - WalkModeToggle
   layers:
   - Default
   - TransparentFX
