@@ -19,6 +19,17 @@ public class DialogueManager : MonoBehaviour
     public GameObject choicePanel;
     public GameObject[] choiceElements;
 
+    [Header("Investigate Panel")]
+    public GameObject investigatePanel;
+
+    [Header("Text Writing")]
+    public float delayTime = 0.1f;
+    public float endTime = 1.2f;
+    public int maxCharacters = 25; // max characters per line
+    string textToPlay = "";
+    List<int> spacePositions = new List<int>(); // will store the positions of each space to find the starts/ends of words
+    bool typing = false;
+
     public enum DialogueStates
     {
         NONE,
@@ -49,9 +60,17 @@ public class DialogueManager : MonoBehaviour
         {
             case DialogueStates.TALKING:
                 choicePanel.SetActive(false);
+                investigatePanel.SetActive(false);
                 talkPanel.SetActive(true);
 
-                bodyText.text = curAsset.lines[curLineIndex].dialogue;
+                if (!typing)
+                {
+                    typing = true;
+                    textToPlay = curAsset.lines[curLineIndex].dialogue;
+                    SeparateWords();
+                    StartCoroutine(WriteText());
+                }
+
                 nameText.text = curAsset.lines[curLineIndex].character.charName;
 
                 // set sprite based on current line's character
@@ -62,6 +81,7 @@ public class DialogueManager : MonoBehaviour
 
             case DialogueStates.CHOOSING:
                 talkPanel.SetActive(false);
+                investigatePanel.SetActive(false);
                 choicePanel.SetActive(true);
 
                 DialogueAsset.DialogueChoice[] choices = curAsset.lines[curLineIndex].choices;
@@ -80,7 +100,7 @@ public class DialogueManager : MonoBehaviour
                     Button choiceButton = choiceElements[i].GetComponentInChildren<Button>();
 
                     choiceText.text = choices[i].text;
-                    //choiceButton.onClick.AddListener(() => { ChooseOption(i); });
+                    //choiceButton.onClick.AddListener(() => ChooseOption(i));
 
                     // TODO set character sprite to Grimoire
 
@@ -90,6 +110,7 @@ public class DialogueManager : MonoBehaviour
             case DialogueStates.INVESTIGATING:
                 talkPanel.SetActive(false);
                 choicePanel.SetActive(false);
+                investigatePanel.SetActive(true);
 
                 // deactivate sprite
                 characterSprite.sprite = null;
@@ -109,16 +130,24 @@ public class DialogueManager : MonoBehaviour
 
     void NextLine()
     {
-        if (curLineIndex < curAsset.lines.Length - 1) 
-        { 
-            // if the current line has choices
-            if (curAsset.lines[curLineIndex].choices.Length > 0)
+        typing = false;
+        bodyText.text = "";
+
+        // if the current line has choices
+        if (curAsset.lines[curLineIndex].choices.Length > 0)
+        {
+            state = DialogueStates.CHOOSING;
+        }
+        else
+        {
+            if (curLineIndex < curAsset.lines.Length - 1)
             {
-                state = DialogueStates.CHOOSING;
+                curLineIndex++;
             }
             else
             {
-                curLineIndex++;
+                // we've reached the end of the conversation, show investigate panel
+                state = DialogueStates.INVESTIGATING;
             }
         }
     }
@@ -136,5 +165,62 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         talkingTo = null;
+    }
+
+    public void YourJob()
+    {
+        curAsset = talkingTo.yourJobAsset;
+
+        curLineIndex = 0;
+        state = DialogueStates.TALKING;
+    }
+
+    void SeparateWords()
+    {
+        spacePositions.Clear();
+        for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
+        {
+            if (textToPlay[charIndex].ToString() == " ") { spacePositions.Add(charIndex); }
+        }
+    }
+
+    IEnumerator WriteText()
+    {
+        int wordIndex = -1;
+        for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
+        {
+            if (textToPlay[charIndex].ToString() == " ")
+            {
+                wordIndex++;
+                // if it's the last word, use the total text length bc there's no space at the end to check
+                if (wordIndex == spacePositions.Count - 1)
+                {
+                    int wordLength = textToPlay.Length - spacePositions[wordIndex];
+                    // if the word isn't going to fit, start a new line
+                    if (bodyText.text.Length + wordLength > maxCharacters) { bodyText.text += "\n"; }
+                    else { bodyText.text += textToPlay[charIndex]; }
+                }
+                else
+                {
+                    int wordLength = spacePositions[wordIndex + 1] - spacePositions[wordIndex];
+                    // if the word isn't going to fit, start a new line
+                    if (bodyText.text.Length + wordLength > maxCharacters) { bodyText.text += "\n"; }
+                    else { bodyText.text += textToPlay[charIndex]; }
+                }
+            }
+            else
+            {
+                if (bodyText.text.Length < maxCharacters) { bodyText.text += textToPlay[charIndex]; }
+                else { bodyText.text = textToPlay[charIndex].ToString(); }
+            }
+            if (charIndex == textToPlay.Length - 1) { StartCoroutine(EndText()); }  // close text after last letter
+            yield return new WaitForSecondsRealtime(delayTime);
+        }
+    }
+
+    IEnumerator EndText()
+    {
+        yield return new WaitForSecondsRealtime(endTime);
+        NextLine();
     }
 }

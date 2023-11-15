@@ -7,14 +7,14 @@ public class DialogueClick : MonoBehaviour
 {
     public DialogueAsset asset;
 
-    public DialogueAsset yourJobDialogue;
+    public DialogueAsset yourJobAsset;
     // challenege conversation to be unlocked
     public DialogueAsset[] toUnlock;
     
-    // I made this a Dictionary bc I thought there would be multiple locked but I THINK we're
-    // just doing the challenge??? idk sorry im lowkey out of the loop -zoey
     Dictionary<DialogueAsset, bool> lockedDialogue = new Dictionary<DialogueAsset, bool>();
     int lineIndex = 0;
+
+    public static bool sallyDiscovered = false;
 
     void Start()
     {
@@ -34,6 +34,7 @@ public class DialogueClick : MonoBehaviour
 
     void StartDialogue()
     {
+        sallyDiscovered = true;
         DialogueManager.PlayDialogue(asset, lineIndex, this);
     }
 
@@ -45,5 +46,13 @@ public class DialogueClick : MonoBehaviour
     public void SetAsset(DialogueAsset newAsset)
     {
         asset = newAsset;
+    }
+
+    public void Unlock(DialogueAsset assetToUnlock)
+    {
+        if (lockedDialogue.ContainsKey(assetToUnlock))
+        {
+            lockedDialogue[assetToUnlock] = true;
+        }
     }
 }
