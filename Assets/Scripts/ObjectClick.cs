@@ -24,7 +24,7 @@ public class ObjectClick : MonoBehaviour
         }
 
         // add the objects here with ("objectTag", "Dialogue...");
-        objectDialogues.Add("rock", "That is just a rock...");
+        objectDialogues.Add("rock", "That gate leads to the town");
 
         // Initially, hide the "Continue" button
         continueButton.gameObject.SetActive(false);
