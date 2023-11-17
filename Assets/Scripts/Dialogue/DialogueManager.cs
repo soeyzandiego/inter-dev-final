@@ -76,6 +76,7 @@ public class DialogueManager : MonoBehaviour
                 nameText.text = curAsset.lines[curLineIndex].character.charName;
 
                 // set sprite based on current line's character
+                characterSprite.enabled = true;
                 characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
 
                 if (Input.GetMouseButtonDown(0)) 
@@ -84,7 +85,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         Debug.Log("Skipped");
                         StopCoroutine(typeCo);
-                        endCo = StartCoroutine(EndText());
+                        endCo = StartCoroutine(EndLine());
                         bodyText.text = textToPlay;
                     }
                     else
@@ -130,7 +131,7 @@ public class DialogueManager : MonoBehaviour
                 investigatePanel.SetActive(true);
 
                 // deactivate sprite
-                characterSprite.sprite = null;
+                characterSprite.enabled = false;
 
             break;
         }
@@ -165,8 +166,14 @@ public class DialogueManager : MonoBehaviour
             {
                 // we've reached the end of the conversation, show investigate panel
                 state = DialogueStates.INVESTIGATING;
+                CheckUnlockables();
             }
         }
+    }
+
+    void CheckUnlockables()
+    {
+
     }
 
     public void ChooseOption(int choice)
@@ -216,6 +223,7 @@ public class DialogueManager : MonoBehaviour
         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
         {
             bodyText.text += textToPlay[charIndex];
+            // this was all text wrapping stuff that is... not working but it's not a huge deal
             //if (textToPlay[charIndex].ToString() == " ")
             //{
             //    wordIndex++;
@@ -244,14 +252,18 @@ public class DialogueManager : MonoBehaviour
             //    if (bodyText.text.Length < maxCharacters) { bodyText.text += textToPlay[charIndex]; }
             //    //else { bodyText.text = textToPlay[charIndex].ToString(); }
             //}
-            if (charIndex == textToPlay.Length - 1) { StartCoroutine(EndText()); }  // close text after last letter
+            if (charIndex == textToPlay.Length - 1) { StartCoroutine(EndLine()); }  // close text after last letter
             yield return new WaitForSecondsRealtime(delayTime);
         }
     }
 
-    IEnumerator EndText()
+    IEnumerator EndLine()
     {
         yield return new WaitForSecondsRealtime(endTime);
+        if (curAsset.lines[curLineIndex].unlockID != null)
+        {
+            GameManager.AddSuspectClue(curAsset.lines[curLineIndex].unlockID);
+        }
         NextLine();
     }
 }

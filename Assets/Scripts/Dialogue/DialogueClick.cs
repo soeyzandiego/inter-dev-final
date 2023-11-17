@@ -9,21 +9,24 @@ public class DialogueClick : MonoBehaviour
 
     public DialogueAsset yourJobAsset;
     public DialogueAsset lesterBeaumontAsset;
-    // challenege conversation to be unlocked
-    public DialogueAsset[] toUnlock;
+    public DialogueUnlockable[] unlockables;
 
-    Dictionary<DialogueAsset, bool> lockedDialogue = new Dictionary<DialogueAsset, bool>();
+    [System.Serializable]
+    public class DialogueUnlockable
+    {
+        public string investigatePanelText;
+        public DialogueAsset dialogue;
+        public string[] unlockIds;
+        public bool challenge = false;
+    }
+
     int lineIndex = 0;
 
     public GameObject sidebarButton;
 
     void Start()
     {
-        GetComponent<Button>().onClick.AddListener(StartDialogue);
-        foreach (DialogueAsset section in toUnlock)
-        {
-            lockedDialogue.Add(section, false);
-        }
+
     }
 
     // TODO look into, OnMouseDown can't raycast to this collider when the overlay camera is active

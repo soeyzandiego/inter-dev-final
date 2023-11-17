@@ -13,6 +13,7 @@ public class DialogueAsset : ScriptableObject
         public DialogueCharacter character;
         [TextArea(6, 6)] public string dialogue;
         public DialogueChoice[] choices; // can be empty
+        public string unlockID; // can be empty
         public DialogueAsset unlockSection; // can be empty
     }
 
