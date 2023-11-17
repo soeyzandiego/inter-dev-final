@@ -173,6 +173,7 @@ public class DialogueManager : MonoBehaviour
 
     void CheckUnlockables()
     {
+        // reference talkingTo's unlockable IDs to GameManager IDs
 
     }
 

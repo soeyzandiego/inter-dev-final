@@ -54,12 +54,4 @@ public class DialogueClick : MonoBehaviour
     {
         asset = newAsset;
     }
-
-    public void Unlock(DialogueAsset assetToUnlock)
-    {
-        if (lockedDialogue.ContainsKey(assetToUnlock))
-        {
-            lockedDialogue[assetToUnlock] = true;
-        }
-    }
 }
