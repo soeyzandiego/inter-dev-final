@@ -26,7 +26,7 @@ public class DialogueClick : MonoBehaviour
 
     void Start()
     {
-
+        GetComponent<Button>().onClick.AddListener(StartDialogue);
     }
 
     // TODO look into, OnMouseDown can't raycast to this collider when the overlay camera is active
