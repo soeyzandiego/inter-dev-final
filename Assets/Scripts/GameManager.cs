@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     bool LoadPanel = false;
     bool walkMode = true;
     List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
-    static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
+    public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
 
     [Header("List of Buttons")]
     Button[] buttons;
@@ -111,11 +111,6 @@ public class GameManager : MonoBehaviour
             button.interactable = walkMode;
         }
         GameObject.FindGameObjectWithTag("WalkModeToggle").GetComponent<Button>().interactable = true;
-    }
-
-    public static void AddSuspectClue(string id)
-    {
-        suspectClues.Add(id);
     }
 
     //Method to Load the UI Panels

@@ -174,7 +174,21 @@ public class DialogueManager : MonoBehaviour
     void CheckUnlockables()
     {
         // reference talkingTo's unlockable IDs to GameManager IDs
-
+        for (int i = 0; i < 2; i++)
+        {
+            DialogueClick.DialogueUnlockable unlockable = talkingTo.unlockables[i];
+            foreach (string ID in unlockable.unlockIds)
+            {
+                if (GameManager.suspectClues.Contains(ID))
+                {
+                    // 
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
     }
 
     public void ChooseOption(int choice)
@@ -220,7 +234,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator WriteText()
     {
         bodyText.text = "";
-        int wordIndex = -1;
+        //int wordIndex = -1;
         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
         {
             bodyText.text += textToPlay[charIndex];
@@ -263,7 +277,7 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(endTime);
         if (curAsset.lines[curLineIndex].unlockID != null)
         {
-            GameManager.AddSuspectClue(curAsset.lines[curLineIndex].unlockID);
+            GameManager.suspectClues.Add(curAsset.lines[curLineIndex].unlockID);
         }
         NextLine();
     }
