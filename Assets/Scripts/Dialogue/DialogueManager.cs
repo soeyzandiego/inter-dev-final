@@ -83,7 +83,6 @@ public class DialogueManager : MonoBehaviour
                 {
                     if (bodyText.text != textToPlay)
                     {
-                        Debug.Log("Skipped");
                         StopCoroutine(typeCo);
                         endCo = StartCoroutine(EndLine());
                         bodyText.text = textToPlay;
@@ -174,14 +173,14 @@ public class DialogueManager : MonoBehaviour
     void CheckUnlockables()
     {
         // reference talkingTo's unlockable IDs to GameManager IDs
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < talkingTo.unlockables.Length; i++)
         {
             DialogueClick.DialogueUnlockable unlockable = talkingTo.unlockables[i];
             foreach (string ID in unlockable.unlockIds)
             {
                 if (GameManager.suspectClues.Contains(ID))
                 {
-                    // 
+                    
                 }
                 else
                 {

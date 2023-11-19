@@ -14,7 +14,6 @@ public class DialogueAsset : ScriptableObject
         [TextArea(6, 6)] public string dialogue;
         public DialogueChoice[] choices; // can be empty
         public string unlockID; // can be empty
-        public DialogueAsset unlockSection; // can be empty
     }
 
     [System.Serializable]
