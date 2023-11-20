@@ -34,6 +34,9 @@ public class ObjectClick : MonoBehaviour
 
     private void Update()
     {
+        // if there's a conversation going on, don't look for object clicks
+        if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
+
         if (Input.GetMouseButtonDown(0))
         {
             // raycast bs

@@ -10,7 +10,6 @@ public class SuspectFile : MonoBehaviour
         public string unlockId;
         public string text;
         public Sprite image;
-        [HideInInspector] public bool unlocked = false;
     }
 
     public string suspectName;

@@ -24,16 +24,33 @@ public class DialogueClick : MonoBehaviour
 
     public GameObject sidebarButton;
 
-    void Start()
+    private void Update()
     {
-        GetComponent<Button>().onClick.AddListener(StartDialogue);
+        // if there's a conversation going on, don't look for dialogue clicks
+        if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            // raycast bs
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Ray2D ray = new Ray2D(mousePosition, Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject == gameObject)
+                {
+                    StartDialogue();
+                }
+            }
+        }
     }
 
     // TODO look into, OnMouseDown can't raycast to this collider when the overlay camera is active
     //void OnMouseDown()
     //{
     //    Debug.Log("pressed");
-    //    DialogueManager.PlayDialogue(asset, lineIndex);
+    //    DialogueManager.PlayDialogue(asset, lineIndex, this);
     //}
 
     void StartDialogue()

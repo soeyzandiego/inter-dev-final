@@ -8,7 +8,6 @@ using static UnityEngine.GraphicsBuffer;
 
 public class GameManager : MonoBehaviour
 {
-
     //Receive Game Objects
     public GameObject Panel;
 

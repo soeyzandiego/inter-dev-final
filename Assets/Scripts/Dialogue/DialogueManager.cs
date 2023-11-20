@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Investigate Panel")]
     public GameObject investigatePanel;
+    public GameObject[] unlockableElements;
 
     [Header("Text Writing")]
     public float delayTime = 0.1f;
@@ -83,12 +84,14 @@ public class DialogueManager : MonoBehaviour
                 {
                     if (bodyText.text != textToPlay)
                     {
+                        // Skip to the end of the current line
                         StopCoroutine(typeCo);
                         endCo = StartCoroutine(EndLine());
                         bodyText.text = textToPlay;
                     }
                     else
                     {
+                        // Play next line
                         StopCoroutine(endCo);
                         NextLine();
                     }
@@ -147,6 +150,11 @@ public class DialogueManager : MonoBehaviour
 
     void NextLine()
     {
+        if (curAsset.lines[curLineIndex].unlockID != null)
+        {
+            GameManager.suspectClues.Add(curAsset.lines[curLineIndex].unlockID);
+        }
+
         typing = false;
         bodyText.text = "";
 
@@ -176,33 +184,41 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < talkingTo.unlockables.Length; i++)
         {
             DialogueClick.DialogueUnlockable unlockable = talkingTo.unlockables[i];
+            Debug.Log(GameManager.suspectClues[0]);
             foreach (string ID in unlockable.unlockIds)
             {
                 if (GameManager.suspectClues.Contains(ID))
                 {
-                    
+                    continue;
                 }
                 else
                 {
-                    break;
+                    return;
                 }
             }
+            // if we've found every ID, unlock
+            unlockableElements[i].SetActive(true);
+            unlockableElements[i].GetComponentInChildren<TMP_Text>().text = unlockable.investigatePanelText;
         }
     }
 
     public void ChooseOption(int choice)
     {
         DialogueAsset.DialogueChoice[] choices = curAsset.lines[curLineIndex].choices;
-        curAsset = choices[choice].nextSection;
+        if (choices.Length > 0)
+        {
+            curAsset = choices[choice].nextSection;
 
-        curLineIndex = 0;
-        state = DialogueStates.TALKING;
+            curLineIndex = 0;
+            state = DialogueStates.TALKING;
+        }
     }
 
     public void CloseDialogue()
     {
         dialoguePanel.SetActive(false);
         talkingTo = null;
+        state = DialogueStates.NONE;
     }
 
     public void YourJob()
@@ -266,7 +282,7 @@ public class DialogueManager : MonoBehaviour
             //    if (bodyText.text.Length < maxCharacters) { bodyText.text += textToPlay[charIndex]; }
             //    //else { bodyText.text = textToPlay[charIndex].ToString(); }
             //}
-            if (charIndex == textToPlay.Length - 1) { StartCoroutine(EndLine()); }  // close text after last letter
+            if (charIndex == textToPlay.Length - 1) { StartCoroutine(EndLine()); }  // end line after last letter
             yield return new WaitForSecondsRealtime(delayTime);
         }
     }
@@ -274,10 +290,6 @@ public class DialogueManager : MonoBehaviour
     IEnumerator EndLine()
     {
         yield return new WaitForSecondsRealtime(endTime);
-        if (curAsset.lines[curLineIndex].unlockID != null)
-        {
-            GameManager.suspectClues.Add(curAsset.lines[curLineIndex].unlockID);
-        }
         NextLine();
     }
 }
