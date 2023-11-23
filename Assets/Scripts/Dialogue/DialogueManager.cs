@@ -184,7 +184,6 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < talkingTo.unlockables.Length; i++)
         {
             DialogueClick.DialogueUnlockable unlockable = talkingTo.unlockables[i];
-            Debug.Log(GameManager.suspectClues[0]);
             foreach (string ID in unlockable.unlockIds)
             {
                 if (GameManager.suspectClues.Contains(ID))

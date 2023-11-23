@@ -11,19 +11,25 @@ public class GameManager : MonoBehaviour
     //Receive Game Objects
     public GameObject Panel;
 
-    public GameObject ProfilePanel;
-    public GameObject CluesPanel;
-    public GameObject MapPanel;
-    public GameObject SallyPanel;
-    public GameObject ResearcherPanel;
+    public GameObject profilePanel;
+    public GameObject cluesPanel;
+    public GameObject mapPanel;
+    public GameObject suspectPanel;
 
     public GameObject currentRoom;
+
+    [Header("Suspect Panel Elements")]
+    public Image suspectPicture;
+    public TMP_Text suspectName;
+    public TMP_Text suspectQuote;
+    public SuspectClueUI[] clueElements;
+
 
     [Header("Suspect Profiles")]
     public SuspectFile[] suspects;
 
     //Initialize variables
-    bool LoadPanel = false;
+    bool loadPanel = false;
     bool walkMode = true;
     List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
@@ -50,7 +56,7 @@ public class GameManager : MonoBehaviour
         transform.position = currentRoom.transform.position;
         
         //Loading Panels
-        if (LoadPanel)
+        if (loadPanel)
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(0.1f, 0, 0), Time.deltaTime * 5);
         }
@@ -64,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     //Coroutine for screen transition
     //Loops for 2 seconds, lowering opacity, swaps currentRoom object, and makes the new object visible.
-    IEnumerator roomTransition(GameObject room)
+    IEnumerator RoomTransition(GameObject room)
     {
         walkModeToggle();
         foreach (Button button in buttons)
@@ -93,7 +99,7 @@ public class GameManager : MonoBehaviour
     //Method to move from room to room
     public void moveToRoom(GameObject room)
     {
-        StartCoroutine(roomTransition(room));
+        StartCoroutine(RoomTransition(room));
     }
 
     //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
@@ -115,66 +121,71 @@ public class GameManager : MonoBehaviour
     //Method to Load the UI Panels
     public void UnloadPanel()
     {
-        LoadPanel = false;
-        ProfilePanel.SetActive(false);
-        CluesPanel.SetActive(false);
-        MapPanel.SetActive(false);
-        SallyPanel.SetActive(false);
-        ResearcherPanel.SetActive(false);
+        loadPanel = false;
+        profilePanel.SetActive(false);
+        cluesPanel.SetActive(false);
+        mapPanel.SetActive(false);
+        suspectPanel.SetActive(false);
     }
 
     public void LoadProfilePanel()
     {
-        LoadPanel = true;
-        ProfilePanel.SetActive(true);
-        CluesPanel.SetActive(false);
-        MapPanel.SetActive(false);
-        SallyPanel.SetActive(false);
-        ResearcherPanel.SetActive(false);
-
+        loadPanel = true;
+        profilePanel.SetActive(true);
+        cluesPanel.SetActive(false);
+        mapPanel.SetActive(false);
+        suspectPanel.SetActive(false);
     }
 
     public void LoadCluesPanel()
     {
-        LoadPanel = true;
-        CluesPanel.SetActive(true);
-        MapPanel.SetActive(false);
-        ProfilePanel.SetActive(false);
-        SallyPanel.SetActive(false);
-        ResearcherPanel.SetActive(false);
-
+        loadPanel = true;
+        cluesPanel.SetActive(true);
+        mapPanel.SetActive(false);
+        profilePanel.SetActive(false);
+        suspectPanel.SetActive(false);
     }
 
     public void LoadMapPanel()
     {
-        LoadPanel = true;
-        MapPanel.SetActive(true);
-        CluesPanel.SetActive(false);
-        ProfilePanel.SetActive(false);
-        SallyPanel.SetActive(false);
-        ResearcherPanel.SetActive(false);
-
+        loadPanel = true;
+        mapPanel.SetActive(true);
+        cluesPanel.SetActive(false);
+        profilePanel.SetActive(false);
+        suspectPanel.SetActive(false);
     }
 
-    public void LoadSallyPanel()
+    public void LoadSuspectPanel(int suspectIndex)
     {
-        LoadPanel = true;
-        SallyPanel.SetActive(true);
-        MapPanel.SetActive(false);
-        CluesPanel.SetActive(false);
-        ProfilePanel.SetActive(false);
-        ResearcherPanel.SetActive(false);
+        loadPanel = true;
+        suspectPanel.SetActive(true);
+        mapPanel.SetActive(false);
+        cluesPanel.SetActive(false);
+        profilePanel.SetActive(false);
 
-    }
-
-    public void LoadResearcherPanel()
-    {
-        LoadPanel = true;
-        ResearcherPanel.SetActive(true);
-        MapPanel.SetActive(false);
-        CluesPanel.SetActive(false);
-        ProfilePanel.SetActive(false);
-        SallyPanel.SetActive (false);
-
+        SuspectFile curSuspect = suspects[suspectIndex];
+        suspectPicture.sprite = curSuspect.sprite;
+        suspectName.text = curSuspect.suspectName;
+        suspectQuote.text = curSuspect.quote;
+        
+        // if the GameManager has unlocked the ID for the first clue
+        if (suspectClues.Contains(curSuspect.clues[0].unlockId))
+        {
+            clueElements[0].SetClue(curSuspect.clues[0].picture, curSuspect.clues[0].text);
+        }
+        else
+        {
+            clueElements[0].HideClue();
+        }
+        
+        // if the GameManager has unlocked the ID for the second clue
+        if (suspectClues.Contains(curSuspect.clues[1].unlockId))
+        {
+            clueElements[1].SetClue(curSuspect.clues[1].picture, curSuspect.clues[1].text);
+        }
+        else
+        {
+            clueElements[1].HideClue();
+        }
     }
 }
