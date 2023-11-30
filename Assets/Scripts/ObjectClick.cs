@@ -36,6 +36,8 @@ public class ObjectClick : MonoBehaviour
     {
         // if there's a conversation going on, don't look for object clicks
         if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
+        // if a panel is open, don't look for dialogue clicks
+        if (GameManager.loadPanel) { return; }
 
         if (Input.GetMouseButtonDown(0))
         {

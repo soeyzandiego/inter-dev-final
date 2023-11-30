@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public SuspectFile[] suspects;
 
     //Initialize variables
-    bool loadPanel = false;
+    public static bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
     bool walkMode = true;
     List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)

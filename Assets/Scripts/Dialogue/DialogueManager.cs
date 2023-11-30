@@ -66,21 +66,7 @@ public class DialogueManager : MonoBehaviour
                 investigatePanel.SetActive(false);
                 talkPanel.SetActive(true);
 
-                if (!typing)
-                {
-                    typing = true;
-                    textToPlay = curAsset.lines[curLineIndex].dialogue;
-                    SeparateWords();
-                    typeCo = StartCoroutine(WriteText());
-                }
-
-                nameText.text = curAsset.lines[curLineIndex].character.charName;
-
-                // set sprite based on current line's character
-                characterSprite.enabled = true;
-                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
-
-                if (Input.GetMouseButtonDown(0)) 
+                if (typing && Input.GetMouseButtonDown(0))
                 {
                     if (bodyText.text != textToPlay)
                     {
@@ -95,8 +81,21 @@ public class DialogueManager : MonoBehaviour
                         StopCoroutine(endCo);
                         NextLine();
                     }
-                    
                 }
+
+                if (!typing)
+                {
+                    typing = true;
+                    textToPlay = curAsset.lines[curLineIndex].dialogue;
+                    SeparateWords();
+                    typeCo = StartCoroutine(WriteText());
+                }
+
+                nameText.text = curAsset.lines[curLineIndex].character.charName;
+
+                // set sprite based on current line's character
+                characterSprite.enabled = true;
+                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
             break;
 
             case DialogueStates.CHOOSING:
