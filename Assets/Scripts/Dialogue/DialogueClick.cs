@@ -18,6 +18,7 @@ public class DialogueClick : MonoBehaviour
         public DialogueAsset dialogue;
         public string[] unlockIds;
         public bool challenge = false;
+        [HideInInspector] public bool unlocked = false;
     }
 
     int lineIndex = 0;

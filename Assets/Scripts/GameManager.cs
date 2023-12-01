@@ -188,4 +188,15 @@ public class GameManager : MonoBehaviour
             clueElements[1].HideClue();
         }
     }
+
+    public static bool UnlockClue(string _id)
+    {
+        bool wasUnlocked = suspectClues.Contains(_id);
+        if (!wasUnlocked)
+        {
+            suspectClues.Add(_id);
+        }
+
+        return wasUnlocked;
+    }
 }

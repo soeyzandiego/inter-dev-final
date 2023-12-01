@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     [Header("UI Elements")]
     public GameObject dialoguePanel;
     public Image characterSprite;
+    public GameObject updateIndicator; 
 
     [Header("Talk Panel")]
     public GameObject talkPanel;
@@ -89,6 +90,19 @@ public class DialogueManager : MonoBehaviour
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
                     SeparateWords();
                     typeCo = StartCoroutine(WriteText());
+
+                    // If there is an unlock 
+                    if (curAsset.lines[curLineIndex].unlockID != "")
+                    {
+                        bool unlocked = GameManager.UnlockClue(curAsset.lines[curLineIndex].unlockID);
+
+                        // if this is new information
+                        if (!unlocked)
+                        {
+                            // update case file indicator
+                            dialoguePanel.GetComponent<Animator>().SetTrigger("SuspectUpdated");
+                        }
+                    }
                 }
 
                 nameText.text = curAsset.lines[curLineIndex].character.charName;
@@ -149,11 +163,6 @@ public class DialogueManager : MonoBehaviour
 
     void NextLine()
     {
-        if (curAsset.lines[curLineIndex].unlockID != null)
-        {
-            GameManager.suspectClues.Add(curAsset.lines[curLineIndex].unlockID);
-        }
-
         typing = false;
         bodyText.text = "";
 
@@ -173,6 +182,7 @@ public class DialogueManager : MonoBehaviour
                 // we've reached the end of the conversation, show investigate panel
                 state = DialogueStates.INVESTIGATING;
                 CheckUnlockables();
+                //dialoguePanel.GetComponent<Animator>().SetTrigger("ForceClose");
             }
         }
     }
@@ -230,6 +240,14 @@ public class DialogueManager : MonoBehaviour
     public void LesterBeaumont()
     {
         curAsset = talkingTo.lesterBeaumontAsset;
+
+        curLineIndex = 0;
+        state = DialogueStates.TALKING;
+    }
+
+    public void PlayUnlockable(int index)
+    {
+        curAsset = talkingTo.unlockables[index].dialogue;
 
         curLineIndex = 0;
         state = DialogueStates.TALKING;
