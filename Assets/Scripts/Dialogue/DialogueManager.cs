@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     bool typing = false;
     Coroutine typeCo; // current typing coroutine
     Coroutine endCo; // current end coroutine to move to next line
+    Sprite queuedSprite = null;
 
     public enum DialogueStates
     {
@@ -74,6 +75,34 @@ public class DialogueManager : MonoBehaviour
                         // Skip to the end of the current line
                         StopCoroutine(typeCo);
                         endCo = StartCoroutine(EndLine());
+
+                        // remove any sprite indicators
+                        for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
+                        {
+                            switch (textToPlay[charIndex].ToString())
+                            {
+                                case "#":
+                                    textToPlay = textToPlay.Remove(charIndex, 1);
+                                    charIndex--;
+                                break;
+                                
+                                case "$":
+                                    textToPlay = textToPlay.Remove(charIndex, 1);
+                                    charIndex--;
+                                break;
+
+                                case "%":
+                                    textToPlay = textToPlay.Remove(charIndex, 1);
+                                    charIndex--;
+                                break;
+
+                                case "&":
+                                    textToPlay = textToPlay.Remove(charIndex, 1);
+                                    charIndex--;
+                                break;
+                            }
+                        }
+
                         bodyText.text = textToPlay;
                     }
                     else
@@ -91,6 +120,16 @@ public class DialogueManager : MonoBehaviour
                     SeparateWords();
                     typeCo = StartCoroutine(WriteText());
 
+                    // set sprite based on current line's character
+                    characterSprite.enabled = true;
+                    if (queuedSprite == null)
+                    {
+                        Debug.Log("sprite appear");
+                        characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
+                        GetComponent<Animator>().SetTrigger("SpriteAppear");
+                    }
+                    
+
                     // If there is an unlock 
                     if (curAsset.lines[curLineIndex].unlockID != "")
                     {
@@ -100,16 +139,12 @@ public class DialogueManager : MonoBehaviour
                         if (!unlocked)
                         {
                             // update case file indicator
-                            dialoguePanel.GetComponent<Animator>().SetTrigger("SuspectUpdated");
+                            GetComponent<Animator>().SetTrigger("SuspectUpdated");
                         }
                     }
                 }
 
                 nameText.text = curAsset.lines[curLineIndex].character.charName;
-
-                // set sprite based on current line's character
-                characterSprite.enabled = true;
-                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
             break;
 
             case DialogueStates.CHOOSING:
@@ -181,8 +216,8 @@ public class DialogueManager : MonoBehaviour
             {
                 // we've reached the end of the conversation, show investigate panel
                 state = DialogueStates.INVESTIGATING;
+                GetComponent<Animator>().SetTrigger("ForceClose");
                 CheckUnlockables();
-                //dialoguePanel.GetComponent<Animator>().SetTrigger("ForceClose");
             }
         }
     }
@@ -226,6 +261,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(false);
         talkingTo = null;
+        queuedSprite = null;
         state = DialogueStates.NONE;
     }
 
@@ -268,7 +304,41 @@ public class DialogueManager : MonoBehaviour
         //int wordIndex = -1;
         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
         {
-            bodyText.text += textToPlay[charIndex];
+            switch (textToPlay[charIndex].ToString())
+            {
+                case "#":
+                    GetComponent<Animator>().SetTrigger("SpriteChange");
+                    queuedSprite = curAsset.lines[curLineIndex].character.sprites[0];
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                case "$":
+                    GetComponent<Animator>().SetTrigger("SpriteChange");
+                    queuedSprite = curAsset.lines[curLineIndex].character.sprites[1];
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                case "%":
+                    GetComponent<Animator>().SetTrigger("SpriteChange");
+                    queuedSprite = curAsset.lines[curLineIndex].character.sprites[2];
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                case "&":
+                    GetComponent<Animator>().SetTrigger("SpriteChange");
+                    queuedSprite = curAsset.lines[curLineIndex].character.sprites[3];
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                default:
+                    // if there's no sprite indicator, just add to the text
+                    bodyText.text += textToPlay[charIndex];
+                break;
+            }
             // this was all text wrapping stuff that is... not working but it's not a huge deal
             //if (textToPlay[charIndex].ToString() == " ")
             //{
@@ -307,5 +377,10 @@ public class DialogueManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(endTime);
         NextLine();
+    }
+
+    public void ChangeSprite()
+    {
+        characterSprite.sprite = queuedSprite;
     }
 }

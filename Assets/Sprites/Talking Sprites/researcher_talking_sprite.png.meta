@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -120,10 +120,10 @@ TextureImporter:
       name: researcher_talking_sprite_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 42
-        width: 992
-        height: 1610
+        x: 0
+        y: 0
+        width: 1250
+        height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: researcher_talking_sprite_1
       rect:
         serializedVersion: 2
-        x: 1100
-        y: 30
-        width: 798
-        height: 1564
+        x: 1250
+        y: 0
+        width: 1250
+        height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: researcher_talking_sprite_2
       rect:
         serializedVersion: 2
-        x: 1938
-        y: 38
-        width: 934
-        height: 1594
+        x: 2500
+        y: 0
+        width: 1250
+        height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: researcher_talking_sprite_3
       rect:
         serializedVersion: 2
-        x: 2946
-        y: 42
-        width: 1098
-        height: 1516
+        x: 3750
+        y: 0
+        width: 1250
+        height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

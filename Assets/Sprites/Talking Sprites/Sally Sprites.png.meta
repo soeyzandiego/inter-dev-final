@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -120,10 +120,10 @@ TextureImporter:
       name: Sally Sprites_0
       rect:
         serializedVersion: 2
-        x: 39
+        x: 0
         y: 0
-        width: 756
-        height: 1672
+        width: 1250
+        height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: Sally Sprites_1
       rect:
         serializedVersion: 2
-        x: 833
+        x: 1250
         y: 0
-        width: 961
-        height: 1540
+        width: 1250
+        height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Sally Sprites_2
       rect:
         serializedVersion: 2
-        x: 1836
+        x: 2500
         y: 0
-        width: 677
-        height: 1649
+        width: 1250
+        height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: Sally Sprites_3
       rect:
         serializedVersion: 2
-        x: 2606
+        x: 3750
         y: 0
-        width: 729
-        height: 1665
+        width: 1250
+        height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
