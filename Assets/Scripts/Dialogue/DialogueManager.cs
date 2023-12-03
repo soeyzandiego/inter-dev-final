@@ -9,7 +9,6 @@ public class DialogueManager : MonoBehaviour
     [Header("UI Elements")]
     public GameObject dialoguePanel;
     public Image characterSprite;
-    public GameObject updateIndicator; 
 
     [Header("Talk Panel")]
     public GameObject talkPanel;
@@ -70,11 +69,10 @@ public class DialogueManager : MonoBehaviour
 
                 if (typing && Input.GetMouseButtonDown(0))
                 {
-                    if (bodyText.text != textToPlay)
+                    if (bodyText.text.Length < textToPlay.Length)
                     {
                         // Skip to the end of the current line
                         StopCoroutine(typeCo);
-                        endCo = StartCoroutine(EndLine());
 
                         // remove any sprite indicators
                         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
@@ -104,6 +102,9 @@ public class DialogueManager : MonoBehaviour
                         }
 
                         bodyText.text = textToPlay;
+
+                        // start counting to move to next line
+                        endCo = StartCoroutine(EndLine());
                     }
                     else
                     {
@@ -124,9 +125,12 @@ public class DialogueManager : MonoBehaviour
                     characterSprite.enabled = true;
                     if (queuedSprite == null)
                     {
-                        Debug.Log("sprite appear");
                         characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
                         GetComponent<Animator>().SetTrigger("SpriteAppear");
+                    }
+                    else
+                    {
+                        //queuedSprite = curAsset.lines[curLineIndex].character.sprites[0];
                     }
                     
 
@@ -250,10 +254,19 @@ public class DialogueManager : MonoBehaviour
         DialogueAsset.DialogueChoice[] choices = curAsset.lines[curLineIndex].choices;
         if (choices.Length > 0)
         {
-            curAsset = choices[choice].nextSection;
-
-            curLineIndex = 0;
-            state = DialogueStates.TALKING;
+            if (choices[choice].nextSection != null)
+            {
+                curAsset = choices[choice].nextSection;
+                curLineIndex = 0;
+                state = DialogueStates.TALKING;
+            }
+            else // if not branching
+            {
+                typing = false;
+                bodyText.text = "";
+                curLineIndex++;
+                state = DialogueStates.TALKING;
+            }
         }
     }
 
@@ -368,7 +381,7 @@ public class DialogueManager : MonoBehaviour
             //    if (bodyText.text.Length < maxCharacters) { bodyText.text += textToPlay[charIndex]; }
             //    //else { bodyText.text = textToPlay[charIndex].ToString(); }
             //}
-            if (charIndex == textToPlay.Length - 1) { StartCoroutine(EndLine()); }  // end line after last letter
+            if (charIndex == textToPlay.Length - 1) { endCo = StartCoroutine(EndLine()); }  // end line after last letter
             yield return new WaitForSecondsRealtime(delayTime);
         }
     }
@@ -379,6 +392,8 @@ public class DialogueManager : MonoBehaviour
         NextLine();
     }
 
+
+    // used by an animation event for SpriteChange
     public void ChangeSprite()
     {
         characterSprite.sprite = queuedSprite;

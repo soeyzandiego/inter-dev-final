@@ -48,7 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 5195058801442881808}
   characterSprite: {fileID: 5195058801506163335}
-  updateIndicator: {fileID: 9132715286767785084}
   talkPanel: {fileID: 5195058802620452246}
   bodyText: {fileID: 5195058802866328746}
   nameText: {fileID: 5195058801977650550}
@@ -210,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606063539745, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606063539750, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_Color.a
@@ -308,10 +307,5 @@ MonoBehaviour:
 --- !u!1 &5195058802916255941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3937661606469529588, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
-  m_PrefabInstance: {fileID: 9132715287535781681}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &9132715286767785084 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 852185933, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
   m_PrefabInstance: {fileID: 9132715287535781681}
   m_PrefabAsset: {fileID: 0}
