@@ -63,6 +63,8 @@ public class DialogueManager : MonoBehaviour
         // turns on the object containing all the panels
         if (state != DialogueStates.NONE) { dialoguePanel.SetActive(true); }
 
+        GetComponent<Animator>().SetBool("DialogueOpen", state == DialogueStates.TALKING || state == DialogueStates.CHOOSING);
+
         switch (state)
         {
             case DialogueStates.TALKING:
@@ -78,7 +80,7 @@ public class DialogueManager : MonoBehaviour
                         // Skip to the end of the current line
                         StopCoroutine(typeCo);
 
-                        // remove any sprite indicators
+                        // remove any sprite indicators before setting text
                         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
                         {
                             switch (textToPlay[charIndex].ToString())
@@ -113,6 +115,7 @@ public class DialogueManager : MonoBehaviour
                     else
                     {
                         // Play next line
+                        StopCoroutine(typeCo);
                         StopCoroutine(endCo);
                         NextLine();
                     }
@@ -128,6 +131,7 @@ public class DialogueManager : MonoBehaviour
 
                     // set sprite based on current line's character
                     characterSprite.enabled = true;
+                    // if this is the sprite's first appearance
                     if (queuedSprite == null)
                     {
                         characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
@@ -225,11 +229,16 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                // we've reached the end of the conversation, show investigate panel
-                state = DialogueStates.INVESTIGATING;
-
                 StopCoroutine(typeCo);
                 StopCoroutine(endCo);
+
+                typing = false;
+                queuedSprite = null;
+                curAsset = null;
+                textToPlay = null;
+
+                // we've reached the end of the conversation, show investigate panel
+                state = DialogueStates.INVESTIGATING;
 
                 //GetComponent<Animator>().SetTrigger("ForceClose");
                 CheckUnlockables();
@@ -273,6 +282,8 @@ public class DialogueManager : MonoBehaviour
             }
             else // if not branching
             {
+                textToPlay = null;
+
                 typing = false;
                 bodyText.text = "";
                 curLineIndex++;
@@ -284,8 +295,11 @@ public class DialogueManager : MonoBehaviour
     public void CloseDialogue()
     {
         dialoguePanel.SetActive(false);
+        typing = false;
         talkingTo = null;
         queuedSprite = null;
+        curAsset = null;
+        textToPlay = null;
         if (typeCo != null) { StopCoroutine(typeCo); }
         if (endCo != null) { StopCoroutine(endCo); }
         state = DialogueStates.NONE;
@@ -293,6 +307,8 @@ public class DialogueManager : MonoBehaviour
 
     public void YourJob()
     {
+        typing = false;
+        textToPlay = null;
         curAsset = talkingTo.yourJobAsset;
 
         curLineIndex = 0;
@@ -301,6 +317,8 @@ public class DialogueManager : MonoBehaviour
 
     public void LesterBeaumont()
     {
+        typing = false;
+        textToPlay = null;
         curAsset = talkingTo.lesterBeaumontAsset;
 
         curLineIndex = 0;
@@ -309,6 +327,8 @@ public class DialogueManager : MonoBehaviour
 
     public void PlayUnlockable(int index)
     {
+        typing = false;
+        textToPlay = null; 
         curAsset = talkingTo.unlockables[index].dialogue;
 
         curLineIndex = 0;
