@@ -16,7 +16,7 @@ MonoBehaviour:
   sprite: {fileID: -635598667, guid: d1adc71586e63fc4e87e231a3f0d18b3, type: 3}
   quote: '"Minimum Wage Workers Unite!"'
   clues:
-  - unlockId: SA1
+  - unlockId: RS_S_1
     text: This is a test clue
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
   - unlockId: SA2

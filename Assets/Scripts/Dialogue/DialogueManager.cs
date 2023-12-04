@@ -6,6 +6,9 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public Sprite choiceCharSprite; // the sprite to display when the choice menu is open
+    [Space(10)]
+
     [Header("UI Elements")]
     public GameObject dialoguePanel;
     public Image characterSprite;
@@ -63,6 +66,7 @@ public class DialogueManager : MonoBehaviour
         switch (state)
         {
             case DialogueStates.TALKING:
+
                 choicePanel.SetActive(false);
                 investigatePanel.SetActive(false);
                 talkPanel.SetActive(true);
@@ -118,6 +122,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     typing = true;
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
+                    //Debug.Log(textToPlay);
                     SeparateWords();
                     typeCo = StartCoroutine(WriteText());
 
@@ -173,9 +178,6 @@ public class DialogueManager : MonoBehaviour
 
                     choiceText.text = choices[i].text;
                     //choiceButton.onClick.AddListener(() => ChooseOption(i));
-
-                    // TODO set character sprite to Grimoire
-
                 }
             break;
 
@@ -208,7 +210,12 @@ public class DialogueManager : MonoBehaviour
         // if the current line has choices
         if (curAsset.lines[curLineIndex].choices.Length > 0)
         {
+            StopCoroutine(typeCo);
+            StopCoroutine(endCo);
+
             state = DialogueStates.CHOOSING;
+            queuedSprite = choiceCharSprite;
+            GetComponent<Animator>().SetTrigger("SpriteChange");
         }
         else
         {
@@ -220,7 +227,11 @@ public class DialogueManager : MonoBehaviour
             {
                 // we've reached the end of the conversation, show investigate panel
                 state = DialogueStates.INVESTIGATING;
-                GetComponent<Animator>().SetTrigger("ForceClose");
+
+                StopCoroutine(typeCo);
+                StopCoroutine(endCo);
+
+                //GetComponent<Animator>().SetTrigger("ForceClose");
                 CheckUnlockables();
             }
         }
@@ -275,6 +286,8 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         talkingTo = null;
         queuedSprite = null;
+        if (typeCo != null) { StopCoroutine(typeCo); }
+        if (endCo != null) { StopCoroutine(endCo); }
         state = DialogueStates.NONE;
     }
 

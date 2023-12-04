@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charName: Grimoire
   sprites:
-  - {fileID: -1559246386, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
-  - {fileID: 1668212323, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
-  - {fileID: -441646306, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
-  - {fileID: 1958345891, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
+  - {fileID: 562010720, guid: 0d21b7c6ea66bfd4fb926df17adb3ff2, type: 3}
+  - {fileID: -1331999673, guid: 0d21b7c6ea66bfd4fb926df17adb3ff2, type: 3}
+  - {fileID: 1643458294, guid: 0d21b7c6ea66bfd4fb926df17adb3ff2, type: 3}
+  - {fileID: 1430774311, guid: 0d21b7c6ea66bfd4fb926df17adb3ff2, type: 3}

@@ -4822,14 +4822,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: eb0322fb0be20984ab8484b1613ef0e4, type: 2}
-  yourJobAsset: {fileID: 11400000, guid: 20d76fb1c145f1a4986e8caecdfa2ff2, type: 2}
+  yourJobAsset: {fileID: 11400000, guid: 5d87b7016fbf9de4bbd220cc16b703c7, type: 2}
   lesterBeaumontAsset: {fileID: 0}
   unlockables:
   - investigatePanelText: Test
     dialogue: {fileID: 11400000, guid: e26ea68a4df06004ea9845361d47c5b9, type: 2}
     unlockIds:
-    - SA1
-    - SA2
+    - RS_S_1
     challenge: 0
     unlocked: 0
   sidebarButton: {fileID: 95015108}
@@ -9098,6 +9097,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7563944610275369578, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
+      propertyPath: choiceCharSprite
+      value: 
+      objectReference: {fileID: 1643458294, guid: 0d21b7c6ea66bfd4fb926df17adb3ff2, type: 3}
     - target: {fileID: 7563944610275369579, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
       propertyPath: m_RootOrder
       value: 12
