@@ -6,11 +6,14 @@ using UnityEngine.UI;
 
 public class ObjectClick : MonoBehaviour
 {
+    [Header("Dialogue")]
     public TMP_Text dialogueText; // Reference to the TextMeshPro Text component for dialogue
     public GameObject dialogueBox; // Reference to the dialogue box UI GameObject
     public Button continueButton; // Reference to the "Continue" button 
     public Image grimoireBox; // Reference to the Image for the dialogue 
 
+    [Header("Audio")]
+    public AudioClip clickSound;
 
     // all the game objects in the scene go here
     private Dictionary<string, string> objectDialogues = new Dictionary<string, string>();
@@ -55,6 +58,8 @@ public class ObjectClick : MonoBehaviour
                 // if then the objectDialogues Dictionary has that object tag and dialouge with it
                 if (objectDialogues.ContainsKey(objectName))
                 {
+                    if (clickSound != null) { SoundManager.PlaySound(clickSound); }
+
                     // set the dialouge box to active
                     dialogueBox.SetActive(true);
 

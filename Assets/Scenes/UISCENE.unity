@@ -2904,6 +2904,9 @@ MonoBehaviour:
   clueElements:
   - {fileID: 1984754645}
   - {fileID: 1852283799}
+  unloadPanelSound: {fileID: 0}
+  walkModeSound: {fileID: 0}
+  mapPanelSound: {fileID: 0}
   suspects:
   - {fileID: 11400000, guid: 3960364e6a69d7a4793fc38b335c5fbd, type: 2}
   - {fileID: 11400000, guid: 9822bbf53f14783499247c41b17d943a, type: 2}
@@ -2924,6 +2927,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1582943461}
   continueButton: {fileID: 567305676}
   grimoireBox: {fileID: 1008138429}
+  clickSound: {fileID: 0}
 --- !u!1 &779580872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,7 +3069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02214efdd123d9f4e8972ad070b83cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVol: 0.9
 --- !u!1 &794364441
 GameObject:
   m_ObjectHideFlags: 0
@@ -4831,6 +4834,7 @@ MonoBehaviour:
     - RS_S_1
     challenge: 0
     unlocked: 0
+  clickSound: {fileID: 0}
   sidebarButton: {fileID: 95015108}
 --- !u!61 &1249014769
 BoxCollider2D:
@@ -5922,7 +5926,7 @@ GameObject:
   - component: {fileID: 1444377671}
   - component: {fileID: 1444377670}
   m_Layer: 5
-  m_Name: walkModeToggle
+  m_Name: WalkModeToggle
   m_TagString: WalkModeToggle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5994,7 +5998,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 769169793}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: walkModeToggle
+        m_MethodName: WalkModeToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9093,18 +9097,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1286672857}
     m_Modifications:
-    - target: {fileID: 5195058801442881808, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7563944610275369573, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7563944610275369578, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
-      propertyPath: choiceCharSprite
-      value: 
-      objectReference: {fileID: 1643458294, guid: 0d21b7c6ea66bfd4fb926df17adb3ff2, type: 3}
     - target: {fileID: 7563944610275369579, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
       propertyPath: m_RootOrder
       value: 12

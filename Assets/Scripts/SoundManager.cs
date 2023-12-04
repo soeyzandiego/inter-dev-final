@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public float defaultVol = 0.9f;
+    static float defaultVol = 0.9f;
 
-    AudioSource audioSource;
+    static AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -15,13 +15,13 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void PlaySound(AudioClip clip, float vol)
+    public static void PlaySound(AudioClip clip, float vol)
     {
         audioSource.volume = vol;
         audioSource.PlayOneShot(clip);
     }
 
-    public void PlaySound(AudioClip clip)
+    public static void PlaySound(AudioClip clip)
     {
         audioSource.volume = defaultVol;
         audioSource.PlayOneShot(clip);

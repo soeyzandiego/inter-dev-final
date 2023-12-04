@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class DialogueClick : MonoBehaviour
 {
+    [Header("Dialogue")]
     public DialogueAsset asset;
-
     public DialogueAsset yourJobAsset;
     public DialogueAsset lesterBeaumontAsset;
     public DialogueUnlockable[] unlockables;
+
+    [Header("Audio")]
+    public AudioClip clickSound;
 
     [System.Serializable]
     public class DialogueUnlockable
@@ -43,6 +46,7 @@ public class DialogueClick : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
+                    if (clickSound != null) { SoundManager.PlaySound(clickSound); }
                     StartDialogue();
                 }
             }

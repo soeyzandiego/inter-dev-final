@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
     public SuspectClueUI[] clueElements;
 
 
+    [Header("Audio")]
+    public AudioClip unloadPanelSound;
+    public AudioClip walkModeSound;
+    public AudioClip mapPanelSound;
+
     [Header("Suspect Profiles")]
     public SuspectFile[] suspects;
 
@@ -47,7 +52,7 @@ public class GameManager : MonoBehaviour
         {
             walkButtons.Add(g.GetComponent<Button>());
         }
-        walkModeToggle();
+        WalkModeToggle();
     }
 
     //Main Method
@@ -72,7 +77,7 @@ public class GameManager : MonoBehaviour
     //Loops for 2 seconds, lowering opacity, swaps currentRoom object, and makes the new object visible.
     IEnumerator RoomTransition(GameObject room)
     {
-        walkModeToggle();
+        WalkModeToggle();
         foreach (Button button in buttons)
         {
             button.interactable = false;
@@ -103,8 +108,10 @@ public class GameManager : MonoBehaviour
     }
 
     //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
-    public void walkModeToggle()
+    public void WalkModeToggle()
     {
+        if (walkModeSound != null) { SoundManager.PlaySound(walkModeSound); }
+
         walkMode = !walkMode;
         foreach (Button button in buttons)
         {
@@ -126,6 +133,8 @@ public class GameManager : MonoBehaviour
         cluesPanel.SetActive(false);
         mapPanel.SetActive(false);
         suspectPanel.SetActive(false);
+
+        if (unloadPanelSound != null) { SoundManager.PlaySound(unloadPanelSound); }
     }
 
     public void LoadProfilePanel()
@@ -148,6 +157,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadMapPanel()
     {
+        if (mapPanelSound != null) { SoundManager.PlaySound(mapPanelSound); }
+
         loadPanel = true;
         mapPanel.SetActive(true);
         cluesPanel.SetActive(false);

@@ -9,6 +9,10 @@ public class DialogueManager : MonoBehaviour
     public Sprite choiceCharSprite; // the sprite to display when the choice menu is open
     [Space(10)]
 
+    [Header("Audio")]
+    public AudioClip skipSound;
+    public AudioClip buttonSound; 
+
     [Header("UI Elements")]
     public GameObject dialoguePanel;
     public Image characterSprite;
@@ -75,6 +79,8 @@ public class DialogueManager : MonoBehaviour
 
                 if (typing && Input.GetMouseButtonDown(0))
                 {
+                    if (skipSound != null) { SoundManager.PlaySound(skipSound); }
+
                     if (bodyText.text.Length < textToPlay.Length)
                     {
                         // Skip to the end of the current line
@@ -430,5 +436,10 @@ public class DialogueManager : MonoBehaviour
     public void ChangeSprite()
     {
         characterSprite.sprite = queuedSprite;
+    }
+
+    public void ButtonSound()
+    {
+        if (buttonSound != null) { SoundManager.PlaySound(buttonSound); }
     }
 }
