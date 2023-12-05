@@ -49,6 +49,8 @@ public class DialogueManager : MonoBehaviour
         INVESTIGATING
     };
 
+    bool updated = false; // so certain lines will only run once at the beginning of a state switch (similar to bool typing)
+
     public static DialogueStates state = DialogueStates.NONE;
 
     static DialogueAsset curAsset;
@@ -131,7 +133,6 @@ public class DialogueManager : MonoBehaviour
                 {
                     typing = true;
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
-                    //Debug.Log(textToPlay);
                     SeparateWords();
                     typeCo = StartCoroutine(WriteText());
 
@@ -171,23 +172,30 @@ public class DialogueManager : MonoBehaviour
                 investigatePanel.SetActive(false);
                 choicePanel.SetActive(true);
 
-                DialogueAsset.DialogueChoice[] choices = curAsset.lines[curLineIndex].choices;
-
-                // TODO lambda expression doesn't work with local variable from for loop, so... figure that out
-                Button but1 = choiceElements[0].GetComponentInChildren<Button>();
-                but1.onClick.AddListener(() => ChooseOption(0));
-                Button but2 = choiceElements[1].GetComponentInChildren<Button>();
-                but2.onClick.AddListener(() => ChooseOption(1));
-                Button but3 = choiceElements[2].GetComponentInChildren<Button>();
-                but3.onClick.AddListener(() => ChooseOption(2));
-
-                for (int i = 0; i < choiceElements.Length; i++)
+                if (!updated)
                 {
-                    TMP_Text choiceText = choiceElements[i].GetComponentInChildren<TMP_Text>();
-                    Button choiceButton = choiceElements[i].GetComponentInChildren<Button>();
+                    updated = true;
+                    DialogueAsset.DialogueChoice[] choices = curAsset.lines[curLineIndex].choices;
 
-                    choiceText.text = choices[i].text;
-                    //choiceButton.onClick.AddListener(() => ChooseOption(i));
+                    queuedSprite = choiceCharSprite;
+                    GetComponent<Animator>().SetTrigger("SpriteChange");
+
+                    // TODO lambda expression doesn't work with local variable from for loop, so... figure that out
+                    Button but1 = choiceElements[0].GetComponentInChildren<Button>();
+                    but1.onClick.AddListener(() => ChooseOption(0));
+                    Button but2 = choiceElements[1].GetComponentInChildren<Button>();
+                    but2.onClick.AddListener(() => ChooseOption(1));
+                    Button but3 = choiceElements[2].GetComponentInChildren<Button>();
+                    but3.onClick.AddListener(() => ChooseOption(2));
+
+                    for (int i = 0; i < choiceElements.Length; i++)
+                    {
+                        TMP_Text choiceText = choiceElements[i].GetComponentInChildren<TMP_Text>();
+                        Button choiceButton = choiceElements[i].GetComponentInChildren<Button>();
+
+                        choiceText.text = choices[i].text;
+                        //choiceButton.onClick.AddListener(() => ChooseOption(i));
+                    }
                 }
             break;
 
@@ -198,7 +206,6 @@ public class DialogueManager : MonoBehaviour
 
                 // deactivate sprite
                 characterSprite.enabled = false;
-
             break;
         }
     }
@@ -214,31 +221,24 @@ public class DialogueManager : MonoBehaviour
 
     void NextLine()
     {
-        typing = false;
         bodyText.text = "";
+        StopCoroutine(typeCo);
+        StopCoroutine(endCo);
 
         // if the current line has choices
         if (curAsset.lines[curLineIndex].choices.Length > 0)
         {
-            StopCoroutine(typeCo);
-            StopCoroutine(endCo);
-
             state = DialogueStates.CHOOSING;
-            queuedSprite = choiceCharSprite;
-            GetComponent<Animator>().SetTrigger("SpriteChange");
         }
         else
         {
+            typing = false;
             if (curLineIndex < curAsset.lines.Length - 1)
             {
                 curLineIndex++;
             }
             else
             {
-                StopCoroutine(typeCo);
-                StopCoroutine(endCo);
-
-                typing = false;
                 queuedSprite = null;
                 curAsset = null;
                 textToPlay = null;
@@ -296,6 +296,7 @@ public class DialogueManager : MonoBehaviour
                 state = DialogueStates.TALKING;
             }
         }
+        updated = false;
     }
 
     public void CloseDialogue()
