@@ -132,6 +132,7 @@ public class DialogueManager : MonoBehaviour
                 if (!typing)
                 {
                     typing = true;
+                    if (curAsset == null) { return; }
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
                     SeparateWords();
                     typeCo = StartCoroutine(WriteText());
