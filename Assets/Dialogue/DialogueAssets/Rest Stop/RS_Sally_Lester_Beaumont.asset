@@ -19,7 +19,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "#I know\u2026\r\nBut it won't help\u2026\r"
+    dialogue: "%I know\u2026\r\nBut it won't help\u2026\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
@@ -30,17 +30,17 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "I waited the whole day while no one came.\r\nBy the end of my shift,
-      he still was not back.\r"
+    dialogue: "&I waited the whole day $while no one came.\r\nBy the end of my shift,
+      #he still was not back.\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "So I called him\u2026 no answer\u2026\r\nI went to his house but no
-      one was there\u2026\r"
+    dialogue: "$So I called him\u2026 %no answer\u2026\r\nI went to his house &but
+      no one was there\u2026\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "So I called the police\u2026 you\u2026\r\nAnd reported that he was
+    dialogue: "#So I called the police\u2026 $you\u2026\r\nAnd reported that he was
       missing.\r"
     choices: []
     unlockID: 
@@ -49,16 +49,16 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "#As you can see, there is almost no one in this town.\r"
+    dialogue: "#As you can see, $there is almost no one in this town.\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "If someone doesn\u2019t show up to their job, there are only two places
-      they can be..."
+    dialogue: "If someone doesn\u2019t show up to their job, &there are only two
+      places they can be..."
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "1. At home or 2. They are missing.\r\nSo he was missing. \r\n"
+    dialogue: "#1. At home or %2. They are missing.\r\n$So he was missing. \r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
