@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: RS_Sally_Lester_Beaumont
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#When you have a moment free from your\u2026 Busy schedule\u2026 I
+      need to ask you about Lester Beaumont."
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "%I know\u2026\r\nBut it won't help\u2026\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: 'I came here in the morning to start work. When I got here Lester was
+      missing.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "&I waited the whole day $while no one came.\r\nBy the end of my shift,
+      #he still was not back.\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "$So I called him\u2026 %no answer\u2026\r\nI went to his house &but
+      no one was there\u2026\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "#So I called the police\u2026 $you\u2026\r\nAnd reported that he was
+      missing.\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Why did you report him as missing so fast?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "#As you can see, $there is almost no one in this town.\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "If someone doesn\u2019t show up to their job, &there are only two
+      places they can be..."
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "#1. At home or %2. They are missing.\r\n$So he was missing. \r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#That seems like a terrible process of elimination\u2026\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "#It\u2019s the truth.\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "No one comes here and no one stays other than me, Lester, the Old
+      Lady, the Researcher, and that one Tourist who has been here. \r"
+    choices: []
+    unlockID: 

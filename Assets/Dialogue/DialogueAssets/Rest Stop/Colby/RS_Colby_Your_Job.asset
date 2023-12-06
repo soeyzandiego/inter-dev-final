@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: RS_Colby_Your_Job
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Sooo\u2026 what are you researching about?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#I never said I was just a researcher! \nI am a scholar! An academic!\r\nI\u2019m
+      here to research the past and uncover the future!\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#The future of... what?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Of life obviously!'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: I research rare and exotic animals native only to this land!
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#For\u2026 Fun\u2026?\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Fun?
+
+      Ha.
+
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "There\u2019s nothing so simple as fun to be had here\r\nI live here
+      full time to study the land\u2019s secrets\u2026\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#What kind of secrets?
+
+      I mean this is just an ordinary desert,
+      right?
+
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#This desert is ridden with abnormal and exotic animals!
+
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: 'They are unlike anything most people have seen before and they only
+      exist here in this specific desert.
+
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#You know\u2026 I have been wondering what makes this town and desert
+      so special\u2026\n\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#My knowledge far exceeds anyone else you might have met so far.
+
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So... You\u2019ll help me? \n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#Well, I didn\u2019t say all that.\n"
+    choices: []
+    unlockID: 

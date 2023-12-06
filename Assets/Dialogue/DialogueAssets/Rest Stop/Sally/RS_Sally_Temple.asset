@@ -10,19 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
-  m_Name: RS_Sally_YourJob
+  m_Name: RS_Sally_Temple
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: I didn't expect to see someone your age working in a place like this.
-    choices: []
-    unlockID: 
-  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '&But then again, I didn''t expect there to be a place like this in...
-      a place like this...'
+    dialogue: "#So why don\u2019t you believe in the temple?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: $I only started working here this year anyway...
+    dialogue: "#A secret ancient magical temple that is hidden somewhere underground?\r"
     choices: []
-    unlockID: RS_S_1
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#I see what you mean.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "#Yeah\u2026 $Anything else?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Nope.'
+    choices: []
+    unlockID: 
