@@ -7,6 +7,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public Sprite choiceCharSprite; // the sprite to display when the choice menu is open
+    public DialogueCharacter choiceChar;
     [Space(10)]
 
     [Header("Audio")]
@@ -234,7 +235,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             typing = false;
-            if (curLineIndex < curAsset.lines.Length - 1)
+            if (curLineIndex < curAsset.lines.Count - 1)
             {
                 curLineIndex++;
             }
@@ -281,21 +282,30 @@ public class DialogueManager : MonoBehaviour
         DialogueAsset.DialogueChoice[] choices = curAsset.lines[curLineIndex].choices;
         if (choices.Length > 0)
         {
-            if (choices[choice].nextSection != null)
-            {
-                curAsset = choices[choice].nextSection;
-                curLineIndex = 0;
-                state = DialogueStates.TALKING;
-            }
-            else // if not branching
-            {
-                textToPlay = null;
+            textToPlay = null;
 
-                typing = false;
-                bodyText.text = "";
-                curLineIndex++;
-                state = DialogueStates.TALKING;
-            }
+            typing = false;
+            bodyText.text = "";
+
+            List<DialogueAsset.DialogueLine> tempList = curAsset.lines;
+
+            // add a new line to the asset to play the full text for the choice
+            //DialogueAsset.DialogueLine newLine = new DialogueAsset.DialogueLine();
+            //newLine.character = choiceChar;
+            //newLine.dialogue = choices[choice].fullText;
+            //newLine.unlockID = null;
+            //newLine.choices = null;
+            tempList.Insert(curLineIndex + 1, choices[choice].lineToPlay);
+
+            //tempList.Insert(curLineIndex + 1, newLine);
+            DialogueAsset tempAsset = ScriptableObject.CreateInstance<DialogueAsset>();
+            tempAsset.lines = tempList;
+            curAsset = tempAsset;
+
+            //curAsset.lines.Insert(curLineIndex + 1, choices[choice].lineToPlay);
+
+            curLineIndex++;
+            state = DialogueStates.TALKING; 
         }
         updated = false;
     }

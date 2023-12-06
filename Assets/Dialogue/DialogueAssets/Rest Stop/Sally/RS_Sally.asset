@@ -20,12 +20,12 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
     dialogue: '#You weren''t here yesterday.'
     choices:
-    - text: Oh, no... I... well, I only just arrived
-      nextSection: {fileID: 0}
-    - text: I know... I was in my office yesterday.
-      nextSection: {fileID: 0}
+    - text: Oh, no...I...well, I only just arrived.
+      fullText: Oh, no...I...well, I only just arrived.
+    - text: "I know\u2026I was in my office yesterday."
+      fullText: "I know\u2026I was in my office yesterday."
     - text: Did you miss me?
-      nextSection: {fileID: 0}
+      fullText: Did you miss me?
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
     dialogue: '%You''re the Detective, right?'
