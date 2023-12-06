@@ -27,39 +27,6 @@ public class ObjectClick : MonoBehaviour
         }
 
         // add the objects here with ("objectTag", "Dialogue...");
-<<<<<<< HEAD
-        objectDialogues.Add("g_gate", "It looks like a locked gate?");
-        objectDialogues.Add("g_post", "Straight to the point, aren't we.");
-        objectDialogues.Add("g_skull", "Glad to know the town name is based off... something...");
-        objectDialogues.Add("g_cacti", "Awe look, some small cacti.");
-        objectDialogues.Add("g_sand", "Wow, lots and lots of sand.\nI best stick to the path as to not get my fabluous outfit too dirty. ");
-        objectDialogues.Add("g_map", "Oh hey, whats that?\nOh great! It's a map!");
-        objectDialogues.Add("g_tree", "Looks like everything is dead around here...");
-        objectDialogues.Add("g_sky", "It's so hot out here. I should have worn something lighter.\nI guess the desert isn't made for detectives. Or at least stylish ones.");
-        objectDialogues.Add("os_sign", "I wonder what that is pointing towards?");
-        objectDialogues.Add("os_bucket", "I don't even want to image what that is for.");
-        objectDialogues.Add("os_shelter", "Oh hey! It's the rest stop.");
-        objectDialogues.Add("os_cactus", "Hello spikey friend.");
-        objectDialogues.Add("os_sand", "More sand...");
-        objectDialogues.Add("os_sky", "Even the sky is depressed at how hot it is.");
-        objectDialogues.Add("ra_skull", "Is this what she meant by 'follow the animals'?");
-        objectDialogues.Add("ra_cacti", "Glad to see my friends are here");
-        objectDialogues.Add("ra_entrance", "Is this the entrance to the temple?\nLooks like some of the stuff that was covering it was broken.");
-        objectDialogues.Add("ra_glove", "What's this?\nIs this one of sally's gloves?");
-        objectDialogues.Add("ra_rocks", "Epic, something else other than sand.");
-        objectDialogues.Add("i_apple", "You know what they say about apples...\nAlthough I doubt there are any doctors out here.\nMaybe that is the point.");
-        objectDialogues.Add("i_chair", "Very... Uh... Cozy in here...");
-        objectDialogues.Add("i_bottles", "Thank everything I was geting pretty thirsty.");
-        objectDialogues.Add("i_light", "'All the better to see you with my dear.'");
-        objectDialogues.Add("i_bottles", "Thank everything I was geting pretty thirsty.");
-        objectDialogues.Add("i_area", "You would think with all this space to build, the place would maybe be.... bigger?");
-        objectDialogues.Add("h_bed", "Looks comfy.");
-        objectDialogues.Add("h_yarn", "I wonder when I get older if I will also love knitting?");
-        objectDialogues.Add("h_around", "How long has she lived here?");
-        objectDialogues.Add("h_books", "Hmm. I wonder what these are about?");
-        objectDialogues.Add("h_heater", "I guess it does get cold at night in the desert.");
-
-=======
         objectDialogues.Add("rock", "It looks like a locked gate?");
         objectDialogues.Add("post", "Straight to the point, aren't we.");
         objectDialogues.Add("skull", "Glad to know the town name is based off... something...");
@@ -86,7 +53,6 @@ public class ObjectClick : MonoBehaviour
         objectDialogues.Add("entrance", "Is this the entrance to the temple?\r\nIt looks like some of the stuff that was covering it was broken.");
         objectDialogues.Add("gloves", "What's this?\r\nIs this one of sally's gloves?");
         objectDialogues.Add("rocks", "Epic, something else other than sand.");
->>>>>>> origin/main
 
 
         // Initially, hide the "Continue" button
