@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class LogicWheel : MonoBehaviour
 {
-    public bool rightEvidence = false;
+    public int rightEvidence; // the index of the correct string. Feel free to change this into a string and just use .Equals().
 
-    [SerializeField] TextMeshPro displayedString;
+    public bool correctEvidence; // is the current index at the correct evidence.
+
+    [SerializeField] TMP_Text displayedString;
+
     //public GameObject[] evidenceCards;
     //anything related to this is physical implementation of the evidence cards in the looping lists found in the logic puzzle. This is currently not being implemented, in favor of a simpler string replacement.
 
@@ -17,7 +21,10 @@ public class LogicWheel : MonoBehaviour
 
     public string[] evidence = new string[4]; // the strings associated with this wheels logic. Should be 4 long.
 
-    [SerializeField] int correctEvidence; // the index of the correct string. Feel free to change this into a string and just use .Equals().
+    // Scroll Arrows
+    [SerializeField] GameObject upArrowPrefab;
+    [SerializeField] GameObject downArrowPrefab;
+    [SerializeField] GameObject[] scrollButtons = new GameObject[2];
 
     [SerializeField] int currentIndex; // the index currently being displayed
 
@@ -25,7 +32,22 @@ public class LogicWheel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        displayedString = gameObject.GetComponent<TextMeshPro>();
+        displayedString = gameObject.GetComponentInChildren<TMP_Text>(); // gets reference to text that we can change
+
+        scrollButtons[0] = Instantiate(upArrowPrefab, transform.parent);
+        scrollButtons[0].transform.position = transform.position + new Vector3(0, 1, 0);
+        Button temp = scrollButtons[0].GetComponent<Button>();
+        temp.onClick.AddListener(() => { ScrollUp(); });
+        scrollButtons[1] = Instantiate(downArrowPrefab, transform.parent);
+        scrollButtons[1].transform.position = transform.position + new Vector3(0, -1, 0);
+        temp = scrollButtons[1].GetComponent<Button>();
+        temp.onClick.AddListener(() => { ScrollDown(); });
+
+        if (currentIndex == rightEvidence)
+        {
+            correctEvidence = true;
+        }
+
         /*
         for (int i = 0; i < 4; i++)
         {
@@ -35,7 +57,7 @@ public class LogicWheel : MonoBehaviour
     }
 
     // Increments current index and displays the text by editing the previous displayedString object.
-    public void scrollUp()
+    public void ScrollUp()
     {
         currentIndex++;
         if(currentIndex >= evidence.Length)
@@ -43,16 +65,16 @@ public class LogicWheel : MonoBehaviour
             currentIndex = 0;
         }
         displayedString.text = evidence[currentIndex];
-        if (currentIndex == correctEvidence)
+        if (currentIndex == rightEvidence)
         {
-            rightEvidence = true;
+            correctEvidence = true;
         }
         else
         {
-            rightEvidence = false;
+            correctEvidence = false;
         }
     }
-    public void scrollDown()
+    public void ScrollDown()
     {
         currentIndex--;
         if (currentIndex < 0)
@@ -60,13 +82,13 @@ public class LogicWheel : MonoBehaviour
             currentIndex = 3;
         }
         displayedString.text = evidence[currentIndex];
-        if(currentIndex == correctEvidence)
+        if(currentIndex == rightEvidence)
         {
-            rightEvidence = true;
+            correctEvidence = true;
         }
         else
         {
-            rightEvidence = false;
+            correctEvidence = false;
         }
     }
 }

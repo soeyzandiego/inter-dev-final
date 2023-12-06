@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &933005947336020208
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933005947336020209}
+  - component: {fileID: 933005947336020214}
+  m_Layer: 0
+  m_Name: LogicPuzzleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &933005947336020209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933005947336020208}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 92.021484}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &933005947336020214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933005947336020208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6628910c06bdfb440b9e8037bcf6d122, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logicObjectPrefab: {fileID: 5827238663057444350, guid: ac492e834d18ad541b37fbd2b4b532b1, type: 3}
+  logicSlotPrefab: {fileID: 1954820145386000621, guid: b69778122f6dc8448830a9200c424c90, type: 3}
+  logicWheelPrefab: {fileID: 7422991683388347869, guid: 6dec5cdec2fea4e4fbf3e80f353dd284, type: 3}
+  logicSlot:
+  - {fileID: 0}
+  - {fileID: 0}
+  logicWheel:
+  - {fileID: 0}
+  - {fileID: 0}
+  correctEvidence: 00000000000000000000000000000000
+  selectedItem: {fileID: 0}
+  selectOffset: {x: 0, y: 0, z: 0}
+  logicObjectSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  logicObjectDesc:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  logicWheelDesc:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  logicObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  hLobjectOffset: {x: 3, y: 0}
+  vLobjectOffset: {x: 0, y: 3}
+  canvas: {fileID: 0}

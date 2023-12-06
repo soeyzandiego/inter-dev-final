@@ -12,11 +12,13 @@ public class LogicObject : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
+        targetPos = startPos;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("LogicSlot"))
         {
+            Debug.Log("collided");
             GameObject tmp = collision.gameObject;
             if(tmp.GetComponent<LogicSlot>().logicObject != null)
             {
@@ -26,13 +28,14 @@ public class LogicObject : MonoBehaviour
             logicSlot = collision.gameObject;
             targetPos = collision.transform.position;
             logicSlot.GetComponent<LogicSlot>().logicObject = this.gameObject;
+            logicSlot.GetComponent<LogicSlot>().currentEvidence = evidenceNum;
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
+        logicSlot.GetComponent<LogicSlot>().logicObject = null;
         logicSlot = null;
         targetPos = startPos;
-        logicSlot.GetComponent<LogicSlot>().logicObject = null;
     }
 }

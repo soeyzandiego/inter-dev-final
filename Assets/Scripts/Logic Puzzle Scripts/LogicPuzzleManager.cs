@@ -10,15 +10,16 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] GameObject logicWheelPrefab; // Prefab for the logic wheel (e.g "has always had permission from", "only recently got permission from", etc.
     [SerializeField] GameObject[] logicSlot = new GameObject[2]; // Reference to the logic slots, to check for correct evidence.
     [SerializeField] GameObject[] logicWheel = new GameObject[2]; // Reference to the logic wheels, to check for correct evidence.
+    [SerializeField] int[] correctEvidence = new int[4]; // Array of correct evidence indexes
     [SerializeField] GameObject selectedItem; // The item currently being dragged.
     [SerializeField] Vector3 selectOffset; // Vector offset to ensure the dragged item doesnt move into clipping plane while being dragged.
-    [SerializeField] Sprite[] logicObjectSprites; // Array of sprites to assign to draggable evidence pieces.
-    [SerializeField] string[] logicObjectDesc; // Array of strings to assign to draggable evidence pieces. (depends on whether the sprites for the evidence pieces includes the text or not.
-    [SerializeField] string[] logicWheelDesc;
+    [SerializeField] Sprite[] logicObjectSprites = new Sprite[8]; // Array of sprites to assign to draggable evidence pieces.
+    [SerializeField] string[] logicObjectDesc = new string[8]; // Array of strings to assign to draggable evidence pieces. (depends on whether the sprites for the evidence pieces includes the text or not.
+    [SerializeField] string[] logicWheelDesc = new string[8]; // descriptions to be assigned to the logicwheel objects.
     [SerializeField] GameObject[] logicObjects = new GameObject[8]; // Reference to logicObjects (possibly not necessary?)
-    [SerializeField] Vector2 hLobjectOffset = Vector2.right * 2; // horizontal spacing for instantiating logic objects.
-    [SerializeField] Vector2 vLobjectOffset = Vector2.up;  // vertical spacing for instantiating logic objects.
-    [SerializeField] GameObject canvas;
+    [SerializeField] Vector2 hLobjectOffset = new Vector2(3, 0); // horizontal spacing for instantiating logic objects.
+    [SerializeField] Vector2 vLobjectOffset = new Vector2(0, 3);  // vertical spacing for instantiating logic objects.
+    [SerializeField] GameObject canvas; // associated canvas object's game object.
 
     void Start()
     {
@@ -28,9 +29,9 @@ public class LogicPuzzleManager : MonoBehaviour
         {
             for (int j = 0; j < 4; j++)
             {
-                logicObjects[count] = Instantiate(logicObjectPrefab);
+                logicObjects[count] = Instantiate(logicObjectPrefab, canvas.transform);
                 LogicObject temp = logicObjects[count].GetComponent<LogicObject>(); //assigns the current evidence piece to temp, to instantiate fields in LogicObject
-                temp.transform.position = hLobjectOffset * (j - 1.5f) + vLobjectOffset * (i - .5f);
+                temp.transform.position = hLobjectOffset * (j - 1.5f) + vLobjectOffset * (i + 0.25f);
                 //temp.GetComponent<SpriteRenderer>().sprite = logicObjectSprites[count]; Commented out for testing. PLEASE UNCOMMENT THIS WHEN U NEED TO PUT IN UR DESCRIPTIONS N WHATNOT.
                 //temp.GetComponent<TextMeshPro>().text = logicObjectDesc[count];
                 count++; 
@@ -42,14 +43,16 @@ public class LogicPuzzleManager : MonoBehaviour
         for(int i = 0; i < 2; i++)
         {
             logicSlot[i] = Instantiate(logicSlotPrefab, canvas.transform);
-            logicSlot[i].transform.position = new Vector3(i - 1 * 3, -3, 0);
+            logicSlot[i].transform.position = new Vector3((i - .5f) * 8 - 2.5f, -2, 1);
+            logicSlot[i].GetComponent<LogicSlot>().rightEvidence = correctEvidence[i * 2];
             
             
             logicWheel[i] = Instantiate(logicWheelPrefab, canvas.transform);
-            logicWheel[i].transform.position = new Vector3(i - 1 * 3, -3, 0);
+            logicWheel[i].transform.position = new Vector3((i - .5f) * 8 + 1.5f, -2, 1);
+            logicWheel[i].GetComponent<LogicWheel>().rightEvidence = correctEvidence[i * 2 + 1];
             for (int j = 0; j < 4; j++)
             {
-                logicWheel[i].GetComponent<LogicWheel>().evidence[j] = logicWheelDesc[count];
+                logicWheel[i].GetComponentInChildren<LogicWheel>().evidence[j] = logicWheelDesc[count];
                 count++;
             }
         }
@@ -81,17 +84,18 @@ public class LogicPuzzleManager : MonoBehaviour
         }
     }
 
-    public bool checkCorrect()
+    public bool CheckCorrect()
     {
         for (int i = 0; i < 2; i++) 
         {
             LogicSlot tempSlot = logicSlot[i].GetComponent<LogicSlot>();
             LogicWheel tempWheel = logicWheel[i].GetComponent<LogicWheel>();
-            if (!tempSlot.checkEvidence() || !tempWheel.rightEvidence)
+            if (!tempSlot.CheckEvidence() || !tempWheel.correctEvidence)
             {
                 return false;
             }
         }
+        Debug.Log("Works");
         return true;
     }
 }
