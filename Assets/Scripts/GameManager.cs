@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     //Method to move from room to room
     public void moveToRoom(GameObject room)
     {
-        StartCoroutine(RoomTransition(room));
+        StartCoroutine(RoomTransition(room)); UnloadPanel();
     }
 
     //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.

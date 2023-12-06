@@ -14,6 +14,7 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] Vector3 selectOffset; // Vector offset to ensure the dragged item doesnt move into clipping plane while being dragged.
     [SerializeField] Sprite[] logicObjectSprites; // Array of sprites to assign to draggable evidence pieces.
     [SerializeField] string[] logicObjectDesc; // Array of strings to assign to draggable evidence pieces. (depends on whether the sprites for the evidence pieces includes the text or not.
+    [SerializeField] string[] logicWheelDesc;
     [SerializeField] GameObject[] logicObjects = new GameObject[8]; // Reference to logicObjects (possibly not necessary?)
     [SerializeField] Vector2 hLobjectOffset = Vector2.right * 2; // horizontal spacing for instantiating logic objects.
     [SerializeField] Vector2 vLobjectOffset = Vector2.up;  // vertical spacing for instantiating logic objects.
@@ -37,13 +38,20 @@ public class LogicPuzzleManager : MonoBehaviour
             }
         }
 
+        count = 0;
         for(int i = 0; i < 2; i++)
         {
             logicSlot[i] = Instantiate(logicSlotPrefab, canvas.transform);
             logicSlot[i].transform.position = new Vector3(i - 1 * 3, -3, 0);
             
+            
             logicWheel[i] = Instantiate(logicWheelPrefab, canvas.transform);
             logicWheel[i].transform.position = new Vector3(i - 1 * 3, -3, 0);
+            for (int j = 0; j < 4; j++)
+            {
+                logicWheel[i].GetComponent<LogicWheel>().evidence[j] = logicWheelDesc[count];
+                count++;
+            }
         }
 
     }

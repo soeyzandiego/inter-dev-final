@@ -15,7 +15,7 @@ public class LogicWheel : MonoBehaviour
     //[SerializeField] GameObject evidenceCardPrefab;
     //anything related to this is physical implementation of the evidence cards in the looping lists found in the logic puzzle. This is currently not being implemented, in favor of a simpler string replacement.
 
-    [SerializeField] string[] evidence = new string[4]; // the strings associated with this wheels logic. Should be 4 long.
+    public string[] evidence = new string[4]; // the strings associated with this wheels logic. Should be 4 long.
 
     [SerializeField] int correctEvidence; // the index of the correct string. Feel free to change this into a string and just use .Equals().
 
