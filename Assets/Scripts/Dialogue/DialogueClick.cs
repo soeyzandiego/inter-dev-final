@@ -26,7 +26,14 @@ public class DialogueClick : MonoBehaviour
 
     int lineIndex = 0;
 
+    [Header("UI Elements")]
     public GameObject sidebarButton;
+    public GameObject profileButton;
+
+    private void Awake()
+    {
+        profileButton.SetActive(false);
+    }
 
     private void Update()
     {
@@ -62,10 +69,11 @@ public class DialogueClick : MonoBehaviour
 
     void StartDialogue()
     {
-        if(sidebarButton.activeSelf)
+        if (sidebarButton.activeSelf)
         {
             sidebarButton.SetActive(false);
         }
+        profileButton.SetActive(true);
         DialogueManager.PlayDialogue(asset, lineIndex, this);
     }
 
