@@ -33,6 +33,7 @@ TagManager:
   - rocks
   - skull2
   - gloves
+  - GatePuzzleCircles
   layers:
   - Default
   - TransparentFX
@@ -42,7 +43,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Rope
   - 
   - 
   - 

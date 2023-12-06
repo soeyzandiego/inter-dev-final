@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
 
     //Initialize variables
     public static bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
-    bool walkMode = true;
-    List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
+    [SerializeField] bool walkMode = true;
+    [SerializeField] List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
 
     [Header("List of Buttons")]

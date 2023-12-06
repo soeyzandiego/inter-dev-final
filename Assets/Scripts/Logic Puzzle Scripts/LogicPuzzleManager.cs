@@ -33,7 +33,7 @@ public class LogicPuzzleManager : MonoBehaviour
                 LogicObject temp = logicObjects[count].GetComponent<LogicObject>(); //assigns the current evidence piece to temp, to instantiate fields in LogicObject
                 temp.transform.position = hLobjectOffset * (j - 1.5f) + vLobjectOffset * (i + 0.25f);
                 //temp.GetComponent<SpriteRenderer>().sprite = logicObjectSprites[count]; Commented out for testing. PLEASE UNCOMMENT THIS WHEN U NEED TO PUT IN UR DESCRIPTIONS N WHATNOT.
-                //temp.GetComponent<TextMeshPro>().text = logicObjectDesc[count];
+                temp.GetComponentInChildren<TMP_Text>().text = logicObjectDesc[count];
                 count++; 
                 temp.evidenceNum = count; //assigns evidence number identifier, to be used when checking the logic puzzle for correctness.
             }
