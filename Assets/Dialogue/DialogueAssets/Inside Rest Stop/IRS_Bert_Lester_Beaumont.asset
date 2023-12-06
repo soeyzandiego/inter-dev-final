@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: IRS_Bert_Lester_Beaumont
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So, how familiar are you with the people here?\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: "#What do you mean?\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Well, you said that you are here doing uh\u2026\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: "#Art!\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Yes, art. \r\nSo how long have you been here doing that?\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Well, only for a day of course!'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#What do you mean by \u201Cof course\u201D?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: "#I would never stay in this town for an extended period willingly!
+      I am Bert Earnest! This is not where the likes of me should be staying. I mean
+      this rest stop is a dump!\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Okay, so why haven\u2019t you left yet?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Well because my camel has gone missing.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Why don\u2019t you just call a helicopter or something, you are Bert
+      Earnest after all. \r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Ugh, I knew you would never understand true art. I am experiencing'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#But you just said\u2026\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Enough! I need to get back to finding my camel. Shoo shoo.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#But do you know anything about Lester Beaumont?
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#I said shoo!
+
+
+'
+    choices: []
+    unlockID: 

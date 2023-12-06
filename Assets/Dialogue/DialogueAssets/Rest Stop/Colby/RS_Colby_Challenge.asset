@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: RS_Colby_Challenge
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#I have a bone to pick with you!\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Are you setting yourself up for a joke? Something related to animal
+      bones?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Maybe. Who knows.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "Stop distracting me. I\u2019m trying to interrogate you!\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#My apologies. Go ahead.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So. What can you tell me about these animal drawings?\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#I don\u2019t know. They are drawings of animals?\r\nWhy does this
+      concern me?\r"
+    choices:
+    - text: 'You said you love animals and I should show you my art. '
+      nextSection: {fileID: 0}
+    - text: 'I am not sure. '
+      nextSection: {fileID: 0}
+    - text: "These are exotic native animals to this area\u2026 "
+      nextSection: {fileID: 0}
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Luckily for me, Detective, I was honest with you. I believe I have
+      already explained that I study abnormal exotic animals.'
+    choices:
+    - text: "You\u2019re right, I was wrong\u2026"
+      nextSection: {fileID: 0}
+    - text: "Are you sure\u2026?"
+      nextSection: {fileID: 0}
+    - text: "I know you are lying\u2026"
+      nextSection: {fileID: 0}
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#It seems like you have already made up your mind detective, so I
+      have nothing else I can say to you.'
+    choices: []
+    unlockID: 

@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: H_Rita_Your_Job
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#What do you do here? Do you work for Lester Beaumont?\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "#I was living here before that man was even born\u2026\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "\u2026and have absolutely nothing to do with him\u2026\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "\u2026 or his little \u201Crest stop.\u201D\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#You\u2019re exaggerating\u2026 how long have you been here?\r\nJust
+      in this house\u2026?\r\nWhat do you do out here?\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "#I\u2019ve been here longer than anyone. Even longer than\u2026 well\u2026
+      anyone.\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#I\u2026 like numbers."
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: '#Sixty years. Something like that.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#What have you been doing for that time? \r\nIf you don't mind me
+      asking\u2026\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "#I have many reasons to be here\u2026\r\nBut I won\u2019t bore you
+      with the details of my life.\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#I\u2019m sure there\u2019s one detail worth writing down\u2026"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: '#I like to study the animals in this area.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "I\u2019ve learned many things from them.\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Oh so like that researcher!
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "#No. I am nothing like that man. He is\u2026\r\nWrong\u2026\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Wrong?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: '#He is not who he says he is. '
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#What do you mean?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: '#That is something I can not tell you, Detective.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "But, I\u2019ll give you something to help you.\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
+    dialogue: "But, I\u2019ll give you something to help you.\r\n"
+    choices: []
+    unlockID: 

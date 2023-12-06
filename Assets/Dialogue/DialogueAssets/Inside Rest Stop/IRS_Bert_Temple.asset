@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: IRS_Bert_Temple
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#What do you want now?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Do you believe in magic?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#What the hell do you mean?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#I, for one, think that magic could be real. I mean who can explain
+      the pyramids?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Have you gone insane?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#I wonder if they were secret temples at one point.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Get out of my light.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So you don\u2019t know anything about a secret temple?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Goodbye.'
+    choices: []
+    unlockID: 

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: RS_Colby_Temple
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So what\u2019s this I hear about some ancient temple?\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#I have no idea what you are talking about.\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Oh really? Because I am pretty sure you do.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#Incorrect detective. And even if I did, I shouldn't be the one you\u2019re
+      asking."
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Well, who is then?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#That actor or whatever.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Why do you say that?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#I heard him the other day on the phone with someone.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: 'I of course did not care for what he was talking about other than
+      the fact that he said he was going to destroy my research area to search for
+      some temple. '
+    choices: []
+    unlockID: 

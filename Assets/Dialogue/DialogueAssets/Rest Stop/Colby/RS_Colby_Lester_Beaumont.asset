@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: RS_Colby_Lester_Beaumont
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So Mr.Stevens, what can you tell me about Lester Beaumont?\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#Well, I was in my research area all night.\r\nGoing over my animals,
+      my findings, my files. \r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: Before disappearing into the night!
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Disappearing to where exactly?\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#To my home so I could watch the night cameras for any animals!
+
+      Not
+      everything runs on a diurnal schedule, Detective.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Yeah\u2026 Of course\u2026\r\nSo, do you interact with Lester Beaumont
+      often?\r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#What makes you say that?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Well, there seem to only be a few of you in this town, and you are
+      outside his rest stop right now\u2026"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#I never cared for others'' schedules.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Uh ok. So are you saying you don\u2019t interact-"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#No are you stupid?\r\nOnce again the clueless expression!\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "Of course, I interact with him.\r\nThere are only so many people you
+      can talk to here.\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Ok so\u2026 What can you tell me about him?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#He sucks!
+
+      Always going and trying to ruin my research area.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#You know the other day I found him snooping around and he scared
+      away a Canis Falsifatus!
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#A\u2026 a what?\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#Nevermind. Your feeble mind would never understand. \r\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "Anyways, I don\u2019t like him.\r\n"
+    choices: []
+    unlockID: 
