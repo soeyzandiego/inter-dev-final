@@ -46,3 +46,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Blackout
+    uniqueID: 932459347
+    locked: 0
