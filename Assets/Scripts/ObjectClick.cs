@@ -27,7 +27,33 @@ public class ObjectClick : MonoBehaviour
         }
 
         // add the objects here with ("objectTag", "Dialogue...");
-        objectDialogues.Add("rock", "That gate leads to the town");
+        objectDialogues.Add("rock", "It looks like a locked gate?");
+        objectDialogues.Add("post", "Straight to the point, aren't we.");
+        objectDialogues.Add("skull", "Glad to know the town name is based off... something...");
+        objectDialogues.Add("cacti", "Awe look, some small cacti.");
+        objectDialogues.Add("sand", "Wow, lots and lots of sand. \r\nI best stick to the path as to not get my fabluous outfit too dirty. ");
+        objectDialogues.Add("map", "Oh hey, whats that?\r\nOh great! It's a map!");
+        objectDialogues.Add("tree", "Looks like everything is dead around here...");
+        objectDialogues.Add("sky", "It's so hot out here. I should have worn something lighter.\r\nI guess the desert isn't made for detectives. Or at least stylish ones.");
+        objectDialogues.Add("sign", "I wonder what that is pointing towards?");
+        objectDialogues.Add("bucket", "I don't even want to image what that is for.");
+        objectDialogues.Add("shelter", "Oh hey! It's the rest stop.");
+        objectDialogues.Add("cactus", "Hello spikey friend.");
+        objectDialogues.Add("yarn", "I wonder when I get older if I will also love knitting?");
+        objectDialogues.Add("around", "How long has she lived here?");
+        objectDialogues.Add("books", "Hmm. I wonder what these are about?");
+        objectDialogues.Add("heater", "I guess it does get cold at night in the desert.");
+        objectDialogues.Add("bed", "Looks comfy.");
+        objectDialogues.Add("apple", "You know what they say about apples...\r\nAlthough I doubt there are any doctors out here. \r\nMaybe that is the point.");
+        objectDialogues.Add("chair", "Very... Uh... Cozy in here...");
+        objectDialogues.Add("bottles", "Thank everything I was geting pretty thirsty.");
+        objectDialogues.Add("light", "All the better to see you with my dear.");
+        objectDialogues.Add("area", "You would think with all this space to build, the place would maybe be.... bigger?");
+        objectDialogues.Add("skull2", "Is this what she meant by follow the animals?");
+        objectDialogues.Add("entrance", "Is this the entrance to the temple?\r\nIt looks like some of the stuff that was covering it was broken.");
+        objectDialogues.Add("gloves", "What's this?\r\nIs this one of sally's gloves?");
+        objectDialogues.Add("rocks", "Epic, something else other than sand.");
+
 
         // Initially, hide the "Continue" button
         continueButton.gameObject.SetActive(false);

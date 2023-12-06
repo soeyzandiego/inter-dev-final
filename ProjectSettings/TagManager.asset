@@ -9,6 +9,30 @@ TagManager:
   - WalkModeToggle
   - LogicSlot
   - LogicObject
+  - post
+  - skull
+  - sand
+  - map
+  - tree
+  - sky
+  - sign
+  - bucket
+  - shelter
+  - cactus
+  - bed
+  - yarn
+  - around
+  - books
+  - heater
+  - apple
+  - chair
+  - bottles
+  - light
+  - area
+  - entrance
+  - rocks
+  - skull2
+  - gloves
   layers:
   - Default
   - TransparentFX
