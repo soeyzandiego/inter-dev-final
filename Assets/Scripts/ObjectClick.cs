@@ -16,11 +16,15 @@ public class ObjectClick : MonoBehaviour
     [Header("Audio")]
     public AudioClip clickSound;
 
+    GameManager gameManager;
+
     // all the game objects in the scene go here
     private Dictionary<string, string> objectDialogues = new Dictionary<string, string>();
 
     private void Start()
     {
+        gameManager = GetComponent<GameManager>();
+
         if (dialogueBox != null)
         {
             dialogueBox.SetActive(false);
@@ -89,6 +93,15 @@ public class ObjectClick : MonoBehaviour
                 if (objectDialogues.ContainsKey(objectName))
                 {
                     SpawnObjectDialogue(objectName);
+                    foreach (Button button in gameManager.buttons)
+                    {
+                        button.interactable = false;
+                    }
+                    continueButton.interactable = true;
+                    foreach (GameObject cliker in gameManager.clicker)
+                    {
+                        cliker.SetActive(false);
+                    }
                 }
             }
         }
@@ -116,5 +129,13 @@ public class ObjectClick : MonoBehaviour
         dialogueBox.SetActive(false);
         continueButton.gameObject.SetActive(false);
         grimoireBox.gameObject.SetActive(false);
+        foreach (Button button in gameManager.buttons)
+        {
+            button.interactable = true;
+        }
+        foreach (GameObject cliker in gameManager.clicker)
+        {
+            cliker.SetActive(true);
+        }
     }
 }

@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
 
     [Header("List of Buttons")]
-    Button[] buttons;
+    public Button[] buttons;
+    public GameObject[] clicker;
 
     [Header("GateButton Replacement")]
     [SerializeField] GameObject gatePuzzleManager;
@@ -92,18 +93,18 @@ public class GameManager : MonoBehaviour
         }
         Time.timeScale = 0;
 
-        for (float i = 0; i < 1; i += Time.unscaledDeltaTime / 3 * 2)
+        for (float i = 0; i < 1; i += Time.unscaledDeltaTime * 2)
         {
-            fadeToBlack.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, i);
+            fadeToBlack.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, i);
             yield return null;
         }
 
         currentRoom = room;
         transform.position = currentRoom.transform.position;
 
-        for (float i = 1; i >= 0; i -= Time.unscaledDeltaTime / 3 * 2)
+        for (float i = 1; i >= 0; i -= Time.unscaledDeltaTime * 2)
         {
-            fadeToBlack.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, i);
+            fadeToBlack.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, i);
             yield return null;
         }
 
