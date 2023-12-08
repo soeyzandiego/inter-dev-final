@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEditor;
+using Unity.Burst.CompilerServices;
 
 public class ObjectClick : MonoBehaviour
 {
@@ -92,7 +93,7 @@ public class ObjectClick : MonoBehaviour
                 // if then the objectDialogues Dictionary has that object tag and dialouge with it
                 if (objectDialogues.ContainsKey(objectName))
                 {
-                    SpawnObjectDialogue(objectName);
+                    StartCoroutine(delay(objectName));
                     foreach (Button button in gameManager.buttons)
                     {
                         button.interactable = false;
@@ -105,6 +106,14 @@ public class ObjectClick : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator delay(string name)
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        Debug.Log(name);
+        SpawnObjectDialogue(name);
+
     }
 
     public void SpawnObjectDialogue(string objectName)
