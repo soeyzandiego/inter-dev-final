@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine.UI;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
+using JetBrains.Annotations;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class GameManager : MonoBehaviour
     public GameObject mapPanel;
     public GameObject suspectPanel;
 
+    [Header("Room Transition")]
     public GameObject currentRoom;
+    [SerializeField] GameObject fadeToBlack;
 
     [Header("Suspect Panel Elements")]
     public Image suspectPicture;
@@ -35,12 +38,19 @@ public class GameManager : MonoBehaviour
 
     //Initialize variables
     public static bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
-    [SerializeField] bool walkMode = true;
+    public static bool walkMode = true;
     [SerializeField] List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
 
     [Header("List of Buttons")]
     Button[] buttons;
+
+    [Header("GateButton Replacement")]
+    [SerializeField] GameObject gatePuzzleManager;
+    [SerializeField] Button gateButton;
+    bool gateSolved = false;
+
+    
 
 
     //deactivate all walk buttons on game start.
@@ -57,9 +67,7 @@ public class GameManager : MonoBehaviour
 
     //Main Method
     private void Update()
-    {
-        transform.position = currentRoom.transform.position;
-        
+    {        
         //Loading Panels
         if (loadPanel)
         {
@@ -83,17 +91,23 @@ public class GameManager : MonoBehaviour
             button.interactable = false;
         }
         Time.timeScale = 0;
-        for (float i = 1; i >= 0; i -= Time.unscaledDeltaTime*2)
+
+        for (float i = 0; i < 1; i += Time.unscaledDeltaTime / 3 * 2)
         {
-            currentRoom.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, i);
+            fadeToBlack.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, i);
             yield return null;
         }
+
         currentRoom = room;
-        for (float i = 0; i < 1; i += Time.unscaledDeltaTime/3*2)
+        transform.position = currentRoom.transform.position;
+
+        for (float i = 1; i >= 0; i -= Time.unscaledDeltaTime / 3 * 2)
         {
-            currentRoom.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, i);
+            fadeToBlack.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, i);
             yield return null;
         }
+
+
         Time.timeScale = 1;
         foreach (Button button in buttons)
         {
@@ -123,6 +137,13 @@ public class GameManager : MonoBehaviour
             button.interactable = walkMode;
         }
         GameObject.FindGameObjectWithTag("WalkModeToggle").GetComponent<Button>().interactable = true;
+    }
+
+    // Method to swap out the gate button after puzzle has been completed.
+    public void PuzzleComplete()
+    {
+        gateButton.onClick.RemoveAllListeners();
+        gateButton.onClick.AddListener(() => { moveToRoom(gateButton.GetComponent<GateButtonSwap>().room); });
     }
 
     //Method to Load the UI Panels

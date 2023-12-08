@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class ObjectClick : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class ObjectClick : MonoBehaviour
         objectDialogues.Add("entrance", "Is this the entrance to the temple?\r\nIt looks like some of the stuff that was covering it was broken.");
         objectDialogues.Add("gloves", "What's this?\r\nIs this one of sally's gloves?");
         objectDialogues.Add("rocks", "Epic, something else other than sand.");
+        objectDialogues.Add("gatecomplete", "There's that! That wasn't so bad. I'll have to get one of these for myself...");
 
 
         // Initially, hide the "Continue" button
@@ -67,6 +69,8 @@ public class ObjectClick : MonoBehaviour
         if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
         // if a panel is open, don't look for dialogue clicks
         if (GameManager.loadPanel) { return; }
+        // if walkmode is toggled, don't look for dialogue clicks.
+        if (GameManager.walkMode) { return; }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -84,22 +88,27 @@ public class ObjectClick : MonoBehaviour
                 // if then the objectDialogues Dictionary has that object tag and dialouge with it
                 if (objectDialogues.ContainsKey(objectName))
                 {
-                    if (clickSound != null) { SoundManager.PlaySound(clickSound); }
-
-                    // set the dialouge box to active
-                    dialogueBox.SetActive(true);
-
-                    // set the image to active
-                    grimoireBox.gameObject.SetActive(true);
-
-                    // and show the dialouge
-                    dialogueText.text = objectDialogues[objectName];
-
-                    // Show the "Continue" button
-                    continueButton.gameObject.SetActive(true);
+                    SpawnObjectDialogue(objectName);
                 }
             }
         }
+    }
+
+    public void SpawnObjectDialogue(string objectName)
+    {
+        if (clickSound != null) { SoundManager.PlaySound(clickSound); }
+
+        // set the dialouge box to active
+        dialogueBox.SetActive(true);
+
+        // set the image to active
+        grimoireBox.gameObject.SetActive(true);
+
+        // and show the dialouge
+        dialogueText.text = objectDialogues[objectName];
+
+        // Show the "Continue" button
+        continueButton.gameObject.SetActive(true);
     }
 
     private void OnContinueButtonClicked()

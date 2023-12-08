@@ -34,6 +34,7 @@ TagManager:
   - skull2
   - gloves
   - GatePuzzleCircles
+  - Background
   layers:
   - Default
   - TransparentFX
