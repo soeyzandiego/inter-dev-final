@@ -70,6 +70,11 @@ public class ObjectClick : MonoBehaviour
 
     private void Update()
     {
+
+        Vector3 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        mousePos.z = 0;
+
         // if there's a conversation going on, don't look for object clicks
         if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
         // if a panel is open, don't look for dialogue clicks
@@ -93,6 +98,9 @@ public class ObjectClick : MonoBehaviour
                 // if then the objectDialogues Dictionary has that object tag and dialouge with it
                 if (objectDialogues.ContainsKey(objectName))
                 {
+                    var glass = Instantiate(gameManager.magGlass, new Vector3(mousePos.x, mousePos.y, mousePos.z), Quaternion.identity);
+                    Destroy(glass, 0.6f);
+
                     StartCoroutine(delay(objectName));
                     foreach (Button button in gameManager.buttons)
                     {

@@ -79,21 +79,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-18, 0, 0), Time.deltaTime * 5);
-        }
-
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        mousePos.z = 0;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            var glass = Instantiate(magGlass, new Vector3(mousePos.x, mousePos.y, mousePos.z), Quaternion.identity);
-            Destroy(glass,0.6f);
-        }
-
-        
-
-        
+        }        
     }
 
 
