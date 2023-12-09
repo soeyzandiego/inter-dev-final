@@ -141,22 +141,41 @@ public class DialogueManager : MonoBehaviour
                     if (curAsset == null) { return; }
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
                     SeparateWords();
-                    typeCo = StartCoroutine(WriteText());
 
-                    // set sprite based on current line's character
                     characterSprite.enabled = true;
                     // if this is the sprite's first appearance
                     if (queuedSprite == null)
                     {
-                        characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
+                        Debug.Log(textToPlay[0].ToString());
+                        switch (textToPlay[0].ToString())
+                        {
+                            case "#":
+                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
+                                break;
+
+                            case "$":
+                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[1];
+                                break;
+
+                            case "%":
+                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[2];
+                                break;
+
+                            case "&":
+                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[3];
+                                break;
+
+                            default:
+                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
+                                break;
+                        }
                         GetComponent<Animator>().SetTrigger("SpriteAppear");
                     }
-                    else
-                    {
-                        //queuedSprite = curAsset.lines[curLineIndex].character.sprites[0];
-                    }
-                    
 
+                    // start typing
+                    typeCo = StartCoroutine(WriteText());
+
+                  
                     // If there is an unlock 
                     if (curAsset.lines[curLineIndex].unlockID != "")
                     {
