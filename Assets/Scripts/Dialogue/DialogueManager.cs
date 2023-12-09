@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     public Sprite choiceCharSprite; // the sprite to display when the choice menu is open
     public DialogueAsset tempAsset; // used to store assets with new choice lines
+    public DialogueAsset.DialogueLine tempLine; // used to add a line after making a choice
     [Space(10)]
 
     [Header("Audio")]
@@ -310,7 +311,8 @@ public class DialogueManager : MonoBehaviour
             {
                 // add the "not right line" as the only line so it goes straight back to INVESTIGATING
                 tempAsset.lines.Clear();
-                tempAsset.lines.Insert(0, choices[choice].lineToPlay);
+                tempLine.dialogue = choices[choice].fullText;
+                tempAsset.lines.Insert(0, tempLine);
 
                 curAsset = tempAsset;
                 curLineIndex = 0;
@@ -323,7 +325,8 @@ public class DialogueManager : MonoBehaviour
                 {
                     tempAsset.lines.Add(line);
                 }
-                tempAsset.lines.Insert(curLineIndex + 1, choices[choice].lineToPlay);
+                tempLine.dialogue = choices[choice].fullText;
+                tempAsset.lines.Insert(curLineIndex + 1, tempLine);
                 curAsset = tempAsset;
 
                 curLineIndex++;

@@ -20,8 +20,7 @@ public class DialogueAsset : ScriptableObject
     public class DialogueChoice
     {
         public string text;
-        public DialogueLine lineToPlay;
-        //public string fullText;
+        public string fullText;
     }
 
     //public DialogueLine[] lines;

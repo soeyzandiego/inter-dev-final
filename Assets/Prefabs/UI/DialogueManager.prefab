@@ -527,7 +527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8282184784740064185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7563944610275369578}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: PlayChallenege
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7563944610275369573
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +588,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceCharSprite: {fileID: 1643458294, guid: 0d21b7c6ea66bfd4fb926df17adb3ff2, type: 3}
   tempAsset: {fileID: 11400000, guid: 66ea7c99cd03da240aa7792b82896a3d, type: 2}
+  tempLine:
+    character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: 
+    choices: []
+    unlockID: 
   skipSound: {fileID: 0}
   buttonSound: {fileID: 0}
   dialoguePanel: {fileID: 5195058801442881808}
