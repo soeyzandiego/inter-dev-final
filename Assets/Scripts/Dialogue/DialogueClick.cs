@@ -10,6 +10,7 @@ public class DialogueClick : MonoBehaviour
     public DialogueAsset yourJobAsset;
     public DialogueAsset lesterBeaumontAsset;
     public DialogueUnlockable[] unlockables;
+    public DialogueUnlockable challenge;
 
     [Header("Audio")]
     public AudioClip clickSound;
@@ -20,7 +21,6 @@ public class DialogueClick : MonoBehaviour
         public string investigatePanelText;
         public DialogueAsset dialogue;
         public string[] unlockIds;
-        public bool challenge = false;
         [HideInInspector] public bool unlocked = false;
     }
 
@@ -32,7 +32,7 @@ public class DialogueClick : MonoBehaviour
 
     private void Awake()
     {
-        profileButton.SetActive(false);
+        if (profileButton != null) { profileButton.SetActive(false); }
     }
 
     private void Update()
@@ -69,11 +69,14 @@ public class DialogueClick : MonoBehaviour
 
     void StartDialogue()
     {
-        if (sidebarButton.activeSelf)
+        if (sidebarButton != null && profileButton != null)
         {
-            sidebarButton.SetActive(false);
+            if (sidebarButton.activeSelf)
+            {
+                sidebarButton.SetActive(false);
+            }
+            profileButton.SetActive(true);
         }
-        profileButton.SetActive(true);
         DialogueManager.PlayDialogue(asset, lineIndex, this);
     }
 

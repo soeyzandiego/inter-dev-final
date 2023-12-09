@@ -7,7 +7,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public Sprite choiceCharSprite; // the sprite to display when the choice menu is open
-    public DialogueCharacter choiceChar;
+    public DialogueAsset tempAsset; // used to store assets with new choice lines
     [Space(10)]
 
     [Header("Audio")]
@@ -35,12 +35,16 @@ public class DialogueManager : MonoBehaviour
     public float delayTime = 0.1f;
     public float endTime = 1.2f;
     public int maxCharacters = 25; // max characters per line
-    string textToPlay = "";
+    
+    string textToPlay = ""; // string that the typing coroutine uses to write text
     List<int> spacePositions = new List<int>(); // will store the positions of each space to find the starts/ends of words
-    bool typing = false;
+    bool typing = false; // used for making sure code only executes once during TALKING state
     Coroutine typeCo; // current typing coroutine
     Coroutine endCo; // current end coroutine to move to next line
-    Sprite queuedSprite = null;
+    Sprite queuedSprite = null; // sprite to transition to
+
+    bool challengeMode = false;
+    int challengeAnswer; // to track which choice option is correct during a challenge dialogue
 
     public enum DialogueStates
     {
@@ -192,10 +196,20 @@ public class DialogueManager : MonoBehaviour
 
                     for (int i = 0; i < choiceElements.Length; i++)
                     {
+                        int index = i;
                         TMP_Text choiceText = choiceElements[i].GetComponentInChildren<TMP_Text>();
                         Button choiceButton = choiceElements[i].GetComponentInChildren<Button>();
 
-                        choiceText.text = choices[i].text;
+                        if (choices[i].text[0].ToString() == "!")
+                        {
+                            challengeAnswer = i;
+                            choiceText.text = choices[i].text.Substring(1); // get rid of the answer indicator
+                        }
+                        else
+                        {
+                            choiceText.text = choices[i].text;
+                        }
+                        
                         //choiceButton.onClick.AddListener(() => ChooseOption(i));
                     }
                 }
@@ -205,6 +219,9 @@ public class DialogueManager : MonoBehaviour
                 talkPanel.SetActive(false);
                 choicePanel.SetActive(false);
                 investigatePanel.SetActive(true);
+
+                // turn off challenge mode
+                challengeMode = false; 
 
                 // deactivate sprite
                 characterSprite.enabled = false;
@@ -262,19 +279,21 @@ public class DialogueManager : MonoBehaviour
             DialogueClick.DialogueUnlockable unlockable = talkingTo.unlockables[i];
             foreach (string ID in unlockable.unlockIds)
             {
-                if (GameManager.suspectClues.Contains(ID))
-                {
-                    continue;
-                }
-                else
-                {
-                    return;
-                }
+                if (GameManager.suspectClues.Contains(ID)) { continue; }
+                else { return; }
             }
             // if we've found every ID, unlock
             unlockableElements[i].SetActive(true);
             unlockableElements[i].GetComponentInChildren<TMP_Text>().text = unlockable.investigatePanelText;
         }
+
+        // do the same for challenge
+        foreach (string ID in talkingTo.challenge.unlockIds)
+        {
+            if (GameManager.suspectClues.Contains(ID)) { continue; }
+            else { return; }
+        }
+        unlockableElements[talkingTo.unlockables.Length + 1].SetActive(true);
     }
 
     public void ChooseOption(int choice)
@@ -287,25 +306,29 @@ public class DialogueManager : MonoBehaviour
             typing = false;
             bodyText.text = "";
 
-            List<DialogueAsset.DialogueLine> tempList = curAsset.lines;
+            if (challengeMode && choice != challengeAnswer)
+            {
+                // add the "not right line" as the only line so it goes straight back to INVESTIGATING
+                tempAsset.lines.Clear();
+                tempAsset.lines.Insert(0, choices[choice].lineToPlay);
 
-            // add a new line to the asset to play the full text for the choice
-            //DialogueAsset.DialogueLine newLine = new DialogueAsset.DialogueLine();
-            //newLine.character = choiceChar;
-            //newLine.dialogue = choices[choice].fullText;
-            //newLine.unlockID = null;
-            //newLine.choices = null;
-            tempList.Insert(curLineIndex + 1, choices[choice].lineToPlay);
+                curAsset = tempAsset;
+                curLineIndex = 0;
+                state = DialogueStates.TALKING;
+            }
+            else
+            {
+                tempAsset.lines.Clear();
+                foreach (DialogueAsset.DialogueLine line in curAsset.lines)
+                {
+                    tempAsset.lines.Add(line);
+                }
+                tempAsset.lines.Insert(curLineIndex + 1, choices[choice].lineToPlay);
+                curAsset = tempAsset;
 
-            //tempList.Insert(curLineIndex + 1, newLine);
-            DialogueAsset tempAsset = ScriptableObject.CreateInstance<DialogueAsset>();
-            tempAsset.lines = tempList;
-            curAsset = tempAsset;
-
-            //curAsset.lines.Insert(curLineIndex + 1, choices[choice].lineToPlay);
-
-            curLineIndex++;
-            state = DialogueStates.TALKING; 
+                curLineIndex++;
+                state = DialogueStates.TALKING;
+            }
         }
         updated = false;
     }
@@ -353,6 +376,18 @@ public class DialogueManager : MonoBehaviour
         state = DialogueStates.TALKING;
     }
 
+    public void PlayChallenege()
+    {
+        challengeMode = true;
+
+        typing = false;
+        textToPlay = null;
+        curAsset = talkingTo.challenge.dialogue;
+
+        curLineIndex = 0;
+        state = DialogueStates.TALKING;
+    }
+
     void SeparateWords()
     {
         spacePositions.Clear();
@@ -371,29 +406,33 @@ public class DialogueManager : MonoBehaviour
             switch (textToPlay[charIndex].ToString())
             {
                 case "#":
-                    GetComponent<Animator>().SetTrigger("SpriteChange");
                     queuedSprite = curAsset.lines[curLineIndex].character.sprites[0];
+                    // only do swap animation if it's a new sprite
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
                 case "$":
-                    GetComponent<Animator>().SetTrigger("SpriteChange");
                     queuedSprite = curAsset.lines[curLineIndex].character.sprites[1];
+                    // only do swap animation if it's a new sprite
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
                 case "%":
-                    GetComponent<Animator>().SetTrigger("SpriteChange");
                     queuedSprite = curAsset.lines[curLineIndex].character.sprites[2];
+                    // only do swap animation if it's a new sprite
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
                 case "&":
-                    GetComponent<Animator>().SetTrigger("SpriteChange");
                     queuedSprite = curAsset.lines[curLineIndex].character.sprites[3];
+                    // only do swap animation if it's a new sprite
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
@@ -433,13 +472,13 @@ public class DialogueManager : MonoBehaviour
             //    //else { bodyText.text = textToPlay[charIndex].ToString(); }
             //}
             if (charIndex == textToPlay.Length - 1) { endCo = StartCoroutine(EndLine()); }  // end line after last letter
-            yield return new WaitForSecondsRealtime(delayTime);
+            yield return new WaitForSeconds(delayTime);
         }
     }
 
     IEnumerator EndLine()
     {
-        yield return new WaitForSecondsRealtime(endTime);
+        yield return new WaitForSeconds(endTime);
         NextLine();
     }
 
