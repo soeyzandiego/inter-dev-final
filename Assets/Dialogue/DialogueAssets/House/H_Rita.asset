@@ -17,11 +17,11 @@ MonoBehaviour:
     dialogue: "#You just walked straight into my house did you?\r"
     choices:
     - text: 'Not exactly. I had to get here first. '
-      nextSection: {fileID: 0}
+      fullText: Not exactly. I had to get here first.
     - text: "I\u2019m paid to walk into people\u2019s houses\u2026 "
-      nextSection: {fileID: 0}
+      fullText: "I\u2019m paid to walk into people\u2019s houses\u2026"
     - text: "Sorry. I would have rung the bell\u2026 "
-      nextSection: {fileID: 0}
+      fullText: "Sorry. I would have rung the bell\u2026"
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: "#Normally I have methods for dealing with unwanted attention\u2026\r\n"
