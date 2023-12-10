@@ -12,4 +12,201 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
   m_Name: T_END_OF_GAME
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#WOAH! STOP!'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#OH GREAT! Look who came! The fated detective. Here to solve the damn
+      case!'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Woah, calm down Colby.\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: "#NO! Just shut up! I\u2019m done with everyone meddling with my work!"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: Now just turn your little head around while I clean up the mess.
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#Killing Bert won\u2019t do you any good, neither will not cooperating
+      with me."
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Not if I kill you along with him.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#And then what? How will you play off all of us being missing? They
+      will just send another detective to come and arrest you. '
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Not if I get away first. '
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Would both of you shut up and untie me?!'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#SHUT UP.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#No, because this is not how you should treat me. I am famous you
+      know!'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#I could really care less.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Why are you even trying to kill Bert in the first place?'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#You tell me, Detective. Or have you not put it together yet?'
+    choices:
+    - text: '!Bert is the one who killed Lester'
+      fullText: "Bert is the one who killed Lester\u2026"
+    - text: Colby is crazy
+      fullText: Let me rethink that...
+    - text: "I am the murderer\u2026 somehow\u2026"
+      fullText: Let me rethink that...
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '#Preposterous!'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Finally, you got something right.'
+    choices:
+    - text: He was annoyed with Lester, that is why
+      fullText: Let me rethink that...
+    - text: "!It was an accident\u2026"
+      fullText: It was an accident. You came down here searching for the temple,
+        and you ended up finding it.
+    - text: He is secretly a serial killer
+      fullText: Let me rethink that...
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#But...'
+    choices:
+    - text: '!Something was wrong'
+      fullText: Something was wrong. There was something blocking the entrance.
+    - text: Lester was in the way
+      fullText: Let me rethink that...
+    - text: "It wasn\u2019t what you expected"
+      fullText: Let me rethink that...
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So you broke it, but what you didn\u2019t know at the time was\u2026\r"
+    choices:
+    - text: I was watching you
+      fullText: Let me rethink that...
+    - text: You unleashed the magic
+      fullText: Let me rethink that...
+    - text: '!Lester was down there'
+      fullText: Lester was down there already. The broken piece hit him in the head,
+        killing him instantly.
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#You panicked. You're a famous actor, you don\u2019t know what to
+      do with a dead body. That is when you called someone. But it was too late,
+      because\u2026\r"
+    choices:
+    - text: "Your lawyer said it was over for you\u2026"
+      fullText: Let me rethink that...
+    - text: "!Colby heard you on the phone\u2026"
+      fullText: Colby heard you on the phone, in his precious research area.
+    - text: 'You had never killed someone before. '
+      fullText: Let me rethink that...
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So he hid, listening to you panic over Lester\u2019s dead body and
+      your murder of him. Colby quickly got to work. He stole your camel, preventing
+      you from leaving, because he\u2026\r"
+    choices:
+    - text: He wanted to bribe you
+      fullText: Let me rethink that...
+    - text: He was in love with Lester
+      fullText: Let me rethink that...
+    - text: "!Couldn\u2019t have anyone else know about his fake research"
+      fullText: "He couldn\u2019t have anyone else learn about his fake research.
+        He was so close to uncovering the secrets of this temple and no one could
+        get in his way."
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#So he stole your camel and hid him down here, preventing you from
+      leaving. He knew you wouldn\u2019t come back down here unless you were absolutely
+      desperate."
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#And when I was coming close to solving everything, that's when you
+      came down here Bert, only to have Colby following you close behind, ready for
+      the kill.\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Wow. Color me impressed. You solved the case! You did your job! Yay!
+      Now leave before any of this becomes messy.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "#I\u2019m afraid I can\u2019t do that Colby. You\u2019re under arrest
+      for attempted murder. \n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
+    dialogue: '#Not if I get away first!'
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "\rColby makes a run for it, but luckily Detective Grimoire was already
+      one step ahead.\r He grabs the camel and runs after Colby.\n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "On the way the animals that were watching everything unfold end up
+      blocking Colby\u2019s path, threatening to attack if he were to run any farther.
+      \n"
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: Grimoire handcuffs both Colby and Bert, as both are under arrest, Colby
+      for attempted murder, and Bert for involuntary manslaughter.
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "After other police come to collect both of them, and Lester\u2019s
+      body, Sally and Grimoire leave the town, as Sally no longer has a job. Rita
+      is left in the town alone, just like she wanted in the first place. "
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: 'Before he leaves, Grimoire thanks her for her help and tells her to
+      also thank the animals. She bids him farewell.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#Onto the next murder, or whatever detectives are supposed to say.'
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
+    dialogue: "#I\u2019m not sure that is the right phrase\u2026"
+    choices: []
+    unlockID: 
