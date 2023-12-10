@@ -44,8 +44,10 @@ public class GameManager : MonoBehaviour
 
     [Header("List of Buttons")]
     public Button[] buttons;
+    public Button[] mapButtons;
     public GameObject[] clicker;
     public GameObject magGlass;
+    public GameObject mapSelect;
 
     [Header("GateButton Replacement")]
     [SerializeField] GameObject gatePuzzleManager;
@@ -79,7 +81,14 @@ public class GameManager : MonoBehaviour
         else
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-18, 0, 0), Time.deltaTime * 5);
-        }        
+        }   
+        
+        if (currentRoom.name == "Entrance") { mapSelect.transform.position = mapButtons[0].transform.position; }
+        if (currentRoom.name == "Outside Rest Stop") { mapSelect.transform.position = mapButtons[1].transform.position; }
+        if (currentRoom.name == "Rita's") { mapSelect.transform.position = mapButtons[3].transform.position; }
+        if (currentRoom.name == "Outside Temple") { mapSelect.transform.position = mapButtons[4].transform.position; }
+        if (currentRoom.name == "Temple") { mapSelect.transform.position = mapButtons[5].transform.position; }
+        if (currentRoom.name == "Inside Rest Stop") { mapSelect.transform.position = mapButtons[2].transform.position; }
     }
 
 
