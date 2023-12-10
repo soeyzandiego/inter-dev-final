@@ -36,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     public float delayTime = 0.1f;
     public float endTime = 1.2f;
     public int maxCharacters = 25; // max characters per line
+    public string[] spriteIndicators; // possible sprite indicators
     
     string textToPlay = ""; // string that the typing coroutine uses to write text
     List<int> spacePositions = new List<int>(); // will store the positions of each space to find the starts/ends of words
@@ -97,27 +98,13 @@ public class DialogueManager : MonoBehaviour
                         // remove any sprite indicators before setting text
                         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
                         {
-                            switch (textToPlay[charIndex].ToString())
+                            foreach (string indicator in spriteIndicators)
                             {
-                                case "#":
+                                if (textToPlay[charIndex].ToString() == indicator)
+                                {
                                     textToPlay = textToPlay.Remove(charIndex, 1);
                                     charIndex--;
-                                break;
-                                
-                                case "$":
-                                    textToPlay = textToPlay.Remove(charIndex, 1);
-                                    charIndex--;
-                                break;
-
-                                case "%":
-                                    textToPlay = textToPlay.Remove(charIndex, 1);
-                                    charIndex--;
-                                break;
-
-                                case "&":
-                                    textToPlay = textToPlay.Remove(charIndex, 1);
-                                    charIndex--;
-                                break;
+                                }
                             }
                         }
 
@@ -146,29 +133,7 @@ public class DialogueManager : MonoBehaviour
                     // if this is the sprite's first appearance
                     if (queuedSprite == null)
                     {
-                        Debug.Log(textToPlay[0].ToString());
-                        switch (textToPlay[0].ToString())
-                        {
-                            case "#":
-                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
-                                break;
-
-                            case "$":
-                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[1];
-                                break;
-
-                            case "%":
-                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[2];
-                                break;
-
-                            case "&":
-                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[3];
-                                break;
-
-                            default:
-                                characterSprite.sprite = curAsset.lines[curLineIndex].character.sprites[0];
-                                break;
-                        }
+                        characterSprite.sprite = GetSprite(textToPlay[0].ToString());
                         GetComponent<Animator>().SetTrigger("SpriteAppear");
                     }
 
@@ -425,43 +390,68 @@ public class DialogueManager : MonoBehaviour
         //int wordIndex = -1;
         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
         {
-            switch (textToPlay[charIndex].ToString())
+            string character = textToPlay[charIndex].ToString();
+            switch (character)
             {
                 case "#":
-                    queuedSprite = curAsset.lines[curLineIndex].character.sprites[0];
-                    // only do swap animation if it's a new sprite
+                    queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
                 case "$":
-                    queuedSprite = curAsset.lines[curLineIndex].character.sprites[1];
-                    // only do swap animation if it's a new sprite
+                    queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
                 case "%":
-                    queuedSprite = curAsset.lines[curLineIndex].character.sprites[2];
-                    // only do swap animation if it's a new sprite
+                    queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
                 case "&":
-                    queuedSprite = curAsset.lines[curLineIndex].character.sprites[3];
-                    // only do swap animation if it's a new sprite
+                    queuedSprite = GetSprite(character);
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                case "*":
+                    queuedSprite = GetSprite(character);
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                case "(":
+                    queuedSprite = GetSprite(character);
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                case ")":
+                    queuedSprite = GetSprite(character);
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                case "+":
+                    queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
                 default:
-                    // if there's no sprite indicator, just add to the text
-                    bodyText.text += textToPlay[charIndex];
+                    // if no sprite indicator, just add text
+                    bodyText.text += textToPlay[charIndex].ToString();
                 break;
             }
             // this was all text wrapping stuff that is... not working but it's not a huge deal
@@ -502,6 +492,20 @@ public class DialogueManager : MonoBehaviour
     {
         yield return new WaitForSeconds(endTime);
         NextLine();
+    }
+
+    Sprite GetSprite(string indicator)
+    {
+        if (indicator == "#") { return curAsset.lines[curLineIndex].character.sprites[0]; }
+        else if (indicator == "$") { return curAsset.lines[curLineIndex].character.sprites[1]; }
+        else if (indicator == "%") { return curAsset.lines[curLineIndex].character.sprites[2]; }
+        else if (indicator == "&") { return curAsset.lines[curLineIndex].character.sprites[3]; }
+        else if (indicator == "*") { return curAsset.lines[curLineIndex].character.sprites[4]; }
+        else if (indicator == "(") { return curAsset.lines[curLineIndex].character.sprites[5]; }
+        else if (indicator == ")") { return curAsset.lines[curLineIndex].character.sprites[6]; }
+        else if (indicator == "-") { return curAsset.lines[curLineIndex].character.sprites[7]; }
+        else if (indicator == "+") { return curAsset.lines[curLineIndex].character.sprites[8]; }
+        else { return curAsset.lines[curLineIndex].character.sprites[0]; }
     }
 
 

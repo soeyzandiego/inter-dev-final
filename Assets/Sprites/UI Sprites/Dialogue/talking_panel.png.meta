@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4e2484d6806e8a34787e9c032303c9cb
+guid: d7c455680724e6643a6a5aad3fad4ee0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,112 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: grimoire_talking2_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1250
-        height: 1714
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4d25372fc7a1454081a5bdde38fff33
-      internalID: 2078928530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grimoire_talking2_1
-      rect:
-        serializedVersion: 2
-        x: 1250
-        y: 0
-        width: 1250
-        height: 1714
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d5218d8dbc99e84897f42f466b52d16
-      internalID: 2143675454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grimoire_talking2_2
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 0
-        width: 1250
-        height: 1714
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e73247b8750d996418f6309407a8da93
-      internalID: 1969012796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grimoire_talking2_3
-      rect:
-        serializedVersion: 2
-        x: 3750
-        y: 0
-        width: 1250
-        height: 1714
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b12725dc946215c4dae784769eb29b95
-      internalID: -396279298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grimoire_talking2_4
-      rect:
-        serializedVersion: 2
-        x: 5000
-        y: 0
-        width: 1250
-        height: 1714
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94d639c77196f6a4fb417c20ac90707d
-      internalID: 1935946507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -231,12 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      grimoire_talking2_0: 2078928530
-      grimoire_talking2_1: 2143675454
-      grimoire_talking2_2: 1969012796
-      grimoire_talking2_3: -396279298
-      grimoire_talking2_4: 1935946507
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

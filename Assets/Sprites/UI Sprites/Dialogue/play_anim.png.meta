@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4e2484d6806e8a34787e9c032303c9cb
+guid: 28ac0d698ebd9734c954438c950f1db9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grimoire_talking2_0
+      name: play_anim_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1250
-        height: 1714
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4d25372fc7a1454081a5bdde38fff33
-      internalID: 2078928530
+      spriteID: d39f01ba2c21f62428380bc7e844d5dd
+      internalID: -101643017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grimoire_talking2_1
+      name: play_anim_1
       rect:
         serializedVersion: 2
-        x: 1250
+        x: 400
         y: 0
-        width: 1250
-        height: 1714
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d5218d8dbc99e84897f42f466b52d16
-      internalID: 2143675454
+      spriteID: 8d555cf2ee60f304d9f0d4028bb5b5e7
+      internalID: 1462618271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grimoire_talking2_2
+      name: play_anim_2
       rect:
         serializedVersion: 2
-        x: 2500
+        x: 800
         y: 0
-        width: 1250
-        height: 1714
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e73247b8750d996418f6309407a8da93
-      internalID: 1969012796
+      spriteID: a4cae3831c546a44e9845859d2b3b037
+      internalID: -1845990328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grimoire_talking2_3
+      name: play_anim_3
       rect:
         serializedVersion: 2
-        x: 3750
+        x: 1200
         y: 0
-        width: 1250
-        height: 1714
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b12725dc946215c4dae784769eb29b95
-      internalID: -396279298
+      spriteID: 53a674b2dd8f7694094598c943b46cc6
+      internalID: -887231672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grimoire_talking2_4
+      name: play_anim_4
       rect:
         serializedVersion: 2
-        x: 5000
+        x: 1600
         y: 0
-        width: 1250
-        height: 1714
+        width: 400
+        height: 400
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94d639c77196f6a4fb417c20ac90707d
-      internalID: 1935946507
+      spriteID: 11bc926a4fcac76498b6f2762c7cfb52
+      internalID: 207333934
       vertices: []
       indices: 
       edges: []
@@ -232,11 +232,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grimoire_talking2_0: 2078928530
-      grimoire_talking2_1: 2143675454
-      grimoire_talking2_2: 1969012796
-      grimoire_talking2_3: -396279298
-      grimoire_talking2_4: 1935946507
+      play_anim_0: -101643017
+      play_anim_1: 1462618271
+      play_anim_2: -1845990328
+      play_anim_3: -887231672
+      play_anim_4: 207333934
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
