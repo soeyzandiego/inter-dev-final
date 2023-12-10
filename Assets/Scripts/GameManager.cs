@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public GameObject magGlass;
     public GameObject mapSelect;
     public GameObject UI;
+    SpriteRenderer UISprite;
 
     [Header("GateButton Replacement")]
     [SerializeField] GameObject gatePuzzleManager;
@@ -61,6 +62,10 @@ public class GameManager : MonoBehaviour
     //deactivate all walk buttons on game start.
     private void Start()
     {
+        foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
+
+        UISprite = UI.GetComponent<SpriteRenderer>();
+
         buttons = FindObjectsOfType<Button>();
         GameObject[] temp = GameObject.FindGameObjectsWithTag("WalkButton");
         foreach(GameObject g in temp)
@@ -84,14 +89,14 @@ public class GameManager : MonoBehaviour
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-18, 0, 0), Time.deltaTime * 5);
         }   
         
-        if (currentRoom.name == "Entrance") { mapSelect.transform.position = mapButtons[0].transform.position; }
-        if (currentRoom.name == "Outside Rest Stop") { mapSelect.transform.position = mapButtons[1].transform.position; }
-        if (currentRoom.name == "Rita's") { mapSelect.transform.position = mapButtons[3].transform.position; }
-        if (currentRoom.name == "Outside Temple") { mapSelect.transform.position = mapButtons[4].transform.position; }
-        if (currentRoom.name == "Temple") { mapSelect.transform.position = mapButtons[5].transform.position; }
-        if (currentRoom.name == "Inside Rest Stop") { mapSelect.transform.position = mapButtons[2].transform.position; }
-        if (currentRoom.name == "MainMenu") { UI.SetActive(true); }
-        else {  UI.SetActive(true); }
+        if (currentRoom.name == "Entrance") { mapSelect.transform.position = mapButtons[0].transform.position; mapButtons[0].gameObject.SetActive(true); }
+        if (currentRoom.name == "Outside Rest Stop") { mapSelect.transform.position = mapButtons[1].transform.position; mapButtons[1].gameObject.SetActive(true); }
+        if (currentRoom.name == "Rita's") { mapSelect.transform.position = mapButtons[3].transform.position; mapButtons[3].gameObject.SetActive(true); }
+        if (currentRoom.name == "Outside Temple") { mapSelect.transform.position = mapButtons[4].transform.position; mapButtons[4].gameObject.SetActive(true); }
+        if (currentRoom.name == "Temple") { mapSelect.transform.position = mapButtons[5].transform.position; mapButtons[5].gameObject.SetActive(true); }
+        if (currentRoom.name == "Inside Rest Stop") { mapSelect.transform.position = mapButtons[2].transform.position; mapButtons[2].gameObject.SetActive(true); }
+        if (currentRoom.name == "MainMenu") { UI.gameObject.SetActive(false); }
+        else { UI.gameObject.SetActive(true); }
     }
 
 
@@ -193,7 +198,6 @@ public class GameManager : MonoBehaviour
     public void LoadMapPanel()
     {
         if (mapPanelSound != null) { SoundManager.PlaySound(mapPanelSound); }
-        WalkModeToggle();
         loadPanel = true;
         mapPanel.SetActive(true);
         cluesPanel.SetActive(false);
