@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] clicker;
     public GameObject magGlass;
     public GameObject mapSelect;
+    public GameObject UI;
 
     [Header("GateButton Replacement")]
     [SerializeField] GameObject gatePuzzleManager;
@@ -89,6 +90,8 @@ public class GameManager : MonoBehaviour
         if (currentRoom.name == "Outside Temple") { mapSelect.transform.position = mapButtons[4].transform.position; }
         if (currentRoom.name == "Temple") { mapSelect.transform.position = mapButtons[5].transform.position; }
         if (currentRoom.name == "Inside Rest Stop") { mapSelect.transform.position = mapButtons[2].transform.position; }
+        if (currentRoom.name == "MainMenu") { UI.SetActive(true); }
+        else {  UI.SetActive(true); }
     }
 
 
@@ -129,7 +132,7 @@ public class GameManager : MonoBehaviour
     //Method to move from room to room
     public void moveToRoom(GameObject room)
     {
-        StartCoroutine(RoomTransition(room)); UnloadPanel();
+        StartCoroutine(RoomTransition(room)); UnloadPanel(); 
     }
 
     //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
@@ -190,7 +193,7 @@ public class GameManager : MonoBehaviour
     public void LoadMapPanel()
     {
         if (mapPanelSound != null) { SoundManager.PlaySound(mapPanelSound); }
-
+        WalkModeToggle();
         loadPanel = true;
         mapPanel.SetActive(true);
         cluesPanel.SetActive(false);
