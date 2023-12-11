@@ -48,6 +48,8 @@ public class DialogueManager : MonoBehaviour
 
     bool challengeMode = false;
     int challengeAnswer; // to track which choice option is correct during a challenge dialogue
+    [HideInInspector] public delegate void OnLastLine();
+    static OnLastLine onLastLine; // if we need to do something other than go to the investigate panel
 
     public enum DialogueStates
     {
@@ -130,13 +132,14 @@ public class DialogueManager : MonoBehaviour
                 if (!typing)
                 {
                     typing = true;
+                    bodyText.text = "";
                     if (curAsset == null) { return; }
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
 
-                    
+
                     // if this is the sprite's first appearance
                     // TODO I don't like using the animator bool as a reference
-                    if (!GetComponent<Animator>().GetBool("CharVis"))
+                    if (!GetComponent<Animator>().GetBool("CharVis") && curAsset.lines[curLineIndex].character != null)
                     {
                         characterSprite.sprite = GetSprite(textToPlay[0].ToString());
                         GetComponent<Animator>().SetTrigger("SpriteAppear");
@@ -158,18 +161,18 @@ public class DialogueManager : MonoBehaviour
                             GetComponent<Animator>().SetTrigger("SuspectUpdated");
                         }
                     }
-                }
 
-                if (curAsset.lines[curLineIndex].character != null)
-                {
-                    nameText.text = curAsset.lines[curLineIndex].character.charName;
-                    characterSprite.enabled = true;
-                    GetComponent<Animator>().SetBool("CharVis", true);
-                }
-                else
-                {
-                    nameText.text = "";
-                    GetComponent<Animator>().SetBool("CharVis", false);
+                    if (curAsset.lines[curLineIndex].character != null)
+                    {
+                        nameText.text = curAsset.lines[curLineIndex].character.charName;
+                        characterSprite.enabled = true;
+                        GetComponent<Animator>().SetBool("CharVis", true);
+                    }
+                    else
+                    {
+                        nameText.text = "";
+                        GetComponent<Animator>().SetBool("CharVis", false);
+                    }
                 }
                 
             break;
@@ -239,15 +242,23 @@ public class DialogueManager : MonoBehaviour
     {
         curAsset = asset;
         curLineIndex = index;
-        state = DialogueStates.TALKING;
-
         talkingTo = clicked;
+
+        state = DialogueStates.TALKING;
+    }
+
+    public static void PlayDialogue(DialogueAsset asset, int index, OnLastLine endAction)
+    {
+        curAsset = asset;
+        curLineIndex = index;
+        onLastLine = endAction;
+
+        state = DialogueStates.TALKING;
     }
 
     void NextLine()
     {
         lineDone = false;
-        bodyText.text = "";
         StopCoroutine(typeCo);
         StopCoroutine(endCo);
 
@@ -258,22 +269,31 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            typing = false;
             if (curLineIndex < curAsset.lines.Count - 1)
             {
+                typing = false;
                 curLineIndex++;
             }
             else
             {
-                queuedSprite = null;
-                curAsset = null;
-                textToPlay = null;
+                // we've reached the end of the conversation, either play the stored delegate or go to investigate panel
+                if (onLastLine != null)
+                {
+                    onLastLine();
+                }
+                else
+                {
+                    typing = false;
+                    queuedSprite = null;
+                    curAsset = null;
+                    textToPlay = null;
 
-                // we've reached the end of the conversation, show investigate panel
-                SwitchState(DialogueStates.INVESTIGATING);
+                    // we've reached the end of the conversation, show investigate panel
+                    SwitchState(DialogueStates.INVESTIGATING);
+                    CheckUnlockables();
+                    //GetComponent<Animator>().SetTrigger("ForceClose");
+                }
 
-                //GetComponent<Animator>().SetTrigger("ForceClose");
-                CheckUnlockables();
             }
         }
     }
@@ -350,14 +370,17 @@ public class DialogueManager : MonoBehaviour
         queuedSprite = null;
         curAsset = null;
         textToPlay = null;
-        GetComponent<Animator>().SetBool("CharVis", false);
+        onLastLine = null;
+
         characterSprite.enabled = false;
+        GetComponent<Animator>().SetBool("CharVis", false);
 
         if (typeCo != null) { StopCoroutine(typeCo); }
         if (endCo != null) { StopCoroutine(endCo); }
         SwitchState(DialogueStates.NONE);
     }
 
+    #region End Panel Buttons
     public void YourJob()
     {
         typing = false;
@@ -399,7 +422,7 @@ public class DialogueManager : MonoBehaviour
         curLineIndex = 0;
         SwitchState(DialogueStates.TALKING);
     }
-
+    #endregion
     void SwitchState(DialogueStates newState)
     {
         updated = false;
@@ -501,6 +524,7 @@ public class DialogueManager : MonoBehaviour
 
     Sprite GetSprite(string indicator)
     {
+        // not a switch statement bc of break/return interfering w each other
         if (indicator == "#") { return curAsset.lines[curLineIndex].character.sprites[0]; }
         else if (indicator == "$") { return curAsset.lines[curLineIndex].character.sprites[1]; }
         else if (indicator == "%") { return curAsset.lines[curLineIndex].character.sprites[2]; }
@@ -513,15 +537,8 @@ public class DialogueManager : MonoBehaviour
         else { return curAsset.lines[curLineIndex].character.sprites[0]; }
     }
 
-
     // used by an animation event for SpriteChange
-    public void ChangeSprite()
-    {
-        characterSprite.sprite = queuedSprite;
-    }
+    public void ChangeSprite() { characterSprite.sprite = queuedSprite; }
 
-    public void ButtonSound()
-    {
-        if (buttonSound != null) { SoundManager.PlaySound(buttonSound); }
-    }
+    public void ButtonSound() { if (buttonSound != null) { SoundManager.PlaySound(buttonSound); } }
 }

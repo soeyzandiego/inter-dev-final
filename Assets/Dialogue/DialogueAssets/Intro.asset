@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
+  m_Name: Intro
+  m_EditorClassIdentifier: 
+  lines:
+  - character: {fileID: 0}
+    dialogue: I don't get it. Why would anyone travel through the desert by choice?
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: I know the towns between the one I am going to are very popular, but
+      there are helicopters and other services to get between them.
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: 'So why would anyone travel by camelback in the desert between the
+      two? I mean, there is literally nothing here but endless miles of sand.
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "Maybe that\u2019s part of the fun?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "Although I don\u2019t see any fun about it."
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: 'Well, whatever the reason, somehow, someone has gone missing... In
+      a tiny town... In the middle of nowhere...
+
+'
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: Man, how do I always seem to find myself in these remote locations
+      that have no explanation for why and or how they exist?
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "Ugh. Let me go over the case again\u2026"
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "Lester Beaumont, male, age 42, has been reported as missing in the
+      small town of Dead Camel\u2026"
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: Dead Camel is the name of the town?!
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "No wonder the population is so small. I would never want to live in
+      a place called Dead Camel\u2026"
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: Sorry buddy. Lets hope you don't end up like the town name...
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: The murder victim was in charge of the rest stop in the town.
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "\u201CRest Stop\u201D huh\u2026"
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: "\u201CLester\u2019s Shelter\u201D hmm\u2026?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: Wow, this town is ridden with bad names.
+    choices: []
+    unlockID: 
