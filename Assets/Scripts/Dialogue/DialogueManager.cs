@@ -77,16 +77,18 @@ public class DialogueManager : MonoBehaviour
         // turns on the object containing all the panels
         if (state != DialogueStates.NONE) { dialoguePanel.SetActive(true); }
 
-        GetComponent<Animator>().SetBool("DialogueOpen", state == DialogueStates.TALKING || state == DialogueStates.CHOOSING);
-
         switch (state)
         {
             case DialogueStates.TALKING:
-
-                choicePanel.SetActive(false);
-                investigatePanel.SetActive(false);
-                talkPanel.SetActive(true);
-
+                if (!updated)
+                {
+                    updated = true;
+                    choicePanel.SetActive(false);
+                    investigatePanel.SetActive(false);
+                    talkPanel.SetActive(true);
+                }
+                
+                // line skipping
                 if (typing && Input.GetMouseButtonDown(0))
                 {
                     if (skipSound != null) { SoundManager.PlaySound(skipSound); }
@@ -131,9 +133,10 @@ public class DialogueManager : MonoBehaviour
                     if (curAsset == null) { return; }
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
 
-                    characterSprite.enabled = true;
+                    
                     // if this is the sprite's first appearance
-                    if (queuedSprite == null)
+                    // TODO I don't like using the animator bool as a reference
+                    if (!GetComponent<Animator>().GetBool("CharVis"))
                     {
                         characterSprite.sprite = GetSprite(textToPlay[0].ToString());
                         GetComponent<Animator>().SetTrigger("SpriteAppear");
@@ -157,7 +160,18 @@ public class DialogueManager : MonoBehaviour
                     }
                 }
 
-                nameText.text = curAsset.lines[curLineIndex].character.charName;
+                if (curAsset.lines[curLineIndex].character != null)
+                {
+                    nameText.text = curAsset.lines[curLineIndex].character.charName;
+                    characterSprite.enabled = true;
+                    GetComponent<Animator>().SetBool("CharVis", true);
+                }
+                else
+                {
+                    nameText.text = "";
+                    GetComponent<Animator>().SetBool("CharVis", false);
+                }
+                
             break;
 
             case DialogueStates.CHOOSING:
@@ -203,15 +217,20 @@ public class DialogueManager : MonoBehaviour
             break;
 
             case DialogueStates.INVESTIGATING:
-                talkPanel.SetActive(false);
-                choicePanel.SetActive(false);
-                investigatePanel.SetActive(true);
+                if (!updated)
+                {
+                    updated = true;
 
-                // turn off challenge mode
-                challengeMode = false; 
+                    talkPanel.SetActive(false);
+                    choicePanel.SetActive(false);
+                    investigatePanel.SetActive(true);
 
-                // deactivate sprite
-                characterSprite.enabled = false;
+                    // turn off challenge mode
+                    challengeMode = false;
+
+                    // deactivate sprite
+                    GetComponent<Animator>().SetBool("CharVis", false);
+                }
             break;
         }
     }
@@ -235,7 +254,7 @@ public class DialogueManager : MonoBehaviour
         // if the current line has choices
         if (curAsset.lines[curLineIndex].choices.Length > 0)
         {
-            state = DialogueStates.CHOOSING;
+            SwitchState(DialogueStates.CHOOSING);
         }
         else
         {
@@ -251,7 +270,7 @@ public class DialogueManager : MonoBehaviour
                 textToPlay = null;
 
                 // we've reached the end of the conversation, show investigate panel
-                state = DialogueStates.INVESTIGATING;
+                SwitchState(DialogueStates.INVESTIGATING);
 
                 //GetComponent<Animator>().SetTrigger("ForceClose");
                 CheckUnlockables();
@@ -331,9 +350,12 @@ public class DialogueManager : MonoBehaviour
         queuedSprite = null;
         curAsset = null;
         textToPlay = null;
+        GetComponent<Animator>().SetBool("CharVis", false);
+        characterSprite.enabled = false;
+
         if (typeCo != null) { StopCoroutine(typeCo); }
         if (endCo != null) { StopCoroutine(endCo); }
-        state = DialogueStates.NONE;
+        SwitchState(DialogueStates.NONE);
     }
 
     public void YourJob()
@@ -343,7 +365,7 @@ public class DialogueManager : MonoBehaviour
         curAsset = talkingTo.yourJobAsset;
 
         curLineIndex = 0;
-        state = DialogueStates.TALKING;
+        SwitchState(DialogueStates.TALKING);
     }
 
     public void LesterBeaumont()
@@ -353,7 +375,7 @@ public class DialogueManager : MonoBehaviour
         curAsset = talkingTo.lesterBeaumontAsset;
 
         curLineIndex = 0;
-        state = DialogueStates.TALKING;
+        SwitchState(DialogueStates.TALKING);
     }
 
     public void PlayUnlockable(int index)
@@ -363,7 +385,7 @@ public class DialogueManager : MonoBehaviour
         curAsset = talkingTo.unlockables[index].dialogue;
 
         curLineIndex = 0;
-        state = DialogueStates.TALKING;
+        SwitchState(DialogueStates.TALKING);
     }
 
     public void PlayChallenege()
@@ -375,7 +397,13 @@ public class DialogueManager : MonoBehaviour
         curAsset = talkingTo.challenge.dialogue;
 
         curLineIndex = 0;
-        state = DialogueStates.TALKING;
+        SwitchState(DialogueStates.TALKING);
+    }
+
+    void SwitchState(DialogueStates newState)
+    {
+        updated = false;
+        state = newState;
     }
 
     IEnumerator WriteText()
