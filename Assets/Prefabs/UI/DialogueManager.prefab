@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1845990328, guid: 28ac0d698ebd9734c954438c950f1db9, type: 3}
+  m_Sprite: {fileID: -1222883841, guid: e39ae6bd52a369941a1048f4f3637dff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -688,7 +688,6 @@ MonoBehaviour:
   - {fileID: 4824680810514535300}
   delayTime: 0.045
   endTime: 1.5
-  maxCharacters: 25
   spriteIndicators:
   - '#'
   - $
@@ -818,6 +817,10 @@ PrefabInstance:
     - target: {fileID: 3937661605533018688, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 79.000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937661605731573168, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3937661605731573175, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_SizeDelta.x

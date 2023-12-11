@@ -35,15 +35,16 @@ public class DialogueManager : MonoBehaviour
     [Header("Text Writing")]
     public float delayTime = 0.1f;
     public float endTime = 1.2f;
-    public int maxCharacters = 25; // max characters per line
     public string[] spriteIndicators; // possible sprite indicators
     
-    string textToPlay = ""; // string that the typing coroutine uses to write text
-    List<int> spacePositions = new List<int>(); // will store the positions of each space to find the starts/ends of words
+    string textToPlay = "";
+    bool lineDone = false;
     bool typing = false; // used for making sure code only executes once during TALKING state
+    string invisTag = "<color=#00000000>"; // for line wrapping, moves an invisible character along text
+    string clueColorTag = "<color=#F7C6A4>"; // for highlighting clue text
     Coroutine typeCo; // current typing coroutine
     Coroutine endCo; // current end coroutine to move to next line
-    Sprite queuedSprite = null; // sprite to transition to
+    Sprite queuedSprite = null; // sprite to transition to on anim
 
     bool challengeMode = false;
     int challengeAnswer; // to track which choice option is correct during a challenge dialogue
@@ -90,9 +91,11 @@ public class DialogueManager : MonoBehaviour
                 {
                     if (skipSound != null) { SoundManager.PlaySound(skipSound); }
 
-                    if (bodyText.text.Length < textToPlay.Length)
+                    GetComponent<Animator>().SetTrigger("Skip");
+
+                    if (!lineDone)
                     {
-                        // Skip to the end of the current line
+                        // skip to the end of the current line
                         StopCoroutine(typeCo);
 
                         // remove any sprite indicators before setting text
@@ -127,7 +130,6 @@ public class DialogueManager : MonoBehaviour
                     typing = true;
                     if (curAsset == null) { return; }
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
-                    SeparateWords();
 
                     characterSprite.enabled = true;
                     // if this is the sprite's first appearance
@@ -225,6 +227,7 @@ public class DialogueManager : MonoBehaviour
 
     void NextLine()
     {
+        lineDone = false;
         bodyText.text = "";
         StopCoroutine(typeCo);
         StopCoroutine(endCo);
@@ -375,15 +378,6 @@ public class DialogueManager : MonoBehaviour
         state = DialogueStates.TALKING;
     }
 
-    void SeparateWords()
-    {
-        spacePositions.Clear();
-        for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
-        {
-            if (textToPlay[charIndex].ToString() == " ") { spacePositions.Add(charIndex); }
-        }
-    }
-
     IEnumerator WriteText()
     {
         bodyText.text = "";
@@ -449,47 +443,30 @@ public class DialogueManager : MonoBehaviour
                     charIndex--;
                 break;
 
+                case "/":
+                    // messes with the invis tag, fix later
+                    //bodyText.text = textToPlay.Substring(0, charIndex) + clueColorTag + textToPlay.Substring(charIndex);
+                break;
+
                 default:
                     // if no sprite indicator, just add text
-                    bodyText.text += textToPlay[charIndex].ToString();
+                    //bodyText.text += textToPlay[charIndex].ToString();
+                    bodyText.text = textToPlay.Substring(0, charIndex) + invisTag + textToPlay.Substring(charIndex);
                 break;
             }
-            // this was all text wrapping stuff that is... not working but it's not a huge deal
-            //if (textToPlay[charIndex].ToString() == " ")
-            //{
-            //    wordIndex++;
-            //    // if it's the last word, use the total text length bc there's no space at the end to check
-            //    if (wordIndex == spacePositions.Count - 1)
-            //    {
-            //        int wordLength = textToPlay.Length - spacePositions[wordIndex];
-            //        // TODO fix... right now it just clears the line and starts writing the next part
-            //        // if the word isn't going to fit, start a new line
-            //        //if (bodyText.text.Length + wordLength > maxCharacters) { bodyText.text += "\n"; }
-            //        //else { bodyText.text += textToPlay[charIndex]; }
-            //        bodyText.text += textToPlay[charIndex];
-            //    }
-            //    else
-            //    {
-            //        int wordLength = spacePositions[wordIndex + 1] - spacePositions[wordIndex];
-            //        // TODO fix... right now it just clears the line and starts writing the next part
-            //        // if the word isn't going to fit, start a new line
-            //        //if (bodyText.text.Length + wordLength > maxCharacters) { bodyText.text += "\n"; }
-            //        //else { bodyText.text += textToPlay[charIndex]; }
-            //        bodyText.text += textToPlay[charIndex];
-            //    }
-            //}
-            //else
-            //{
-            //    if (bodyText.text.Length < maxCharacters) { bodyText.text += textToPlay[charIndex]; }
-            //    //else { bodyText.text = textToPlay[charIndex].ToString(); }
-            //}
-            if (charIndex == textToPlay.Length - 1) { endCo = StartCoroutine(EndLine()); }  // end line after last letter
+            
+            if (charIndex == textToPlay.Length - 1) 
+            {
+                bodyText.text = textToPlay;
+                endCo = StartCoroutine(EndLine()); // end line after last letter
+            }  
             yield return new WaitForSeconds(delayTime);
         }
     }
 
     IEnumerator EndLine()
     {
+        lineDone = true;
         yield return new WaitForSeconds(endTime);
         NextLine();
     }
