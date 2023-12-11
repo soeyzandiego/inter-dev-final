@@ -10,17 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfab7fa1da22a224c865baf26f220a23, type: 3}
-  m_Name: SF_OldLady
+  m_Name: SF_Bert
   m_EditorClassIdentifier: 
-  suspectName: Old Lady
-  sprite: {fileID: 562155336, guid: 31ef9e3ab5271fb47a584815fcb8333a, type: 3}
-  quote: '"idk this is just for testing"'
+  suspectName: Bert
+  sprite: {fileID: -547671404, guid: 091cc82666709c34b8b753313d3249a2, type: 3}
+  quote: '"The one, the only"'
   clues:
-  - unlockId: OLA1
-    text: Test clue
+  - unlockId: RS_S_1
+    text: This is a test clue
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
-  - unlockId: OLA2
-    text: 'Test clue 2
-
-'
+  - unlockId: SA2
+    text: This is a test clue (2)
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
