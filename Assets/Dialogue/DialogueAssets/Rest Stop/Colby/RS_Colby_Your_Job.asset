@@ -68,7 +68,7 @@ MonoBehaviour:
 
 '
     choices: []
-    unlockID: 
+    unlockID: RS_C_1
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
     dialogue: '$They are unlike anything most people have seen before and they only
       exist here in this specific desert.

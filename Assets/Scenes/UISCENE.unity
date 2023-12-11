@@ -519,7 +519,17 @@ MonoBehaviour:
   asset: {fileID: 11400000, guid: a46dabd634f69cb43ad6b9e1a94d6193, type: 2}
   yourJobAsset: {fileID: 11400000, guid: fe64c36ac620ae44cbdceb24e6c703b3, type: 2}
   lesterBeaumontAsset: {fileID: 11400000, guid: 2b5696706f045bc419abe14d6ce79e12, type: 2}
-  unlockables: []
+  unlockables:
+  - investigatePanelText: '"Town Secrets"'
+    dialogue: {fileID: 11400000, guid: 69ef8c9628ba4a7449e458def0471600, type: 2}
+    unlockIds:
+    - H_R_3
+    unlocked: 0
+  - investigatePanelText: '"Temple?"'
+    dialogue: {fileID: 11400000, guid: dfcc2af36f5fe41488152ebed9df393f, type: 2}
+    unlockIds:
+    - RS_S_2
+    unlocked: 0
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: 34129eb9c6305794da10d3f0953a9e7f, type: 2}
@@ -12415,16 +12425,20 @@ MonoBehaviour:
   yourJobAsset: {fileID: 11400000, guid: 5d87b7016fbf9de4bbd220cc16b703c7, type: 2}
   lesterBeaumontAsset: {fileID: 0}
   unlockables:
-  - investigatePanelText: Test
-    dialogue: {fileID: 11400000, guid: e26ea68a4df06004ea9845361d47c5b9, type: 2}
+  - investigatePanelText: '"Town Secrets"'
+    dialogue: {fileID: 11400000, guid: 1f138ed9512468c409f7f4542fe9082a, type: 2}
     unlockIds:
-    - RS_S_1
+    - H_R_3
+    unlocked: 0
+  - investigatePanelText: '"Temple?"'
+    dialogue: {fileID: 11400000, guid: 31a02d86418978b4cabc1fb64106e857, type: 2}
+    unlockIds:
+    - RS_S_2
     unlocked: 0
   challenge:
     investigatePanelText: 
-    dialogue: {fileID: 11400000, guid: 9bdf8939e7d00ba41a4bf8f2e0054b28, type: 2}
-    unlockIds:
-    - RS_S_1
+    dialogue: {fileID: 11400000, guid: f451858c1f9e1ee40aa2bed8c90ac896, type: 2}
+    unlockIds: []
     unlocked: 0
   clickSound: {fileID: 0}
   sidebarButton: {fileID: 95015108}
@@ -27135,7 +27149,17 @@ MonoBehaviour:
   asset: {fileID: 11400000, guid: 35b97bae0c5047349b9b41390db4e77d, type: 2}
   yourJobAsset: {fileID: 11400000, guid: 508b3db9acb2de541abef3298aafc88f, type: 2}
   lesterBeaumontAsset: {fileID: 11400000, guid: adb70ac70c2723a4fabc95e6392a3b87, type: 2}
-  unlockables: []
+  unlockables:
+  - investigatePanelText: '"Town Secrets"'
+    dialogue: {fileID: 11400000, guid: 4fe43140a11323a4d9aee09d62e9e97e, type: 2}
+    unlockIds:
+    - H_R_3
+    unlocked: 0
+  - investigatePanelText: '"Temple?"'
+    dialogue: {fileID: 11400000, guid: 4fe43140a11323a4d9aee09d62e9e97e, type: 2}
+    unlockIds:
+    - RS_S_2
+    unlocked: 0
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: 8b397727b7ee33c4b9659d9f047d3bcc, type: 2}
@@ -27737,7 +27761,17 @@ MonoBehaviour:
   asset: {fileID: 11400000, guid: 1c604afc2a3ecf64eb91d8557c8d929f, type: 2}
   yourJobAsset: {fileID: 11400000, guid: 93f5b1ad014433b4e8cfb3f04cf18de2, type: 2}
   lesterBeaumontAsset: {fileID: 11400000, guid: eee7c4cad1255674aa022704b7280536, type: 2}
-  unlockables: []
+  unlockables:
+  - investigatePanelText: '"Town Secrets"'
+    dialogue: {fileID: 11400000, guid: 730044e41a6b79941b8716185b5f1d85, type: 2}
+    unlockIds:
+    - H_R_3
+    unlocked: 0
+  - investigatePanelText: '"Temple?"'
+    dialogue: {fileID: 11400000, guid: 4fe43140a11323a4d9aee09d62e9e97e, type: 2}
+    unlockIds:
+    - RS_S_2
+    unlocked: 0
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: b1e3a8b7adbc89c4987a8d55b5363f30, type: 2}

@@ -17,8 +17,9 @@ MonoBehaviour:
   quote: '"You may have realized it''s kinda dead around here..."'
   clues:
   - unlockId: RS_S_1
-    text: This is a test clue
+    text: She only started working here this year.
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
-  - unlockId: SA2
-    text: This is a test clue (2)
+  - unlockId: RS_S_2
+    text: She says that there is an  accent magical temple somewhere in the desert
+      near here
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}

@@ -16,11 +16,17 @@ MonoBehaviour:
   sprite: {fileID: 562155336, guid: 31ef9e3ab5271fb47a584815fcb8333a, type: 3}
   quote: "\"You just walked straight into my house did you?\r\""
   clues:
-  - unlockId: OLA1
-    text: Test clue
+  - unlockId: H_R_1
+    text: She has lived here for 60 years.
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
-  - unlockId: OLA2
-    text: 'Test clue 2
+  - unlockId: H_R_2
+    text: These are drawings of animals around here that Rita drew
+    picture: {fileID: 21300000, guid: 88bb4a5451a9497489475d69b60d893e, type: 3}
+  - unlockId: H_R_3
+    text: 'She says the desert is a magical place in more ways than one.
 
 '
+    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+  - unlockId: H_R_4
+    text: She studies the magic that the animals possess here.
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}

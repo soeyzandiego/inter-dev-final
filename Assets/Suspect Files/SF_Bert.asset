@@ -16,9 +16,10 @@ MonoBehaviour:
   sprite: {fileID: -547671404, guid: 091cc82666709c34b8b753313d3249a2, type: 3}
   quote: "\"The artist! The visionary! The auteur!\r\r\""
   clues:
-  - unlockId: RS_S_1
-    text: This is a test clue
+  - unlockId: IRS_B_1
+    text: His camel has gone missing, so he can not leave.
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
-  - unlockId: SA2
-    text: This is a test clue (2)
+  - unlockId: RS_B_2
+    text: Colby overheard Bert on the phone that he was going to destroy the research
+      area to search for a temple.
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}

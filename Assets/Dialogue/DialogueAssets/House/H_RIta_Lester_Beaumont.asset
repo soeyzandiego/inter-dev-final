@@ -83,7 +83,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: $The desert is a magical place, in more ways than one.
     choices: []
-    unlockID: 
+    unlockID: H_R_2
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: +What do you mean?
     choices: []

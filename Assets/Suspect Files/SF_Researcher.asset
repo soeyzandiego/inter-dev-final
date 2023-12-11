@@ -16,9 +16,16 @@ MonoBehaviour:
   sprite: {fileID: 2085956812, guid: df3f7ae1e8d93604da1ce14bd7b07262, type: 3}
   quote: '"It was the clueless expression on your face."'
   clues:
-  - unlockId: RA1
-    text: Test clue
+  - unlockId: RS_C_1
+    text: He says this desert is ridden with abnormal and exotic animals.
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
-  - unlockId: RA2
-    text: Test clue 2
+  - unlockId: RS_C_2
+    text: He found Lester  snooping around his research area and he scared away an
+      animal.
+    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+  - unlockId: H_C_3
+    text: Rita says he is not who he says he is.
+    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+  - unlockId: RS_C_4
+    text: He blocked off an area behind the town just for his research.
     picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
