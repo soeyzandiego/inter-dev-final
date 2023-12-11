@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suspectName: Old Lady
   sprite: {fileID: 562155336, guid: 31ef9e3ab5271fb47a584815fcb8333a, type: 3}
-  quote: '"idk this is just for testing"'
+  quote: "\"You just walked straight into my house did you?\r\""
   clues:
   - unlockId: OLA1
     text: Test clue

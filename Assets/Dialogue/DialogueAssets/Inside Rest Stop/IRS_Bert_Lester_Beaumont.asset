@@ -58,7 +58,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Well because my camel has gone missing.
+    dialogue: '$Well because my camel has gone missing.
 
 '
     choices: []
@@ -69,7 +69,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Ugh, I knew you would never understand true art. I am experiencing'
+    dialogue: '%Ugh, I knew you would never understand true art. I am experiencing'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -77,7 +77,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Enough! I need to get back to finding my camel. Shoo shoo.
+    dialogue: '&Enough! I need to get back to finding my camel. Shoo shoo.
 
 '
     choices: []

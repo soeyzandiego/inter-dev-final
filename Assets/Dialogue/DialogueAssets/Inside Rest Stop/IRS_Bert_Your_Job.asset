@@ -19,7 +19,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#As I said, I am a visionary! I am here to capture the life of the
+    dialogue: '%As I said, I am a visionary! I am here to capture the life of the
       desert!'
     choices: []
     unlockID: 
@@ -29,7 +29,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#No.'
+    dialogue: $No.
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -37,7 +37,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#No.'
+    dialogue: '&No.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -53,7 +53,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Of course, the likes of you would never understand the ways of a
+    dialogue: '%Of course, the likes of you would never understand the ways of a
       true artist.
 
 '
@@ -83,6 +83,6 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: "#Are we done here?\r"
+    dialogue: "&Are we done here?\r"
     choices: []
     unlockID: 

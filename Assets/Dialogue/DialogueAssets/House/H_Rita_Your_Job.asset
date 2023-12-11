@@ -18,7 +18,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#I was living here before that man was even born\u2026\r\n"
+    dialogue: "%I was living here before that man was even born\u2026\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -35,7 +35,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#I\u2019ve been here longer than anyone. Even longer than\u2026 well\u2026
+    dialogue: "%I\u2019ve been here longer than anyone. $Even longer than\u2026 well\u2026
       anyone.\n"
     choices: []
     unlockID: 
@@ -68,7 +68,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "I\u2019ve learned many things from them.\r\n"
+    dialogue: "&I\u2019ve learned many things from them.\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -78,7 +78,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#No. I am nothing like that man. He is\u2026\r\nWrong\u2026\r\n"
+    dialogue: "%No. I am nothing like that man. He is\u2026\r\nWrong\u2026\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -86,7 +86,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#He is not who he says he is. '
+    dialogue: '%He is not who he says he is. '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -100,6 +100,6 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "But, I\u2019ll give you something to help you.\r\n"
+    dialogue: "$But, I\u2019ll give you something to help you.\r\n"
     choices: []
     unlockID: 

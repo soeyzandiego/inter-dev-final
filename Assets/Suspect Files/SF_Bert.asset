@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suspectName: Bert
   sprite: {fileID: -547671404, guid: 091cc82666709c34b8b753313d3249a2, type: 3}
-  quote: '"The one, the only"'
+  quote: "\"The artist! The visionary! The auteur!\r\r\""
   clues:
   - unlockId: RS_S_1
     text: This is a test clue

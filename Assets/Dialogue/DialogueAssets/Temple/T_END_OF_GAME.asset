@@ -53,7 +53,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Would both of you shut up and untie me?!'
+    dialogue: '*Would both of you shut up and untie me?!'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
@@ -61,7 +61,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#No, because this is not how you should treat me. I am famous you
+    dialogue: '*No, because this is not how you should treat me. I am famous you
       know!'
     choices: []
     unlockID: 
@@ -84,7 +84,7 @@ MonoBehaviour:
       fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Preposterous!'
+    dialogue: '*Preposterous!'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suspectName: Bert
   sprite: {fileID: 2085956812, guid: df3f7ae1e8d93604da1ce14bd7b07262, type: 3}
-  quote: '"Um actually"'
+  quote: '"It was the clueless expression on your face."'
   clues:
   - unlockId: RA1
     text: Test clue

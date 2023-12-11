@@ -18,7 +18,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#Who?'
+    dialogue: '&Who?'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -26,7 +26,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#Oh, I see.'
+    dialogue: '%Oh, I see.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -34,7 +34,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#\u2026 What do you want me to say?"
+    dialogue: "%\u2026 What do you want me to say?"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -51,7 +51,7 @@ MonoBehaviour:
       fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#I do. But I do not think asking me that will help your investigation. '
+    dialogue: '$I do. But I do not think asking me that will help your investigation. '
     choices:
     - text: "You\u2019re right, what I want to know about is your hair\u2026"
       fullText: -Let me rethink that...
@@ -67,7 +67,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#That researcher is right that the animals native to this area are
+    dialogue: "$That researcher is right that the animals native to this area are
       special, but not because they are \u201Crare\u201D they are special because\u2026"
     choices: []
     unlockID: 
@@ -92,16 +92,12 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#They have been preserved since the day the magic of the temple touched
-      them.'
+    dialogue: $They have been preserved since the day the magic of the temple touched
+      them.
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: (So why are you here? How and why do you know this?
-    choices: []
-    unlockID: 
-  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#I think you can answer that one yourself.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -113,7 +109,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#I only ask one thing of you: to not reveal the true secrets of the
+    dialogue: '%I only ask one thing of you: to not reveal the true secrets of the
       temple to anyone.'
     choices: []
     unlockID: 

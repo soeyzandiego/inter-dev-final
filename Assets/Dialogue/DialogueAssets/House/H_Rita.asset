@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#You just walked straight into my house did you?\r"
+    dialogue: "%You just walked straight into my house did you?\r"
     choices:
     - text: 'Not exactly. I had to get here first. '
       fullText: Not exactly. I had to get here first.
@@ -24,11 +24,11 @@ MonoBehaviour:
       fullText: "Sorry. I would have rung the bell\u2026"
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#Normally I have methods for dealing with unwanted attention\u2026\r\n"
+    dialogue: "$Normally I have methods for dealing with unwanted attention\u2026\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "But\u2026 I can make exceptions for harmless idiots."
+    dialogue: "#But\u2026 I can make exceptions for harmless idiots."
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -36,8 +36,8 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#Most of the time people like to leave me alone. \r\nBut\u2026 I don't
-      think you are going to, are you?\r"
+    dialogue: "#Most of the time people like to leave me alone. \r\n&But\u2026 I
+      don't think you are going to, are you?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -50,12 +50,12 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#Well, if you insist on staying, I\u2019ll tell you. \r\nI\u2019m
+    dialogue: "%Well, if you insist on staying, I\u2019ll tell you. \r\nI\u2019m
       Rita Weber..."
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '...and I think you might not be suited for the desert.
+    dialogue: '#...and I think you might not be suited for the desert.
 
 '
     choices: []

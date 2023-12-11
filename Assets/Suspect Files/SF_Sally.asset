@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suspectName: Sally
   sprite: {fileID: -635598667, guid: d1adc71586e63fc4e87e231a3f0d18b3, type: 3}
-  quote: '"Minimum Wage Workers Unite!"'
+  quote: '"You may have realized it''s kinda dead around here..."'
   clues:
   - unlockId: RS_S_1
     text: This is a test clue
