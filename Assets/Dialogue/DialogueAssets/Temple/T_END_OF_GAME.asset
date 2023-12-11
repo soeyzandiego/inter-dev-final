@@ -18,7 +18,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#OH GREAT! Look who came! The fated detective. Here to solve the damn
+    dialogue: '*OH GREAT! Look who came! The fated detective. Here to solve the damn
       case!'
     choices: []
     unlockID: 
@@ -27,7 +27,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: "#NO! Just shut up! I\u2019m done with everyone meddling with my work!"
+    dialogue: "*NO! Just shut up! I\u2019m done with everyone meddling with my work!"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
@@ -40,7 +40,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#Not if I kill you along with him.'
+    dialogue: '*Not if I kill you along with him.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -49,7 +49,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#Not if I get away first. '
+    dialogue: '*Not if I get away first. '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
@@ -57,7 +57,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#SHUT UP.'
+    dialogue: '*SHUT UP.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
@@ -66,7 +66,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#I could really care less.'
+    dialogue: '*I could really care less.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -74,7 +74,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#You tell me, Detective. Or have you not put it together yet?'
+    dialogue: '*You tell me, Detective. Or have you not put it together yet?'
     choices:
     - text: '!Bert is the one who killed Lester'
       fullText: "%Bert is the one who killed Lester\u2026"
@@ -88,7 +88,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#Finally, you got something right.'
+    dialogue: '*Finally, you got something right.'
     choices:
     - text: He was annoyed with Lester, that is why
       fullText: -Let me rethink that...
@@ -158,7 +158,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#Wow. Color me impressed. You solved the case! You did your job! Yay!
+    dialogue: '*Wow. Color me impressed. You solved the case! You did your job! Yay!
       Now leave before any of this becomes messy.
 
 '
@@ -170,7 +170,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#Not if I get away first!'
+    dialogue: '*Not if I get away first!'
     choices: []
     unlockID: 
   - character: {fileID: 0}

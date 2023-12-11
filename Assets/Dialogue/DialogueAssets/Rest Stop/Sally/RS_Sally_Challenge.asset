@@ -26,7 +26,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: '#I really couldn''t care less, Detective. '
+    dialogue: '$I really couldn''t care less, Detective. '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -34,7 +34,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "#What\u2019s your angle, Grimoire?"
+    dialogue: "&What\u2019s your angle, Grimoire?"
     choices:
     - text: I have proof you were wearing them when Lester went missing
       fullText: -Let me rethink that...
@@ -62,16 +62,16 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: '#Fine. You got me. But I have nothing to do with Lester being missing. '
+    dialogue: '$Fine. You got me. %But I have nothing to do with Lester being missing. '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: 'I went to check over there a few days ago because I was getting suspicious
+    dialogue: '#I went to check over there a few days ago because I was getting suspicious
       of the researcher.  '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "He kept talking about how close he was to finding it, and I wanted
+    dialogue: "%He kept talking about how close he was to finding it, and I wanted
       to see if it was real. \r"
     choices: []
     unlockID: 
