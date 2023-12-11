@@ -18,8 +18,8 @@ MonoBehaviour:
   clues:
   - unlockId: IRS_B_1
     text: His camel has gone missing, so he can not leave.
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+    picture: {fileID: 21300000, guid: 6c57526bad4b8ee4b864a38b43b6fb65, type: 3}
   - unlockId: RS_B_2
     text: Colby overheard Bert on the phone that he was going to destroy the research
       area to search for a temple.
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+    picture: {fileID: 21300000, guid: e4d9e12341a3f154fa8ae4001a6a3170, type: 3}

@@ -18,15 +18,15 @@ MonoBehaviour:
   clues:
   - unlockId: H_R_1
     text: She has lived here for 60 years.
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+    picture: {fileID: 21300000, guid: 4dec7c8284e5f0d429c65bb2b6c14558, type: 3}
   - unlockId: H_R_2
     text: These are drawings of animals around here that Rita drew
-    picture: {fileID: 21300000, guid: 88bb4a5451a9497489475d69b60d893e, type: 3}
+    picture: {fileID: 21300000, guid: 78307ecce66d2024b996de9bb91f5a3b, type: 3}
   - unlockId: H_R_3
     text: 'She says the desert is a magical place in more ways than one.
 
 '
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+    picture: {fileID: 21300000, guid: 7dff6e34038adb94ba684ae06b76105b, type: 3}
   - unlockId: H_R_4
     text: She studies the magic that the animals possess here.
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+    picture: {fileID: 21300000, guid: b1e9168832f1b9442bb34fc1d8cca60a, type: 3}
