@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] clicker;
     public GameObject magGlass;
     public GameObject mapSelect;
+    public GameObject MainMenu;
     public GameObject UI;
     SpriteRenderer UISprite;
 
@@ -86,7 +87,9 @@ public class GameManager : MonoBehaviour
         else
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-18, 0, 0), Time.deltaTime * 5);
-        }   
+        }
+
+        if (Input.GetMouseButtonDown(0) && currentRoom.name == "Thank You") { moveToRoom(MainMenu); }
     }
 
 
