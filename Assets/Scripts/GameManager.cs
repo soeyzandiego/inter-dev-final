@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
     [Header("GateButton Replacement")]
     [SerializeField] GameObject gatePuzzleManager;
     [SerializeField] Button gateButton;
-    bool gateSolved = false;
 
     
 
@@ -88,15 +87,6 @@ public class GameManager : MonoBehaviour
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-18, 0, 0), Time.deltaTime * 5);
         }   
-        
-        if (currentRoom.name == "Entrance") { mapSelect.transform.position = mapButtons[0].transform.position; mapButtons[0].gameObject.SetActive(true); }
-        if (currentRoom.name == "Outside Rest Stop") { mapSelect.transform.position = mapButtons[1].transform.position; mapButtons[1].gameObject.SetActive(true); }
-        if (currentRoom.name == "Rita's") { mapSelect.transform.position = mapButtons[3].transform.position; mapButtons[3].gameObject.SetActive(true); }
-        if (currentRoom.name == "Outside Temple") { mapSelect.transform.position = mapButtons[4].transform.position; mapButtons[4].gameObject.SetActive(true); }
-        if (currentRoom.name == "Temple") { mapSelect.transform.position = mapButtons[5].transform.position; mapButtons[5].gameObject.SetActive(true); }
-        if (currentRoom.name == "Inside Rest Stop") { mapSelect.transform.position = mapButtons[2].transform.position; mapButtons[2].gameObject.SetActive(true); }
-        if (currentRoom.name == "MainMenu") { UI.gameObject.SetActive(false); }
-        else { UI.gameObject.SetActive(true); }
     }
 
 
@@ -119,6 +109,46 @@ public class GameManager : MonoBehaviour
 
         currentRoom = room;
         transform.position = currentRoom.transform.position;
+
+        UI.gameObject.SetActive(true);
+        switch (currentRoom.name)
+        {
+            case "Entrance":
+                {
+                    mapSelect.transform.position = mapButtons[0].transform.position; mapButtons[0].gameObject.SetActive(true);
+                    break;
+                }
+            case "Inside Rest Stop":
+                {
+                    mapSelect.transform.position = mapButtons[1].transform.position; mapButtons[1].gameObject.SetActive(true);
+                    break;
+                }
+            case "Outside Rest Stop":
+                {
+                    mapSelect.transform.position = mapButtons[2].transform.position; mapButtons[2].gameObject.SetActive(true);
+                    break;
+                }
+            case "Rita's":
+                {
+                    mapSelect.transform.position = mapButtons[3].transform.position; mapButtons[3].gameObject.SetActive(true);
+                    break;
+                }
+            case "Outside Temple":
+                {
+                    mapSelect.transform.position = mapButtons[4].transform.position; mapButtons[4].gameObject.SetActive(true);
+                    break;
+                }
+            case "Inside Temple":
+                {
+                    mapSelect.transform.position = mapButtons[5].transform.position; mapButtons[5].gameObject.SetActive(true);
+                    break;
+                }
+            case "Main Menu":
+                {
+                    UI.gameObject.SetActive(false);
+                    break;
+                }
+        }
 
         for (float i = 1; i >= 0; i -= Time.unscaledDeltaTime * 2)
         {
