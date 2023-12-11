@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#No no no, let me guess. You are\u2026 Researching something!\r"
+    dialogue: "&No no no, let me guess. You are\u2026 *Researching something!\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -26,12 +26,12 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#How\u2026 did you know I was a detective?\r\nWas it my stylish trenchcoat,
+    dialogue: "&How\u2026 did you know I was a detective?\r\nWas it my stylish trenchcoat,
       my stylish and inquisitive manner?\r\n\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#For all you know, I could have been a magician!
+    dialogue: '$For all you know, I could have been a magician!
 
 '
     choices: []
@@ -53,8 +53,8 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Right. That\u2019s it.\r\nYou\u2019ve done it now.\r..\nWhat's your
-      name?\r\n"
+    dialogue: "(Right. That\u2019s it.\r\n*You\u2019ve done it now.\r..\n+What's
+      your name?\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}

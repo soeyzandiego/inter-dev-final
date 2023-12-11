@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#WOAH! STOP!'
+    dialogue: )WOAH! STOP!
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
@@ -23,7 +23,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Woah, calm down Colby.\r"
+    dialogue: ")Woah, calm down Colby.\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
@@ -70,18 +70,18 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#Why are you even trying to kill Bert in the first place?'
+    dialogue: '%Why are you even trying to kill Bert in the first place?'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
     dialogue: '#You tell me, Detective. Or have you not put it together yet?'
     choices:
     - text: '!Bert is the one who killed Lester'
-      fullText: "Bert is the one who killed Lester\u2026"
+      fullText: "%Bert is the one who killed Lester\u2026"
     - text: Colby is crazy
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: "I am the murderer\u2026 somehow\u2026"
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
     dialogue: '#Preposterous!'
@@ -91,68 +91,68 @@ MonoBehaviour:
     dialogue: '#Finally, you got something right.'
     choices:
     - text: He was annoyed with Lester, that is why
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: "!It was an accident\u2026"
-      fullText: It was an accident. You came down here searching for the temple,
+      fullText: (It was an accident. You came down here searching for the temple,
         and you ended up finding it.
     - text: He is secretly a serial killer
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#But...'
+    dialogue: $But...
     choices:
     - text: '!Something was wrong'
-      fullText: Something was wrong. There was something blocking the entrance.
+      fullText: '&Something was wrong. There was something blocking the entrance.'
     - text: Lester was in the way
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: "It wasn\u2019t what you expected"
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#So you broke it, but what you didn\u2019t know at the time was\u2026\r"
+    dialogue: "$So you broke it, but what you didn\u2019t know at the time was\u2026\r"
     choices:
     - text: I was watching you
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: You unleashed the magic
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: '!Lester was down there'
-      fullText: Lester was down there already. The broken piece hit him in the head,
-        killing him instantly.
+      fullText: '*Lester was down there already. The broken piece hit him in the
+        head, killing him instantly.'
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#You panicked. You're a famous actor, you don\u2019t know what to
-      do with a dead body. That is when you called someone. But it was too late,
+    dialogue: "$You panicked. You're a famous actor, you don\u2019t know what to
+      do with a dead body. That is when you called someone. *But it was too late,
       because\u2026\r"
     choices:
     - text: "Your lawyer said it was over for you\u2026"
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: "!Colby heard you on the phone\u2026"
-      fullText: Colby heard you on the phone, in his precious research area.
+      fullText: $Colby heard you on the phone, in his precious research area.
     - text: 'You had never killed someone before. '
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: "#So he hid, listening to you panic over Lester\u2019s dead body and
-      your murder of him. Colby quickly got to work. He stole your camel, preventing
+      your murder of him. +Colby quickly got to work. &He stole your camel, preventing
       you from leaving, because he\u2026\r"
     choices:
     - text: He wanted to bribe you
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: He was in love with Lester
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: "!Couldn\u2019t have anyone else know about his fake research"
-      fullText: "He couldn\u2019t have anyone else learn about his fake research.
+      fullText: "*He couldn\u2019t have anyone else learn about his fake research.
         He was so close to uncovering the secrets of this temple and no one could
         get in his way."
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: "#So he stole your camel and hid him down here, preventing you from
-      leaving. He knew you wouldn\u2019t come back down here unless you were absolutely
+      leaving. $He knew you wouldn\u2019t come back down here unless you were absolutely
       desperate."
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#And when I was coming close to solving everything, that's when you
+    dialogue: "+And when I was coming close to solving everything, that's when you
       came down here Bert, only to have Colby following you close behind, ready for
       the kill.\r"
     choices: []
@@ -165,7 +165,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#I\u2019m afraid I can\u2019t do that Colby. You\u2019re under arrest
+    dialogue: "+I\u2019m afraid I can\u2019t do that Colby. You\u2019re under arrest
       for attempted murder. \n"
     choices: []
     unlockID: 
@@ -203,7 +203,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#Onto the next murder, or whatever detectives are supposed to say.'
+    dialogue: $Onto the next murder, or whatever detectives are supposed to say.
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}

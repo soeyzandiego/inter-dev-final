@@ -22,7 +22,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#The \u201Cresearcher\u201D"
+    dialogue: "-The \u201Cresearcher\u201D"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -38,28 +38,28 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Well, uhh\u2026 I don\u2019t know. I didn\u2019t think I would get
+    dialogue: ")Well, uhh\u2026 I don\u2019t know. I didn\u2019t think I would get
       this far."
     choices:
     - text: "!I guess I wanted to ask you about the animals\u2026"
-      fullText: "I guess I wanted to ask you about the animals\u2026 Because you
+      fullText: "%I guess I wanted to ask you about the animals\u2026 Because you
         seem to know about exotic animals native to this area since you gave me this
         drawing. "
     - text: "I guess I am done here\u2026"
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: "I guess I am done being a detective\u2026"
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: '#I do. But I do not think asking me that will help your investigation. '
     choices:
     - text: "You\u2019re right, what I want to know about is your hair\u2026"
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: "!You\u2019re right, what I want to know about is this \u201Ctemple\u201D..."
-      fullText: "You\u2019re right, what I want to know about is this \u201Ctemple\u201D
+      fullText: "&You\u2019re right, what I want to know about is this \u201Ctemple\u201D
         that everyone keeps talking about because it seems like you know about it\u2026"
     - text: "You\u2019re right, what I want to know about is how old you are\u2026"
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: '#Actually, your two questions can be answered by one answer. The temple
@@ -72,19 +72,19 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Do you mean\u2026?"
+    dialogue: "+Do you mean\u2026?"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: '#Well, you are the detective, you tell me.'
     choices:
     - text: '!The animals are magical'
-      fullText: 'The animals are magical. They have gained whatever magic originated
+      fullText: '$The animals are magical. They have gained whatever magic originated
         in that temple all those years ago. '
     - text: The animals are born in the temple
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: The animals live in the temple
-      fullText: Let me reethink that...
+      fullText: -Let me rethink that...
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: '#Correct. The animals here possess a certain magic that allows them
@@ -97,7 +97,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#So why are you here? How and why do you know this?'
+    dialogue: (So why are you here? How and why do you know this?
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}

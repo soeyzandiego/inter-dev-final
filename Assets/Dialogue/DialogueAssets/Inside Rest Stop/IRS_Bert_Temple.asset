@@ -26,8 +26,8 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#I, for one, think that magic could be real. I mean who can explain
-      the pyramids?'
+    dialogue: $I, for one, think that magic could be real. I mean who can explain
+      the pyramids?
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
@@ -35,7 +35,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#I wonder if they were secret temples at one point.'
+    dialogue: (I wonder if they were secret temples at one point.
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
@@ -43,7 +43,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#So you don\u2019t know anything about a secret temple?"
+    dialogue: "*So you don\u2019t know anything about a secret temple?"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
