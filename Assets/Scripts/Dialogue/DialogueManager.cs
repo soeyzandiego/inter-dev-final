@@ -276,25 +276,38 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                // we've reached the end of the conversation, either play the stored delegate or go to investigate panel
-                if (onLastLine != null)
-                {
-                    onLastLine();
-                }
-                else
-                {
-                    typing = false;
-                    queuedSprite = null;
-                    curAsset = null;
-                    textToPlay = null;
-
-                    // we've reached the end of the conversation, show investigate panel
-                    SwitchState(DialogueStates.INVESTIGATING);
-                    CheckUnlockables();
-                    //GetComponent<Animator>().SetTrigger("ForceClose");
-                }
-
+                EndAsset();
             }
+        }
+    }
+
+    void EndAsset()
+    {
+        // we've reached the end of the conversation, 
+        // either play the stored delegate, start a logic puzzle, or go to investigate panel
+
+        if (onLastLine != null)
+        {
+            onLastLine();
+        }
+        //else if (curAsset.puzzle != null)
+        //{
+        //    GameObject puzzle = Instantiate(curAsset.puzzle);
+        //    LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
+
+        //    puzzleManager.canvas = FindObjectOfType<GameManager>().currentRoom.GetComponentInChildren<Canvas>().gameObject;
+        //}
+        else
+        {
+            typing = false;
+            queuedSprite = null;
+            curAsset = null;
+            textToPlay = null;
+
+            // we've reached the end of the conversation, show investigate panel
+            SwitchState(DialogueStates.INVESTIGATING);
+            CheckUnlockables();
+            //GetComponent<Animator>().SetTrigger("ForceClose");
         }
     }
 
@@ -333,13 +346,18 @@ public class DialogueManager : MonoBehaviour
             typing = false;
             bodyText.text = "";
 
+            // transfer puzzle over
+            if (curAsset.puzzle != null) { tempAsset.puzzle = curAsset.puzzle; }
+            else { tempAsset.puzzle = null; }
+
             if (challengeMode && choice != challengeAnswer)
             {
                 // add the "not right line" as the only line so it goes straight back to INVESTIGATING
+                
                 tempAsset.lines.Clear();
                 tempLine.dialogue = choices[choice].fullText;
                 tempAsset.lines.Insert(0, tempLine);
-
+                    
                 curAsset = tempAsset;
                 curLineIndex = 0;
                 state = DialogueStates.TALKING;

@@ -18,6 +18,13 @@ public class SuspectFile : ScriptableObject
     [TextArea(3,5)] public string quote;
     public SuspectClue[] clues;
 
+    [Header("Challenge Information")]
+    public string challengeUnlockID;
+    public string challengeSolvedID;
+    [TextArea(4,4)] public string challengeUnlocked;
+    [TextArea(4, 4)] public string challengeSolved;
+
+
     // if restructuring so DialogueClick points to a SuspectFile
     //[Header("Dialogue")]
     //public DialogueAsset defaultAsset;

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public Image suspectPicture;
     public TMP_Text suspectName;
     public TMP_Text suspectQuote;
+    public TMP_Text challengeText;
     public SuspectClueUI[] clueElements;
 
 
@@ -253,24 +254,33 @@ public class GameManager : MonoBehaviour
         suspectName.text = curSuspect.suspectName;
         suspectQuote.text = curSuspect.quote;
         
-        // if the GameManager has unlocked the ID for the first clue
-        if (suspectClues.Contains(curSuspect.clues[0].unlockId))
+        for (int i = 0; i < clueElements.Length; i++)
         {
-            clueElements[0].SetClue(curSuspect.clues[0].picture, curSuspect.clues[0].text);
+            // if the GameManager has unlocked the ID for the clue
+            if (curSuspect.clues.Length > i && suspectClues.Contains(curSuspect.clues[i].unlockId))
+            {
+                clueElements[i].SetClue(curSuspect.clues[i].picture, curSuspect.clues[i].text);
+            }
+            else
+            {
+                clueElements[i].HideClue();
+            }
+        }
+
+        // check challenge
+        if (suspectClues.Contains(curSuspect.challengeSolvedID))
+        {
+            challengeText.enabled = true;
+            challengeText.text = curSuspect.challengeSolved;
+        }
+        else if (suspectClues.Contains(curSuspect.challengeUnlockID))
+        {
+            challengeText.enabled = true;
+            challengeText.text = curSuspect.challengeUnlocked;
         }
         else
         {
-            clueElements[0].HideClue();
-        }
-        
-        // if the GameManager has unlocked the ID for the second clue
-        if (suspectClues.Contains(curSuspect.clues[1].unlockId))
-        {
-            clueElements[1].SetClue(curSuspect.clues[1].picture, curSuspect.clues[1].text);
-        }
-        else
-        {
-            clueElements[1].HideClue();
+            challengeText.enabled = false;
         }
     }
 

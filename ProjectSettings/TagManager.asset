@@ -35,6 +35,7 @@ TagManager:
   - gloves
   - GatePuzzleCircles
   - Background
+  - MainCanvas
   layers:
   - Default
   - TransparentFX

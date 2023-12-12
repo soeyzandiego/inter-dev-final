@@ -7722,6 +7722,7 @@ MonoBehaviour:
   suspectPicture: {fileID: 1606198689}
   suspectName: {fileID: 1947288966}
   suspectQuote: {fileID: 1397433748}
+  challengeText: {fileID: 128383778}
   clueElements:
   - {fileID: 828261632}
   - {fileID: 1535170275}
