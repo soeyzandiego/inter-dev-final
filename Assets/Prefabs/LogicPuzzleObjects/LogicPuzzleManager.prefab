@@ -47,12 +47,16 @@ MonoBehaviour:
   logicObjectPrefab: {fileID: 5827238663057444350, guid: ac492e834d18ad541b37fbd2b4b532b1, type: 3}
   logicSlotPrefab: {fileID: 1954820145386000621, guid: b69778122f6dc8448830a9200c424c90, type: 3}
   logicWheelPrefab: {fileID: 7422991683388347869, guid: 6dec5cdec2fea4e4fbf3e80f353dd284, type: 3}
+  logicPuzzleBGPrefab: {fileID: 9131967549475473780, guid: a1b95a5863a70014eb8508bc20f84f4c, type: 3}
+  confirmButtonPrefab: {fileID: 5092624971149608685, guid: 9876abfe80754f34dbcd633c841c37a2, type: 3}
+  textPrefab: {fileID: 6457790880208806533, guid: aab6e31d594e65c4eaf0f570eb5e8541, type: 3}
   logicSlot:
   - {fileID: 0}
   - {fileID: 0}
   logicWheel:
   - {fileID: 0}
   - {fileID: 0}
+  logicQuestion: 
   correctEvidence: 00000000000000000000000000000000
   selectedItem: {fileID: 0}
   selectOffset: {x: 0, y: 0, z: 0}
@@ -93,5 +97,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   hLobjectOffset: {x: 3, y: 0}
-  vLobjectOffset: {x: 0, y: 3}
+  vLobjectOffset: {x: 0, y: 1.75}
   canvas: {fileID: 0}

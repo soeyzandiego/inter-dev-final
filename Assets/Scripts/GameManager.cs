@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
     public GameObject magGlass;
     public GameObject mapSelect;
     public GameObject UI;
+    public GameObject mapButton;
     SpriteRenderer UISprite;
 
     [Header("GateButton Replacement")]
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         {
             walkButtons.Add(g.GetComponent<Button>());
         }
+        mapButton.SetActive(false);
         WalkModeToggle();
     }
 
@@ -278,5 +280,10 @@ public class GameManager : MonoBehaviour
         }
 
         return wasUnlocked;
+    }
+
+    public void unlockMap()
+    {
+        mapButton.SetActive(true);
     }
 }

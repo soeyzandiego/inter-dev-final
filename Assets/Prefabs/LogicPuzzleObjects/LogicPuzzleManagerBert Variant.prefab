@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &814837923062797101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 933005947336020208, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_Name
+      value: LogicPuzzleManagerBert
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 92.021484
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicQuestion
+      value: Looks like tensions are heated...
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[0]
+      value: is looking for
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[1]
+      value: is feuding with
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[2]
+      value: can't find
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[3]
+      value: works with
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[4]
+      value: and won't explain.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[5]
+      value: since they don't exist.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[6]
+      value: because of the temple.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[7]
+      value: because of the bones all around.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[0]
+      value: Colby
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[1]
+      value: The Temple
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[2]
+      value: The Mystery
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[3]
+      value: Bert
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[4]
+      value: The Animals
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[5]
+      value: The Restricted Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[6]
+      value: The Gate
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[7]
+      value: The Case File
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}

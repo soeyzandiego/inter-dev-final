@@ -137,6 +137,11 @@ public class ObjectClick : MonoBehaviour
         // and show the dialouge
         dialogueText.text = objectDialogues[objectName];
 
+        if(objectName.Equals("map"))
+        {
+            gameManager.unlockMap();
+        }
+
         // Show the "Continue" button
         continueButton.gameObject.SetActive(true);
     }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5780617492965736373}
   - component: {fileID: 766139547166075171}
   - component: {fileID: 5745013917186297283}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Logic Object
   m_TagString: LogicObject
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5827238663057444350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.17, y: 0.44, z: 0}
+  m_LocalPosition: {x: -3.17, y: 0.44, z: -3}
   m_LocalScale: {x: 57.54, y: 57.54, z: 57.54}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -177,7 +177,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8878901833992487922}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.017379215, y: 0.017379215, z: 0.017379215}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,8 +244,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

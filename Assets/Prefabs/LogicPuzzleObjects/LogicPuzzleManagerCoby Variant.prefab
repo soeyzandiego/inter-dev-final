@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5028275431197831291
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 933005947336020208, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_Name
+      value: LogicPuzzleManagerCoby
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020208, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 92.021484
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicQuestion
+      value: None of these animals look familiar...
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[0]
+      value: look the same as
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[1]
+      value: turn out to be
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[2]
+      value: don't match with what
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[3]
+      value: cant be in.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[4]
+      value: showed me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[5]
+      value: hid from me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[6]
+      value: because of me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[7]
+      value: away from me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[0]
+      value: The animals
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[1]
+      value: Lester
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[2]
+      value: Colby
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[3]
+      value: The skeletons
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[4]
+      value: Rita
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[5]
+      value: Lester's Shelter
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[6]
+      value: The town
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[7]
+      value: Sally
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}

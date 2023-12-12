@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1310567434509655843
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 933005947336020208, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_Name
+      value: LogicPuzzleManagerSally
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 44.985508
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 44.985508
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 44.985508
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 90.9375
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: textPrefab
+      value: 
+      objectReference: {fileID: 6457790880208806533, guid: aab6e31d594e65c4eaf0f570eb5e8541, type: 3}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: confirmButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicQuestion
+      value: Something seems out of place...
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: vLobjectOffset.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: confirmButtonPrefab
+      value: 
+      objectReference: {fileID: 5092624971149608685, guid: 9876abfe80754f34dbcd633c841c37a2, type: 3}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicPuzzleBGPrefab
+      value: 
+      objectReference: {fileID: 9131967549475473780, guid: a1b95a5863a70014eb8508bc20f84f4c, type: 3}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[0]
+      value: disproves that
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[1]
+      value: is too shiny for
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[2]
+      value: being dropped in
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[3]
+      value: has too much dirt to be
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[4]
+      value: means that someone was trespassing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[5]
+      value: proves that there was no murder.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[6]
+      value: shows that I'm very fabulous.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[7]
+      value: doesn't mean that no one was there.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[2]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[3]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[0]
+      value: Red Glove
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[1]
+      value: Vincent Van De Peer
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[2]
+      value: Lester's Shelter
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[3]
+      value: My Beard
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[4]
+      value: The Researcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[5]
+      value: The Restricted Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[6]
+      value: A Camel
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[7]
+      value: My Hat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
