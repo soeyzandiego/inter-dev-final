@@ -14,11 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suspectName: Bert
   sprite: {fileID: 2085956812, guid: df3f7ae1e8d93604da1ce14bd7b07262, type: 3}
-  quote: '"Um actually"'
+  quote: '"It was the clueless expression on your face."'
   clues:
-  - unlockId: RA1
-    text: Test clue
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
-  - unlockId: RA2
-    text: Test clue 2
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+  - unlockId: RS_C_1
+    text: He says this desert is ridden with abnormal and exotic animals.
+    picture: {fileID: 21300000, guid: b31b45e896319e147a6c405803e35d8b, type: 3}
+  - unlockId: RS_C_2
+    text: He found Lester  snooping around his research area and he scared away an
+      animal.
+    picture: {fileID: 21300000, guid: d4d17527daf15ef4caea60de912087f8, type: 3}
+  - unlockId: H_C_3
+    text: Rita says he is not who he says he is.
+    picture: {fileID: 21300000, guid: b3cebb7c9de8efd4a84bc6e96e8b547d, type: 3}
+  - unlockId: RS_C_4
+    text: He blocked off an area behind the town just for his research.
+    picture: {fileID: 21300000, guid: 7a509a4732d77474185e3474fbcb0db5, type: 3}

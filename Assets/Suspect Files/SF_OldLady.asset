@@ -13,14 +13,20 @@ MonoBehaviour:
   m_Name: SF_OldLady
   m_EditorClassIdentifier: 
   suspectName: Old Lady
-  sprite: {fileID: -1559246386, guid: 9e1f2fe1d528cc84bbaf4fe6b84417ea, type: 3}
-  quote: '"idk this is just for testing"'
+  sprite: {fileID: 562155336, guid: 31ef9e3ab5271fb47a584815fcb8333a, type: 3}
+  quote: "\"You just walked straight into my house did you?\r\""
   clues:
-  - unlockId: OLA1
-    text: Test clue
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
-  - unlockId: OLA2
-    text: 'Test clue 2
+  - unlockId: H_R_1
+    text: She has lived here for 60 years.
+    picture: {fileID: 21300000, guid: 4dec7c8284e5f0d429c65bb2b6c14558, type: 3}
+  - unlockId: H_R_2
+    text: These are drawings of animals around here that Rita drew
+    picture: {fileID: 21300000, guid: 78307ecce66d2024b996de9bb91f5a3b, type: 3}
+  - unlockId: H_R_3
+    text: 'She says the desert is a magical place in more ways than one.
 
 '
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+    picture: {fileID: 21300000, guid: 7dff6e34038adb94ba684ae06b76105b, type: 3}
+  - unlockId: H_R_4
+    text: She studies the magic that the animals possess here.
+    picture: {fileID: 21300000, guid: b1e9168832f1b9442bb34fc1d8cca60a, type: 3}

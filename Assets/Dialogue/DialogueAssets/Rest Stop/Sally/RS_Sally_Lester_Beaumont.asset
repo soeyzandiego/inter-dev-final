@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#When you have a moment free from your\u2026 Busy schedule\u2026 I
-      need to ask you about Lester Beaumont."
+    dialogue: "&When you have a moment free from your\u2026 -Busy schedule\u2026
+      $I need to ask you about Lester Beaumont."
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
@@ -45,7 +45,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#Why did you report him as missing so fast?'
+    dialogue: +Why did you report him as missing so fast?
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
@@ -70,7 +70,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: "No one comes here and no one stays other than me, Lester, the Old
+    dialogue: "&No one comes here and no one stays other than me, Lester, the Old
       Lady, the Researcher, and that one Tourist who has been here. \r"
     choices: []
     unlockID: 

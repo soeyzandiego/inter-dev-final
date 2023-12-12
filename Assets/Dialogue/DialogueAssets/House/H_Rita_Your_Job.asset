@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#What do you do here? Do you work for Lester Beaumont?\r"
+    dialogue: "&What do you do here? Do you work for Lester Beaumont?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#I was living here before that man was even born\u2026\r\n"
+    dialogue: "%I was living here before that man was even born\u2026\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -31,11 +31,11 @@ MonoBehaviour:
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: "#You\u2019re exaggerating\u2026 how long have you been here?\r\nJust
-      in this house\u2026?\r\nWhat do you do out here?\r\n"
+      in this house\u2026?\r\n(What do you do out here?\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#I\u2019ve been here longer than anyone. Even longer than\u2026 well\u2026
+    dialogue: "%I\u2019ve been here longer than anyone. $Even longer than\u2026 well\u2026
       anyone.\n"
     choices: []
     unlockID: 
@@ -46,9 +46,9 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: '#Sixty years. Something like that.'
     choices: []
-    unlockID: 
+    unlockID: H_R_1
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#What have you been doing for that time? \r\nIf you don't mind me
+    dialogue: "%What have you been doing for that time? \r\n&If you don't mind me
       asking\u2026\r"
     choices: []
     unlockID: 
@@ -58,7 +58,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#I\u2019m sure there\u2019s one detail worth writing down\u2026"
+    dialogue: "-I\u2019m sure there\u2019s one detail worth writing down\u2026"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -68,29 +68,29 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "I\u2019ve learned many things from them.\r\n"
+    dialogue: "&I\u2019ve learned many things from them.\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#Oh so like that researcher!
+    dialogue: '$Oh so like that researcher!
 
 '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#No. I am nothing like that man. He is\u2026\r\nWrong\u2026\r\n"
+    dialogue: "%No. I am nothing like that man. He is\u2026\r\nWrong\u2026\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#Wrong?'
+    dialogue: '%Wrong?'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#He is not who he says he is. '
+    dialogue: '%He is not who he says he is. '
     choices: []
-    unlockID: 
+    unlockID: H_C_3
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#What do you mean?'
+    dialogue: (What do you mean?
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -100,10 +100,6 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "But, I\u2019ll give you something to help you.\r\n"
+    dialogue: "$But, I\u2019ll give you something to help you.\r\n"
     choices: []
-    unlockID: 
-  - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "But, I\u2019ll give you something to help you.\r\n"
-    choices: []
-    unlockID: 
+    unlockID: H_R_2

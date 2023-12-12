@@ -14,34 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#I have a bone to pick with you!\r"
+    dialogue: "+I have a bone to pick with you!\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#Are you setting yourself up for a joke? Something related to animal
-      bones?'
+    dialogue: $Are you setting yourself up for a joke? Something related to animal
+      bones?
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#Maybe. Who knows.
+    dialogue: '(Maybe. Who knows.
 
 '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "Stop distracting me. I\u2019m trying to interrogate you!\r"
+    dialogue: "+Stop distracting me. I\u2019m trying to interrogate you!\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#My apologies. Go ahead.'
+    dialogue: '&My apologies. Go ahead.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#So. What can you tell me about these animal drawings?\r"
+    dialogue: "%So. What can you tell me about these animal drawings?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: "#I don\u2019t know. They are drawings of animals?\r\nWhy does this
+    dialogue: "%I don\u2019t know. They are drawings of animals?\r\nWhy does this
       concern me?\r"
     choices:
     - text: 'You said you love animals and I should show you my art. '
@@ -53,31 +53,31 @@ MonoBehaviour:
         never talked about them."
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#And in fact, you did not seem to recognize them when I just showed
+    dialogue: '*And in fact, you did not seem to recognize them when I just showed
       them to you.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: 'Meaning you are not actually researching exotic native animals in
+    dialogue: '+Meaning you are not actually researching exotic native animals in
       this area! Be honest!
 
 '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#Luckily for me, Detective, I was honest with you. I believe I have
+    dialogue: '#Luckily for me, Detective, I was honest with you. %I believe I have
       already explained that I study abnormal exotic animals.'
     choices:
     - text: "You\u2019re right, I was wrong\u2026"
-      fullText: Let me rethink that...
+      fullText: -Let me rethink that...
     - text: "Are you sure\u2026?"
-      fullText: Le me rethink that...
+      fullText: -Let me rethink that...
     - text: "!I know you are lying\u2026"
-      fullText: I know you are lying because these are the real exotic animals that
-        are native to this area that are mysterious.
+      fullText: '*I know you are lying because these are the real exotic animals
+        that are native to this area that are mysterious.'
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#You have never seen them before because you are not actually researching
+    dialogue: '*You have never seen them before because you are not actually researching
       anything of the sort.'
     choices: []
     unlockID: 
@@ -87,7 +87,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#It seems like you have already made up your mind detective, so I
+    dialogue: '&It seems like you have already made up your mind detective, so I
       have nothing else I can say to you.'
     choices: []
     unlockID: 

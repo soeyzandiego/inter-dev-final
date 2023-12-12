@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suspectName: Sally
   sprite: {fileID: -635598667, guid: d1adc71586e63fc4e87e231a3f0d18b3, type: 3}
-  quote: '"Minimum Wage Workers Unite!"'
+  quote: '"You may have realized it''s kinda dead around here..."'
   clues:
   - unlockId: RS_S_1
-    text: This is a test clue
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
-  - unlockId: SA2
-    text: This is a test clue (2)
-    picture: {fileID: 21300000, guid: 38bb731b5b534854391d40850fc4373e, type: 3}
+    text: She only started working here this year.
+    picture: {fileID: 21300000, guid: cecc056622af1a4498e2b65bf6a64806, type: 3}
+  - unlockId: RS_S_2
+    text: She says that there is an  accent magical temple somewhere in the desert
+      near here
+    picture: {fileID: 21300000, guid: 60ede1a4d35f6bb4cb1cb1a5888000b1, type: 3}

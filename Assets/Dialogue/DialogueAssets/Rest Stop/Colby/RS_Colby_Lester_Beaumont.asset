@@ -14,33 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#So Mr.Stevens, what can you tell me about Lester Beaumont?\r"
+    dialogue: "&So Mr.Stevens, what can you tell me about Lester Beaumont?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: "#Well, I was in my research area all night.\r\nGoing over my animals,
+    dialogue: "%Well, I was in my research area all night.\r\nGoing over my animals,
       my findings, my files. \r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: Before disappearing into the night!
+    dialogue: '#Before disappearing into the night!'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Disappearing to where exactly?\r"
+    dialogue: "%Disappearing to where exactly?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#To my home so I could watch the night cameras for any animals!
+    dialogue: '%To my home so I could watch the night cameras for any animals!
 
-      Not
+      &Not
       everything runs on a diurnal schedule, Detective.
 
 '
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Yeah\u2026 Of course\u2026\r\nSo, do you interact with Lester Beaumont
+    dialogue: "(Yeah\u2026 Of course\u2026\r\n-So, do you interact with Lester Beaumont
       often?\r\n"
     choices: []
     unlockID: 
@@ -49,16 +49,16 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Well, there seem to only be a few of you in this town, and you are
+    dialogue: "&Well, there seem to only be a few of you in this town, and you are
       outside his rest stop right now\u2026"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#I never cared for others'' schedules.'
+    dialogue: $I never cared for others' schedules.
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Uh ok. So are you saying you don\u2019t interact-"
+    dialogue: "%Uh ok. So are you saying you don\u2019t interact-"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
@@ -66,8 +66,8 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: "Of course, I interact with him.\r\nThere are only so many people you
-      can talk to here.\r"
+    dialogue: "&Of course, I interact with him.\r\n%There are only so many people
+      you can talk to here.\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -88,16 +88,16 @@ MonoBehaviour:
 
 '
     choices: []
-    unlockID: 
+    unlockID: RS_C_2
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#A\u2026 a what?\n"
+    dialogue: "%A\u2026 a what?\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: "#Nevermind. Your feeble mind would never understand. \r\n"
+    dialogue: "&Nevermind. Your feeble mind would never understand. \r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: "Anyways, I don\u2019t like him.\r\n"
+    dialogue: "%Anyways, I don\u2019t like him.\r\n"
     choices: []
     unlockID: 

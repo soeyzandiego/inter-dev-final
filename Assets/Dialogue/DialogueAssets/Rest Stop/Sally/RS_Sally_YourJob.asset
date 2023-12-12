@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: I didn't expect to see someone your age working in a place like this.
+    dialogue: '&I didn''t expect to see someone your age working in a place like
+      this.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '&But then again, I didn''t expect there to be a place like this in...
-      a place like this...'
+    dialogue: But then again, I didn't expect there to be a place like this in...
+      )a place like this...
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
@@ -43,7 +44,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "You don\u2019t seem at home here, exactly\u2026?"
+    dialogue: "%You don\u2019t seem at home here, exactly\u2026?"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
@@ -55,7 +56,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Come on. You don\u2019t think it\u2019s\u2026 kinda beautiful?\r\n"
+    dialogue: "#Come on. You don\u2019t think &it\u2019s\u2026kinda beautiful?\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
@@ -69,7 +70,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#If I wasn\u2019t here\u2026 I\u2019d be at my office stuck doing
+    dialogue: ")If I wasn\u2019t here\u2026 I\u2019d be at my office stuck doing
       paperwork.\r\n\n"
     choices: []
     unlockID: 
@@ -84,6 +85,6 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Challenge accepted!\r"
+    dialogue: "$Challenge accepted!\r"
     choices: []
     unlockID: 

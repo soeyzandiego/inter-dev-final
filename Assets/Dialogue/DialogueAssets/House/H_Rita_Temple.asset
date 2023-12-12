@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#So what\u2019s this I heard about some secret ancient temple?"
+    dialogue: "&So what\u2019s this I heard about some secret ancient temple?"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#\u2026\r"
+    dialogue: "%\u2026\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#Wow. You really aren\u2019t a talker, are you?"
+    dialogue: "*Wow. You really aren\u2019t a talker, are you?"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#You\u2019re the one who came into my house to ask me questions. I
+    dialogue: "%You\u2019re the one who came into my house to ask me questions. I
       have no need to answer them."
     choices: []
     unlockID: 
@@ -36,56 +36,36 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#\u2026"
+    dialogue: "%\u2026"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: '#Please?'
     choices:
     - text: 
-      lineToPlay:
-        character: {fileID: 0}
-        dialogue: 
-        choices: []
-        unlockID: 
+      fullText: 
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: "#\u2026"
+    dialogue: "%\u2026"
     choices:
     - text: 
-      lineToPlay:
-        character: {fileID: 0}
-        dialogue: 
-        choices: []
-        unlockID: 
+      fullText: 
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#Gah. Fine.'
+    dialogue: +Gah. Fine.
     choices:
     - text: 
-      lineToPlay:
-        character: {fileID: 0}
-        dialogue: 
-        choices: []
-        unlockID: 
+      fullText: 
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: '#Looks like my job here is done.'
     choices:
     - text: 
-      lineToPlay:
-        character: {fileID: 0}
-        dialogue: 
-        choices: []
-        unlockID: 
+      fullText: 
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Yeah yeah\u2026"
+    dialogue: "-Yeah yeah\u2026"
     choices:
     - text: 
-      lineToPlay:
-        character: {fileID: 0}
-        dialogue: 
-        choices: []
-        unlockID: 
+      fullText: 
     unlockID: 

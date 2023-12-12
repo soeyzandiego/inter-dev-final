@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: "#\u2026Yes?\r\n\u2026Do you have a message for me? \r"
+    dialogue: "&\u2026Yes?\r\n\u2026Do you have a message for me? \r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Uhh\u2026 no. I don't think so."
+    dialogue: "%Uhh\u2026 no. I don't think so."
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
@@ -30,47 +30,33 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: "#What a question!\r\nYou\u2019re serious?\r\nI am Bert Ernest!\r"
+    dialogue: "$What a question!\r\nYou\u2019re serious?\r\nI am Bert Ernest!\r"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: '#The famous actor?'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: "#The artist! The visionary! The auteur!\r\nI\u2019m a man of many
+    dialogue: "$The artist! The visionary! The auteur!\r\nI\u2019m a man of many
       talents.\r"
     choices:
     - text: "Let\u2019s hope you have a talent for answering my questions. "
-      fullText: "Let\u2019s hope you have a talent for answering my questions."
+      fullText: "-Let\u2019s hope you have a talent for answering my questions."
     - text: 'That is a very talented beard you''ve got, at least '
       fullText: That is a very talented beard you've got, at least
     - text: "I heard your work was going downhill lately\u2026 "
-      fullText: "I heard your work was going downhill lately\u2026"
+      fullText: "(I heard your work was going downhill lately\u2026"
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: "#You\u2019re in my light. Could you take a few steps back, please?\r\n"
-    choices:
-    - text: "Let\u2019s hope you have a talent for answering my questions. "
-      fullText: 
-    - text: 'That is a very talented beard you''ve got, at least '
-      fullText: 
-    - text: "I heard your work was going downhill lately\u2026 "
-      fullText: 
+    dialogue: "%You\u2019re in my light. Could you take a few steps back, please?\r\n"
+    choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: "#But\u2026 Then I\u2019ll be too far away to talk to you.\r\n"
-    choices:
-    - text: "Let\u2019s hope you have a talent for answering my questions. "
-      fullText: 
-    - text: 'That is a very talented beard you''ve got, at least '
-      fullText: 
-    - text: "I heard your work was going downhill lately\u2026 "
-      fullText: 
+    choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#I know.'
-    choices:
-    - text: "Let\u2019s hope you have a talent for answering my questions. "
-      fullText: 
-    - text: 'That is a very talented beard you''ve got, at least '
-      fullText: 
-    - text: "I heard your work was going downhill lately\u2026 "
-      fullText: 
+    dialogue: '&I know.'
+    choices: []
     unlockID: 

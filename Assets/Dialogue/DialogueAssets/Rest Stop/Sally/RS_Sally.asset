@@ -32,7 +32,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '#I''m "a" detective...'
+    dialogue: '*I''m "a" detective...'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
@@ -40,7 +40,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: $So you noticed it too.
+    dialogue: '*So you noticed it too.'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
@@ -54,7 +54,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: '%What makes you say that?'
+    dialogue: +What makes you say that?
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}

@@ -22,7 +22,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Well, you said that you are here doing uh\u2026\r"
+    dialogue: "-Well, you said that you are here doing uh\u2026\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
@@ -30,7 +30,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Yes, art. \r\nSo how long have you been here doing that?\r"
+    dialogue: "#Yes, art. \r\n-So how long have you been here doing that?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
@@ -38,40 +38,46 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#What do you mean by \u201Cof course\u201D?"
+    dialogue: "%What do you mean by \u201Cof course\u201D?"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: "#I would never stay in this town for an extended period willingly!
-      I am Bert Earnest! This is not where the likes of me should be staying. I mean
-      this rest stop is a dump!\r"
-    choices: []
-    unlockID: 
-  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#Okay, so why haven\u2019t you left yet?"
+    dialogue: '#I would never stay in this town for an extended period willingly!
+      I am Bert Earnest!'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Well because my camel has gone missing.
+    dialogue: 'This is not where the likes of me should be staying. I mean this rest
+      stop is a dump!
 
 '
     choices: []
     unlockID: 
+  - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
+    dialogue: "(Okay, so why haven\u2019t you left yet?"
+    choices: []
+    unlockID: 
+  - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
+    dialogue: '$Well because my camel has gone missing.
+
+'
+    choices: []
+    unlockID: IRS_B_1
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: "#Why don\u2019t you just call a helicopter or something, you are Bert
       Earnest after all. \r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Ugh, I knew you would never understand true art. I am experiencing'
+    dialogue: '%Ugh, I knew you would never understand true art. I am experiencing'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "#But you just said\u2026\r\n"
+    dialogue: "+But you just said\u2026\r\n"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '#Enough! I need to get back to finding my camel. Shoo shoo.
+    dialogue: '&Enough! I need to get back to finding my camel. Shoo shoo.
 
 '
     choices: []
