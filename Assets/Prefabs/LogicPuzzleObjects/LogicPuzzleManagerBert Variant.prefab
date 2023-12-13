@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogicPuzzleManagerBert Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020208, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: m_RootOrder
       value: 0
