@@ -350,6 +350,7 @@ public class DialogueManager : MonoBehaviour
 
             GameObject puzzle = Instantiate(curAsset.puzzle, logicPuzzleCanvas.transform);
             LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
+            puzzleManager.gameManager = FindObjectOfType<GameManager>();
 
             puzzleManager.canvas = logicPuzzleCanvas;
 

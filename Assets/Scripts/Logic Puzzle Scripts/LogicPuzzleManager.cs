@@ -30,10 +30,11 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] GameObject background;
     [SerializeField] public string clueID;
     [SerializeField] public GameObject canvas; // associated canvas object's game object.
+    [SerializeField] public GameManager gameManager;
 
     void Start()
     {
-        foreach (GameObject clicker in FindObjectOfType<GameManager>().clicker)
+        foreach (GameObject clicker in gameManager.clicker)
         {
             if (clicker.GetComponent<Collider2D>() != null)
             {
@@ -47,7 +48,7 @@ public class LogicPuzzleManager : MonoBehaviour
         background = Instantiate(logicPuzzleBGPrefab, canvas.transform);
         background.transform.position = background.transform.position + new Vector3(0, 0, 10);
         question = Instantiate(textPrefab, canvas.transform);
-        question.transform.position = new Vector3(0, 4, 0);
+        question.transform.position = transform.position + new Vector3(0, 4, 0);
         question.GetComponent<TMP_Text>().text = logicQuestion;
         int count = 0;
         // Instantiating logic object prefabs (the draggable evidence pieces)
@@ -60,8 +61,8 @@ public class LogicPuzzleManager : MonoBehaviour
                 temp.transform.position = transform.position + hLobjectOffset * (j - 1.5f) - Vector3.right + vLobjectOffset * (i + 0.25f);
                 //temp.GetComponent<SpriteRenderer>().sprite = logicObjectSprites[count]; Commented out for testing. PLEASE UNCOMMENT THIS WHEN U NEED TO PUT IN UR DESCRIPTIONS N WHATNOT.
                 temp.GetComponentInChildren<TMP_Text>().text = logicObjectDesc[count];
-                count++;
                 temp.evidenceNum = count; //assigns evidence number identifier, to be used when checking the logic puzzle for correctness.
+                count++;
             }
 
             for (int j = 0; j < 2; j++)
@@ -80,7 +81,7 @@ public class LogicPuzzleManager : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             logicSlot[i] = Instantiate(logicSlotPrefab, canvas.transform);
-            logicSlot[i].transform.position = transform.position + new Vector3((i - .5f) * 6 - 2f, -3.5f, 1);
+            logicSlot[i].transform.position = transform.position + new Vector3((i - .5f) * 6 - 2f, -3.5f, 4);
             logicSlot[i].GetComponent<LogicSlot>().rightEvidence = correctEvidence[i * 2];
 
 
@@ -164,7 +165,7 @@ public class LogicPuzzleManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach (GameObject clicker in FindObjectOfType<GameManager>().clicker)
+        foreach (GameObject clicker in gameManager.clicker)
         {
             if (clicker.GetComponent<Collider2D>() != null)
             {

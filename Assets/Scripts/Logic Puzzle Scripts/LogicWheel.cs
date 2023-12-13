@@ -33,6 +33,7 @@ public class LogicWheel : MonoBehaviour
     void Start()
     {
         displayedString = gameObject.GetComponentInChildren<TMP_Text>(); // gets reference to text that we can change
+        displayedString.text = evidence[0];
 
         scrollButtons[0] = Instantiate(upArrowPrefab, transform.parent);
         scrollButtons[0].transform.position = transform.position + new Vector3(0, 1, 0);

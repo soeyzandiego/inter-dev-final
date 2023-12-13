@@ -100,8 +100,24 @@ PrefabInstance:
       value: Sally didn't.
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicObjectDesc.Array.data[0]
-      value: 'The '
+      value: The Glove
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicObjectDesc.Array.data[1]

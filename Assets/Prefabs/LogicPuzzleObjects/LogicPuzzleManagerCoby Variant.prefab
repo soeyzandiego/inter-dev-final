@@ -85,19 +85,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicWheelDesc.Array.data[4]
-      value: showed me.
-      objectReference: {fileID: 0}
-    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
-      propertyPath: logicWheelDesc.Array.data[5]
       value: hid from me.
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
-      propertyPath: logicWheelDesc.Array.data[6]
+      propertyPath: logicWheelDesc.Array.data[5]
       value: because of me.
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
-      propertyPath: logicWheelDesc.Array.data[7]
+      propertyPath: logicWheelDesc.Array.data[6]
       value: away from me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicWheelDesc.Array.data[7]
+      value: showed me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[2]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: correctEvidence.Array.data[3]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicObjectDesc.Array.data[0]

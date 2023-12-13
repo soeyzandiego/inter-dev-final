@@ -26,7 +26,7 @@ public class LogicObject : MonoBehaviour
                 tmp.GetComponent<LogicSlot>().logicObject.GetComponent<LogicObject>().targetPos = tmp.GetComponent<LogicSlot>().logicObject.GetComponent<LogicObject>().startPos;
             }
             logicSlot = collision.gameObject;
-            targetPos = collision.transform.position;
+            targetPos = collision.transform.position + new Vector3(0, 0, -1);
             logicSlot.GetComponent<LogicSlot>().logicObject = this.gameObject;
             logicSlot.GetComponent<LogicSlot>().currentEvidence = evidenceNum;
         }
