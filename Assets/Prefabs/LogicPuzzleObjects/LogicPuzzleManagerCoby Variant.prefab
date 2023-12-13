@@ -121,15 +121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicObjectDesc.Array.data[2]
-      value: Colby
-      objectReference: {fileID: 0}
-    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
-      propertyPath: logicObjectDesc.Array.data[3]
       value: The skeletons
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
-      propertyPath: logicObjectDesc.Array.data[4]
+      propertyPath: logicObjectDesc.Array.data[3]
       value: Rita
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: logicObjectDesc.Array.data[4]
+      value: Colby
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicObjectDesc.Array.data[5]

@@ -137,12 +137,12 @@ public class GameManager : MonoBehaviour
                     mapSelect.transform.position = mapButtons[0].transform.position; mapButtons[0].gameObject.SetActive(true);
                     break;
                 }
-            case "Inside Rest Stop":
+            case "Outside Rest Stop":
                 {
                     mapSelect.transform.position = mapButtons[1].transform.position; mapButtons[1].gameObject.SetActive(true);
                     break;
                 }
-            case "Outside Rest Stop":
+            case "Inside Rest Stop":
                 {
                     mapSelect.transform.position = mapButtons[2].transform.position; mapButtons[2].gameObject.SetActive(true);
                     break;
