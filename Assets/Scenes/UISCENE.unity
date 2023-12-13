@@ -534,7 +534,8 @@ MonoBehaviour:
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: 34129eb9c6305794da10d3f0953a9e7f, type: 2}
-    unlockIds: []
+    unlockIds:
+    - R_CHAL
     unlocked: 0
   clickSound: {fileID: 8300000, guid: 7595fb35ba5d24e4e94e731d9de31749, type: 3}
   sidebarButton: {fileID: 1954154987}
@@ -8077,10 +8078,6 @@ MonoBehaviour:
   suspectPanel: {fileID: 1300699931}
   currentRoom: {fileID: 1127233636}
   fadeToBlack: {fileID: 334899349}
-  CHLG_S: 0
-  CHLG_B: 0
-  CHLG_C: 0
-  CHLG_R: 0
   suspectPicture: {fileID: 1606198689}
   suspectName: {fileID: 1947288966}
   suspectQuote: {fileID: 1397433748}
@@ -8114,7 +8111,7 @@ MonoBehaviour:
   - {fileID: 1123069755}
   - {fileID: 1574349363}
   - {fileID: 12567111}
-  - {fileID: 1331241496}
+  - {fileID: 229164204}
   - {fileID: 1475964530}
   - {fileID: 1282474917}
   - {fileID: 1947805216}
@@ -8125,12 +8122,15 @@ MonoBehaviour:
   - {fileID: 1850973476}
   - {fileID: 825581881}
   - {fileID: 324920370}
-  - {fileID: 52394528}
   - {fileID: 1795245529}
   - {fileID: 1210283729}
   - {fileID: 76226103}
   - {fileID: 737524033}
   - {fileID: 974846297}
+  - {fileID: 1742924195}
+  - {fileID: 1822428125}
+  - {fileID: 12705895}
+  - {fileID: 969857144}
   researchAreaButton: {fileID: 326437891}
   magGlass: {fileID: 766488358}
   mapSelect: {fileID: 894804098}
@@ -8157,6 +8157,7 @@ MonoBehaviour:
   grimoireBox: {fileID: 1008138429}
   map: {fileID: 0}
   clickSound: {fileID: 0}
+  room: {fileID: 1127233636}
 --- !u!1 &786416756
 GameObject:
   m_ObjectHideFlags: 0
@@ -9524,7 +9525,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -799.9997, y: 0}
+  m_AnchoredPosition: {x: -799.99976, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &883949437
@@ -10280,7 +10281,8 @@ MonoBehaviour:
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: f451858c1f9e1ee40aa2bed8c90ac896, type: 2}
-    unlockIds: []
+    unlockIds:
+    - S_CHAL
     unlocked: 0
   clickSound: {fileID: 8300000, guid: 7595fb35ba5d24e4e94e731d9de31749, type: 3}
   sidebarButton: {fileID: 95015108}
@@ -28371,7 +28373,8 @@ MonoBehaviour:
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: 8b397727b7ee33c4b9659d9f047d3bcc, type: 2}
-    unlockIds: []
+    unlockIds:
+    - B_CHAL
     unlocked: 0
   clickSound: {fileID: 8300000, guid: 7595fb35ba5d24e4e94e731d9de31749, type: 3}
   sidebarButton: {fileID: 298994718}
@@ -28983,7 +28986,8 @@ MonoBehaviour:
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: b1e3a8b7adbc89c4987a8d55b5363f30, type: 2}
-    unlockIds: []
+    unlockIds:
+    - C_CHAL
     unlocked: 0
   clickSound: {fileID: 8300000, guid: 7595fb35ba5d24e4e94e731d9de31749, type: 3}
   sidebarButton: {fileID: 292794549}
