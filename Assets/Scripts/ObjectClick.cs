@@ -17,6 +17,7 @@ public class ObjectClick : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip clickSound;
+    public GameObject room;
 
     GameManager gameManager;
 
@@ -51,7 +52,7 @@ public class ObjectClick : MonoBehaviour
         objectDialogues.Add("books", "Hmm. I wonder what these are about?");
         objectDialogues.Add("heater", "I guess it does get cold at night in the desert.");
         objectDialogues.Add("bed", "Looks comfy.");
-        objectDialogues.Add("apple", "You know what they say about apples...\r\nAlthough I doubt there are any doctors out here. \r\nMaybe that is the point.");
+        objectDialogues.Add("apple", "You know what they say about apples...\r\nAlthough I doubt there are any doctors out here.");
         objectDialogues.Add("chair", "Very... Uh... Cozy in here...");
         objectDialogues.Add("bottles", "Thank everything I was geting pretty thirsty.");
         objectDialogues.Add("light", "All the better to see you with my dear.");
@@ -110,7 +111,10 @@ public class ObjectClick : MonoBehaviour
                     continueButton.interactable = true;
                     foreach (GameObject cliker in gameManager.clicker)
                     {
-                        cliker.SetActive(false);
+                        if (cliker.GetComponent<Collider2D>() != null)
+                        { 
+                            cliker.GetComponent<Collider2D>().enabled = false;
+                        }
                     }
                 }
             }
@@ -141,7 +145,8 @@ public class ObjectClick : MonoBehaviour
         if(objectName.Equals("map"))
         {
             gameManager.unlockMap();
-            map.SetActive(false);
+            gameManager.clicker.Remove(map);
+            Destroy(map);
         }
 
         // Show the "Continue" button
@@ -159,7 +164,14 @@ public class ObjectClick : MonoBehaviour
         }
         foreach (GameObject cliker in gameManager.clicker)
         {
-            cliker.SetActive(true);
+            if (cliker.GetComponent<Collider2D>() != null)
+            {
+                cliker.GetComponent<Collider2D>().enabled = true;
+            }
+        }
+        if (gameManager.currentRoom.name.Equals("Gate"))
+        {
+            gameManager.moveToRoom(room);
         }
     }
 }

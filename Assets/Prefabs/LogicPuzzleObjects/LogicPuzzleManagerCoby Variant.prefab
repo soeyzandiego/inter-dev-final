@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 933005947336020208, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: m_Name
-      value: LogicPuzzleManagerCoby
+      value: LogicPuzzleManagerCoby Variant
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020208, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: m_IsActive
@@ -58,6 +58,10 @@ PrefabInstance:
     - target: {fileID: 933005947336020209, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: clueID
+      value: C_CHAL
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicQuestion

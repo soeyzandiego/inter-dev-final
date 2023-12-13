@@ -27,12 +27,6 @@ public class GameManager : MonoBehaviour
     public static GameObject colby;
     public static GameObject rita;
 
-    [Header("ChallengeCompletion")]
-    public bool CHLG_S;
-    public bool CHLG_B;
-    public bool CHLG_C;
-    public bool CHLG_R;
-
     [Header("Suspect Panel Elements")]
     public Image suspectPicture;
     public TMP_Text suspectName;
@@ -58,7 +52,7 @@ public class GameManager : MonoBehaviour
     [Header("List of Buttons")]
     public Button[] buttons;
     public Button[] mapButtons;
-    public GameObject[] clicker;
+    public List<GameObject> clicker;
     public GameObject researchAreaButton;
     public GameObject magGlass;
     public GameObject mapSelect;

@@ -12,6 +12,7 @@ public class completionCheck : MonoBehaviour
         {
             gameManager.GetComponent<GameManager>().PuzzleComplete();
             gameManager.GetComponent<ObjectClick>().SpawnObjectDialogue("gatecomplete");
+            Destroy(this.gameObject);
         }
     }
 }

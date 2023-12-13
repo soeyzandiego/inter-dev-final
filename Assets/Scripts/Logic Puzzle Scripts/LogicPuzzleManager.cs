@@ -28,6 +28,7 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] GameObject confirmButton;
     [SerializeField] GameObject question;
     [SerializeField] GameObject background;
+    [SerializeField] public string clueID;
     [SerializeField] public GameObject canvas; // associated canvas object's game object.
 
     void Start()
@@ -122,7 +123,10 @@ public class LogicPuzzleManager : MonoBehaviour
                 return false;
             }
         }
+
+        GameManager.UnlockClue(clueID);
         Debug.Log("Works");
+        
         return true;
     }
 
