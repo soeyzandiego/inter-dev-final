@@ -311,7 +311,6 @@ public class DialogueManager : MonoBehaviour
             talkingTo.FinishDialogue();
             SwitchState(DialogueStates.INVESTIGATING);
             CheckUnlockables();
-            CheckChallenge();
             //GetComponent<Animator>().SetTrigger("ForceClose");
         }
     }
@@ -324,7 +323,6 @@ public class DialogueManager : MonoBehaviour
             DialogueClick.DialogueUnlockable unlockable = talkingTo.unlockables[i];
             foreach (string ID in unlockable.unlockIds)
             {
-                Debug.Log(ID);
                 if (GameManager.suspectClues.Contains(ID)) { continue; }
                 else { return; }
             }
@@ -332,19 +330,15 @@ public class DialogueManager : MonoBehaviour
             unlockableElements[i].SetActive(true);
             unlockableElements[i].GetComponentInChildren<TMP_Text>().text = unlockable.investigatePanelText;
         }
-    }
 
-    void CheckChallenge()
-    {
+        // do the same for challenge
         foreach (string ID in talkingTo.challenge.unlockIds)
         {
-            Debug.Log(ID);
             if (GameManager.suspectClues.Contains(ID)) { continue; }
             else { return; }
         }
-        Debug.Log("challenge unlocked");
         challengeChains.SetActive(false);
-        unlockableElements[talkingTo.unlockables.Length].SetActive(true);
+        unlockableElements[talkingTo.unlockables.Length + 1].SetActive(true);
     }
 
     public void ChooseOption(int choice)
@@ -364,14 +358,14 @@ public class DialogueManager : MonoBehaviour
             if (challengeMode && choice != challengeAnswer)
             {
                 // add the "not right line" as the only line so it goes straight back to INVESTIGATING
-                Debug.Log("wrong answer");
+                
                 tempAsset.lines.Clear();
                 tempLine.dialogue = choices[choice].fullText;
                 tempAsset.lines.Insert(0, tempLine);
                     
                 curAsset = tempAsset;
                 curLineIndex = 0;
-                SwitchState(DialogueStates.TALKING);
+                state = DialogueStates.TALKING;
             }
             else
             {
@@ -385,7 +379,7 @@ public class DialogueManager : MonoBehaviour
                 curAsset = tempAsset;
 
                 curLineIndex++;
-                SwitchState(DialogueStates.TALKING);
+                state = DialogueStates.TALKING;
             }
         }
         updated = false;
