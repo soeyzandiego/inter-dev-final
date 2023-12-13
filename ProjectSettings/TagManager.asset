@@ -36,6 +36,7 @@ TagManager:
   - GatePuzzleCircles
   - Background
   - MainCanvas
+  - LogicPuzzleCanvas
   layers:
   - Default
   - TransparentFX
