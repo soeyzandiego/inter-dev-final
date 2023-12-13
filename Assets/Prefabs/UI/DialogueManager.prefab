@@ -820,7 +820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661605731573168, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3937661605731573175, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_SizeDelta.x
@@ -932,7 +932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606063539745, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606063539750, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_Color.a
@@ -941,6 +941,18 @@ PrefabInstance:
     - target: {fileID: 3937661606063539750, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937661606101910104, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937661606101910110, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7563944610275369578}
+    - target: {fileID: 3937661606101910110, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LesterBeaumont
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606418486148, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_SizeDelta.x
@@ -966,6 +978,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d7c455680724e6643a6a5aad3fad4ee0, type: 3}
+    - target: {fileID: 3937661606702140069, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3937661606702140070, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1463985
