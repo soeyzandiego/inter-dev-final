@@ -172,6 +172,7 @@ public class ObjectClick : MonoBehaviour
         if (gameManager.currentRoom.name.Equals("Gate"))
         {
             gameManager.moveToRoom(room);
+            gameManager.WalkModeToggle();
         }
     }
 }

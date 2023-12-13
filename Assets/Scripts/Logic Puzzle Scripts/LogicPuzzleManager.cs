@@ -23,8 +23,8 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] string[] logicObjectDesc = new string[8]; // Array of strings to assign to draggable evidence pieces. (depends on whether the sprites for the evidence pieces includes the text or not.
     [SerializeField] string[] logicWheelDesc = new string[8]; // descriptions to be assigned to the logicwheel objects.
     [SerializeField] GameObject[] logicObjects = new GameObject[8]; // Reference to logicObjects (possibly not necessary?)
-    [SerializeField] Vector2 hLobjectOffset = new Vector3(3, 0, 0); // horizontal spacing for instantiating logic objects.
-    [SerializeField] Vector2 vLobjectOffset = new Vector3(0, 1.75f, 0);  // vertical spacing for instantiating logic objects.
+    [SerializeField] Vector3 hLobjectOffset = new Vector3(3, 0, 0); // horizontal spacing for instantiating logic objects.
+    [SerializeField] Vector3 vLobjectOffset = new Vector3(0, 1.75f, 0);  // vertical spacing for instantiating logic objects.
     [SerializeField] GameObject confirmButton;
     [SerializeField] GameObject question;
     [SerializeField] GameObject background;
@@ -37,6 +37,7 @@ public class LogicPuzzleManager : MonoBehaviour
         confirmButton.GetComponent<Button>().onClick.AddListener(() => { CheckCorrect(); });
         confirmButton.transform.position = confirmButton.transform.position - (Vector3)vLobjectOffset;
         background = Instantiate(logicPuzzleBGPrefab, canvas.transform);
+        background.transform.position = background.transform.position + new Vector3(0, 0, 10);
         question = Instantiate(textPrefab, canvas.transform);
         question.transform.position = new Vector3(0, 4, 0);
         question.GetComponent<TMP_Text>().text = logicQuestion;
@@ -48,7 +49,7 @@ public class LogicPuzzleManager : MonoBehaviour
             {
                 logicObjects[count] = Instantiate(logicObjectPrefab, canvas.transform);
                 LogicObject temp = logicObjects[count].GetComponent<LogicObject>(); //assigns the current evidence piece to temp, to instantiate fields in LogicObject
-                temp.transform.position = hLobjectOffset * (j - 1.5f) - Vector2.right + vLobjectOffset * (i + 0.25f);
+                temp.transform.position = transform.position + hLobjectOffset * (j - 1.5f) - Vector3.right + vLobjectOffset * (i + 0.25f);
                 //temp.GetComponent<SpriteRenderer>().sprite = logicObjectSprites[count]; Commented out for testing. PLEASE UNCOMMENT THIS WHEN U NEED TO PUT IN UR DESCRIPTIONS N WHATNOT.
                 temp.GetComponentInChildren<TMP_Text>().text = logicObjectDesc[count];
                 count++;
@@ -59,7 +60,7 @@ public class LogicPuzzleManager : MonoBehaviour
             {
                 logicObjects[count] = Instantiate(logicObjectPrefab, canvas.transform);
                 LogicObject temp = logicObjects[count].GetComponent<LogicObject>(); //assigns the current evidence piece to temp, to instantiate fields in LogicObject
-                temp.transform.position = hLobjectOffset * (j + 0.5f) + Vector2.right + vLobjectOffset * (i + 0.25f);
+                temp.transform.position = transform.position + hLobjectOffset * (j + 0.5f) + Vector3.right + vLobjectOffset * (i + 0.25f);
                 //temp.GetComponent<SpriteRenderer>().sprite = logicObjectSprites[count]; Commented out for testing. PLEASE UNCOMMENT THIS WHEN U NEED TO PUT IN UR DESCRIPTIONS N WHATNOT.
                 temp.GetComponentInChildren<TMP_Text>().text = logicObjectDesc[count];
                 count++;
@@ -71,12 +72,12 @@ public class LogicPuzzleManager : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
             logicSlot[i] = Instantiate(logicSlotPrefab, canvas.transform);
-            logicSlot[i].transform.position = new Vector3((i - .5f) * 6 - 2f, -3.5f, 1);
+            logicSlot[i].transform.position = transform.position + new Vector3((i - .5f) * 6 - 2f, -3.5f, 1);
             logicSlot[i].GetComponent<LogicSlot>().rightEvidence = correctEvidence[i * 2];
 
 
             logicWheel[i] = Instantiate(logicWheelPrefab, canvas.transform);
-            logicWheel[i].transform.position = new Vector3((i - .5f) * 6 + 1f, -3.5f, 1);
+            logicWheel[i].transform.position = transform.position + new Vector3((i - .5f) * 6 + 1f, -3.5f, 1);
             logicWheel[i].GetComponent<LogicWheel>().rightEvidence = correctEvidence[i * 2 + 1];
             for (int j = 0; j < 4; j++)
             {

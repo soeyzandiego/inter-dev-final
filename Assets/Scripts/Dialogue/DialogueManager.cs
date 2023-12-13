@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Audio")]
     public AudioClip skipSound;
-    public AudioClip buttonSound; 
+    public AudioClip buttonSound;
 
     [Header("UI Elements")]
     public GameObject dialoguePanel;
@@ -37,6 +37,9 @@ public class DialogueManager : MonoBehaviour
     public float delayTime = 0.1f;
     public float endTime = 1.2f;
     public string[] spriteIndicators; // possible sprite indicators
+
+    [Header("Logic Puzzle")]
+    public GameObject logicPuzzleCanvas;
     
     string textToPlay = "";
     bool lineDone = false;
@@ -73,6 +76,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        logicPuzzleCanvas = GameObject.FindWithTag("LogicPuzzleCanvas");
         CloseDialogue(true);
     }
 
@@ -336,10 +340,10 @@ public class DialogueManager : MonoBehaviour
         }
         else if (curAsset.puzzle != null)
         {
-            GameObject puzzle = Instantiate(curAsset.puzzle);
+            GameObject puzzle = Instantiate(curAsset.puzzle, logicPuzzleCanvas.transform);
             LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
 
-            puzzleManager.canvas = GameObject.FindWithTag("LogicPuzzleCanvas");
+            puzzleManager.canvas = logicPuzzleCanvas;
 
             SwitchState(DialogueStates.NONE);
         }
