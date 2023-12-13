@@ -12895,8 +12895,8 @@ MonoBehaviour:
   m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 113d59c65b90b4d42868ad43f622b9bd, type: 2}
+  m_sharedMaterial: {fileID: -3126292734652287583, guid: 113d59c65b90b4d42868ad43f622b9bd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -12920,8 +12920,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.8
-  m_fontSizeBase: 18.8
+  m_fontSize: 17.1
+  m_fontSizeBase: 17.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -13168,7 +13168,7 @@ RectTransform:
   m_GameObject: {fileID: 5195058802855061271}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -3.83}
-  m_LocalScale: {x: 1.1463985, y: 1.1463985, z: 1.1463985}
+  m_LocalScale: {x: 1.3794614, y: 1.3794614, z: 1.3794614}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5195058801608263664}
@@ -13200,7 +13200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &5195058802919930480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13880,6 +13880,7 @@ MonoBehaviour:
   - )
   - '-'
   - +
+  logicPuzzleCanvas: {fileID: 0}
 --- !u!222 &7854323472270032459
 CanvasRenderer:
   m_ObjectHideFlags: 0

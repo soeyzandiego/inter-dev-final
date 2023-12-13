@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject mapPanel;
     public GameObject suspectPanel;
     public DustController dustParticles;
+    public GameObject walkModeButton;
 
     [Header("Room Transition")]
     public GameObject currentRoom;
@@ -46,12 +47,12 @@ public class GameManager : MonoBehaviour
 
     //Initialize variables
     public static bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
-    public static bool walkMode = true;
+    public static bool walkMode = false;
     [SerializeField] List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
 
     [Header("List of Buttons")]
-    public Button[] buttons;
+    [HideInInspector] public Button[] buttons;
     public Button[] mapButtons;
     public List<GameObject> clicker;
     public GameObject researchAreaButton;
@@ -67,8 +68,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button gateButton;
 
     
-
-
     //deactivate all walk buttons on game start.
     private void Start()
     {
@@ -96,11 +95,13 @@ public class GameManager : MonoBehaviour
         if (loadPanel)
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(0.1f, 0, 0), Time.deltaTime * 5);
+            walkModeButton.SetActive(false);
         }
 
         else
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-18, 0, 0), Time.deltaTime * 5);
+            walkModeButton.SetActive(true);
         }
 
         if (Input.GetMouseButtonDown(0) && currentRoom.name == "Thank You") { moveToRoom(MainMenu); }

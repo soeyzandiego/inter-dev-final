@@ -10529,7 +10529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494437483}
   - component: {fileID: 494437484}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Temple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12890,6 +12890,7 @@ MonoBehaviour:
   mapPanel: {fileID: 244985398}
   suspectPanel: {fileID: 1300699931}
   dustParticles: {fileID: 1324718017}
+  walkModeButton: {fileID: 0}
   currentRoom: {fileID: 1127233636}
   fadeToBlack: {fileID: 334899349}
   suspectPicture: {fileID: 1606198689}
