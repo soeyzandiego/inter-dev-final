@@ -48,6 +48,7 @@ public class DialogueManager : MonoBehaviour
     Sprite queuedSprite = null; // sprite to transition to on anim
 
     bool challengeMode = false;
+    bool endChallengeMode = false;
     int challengeAnswer; // to track which choice option is correct during a challenge dialogue
     [HideInInspector] public delegate void OnLastLine();
     static OnLastLine onLastLine; // if we need to do something other than go to the investigate panel
@@ -289,6 +290,12 @@ public class DialogueManager : MonoBehaviour
         // we've reached the end of the conversation, 
         // either play the stored delegate, start a logic puzzle, or go to investigate panel
 
+        if (endChallengeMode)
+        {
+            CloseDialogue();
+            return;
+        }
+
         if (onLastLine != null)
         {
             onLastLine();
@@ -397,6 +404,7 @@ public class DialogueManager : MonoBehaviour
         curAsset = null;
         textToPlay = null;
         onLastLine = null;
+        endChallengeMode = false;
 
         characterSprite.enabled = false;
         GetComponent<Animator>().SetBool("CharVis", false);
@@ -578,4 +586,10 @@ public class DialogueManager : MonoBehaviour
     public void ButtonSound() { if (buttonSound != null) { SoundManager.PlaySound(buttonSound); } }
 
     public void SkipSound() { if (skipSound != null) { SoundManager.PlaySound(skipSound); } }
+
+    public void ToggleEndChallengeMode(bool onOff) 
+    { 
+        endChallengeMode = onOff;
+        challengeMode = onOff;
+    }
 }
