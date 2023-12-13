@@ -88,7 +88,6 @@ public class GameManager : MonoBehaviour
             walkButtons.Add(g.GetComponent<Button>());
         }
         mapButton.SetActive(false);
-        WalkModeToggle();
         walkButtons.Remove(researchAreaButton.GetComponent<Button>());
     }
 
