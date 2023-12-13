@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
   m_Name: IRS_Bert
   m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
     dialogue: "&\u2026Yes?\r\n\u2026Do you have a message for me? \r"
@@ -42,7 +43,7 @@ MonoBehaviour:
       talents.\r"
     choices:
     - text: "Let\u2019s hope you have a talent for answering my questions. "
-      fullText: "-Let\u2019s hope you have a talent for answering my questions."
+      fullText: "=Let\u2019s hope you have a talent for answering my questions."
     - text: 'That is a very talented beard you''ve got, at least '
       fullText: That is a very talented beard you've got, at least
     - text: "I heard your work was going downhill lately\u2026 "

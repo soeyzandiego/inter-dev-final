@@ -23,3 +23,8 @@ MonoBehaviour:
     text: She says that there is an  accent magical temple somewhere in the desert
       near here
     picture: {fileID: 21300000, guid: 60ede1a4d35f6bb4cb1cb1a5888000b1, type: 3}
+  challengeUnlockID: 
+  challengeSolvedID: 
+  challengeUnlocked: Sally's glove was outside the restricted research area...
+  challengeSolved: 'Sally knows about the temple and went to explore it but never
+    told me before out of fear I would not believe her. '

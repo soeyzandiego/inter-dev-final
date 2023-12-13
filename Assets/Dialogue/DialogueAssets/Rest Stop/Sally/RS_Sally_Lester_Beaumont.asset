@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
   m_Name: RS_Sally_Lester_Beaumont
   m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "&When you have a moment free from your\u2026 -Busy schedule\u2026
+    dialogue: "&When you have a moment free from your\u2026 =Busy schedule\u2026
       $I need to ask you about Lester Beaumont."
     choices: []
     unlockID: 

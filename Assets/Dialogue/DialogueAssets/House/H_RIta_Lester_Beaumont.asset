@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
   m_Name: H_RIta_Lester_Beaumont
   m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: "#Your job is to ask me about Lester Beaumont.\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "-Yes, well what can you tell me about him?\r"
+    dialogue: "=Yes, well what can you tell me about him?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -42,7 +43,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "-\u2026Thanks. Just give me a minute to write this all down\u2026"
+    dialogue: "=\u2026Thanks. Just give me a minute to write this all down\u2026"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -83,7 +84,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
     dialogue: $The desert is a magical place, in more ways than one.
     choices: []
-    unlockID: H_R_2
+    unlockID: H_R_3
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: +What do you mean?
     choices: []
