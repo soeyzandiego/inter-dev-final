@@ -42,7 +42,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NoDust
   - Water
   - UI
   - 

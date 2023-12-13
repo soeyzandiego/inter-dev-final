@@ -6146,7 +6146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360.4, y: 44.054993}
+  m_AnchoredPosition: {x: -360.4, y: 18}
   m_SizeDelta: {x: 52.9, y: 59.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80794476
@@ -11105,7 +11105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 540488483}
   - component: {fileID: 540488484}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rita's
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12889,6 +12889,7 @@ MonoBehaviour:
   cluesPanel: {fileID: 1598154802}
   mapPanel: {fileID: 244985398}
   suspectPanel: {fileID: 1300699931}
+  dustParticles: {fileID: 1324718017}
   currentRoom: {fileID: 1127233636}
   fadeToBlack: {fileID: 334899349}
   suspectPicture: {fileID: 1606198689}
@@ -14331,7 +14332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -799.9997, y: 0}
+  m_AnchoredPosition: {x: -799.99976, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &883949437
@@ -16439,7 +16440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -360.4, y: -45.1}
+  m_AnchoredPosition: {x: -360.4, y: -98.5}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1075048065
@@ -24119,6 +24120,7 @@ GameObject:
   - component: {fileID: 1324718014}
   - component: {fileID: 1324718016}
   - component: {fileID: 1324718015}
+  - component: {fileID: 1324718017}
   m_Layer: 5
   m_Name: Dust Particles
   m_TagString: Untagged
@@ -28943,6 +28945,18 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1324718017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324718013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a3bd981cf3ebd4eb44ddbb43dcc808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1329718876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34560,7 +34574,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1393517200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47580,7 +47594,7 @@ GameObject:
   - component: {fileID: 1696274484}
   - component: {fileID: 1696274483}
   m_Layer: 0
-  m_Name: Bg
+  m_Name: Background Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47600,7 +47614,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.307
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

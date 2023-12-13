@@ -1851,12 +1851,22 @@ PrefabInstance:
     m_TransformParent: {fileID: 7563944610275369579}
     m_Modifications:
     - target: {fileID: 365814721, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
+      propertyPath: m_text
+      value: 'SUSPECTS
+
+        Case File Updated'
+      objectReference: {fileID: 0}
+    - target: {fileID: 365814721, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 113d59c65b90b4d42868ad43f622b9bd, type: 2}
     - target: {fileID: 365814721, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3126292734652287583, guid: 113d59c65b90b4d42868ad43f622b9bd, type: 2}
+    - target: {fileID: 365814721, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 852185933, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_IsActive
@@ -2204,7 +2214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606063539745, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606063539750, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_Color.a

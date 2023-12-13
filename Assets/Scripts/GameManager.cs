@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject cluesPanel;
     public GameObject mapPanel;
     public GameObject suspectPanel;
+    public DustController dustParticles;
 
     [Header("Room Transition")]
     public GameObject currentRoom;
@@ -183,6 +184,10 @@ public class GameManager : MonoBehaviour
     //Method to move from room to room
     public void moveToRoom(GameObject room)
     {
+        Debug.Log(room.layer);
+        if (room.layer == LayerMask.NameToLayer("NoDust")) { dustParticles.StopDust(); }
+        else { dustParticles.StartDust(); }
+
         StartCoroutine(RoomTransition(room)); UnloadPanel(); 
     }
 
