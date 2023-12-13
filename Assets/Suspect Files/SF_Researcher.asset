@@ -29,3 +29,9 @@ MonoBehaviour:
   - unlockId: RS_C_4
     text: He blocked off an area behind the town just for his research.
     picture: {fileID: 21300000, guid: 7a509a4732d77474185e3474fbcb0db5, type: 3}
+  challengeUnlockID: 
+  challengeSolvedID: 
+  challengeUnlocked: Rita gave me some drawings of rare and exotic animals...
+  challengeSolved: Does not actually study rare and exotic animals like he says he
+    does. He might be trying to uncover the mysteries surrounding the town and the
+    desert by posing as a researcher
