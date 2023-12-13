@@ -19,7 +19,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "-Yes, well what can you tell me about him?\r"
+    dialogue: "=Yes, well what can you tell me about him?\r"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
@@ -43,7 +43,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
-    dialogue: "-\u2026Thanks. Just give me a minute to write this all down\u2026"
+    dialogue: "=\u2026Thanks. Just give me a minute to write this all down\u2026"
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
