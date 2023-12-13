@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
   m_Name: RS_Sally
   m_EditorClassIdentifier: 
+  puzzle: {fileID: 2216511898867650515, guid: e4175bef9eefdbf4cbe6e0084523b3b6, type: 3}
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: '#Sorry to interrupt, $I can see that you''re... Uhh.. %hard at work.'

@@ -72,7 +72,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CloseDialogue();
+        CloseDialogue(true);
     }
 
     // Update is called once per frame
@@ -83,6 +83,24 @@ public class DialogueManager : MonoBehaviour
 
         switch (state)
         {
+            case DialogueStates.NONE:
+                if (!updated)
+                {
+                    dialoguePanel.SetActive(false);
+                    typing = false;
+                    talkingTo = null;
+                    queuedSprite = null;
+                    curAsset = null;
+                    textToPlay = null;
+                    //onLastLine = null;
+                    endChallengeMode = false;
+
+                    characterSprite.enabled = false;
+                    GetComponent<Animator>().SetBool("CharVis", false);
+                }
+
+            break;
+            
             case DialogueStates.TALKING:
                 if (!updated)
                 {
@@ -135,7 +153,11 @@ public class DialogueManager : MonoBehaviour
                 {
                     typing = true;
                     bodyText.text = "";
-                    if (curAsset == null) { return; }
+                    if (curAsset == null) 
+                    { 
+                        Debug.Log("null asset");
+                        return;
+                    }
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
 
 
@@ -292,13 +314,14 @@ public class DialogueManager : MonoBehaviour
 
         if (endChallengeMode)
         {
-            CloseDialogue();
+            CloseDialogue(true);
             return;
         }
 
         if (onLastLine != null)
         {
             onLastLine();
+            SwitchState(DialogueStates.NONE);
         }
         //else if (curAsset.puzzle != null)
         //{
@@ -379,14 +402,23 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                tempAsset.lines.Clear();
-                foreach (DialogueAsset.DialogueLine line in curAsset.lines)
+                if (curAsset == tempAsset)
                 {
-                    tempAsset.lines.Add(line);
+                    tempLine.dialogue = choices[choice].fullText;
+                    tempAsset.lines.Insert(curLineIndex + 1, tempLine);
                 }
-                tempLine.dialogue = choices[choice].fullText;
-                tempAsset.lines.Insert(curLineIndex + 1, tempLine);
-                curAsset = tempAsset;
+                else
+                {
+                    tempAsset.lines.Clear();
+
+                    foreach (DialogueAsset.DialogueLine line in curAsset.lines)
+                    {
+                        tempAsset.lines.Add(line);
+                    }
+                    tempLine.dialogue = choices[choice].fullText;
+                    tempAsset.lines.Insert(curLineIndex + 1, tempLine);
+                    curAsset = tempAsset;
+                }
 
                 curLineIndex++;
                 SwitchState(DialogueStates.TALKING);
@@ -395,23 +427,12 @@ public class DialogueManager : MonoBehaviour
         updated = false;
     }
 
-    public void CloseDialogue()
+    public void CloseDialogue(bool clearLastLine)
     {
-        dialoguePanel.SetActive(false);
-        typing = false;
-        talkingTo = null;
-        queuedSprite = null;
-        curAsset = null;
-        textToPlay = null;
-        onLastLine = null;
-        endChallengeMode = false;
-
-        characterSprite.enabled = false;
-        GetComponent<Animator>().SetBool("CharVis", false);
-
         if (typeCo != null) { StopCoroutine(typeCo); }
         if (endCo != null) { StopCoroutine(endCo); }
         SwitchState(DialogueStates.NONE);
+        if (clearLastLine) { onLastLine = null; }
     }
 
     #region End Panel Buttons

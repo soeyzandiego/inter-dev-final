@@ -28,7 +28,7 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] GameObject confirmButton;
     [SerializeField] GameObject question;
     [SerializeField] GameObject background;
-    [SerializeField] GameObject canvas; // associated canvas object's game object.
+    [SerializeField] public GameObject canvas; // associated canvas object's game object.
 
     void Start()
     {

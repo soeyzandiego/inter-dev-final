@@ -39,7 +39,6 @@ public class EndScene : MonoBehaviour, ICutscenePlayer
 
     void StartDialogue()
     {
-        Debug.Log(asset.name);
         onLastLine = EndAction;
         DialogueManager.PlayDialogue(asset, 0, onLastLine);
         FindObjectOfType<DialogueManager>().ToggleEndChallengeMode(true); // TODO um different way to do this plz
