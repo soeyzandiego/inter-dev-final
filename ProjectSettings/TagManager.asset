@@ -38,11 +38,12 @@ TagManager:
   - MainCanvas
   - LogicPuzzleCanvas
   - lesters
+  - researchAreaButton
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - NoDust
+  - 
   - Water
   - UI
   - 

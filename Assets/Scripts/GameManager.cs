@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     //deactivate all walk buttons on game start.
     private void Start()
     {
+        researchAreaButton = GameObject.FindGameObjectWithTag("researchAreaButton");
         transform.position = currentRoom.transform.position;
 
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
@@ -86,7 +87,6 @@ public class GameManager : MonoBehaviour
         }
         mapButton.SetActive(false);
         researchAreaButton.SetActive(false);
-        walkButtons.Remove(researchAreaButton.GetComponent<Button>());
     }
 
     //Main Method
