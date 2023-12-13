@@ -62,6 +62,7 @@ public class ObjectClick : MonoBehaviour
         objectDialogues.Add("gloves", "What's this?\r\nIs this one of sally's gloves?");
         objectDialogues.Add("rocks", "Epic, something else other than sand.");
         objectDialogues.Add("gatecomplete", "There's that! That wasn't so bad. I'll have to get one of these for myself...");
+        objectDialogues.Add("lesters", "Ah so here is the fated rest stop!");
 
 
         // Initially, hide the "Continue" button

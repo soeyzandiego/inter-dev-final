@@ -37,6 +37,7 @@ TagManager:
   - Background
   - MainCanvas
   - LogicPuzzleCanvas
+  - lesters
   layers:
   - Default
   - TransparentFX
