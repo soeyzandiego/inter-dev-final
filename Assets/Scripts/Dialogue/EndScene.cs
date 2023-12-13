@@ -41,7 +41,8 @@ public class EndScene : MonoBehaviour, ICutscenePlayer
     {
         onLastLine = EndAction;
         DialogueManager.PlayDialogue(asset, 0, onLastLine);
-        FindObjectOfType<DialogueManager>().ToggleEndChallengeMode(true); // TODO um different way to do this plz
+        string lastLineText = asset.lines[asset.lines.Count].dialogue;
+        FindObjectOfType<DialogueManager>().ToggleEndChallengeMode(true, lastLineText); // TODO um different way to do this plz
     }
 
     public void EndAction()

@@ -49,6 +49,7 @@ public class DialogueManager : MonoBehaviour
 
     bool challengeMode = false;
     bool endChallengeMode = false;
+    string endChallengeLastLine;
     int challengeAnswer; // to track which choice option is correct during a challenge dialogue
     [HideInInspector] public delegate void OnLastLine();
     static OnLastLine onLastLine; // if we need to do something other than go to the investigate panel
@@ -155,7 +156,6 @@ public class DialogueManager : MonoBehaviour
                     bodyText.text = "";
                     if (curAsset == null) 
                     { 
-                        Debug.Log("null asset");
                         return;
                     }
                     textToPlay = curAsset.lines[curLineIndex].dialogue;
@@ -312,11 +312,22 @@ public class DialogueManager : MonoBehaviour
         // we've reached the end of the conversation, 
         // either play the stored delegate, start a logic puzzle, or go to investigate panel
 
+        // IDK FIX THIS LATER
         if (endChallengeMode)
         {
-            CloseDialogue(true);
-            return;
+            if (curAsset.lines[curLineIndex].dialogue == endChallengeLastLine)
+            {
+                onLastLine();
+                Debug.Log(onLastLine == null);
+                SwitchState(DialogueStates.NONE);
+            }
+            else
+            {
+                CloseDialogue(true);
+                return;
+            }
         }
+        // DISREGARD THIS ^^^^^
 
         if (onLastLine != null)
         {
@@ -328,7 +339,9 @@ public class DialogueManager : MonoBehaviour
             GameObject puzzle = Instantiate(curAsset.puzzle);
             LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
 
-            puzzleManager.canvas = FindObjectOfType<GameManager>().currentRoom.GetComponentInChildren<Canvas>().gameObject;
+            puzzleManager.canvas = GameObject.FindWithTag("LogicPuzzleCanvas");
+
+            SwitchState(DialogueStates.NONE);
         }
         else
         {
@@ -365,13 +378,29 @@ public class DialogueManager : MonoBehaviour
 
     void CheckChallenge()
     {
-        foreach (string ID in talkingTo.challenge.unlockIds)
+        if (talkingTo.challenge.unlockIds[0].Length <= 0) { return; }
+        if (GameManager.suspectClues.Contains(talkingTo.challenge.unlockIds[0]))
         {
-            if (GameManager.suspectClues.Contains(ID)) { continue; }
-            else { return; }
+            challengeChains.SetActive(false);
+            unlockableElements[talkingTo.unlockables.Length].SetActive(true);
         }
-        challengeChains.SetActive(false);
-        unlockableElements[talkingTo.unlockables.Length].SetActive(true);
+        //for (int i = 0; i < talkingTo.challenge.unlockIds.Length - 1; i++)
+        //{
+        //    Debug.Log("checking challenge");
+        //    if (GameManager.suspectClues.Contains(talkingTo.challenge.unlockIds[i])) 
+        //    {
+        //        Debug.Log("has id");
+        //        if (i == talkingTo.challenge.unlockIds.Length - 1)
+        //        {
+        //            Debug.Log("last id");
+        //            challengeChains.SetActive(false);
+        //            unlockableElements[talkingTo.unlockables.Length].SetActive(true);
+        //        }
+        //        continue;
+        //    }
+        //    else { return; }
+        //}
+        
     }
 
     public void ChooseOption(int choice)
@@ -608,9 +637,10 @@ public class DialogueManager : MonoBehaviour
 
     public void SkipSound() { if (skipSound != null) { SoundManager.PlaySound(skipSound); } }
 
-    public void ToggleEndChallengeMode(bool onOff) 
+    public void ToggleEndChallengeMode(bool onOff, string lastLineText) 
     { 
         endChallengeMode = onOff;
         challengeMode = onOff;
+        endChallengeLastLine = lastLineText;
     }
 }
