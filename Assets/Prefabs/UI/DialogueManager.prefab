@@ -1772,7 +1772,7 @@ MonoBehaviour:
   - {fileID: 4169030469785803097}
   - {fileID: 2565935513650780532}
   - {fileID: 4824680810514535300}
-  challengeChains: {fileID: 0}
+  challengeChains: {fileID: 2142647582975174963}
   delayTime: 0.045
   endTime: 1.5
   spriteIndicators:
