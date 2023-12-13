@@ -11,6 +11,7 @@ public class LogicSlot : MonoBehaviour
 
     public bool CheckEvidence()
     {
+        Debug.Log("checked noun");
         if (logicObject == null)
         {
             return false;
@@ -18,6 +19,7 @@ public class LogicSlot : MonoBehaviour
         currentEvidence = logicObject.GetComponent<LogicObject>().evidenceNum;
         if (currentEvidence == rightEvidence )
         {
+            Debug.Log("correct noun");
             return true;
         }
         return false;

@@ -68,10 +68,12 @@ public class LogicWheel : MonoBehaviour
         if (currentIndex == rightEvidence)
         {
             correctEvidence = true;
+            Debug.Log("correct desc");
         }
         else
         {
             correctEvidence = false;
+            Debug.Log("incorrect desc");
         }
     }
     public void ScrollDown()
