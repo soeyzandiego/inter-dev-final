@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
   m_Name: RS_Colby_Challenge
   m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: "+I have a bone to pick with you!\r"
@@ -45,9 +46,9 @@ MonoBehaviour:
       concern me?\r"
     choices:
     - text: 'You said you love animals and I should show you my art. '
-      fullText: Let me rethink that...
+      fullText: =Let me rethink that...
     - text: 'I am not sure. '
-      fullText: Let me rethink that...
+      fullText: =Let me rethink that...
     - text: "!These are exotic native animals to this area\u2026 "
       fullText: "These are exotic native animals to this area\u2026 but you have
         never talked about them."
@@ -69,9 +70,9 @@ MonoBehaviour:
       already explained that I study abnormal exotic animals.'
     choices:
     - text: "You\u2019re right, I was wrong\u2026"
-      fullText: -Let me rethink that...
+      fullText: =Let me rethink that...
     - text: "Are you sure\u2026?"
-      fullText: -Let me rethink that...
+      fullText: =Let me rethink that...
     - text: "!I know you are lying\u2026"
       fullText: '*I know you are lying because these are the real exotic animals
         that are native to this area that are mysterious.'
