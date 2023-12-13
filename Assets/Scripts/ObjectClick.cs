@@ -109,11 +109,11 @@ public class ObjectClick : MonoBehaviour
                         button.interactable = false;
                     }
                     continueButton.interactable = true;
-                    foreach (GameObject cliker in gameManager.clicker)
+                    foreach (GameObject clicker in gameManager.clicker)
                     {
-                        if (cliker.GetComponent<Collider2D>() != null)
+                        if (clicker.GetComponent<Collider2D>() != null)
                         { 
-                            cliker.GetComponent<Collider2D>().enabled = false;
+                            clicker.GetComponent<Collider2D>().enabled = false;
                         }
                     }
                 }
@@ -162,11 +162,11 @@ public class ObjectClick : MonoBehaviour
         {
             button.interactable = true;
         }
-        foreach (GameObject cliker in gameManager.clicker)
+        foreach (GameObject clicker in gameManager.clicker)
         {
-            if (cliker.GetComponent<Collider2D>() != null)
+            if (clicker.GetComponent<Collider2D>() != null)
             {
-                cliker.GetComponent<Collider2D>().enabled = true;
+                clicker.GetComponent<Collider2D>().enabled = true;
             }
         }
         if (gameManager.currentRoom.name.Equals("Gate"))

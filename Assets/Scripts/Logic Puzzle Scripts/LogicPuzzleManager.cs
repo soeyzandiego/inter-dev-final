@@ -33,6 +33,14 @@ public class LogicPuzzleManager : MonoBehaviour
 
     void Start()
     {
+        foreach (GameObject clicker in FindObjectOfType<GameManager>().clicker)
+        {
+            if (clicker.GetComponent<Collider2D>() != null)
+            {
+                clicker.GetComponent<Collider2D>().enabled = false;
+            }
+        }
+
         confirmButton = Instantiate(confirmButtonPrefab, canvas.transform);
         confirmButton.GetComponent<Button>().onClick.AddListener(() => { CheckCorrect(); });
         confirmButton.transform.position = confirmButton.transform.position - (Vector3)vLobjectOffset;
@@ -113,26 +121,57 @@ public class LogicPuzzleManager : MonoBehaviour
         }
     }
 
-    public bool CheckCorrect()
+    //public bool CheckCorrect()
+    //{
+    //    Debug.Log("Works");
+
+    //    for (int i = 0; i < 2; i++)
+    //    {
+    //        LogicSlot tempSlot = logicSlot[i].GetComponent<LogicSlot>();
+    //        LogicWheel tempWheel = logicWheel[i].GetComponent<LogicWheel>();
+    //        if (!tempSlot.CheckEvidence() || !tempWheel.correctEvidence)
+    //        {
+    //            return false;
+    //        }
+    //    }
+
+    //    GameManager.UnlockClue(clueID);
+        
+    //    return true;
+    //}
+
+    public void CheckCorrect()
     {
+        Debug.Log("Works");
+
         for (int i = 0; i < 2; i++)
         {
             LogicSlot tempSlot = logicSlot[i].GetComponent<LogicSlot>();
             LogicWheel tempWheel = logicWheel[i].GetComponent<LogicWheel>();
+
             if (!tempSlot.CheckEvidence() || !tempWheel.correctEvidence)
             {
-                return false;
+                return;
             }
         }
 
+        Debug.Log("correct");
         GameManager.UnlockClue(clueID);
-        Debug.Log("Works");
-        
-        return true;
+        Destroy(gameObject);
+
+        return;
     }
 
     private void OnDestroy()
     {
+        foreach (GameObject clicker in FindObjectOfType<GameManager>().clicker)
+        {
+            if (clicker.GetComponent<Collider2D>() != null)
+            {
+                clicker.GetComponent<Collider2D>().enabled = true;
+            }
+        }
+
         foreach (GameObject o in logicSlot)
         {
             Destroy(o);

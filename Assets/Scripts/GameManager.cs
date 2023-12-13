@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviour
     //deactivate all walk buttons on game start.
     private void Start()
     {
+        transform.position = currentRoom.transform.position;
+
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
 
         UISprite = UI.GetComponent<SpriteRenderer>();

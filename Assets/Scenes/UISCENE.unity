@@ -28921,8 +28921,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331241496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1530953, y: -0.39271072, z: -100}
-  m_LocalScale: {x: 0.0057798456, y: 0.009699891, z: 1}
+  m_LocalPosition: {x: -0.129, y: -0.378, z: -100}
+  m_LocalScale: {x: 0.004349392, y: 0.0072992654, z: 0.75251}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1127233638}
@@ -28969,7 +28969,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: badf60bae69aec84cbad837a07b5dad7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9efb3eae741000a46acc383b320816fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -50906,14 +50906,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1286672857}
     m_Modifications:
-    - target: {fileID: 5195058801442881808, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5195058802620452246, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7563944610275369573, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
       propertyPath: m_Name
       value: DialogueManager

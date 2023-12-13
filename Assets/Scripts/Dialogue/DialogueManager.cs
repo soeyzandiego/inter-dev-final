@@ -345,12 +345,13 @@ public class DialogueManager : MonoBehaviour
         }
         else if (curAsset.puzzle != null)
         {
+            CloseDialogue(true);
+
             GameObject puzzle = Instantiate(curAsset.puzzle, logicPuzzleCanvas.transform);
             LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
 
             puzzleManager.canvas = logicPuzzleCanvas;
 
-            SwitchState(DialogueStates.NONE);
         }
         else
         {
