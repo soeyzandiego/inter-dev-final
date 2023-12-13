@@ -49,14 +49,14 @@ public class GameManager : MonoBehaviour
     //Initialize variables
     public static bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
     public static bool walkMode = false;
-    [SerializeField] List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
+    [SerializeField] public static List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
 
     [Header("List of Buttons")]
     [HideInInspector] public Button[] buttons;
     public Button[] mapButtons;
     public List<GameObject> clicker;
-    public GameObject researchAreaButton;
+    public static GameObject researchAreaButton;
     public GameObject magGlass;
     public GameObject mapSelect;
     public GameObject MainMenu;
@@ -312,6 +312,11 @@ public class GameManager : MonoBehaviour
             suspectClues.Add(_id);
         }
 
+        if(_id.Equals("R_CHAL"))
+        {
+            researchAreaButton.SetActive(true);
+            walkButtons.Add(researchAreaButton.GetComponent<Button>());
+        }
         return wasUnlocked;
     }
 
