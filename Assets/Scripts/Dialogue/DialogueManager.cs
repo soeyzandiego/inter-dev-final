@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
 
     bool challengeMode = false;
     bool endChallengeMode = false;
-    string endChallengeLastLine;
+    string trueLastLine;
     int challengeAnswer; // to track which choice option is correct during a challenge dialogue
     [HideInInspector] public delegate void OnLastLine();
     static OnLastLine onLastLine; // if we need to do something other than go to the investigate panel
@@ -87,6 +87,7 @@ public class DialogueManager : MonoBehaviour
             case DialogueStates.NONE:
                 if (!updated)
                 {
+                    //updated = true;
                     dialoguePanel.SetActive(false);
                     typing = false;
                     talkingTo = null;
@@ -96,6 +97,7 @@ public class DialogueManager : MonoBehaviour
                     //onLastLine = null;
                     endChallengeMode = false;
 
+                    
                     characterSprite.enabled = false;
                     GetComponent<Animator>().SetBool("CharVis", false);
                 }
@@ -253,6 +255,7 @@ public class DialogueManager : MonoBehaviour
                     choicePanel.SetActive(false);
                     investigatePanel.SetActive(true);
 
+                    Debug.Log("investigate");
                     // turn off challenge mode
                     challengeMode = false;
 
@@ -312,13 +315,15 @@ public class DialogueManager : MonoBehaviour
         // we've reached the end of the conversation, 
         // either play the stored delegate, start a logic puzzle, or go to investigate panel
 
+
         // IDK FIX THIS LATER
         if (endChallengeMode)
         {
-            if (curAsset.lines[curLineIndex].dialogue == endChallengeLastLine)
+            Debug.Log("end challenge");
+            if (textToPlay == trueLastLine)
             {
+                Debug.Log("true last line");
                 onLastLine();
-                Debug.Log(onLastLine == null);
                 SwitchState(DialogueStates.NONE);
             }
             else
@@ -413,14 +418,13 @@ public class DialogueManager : MonoBehaviour
             typing = false;
             bodyText.text = "";
 
-            // transfer puzzle over
-            if (curAsset.puzzle != null) { tempAsset.puzzle = curAsset.puzzle; }
-            else { tempAsset.puzzle = null; }
 
             if (challengeMode && choice != challengeAnswer)
             {
                 // add the "not right line" as the only line so it goes straight back to INVESTIGATING
-                
+
+                Debug.Log("wrong answer");
+
                 tempAsset.lines.Clear();
                 tempLine.dialogue = choices[choice].fullText;
                 tempAsset.lines.Insert(0, tempLine);
@@ -438,6 +442,10 @@ public class DialogueManager : MonoBehaviour
                 }
                 else
                 {
+                    // transfer puzzle over
+                    if (curAsset.puzzle != null) { tempAsset.puzzle = curAsset.puzzle; }
+                    else { tempAsset.puzzle = null; }
+
                     tempAsset.lines.Clear();
 
                     foreach (DialogueAsset.DialogueLine line in curAsset.lines)
@@ -477,7 +485,6 @@ public class DialogueManager : MonoBehaviour
 
     public void LesterBeaumont()
     {
-        Debug.Log("lester played");
         typing = false;
         textToPlay = null;
         curAsset = talkingTo.lesterBeaumontAsset;
@@ -641,6 +648,6 @@ public class DialogueManager : MonoBehaviour
     { 
         endChallengeMode = onOff;
         challengeMode = onOff;
-        endChallengeLastLine = lastLineText;
+        trueLastLine = lastLineText;
     }
 }
