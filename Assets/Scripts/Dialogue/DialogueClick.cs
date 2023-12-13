@@ -43,6 +43,8 @@ public class DialogueClick : MonoBehaviour
         if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
         // if a panel is open, don't look for dialogue clicks
         if (GameManager.loadPanel) { return; }
+        // if walk mode is active, don't look for dialogue clicks
+        if (GameManager.walkMode) { return; }
 
         if (Input.GetMouseButtonDown(0))
         {

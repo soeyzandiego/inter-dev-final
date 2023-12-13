@@ -713,8 +713,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 186.7
-  m_fontSizeBase: 186.7
+  m_fontSize: 203.3
+  m_fontSizeBase: 203.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -876,6 +876,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7563944610275369578}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 7563944610275369578}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: CloseDialogue
@@ -1648,8 +1660,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 186.7
-  m_fontSizeBase: 186.7
+  m_fontSize: 203.3
+  m_fontSizeBase: 203.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1743,8 +1755,8 @@ MonoBehaviour:
     dialogue: 
     choices: []
     unlockID: 
-  skipSound: {fileID: 0}
-  buttonSound: {fileID: 0}
+  skipSound: {fileID: 8300000, guid: d8cd25d58913fdc4e8b0f217976e4d74, type: 3}
+  buttonSound: {fileID: 8300000, guid: 46999780ed3662246b278834b6bbeb85, type: 3}
   dialoguePanel: {fileID: 5195058801442881808}
   characterSprite: {fileID: 5195058801506163335}
   talkPanel: {fileID: 5195058802620452246}
@@ -1771,7 +1783,7 @@ MonoBehaviour:
   - '*'
   - (
   - )
-  - '-'
+  - =
   - +
 --- !u!95 &2086882993
 Animator:
@@ -1895,7 +1907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364758687795639687, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
+      value: SkipSound
       objectReference: {fileID: 0}
     - target: {fileID: 3364758687795639687, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1907,7 +1919,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661605226722018, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_fontSize
-      value: 186.7
+      value: 203.3
       objectReference: {fileID: 0}
     - target: {fileID: 3937661605226722018, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_margin.w
@@ -1927,7 +1939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661605226722018, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_fontSizeBase
-      value: 186.7
+      value: 203.3
       objectReference: {fileID: 0}
     - target: {fileID: 3937661605533018688, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_LocalScale.x
@@ -2123,7 +2135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606063539745, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606063539750, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_Color.a
@@ -2171,11 +2183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606101910110, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LesterBeaumont
+      value: ButtonSound
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606101910110, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
+      value: SkipSound
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606101910110, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2235,7 +2247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606702140071, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606767564737, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -2271,7 +2283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606767564737, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
+      value: SkipSound
       objectReference: {fileID: 0}
     - target: {fileID: 3937661606767564737, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2291,7 +2303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3937661607010493949, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9113111771337139332, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2315,7 +2327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9113111771337139332, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ButtonSound
+      value: SkipSound
       objectReference: {fileID: 0}
     - target: {fileID: 9113111771337139332, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName

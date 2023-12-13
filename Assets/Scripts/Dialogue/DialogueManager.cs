@@ -460,6 +460,7 @@ public class DialogueManager : MonoBehaviour
         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
         {
             string character = textToPlay[charIndex].ToString();
+            // TODO refactor this, can't use for loop because of coroutine
             switch (character)
             {
                 case "#":
@@ -511,7 +512,7 @@ public class DialogueManager : MonoBehaviour
                     charIndex--;
                 break;
 
-                case "-":
+                case "=":
                     queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
@@ -563,7 +564,7 @@ public class DialogueManager : MonoBehaviour
         else if (indicator == "*") { return curAsset.lines[curLineIndex].character.sprites[4]; }
         else if (indicator == "(") { return curAsset.lines[curLineIndex].character.sprites[5]; }
         else if (indicator == ")") { return curAsset.lines[curLineIndex].character.sprites[6]; }
-        else if (indicator == "-") { return curAsset.lines[curLineIndex].character.sprites[7]; }
+        else if (indicator == "=") { return curAsset.lines[curLineIndex].character.sprites[7]; }
         else if (indicator == "+") { return curAsset.lines[curLineIndex].character.sprites[8]; }
         else { return curAsset.lines[curLineIndex].character.sprites[0]; }
     }
@@ -572,4 +573,6 @@ public class DialogueManager : MonoBehaviour
     public void ChangeSprite() { characterSprite.sprite = queuedSprite; }
 
     public void ButtonSound() { if (buttonSound != null) { SoundManager.PlaySound(buttonSound); } }
+
+    public void SkipSound() { if (skipSound != null) { SoundManager.PlaySound(skipSound); } }
 }
