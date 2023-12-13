@@ -319,4 +319,9 @@ public class GameManager : MonoBehaviour
         bert.SetActive(false);
         colby.SetActive(false);
     }
+
+    public void unlockResearchArea()
+    {
+        walkButtons.Add(researchAreaButton.GetComponent<Button>());
+    }
 }

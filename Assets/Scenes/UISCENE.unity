@@ -7774,7 +7774,7 @@ MonoBehaviour:
   - {fileID: 76226103}
   - {fileID: 737524033}
   - {fileID: 974846297}
-  researchAreaButton: {fileID: 0}
+  researchAreaButton: {fileID: 326437891}
   magGlass: {fileID: 766488358}
   mapSelect: {fileID: 894804098}
   MainMenu: {fileID: 1753592662}
@@ -8802,7 +8802,7 @@ MonoBehaviour:
         m_MethodName: moveToRoom
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 814333015}
+          m_ObjectArgument: {fileID: 612368181}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
