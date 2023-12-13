@@ -311,6 +311,7 @@ public class DialogueManager : MonoBehaviour
             talkingTo.FinishDialogue();
             SwitchState(DialogueStates.INVESTIGATING);
             CheckUnlockables();
+            CheckChallenge();
             //GetComponent<Animator>().SetTrigger("ForceClose");
         }
     }
@@ -330,15 +331,17 @@ public class DialogueManager : MonoBehaviour
             unlockableElements[i].SetActive(true);
             unlockableElements[i].GetComponentInChildren<TMP_Text>().text = unlockable.investigatePanelText;
         }
+    }
 
-        // do the same for challenge
+    void CheckChallenge()
+    {
         foreach (string ID in talkingTo.challenge.unlockIds)
         {
             if (GameManager.suspectClues.Contains(ID)) { continue; }
             else { return; }
         }
         challengeChains.SetActive(false);
-        unlockableElements[talkingTo.unlockables.Length + 1].SetActive(true);
+        unlockableElements[talkingTo.unlockables.Length].SetActive(true);
     }
 
     public void ChooseOption(int choice)
@@ -365,7 +368,7 @@ public class DialogueManager : MonoBehaviour
                     
                 curAsset = tempAsset;
                 curLineIndex = 0;
-                state = DialogueStates.TALKING;
+                SwitchState(DialogueStates.TALKING);
             }
             else
             {
@@ -379,7 +382,7 @@ public class DialogueManager : MonoBehaviour
                 curAsset = tempAsset;
 
                 curLineIndex++;
-                state = DialogueStates.TALKING;
+                SwitchState(DialogueStates.TALKING);
             }
         }
         updated = false;
