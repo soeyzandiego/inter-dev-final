@@ -192,8 +192,12 @@ MonoBehaviour:
     unlockID: 
   - character: {fileID: 0}
     dialogue: "After other police come to collect both of them, and Lester\u2019s
-      body, Sally and Grimoire leave the town, as Sally no longer has a job. Rita
-      is left in the town alone, just like she wanted in the first place. "
+      body, Sally and Grimoire leave the town, as Sally no longer has a job. "
+    choices: []
+    unlockID: 
+  - character: {fileID: 0}
+    dialogue: 'Rita is left in the town alone, just like she wanted in the first
+      place. '
     choices: []
     unlockID: 
   - character: {fileID: 0}
