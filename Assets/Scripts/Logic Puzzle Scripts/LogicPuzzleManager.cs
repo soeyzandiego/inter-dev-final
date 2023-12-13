@@ -68,8 +68,8 @@ public class LogicPuzzleManager : MonoBehaviour
                 temp.transform.position = transform.position + hLobjectOffset * (j + 0.5f) + Vector3.right + vLobjectOffset * (i + 0.25f);
                 //temp.GetComponent<SpriteRenderer>().sprite = logicObjectSprites[count]; Commented out for testing. PLEASE UNCOMMENT THIS WHEN U NEED TO PUT IN UR DESCRIPTIONS N WHATNOT.
                 temp.GetComponentInChildren<TMP_Text>().text = logicObjectDesc[count];
-                count++;
                 temp.evidenceNum = count; //assigns evidence number identifier, to be used when checking the logic puzzle for correctness.
+                count++;
             }
         }
 

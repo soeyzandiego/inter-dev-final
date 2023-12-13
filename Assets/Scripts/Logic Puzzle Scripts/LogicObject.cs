@@ -34,7 +34,10 @@ public class LogicObject : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        logicSlot.GetComponent<LogicSlot>().logicObject = null;
+        if (logicSlot != null)
+        {
+            logicSlot.GetComponent<LogicSlot>().logicObject = null;
+        }
         logicSlot = null;
         targetPos = startPos;
     }
