@@ -9424,7 +9424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -799.99976, y: 0}
+  m_AnchoredPosition: {x: -799.9997, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &883949437
@@ -10165,7 +10165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: eb0322fb0be20984ab8484b1613ef0e4, type: 2}
   yourJobAsset: {fileID: 11400000, guid: 5d87b7016fbf9de4bbd220cc16b703c7, type: 2}
-  lesterBeaumontAsset: {fileID: 0}
+  lesterBeaumontAsset: {fileID: 11400000, guid: 98f314bde9d1c8b488a9fe0ec539a6d3, type: 2}
   unlockables:
   - investigatePanelText: '"Town Secrets"'
     dialogue: {fileID: 11400000, guid: 1f138ed9512468c409f7f4542fe9082a, type: 2}
