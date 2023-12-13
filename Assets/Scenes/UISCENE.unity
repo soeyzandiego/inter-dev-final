@@ -12890,7 +12890,7 @@ MonoBehaviour:
   mapPanel: {fileID: 244985398}
   suspectPanel: {fileID: 1300699931}
   dustParticles: {fileID: 1324718017}
-  walkModeButton: {fileID: 0}
+  walkModeButton: {fileID: 1444377668}
   currentRoom: {fileID: 1127233636}
   fadeToBlack: {fileID: 334899349}
   suspectPicture: {fileID: 1606198689}
