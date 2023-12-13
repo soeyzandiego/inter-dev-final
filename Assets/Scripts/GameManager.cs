@@ -27,6 +27,12 @@ public class GameManager : MonoBehaviour
     public static GameObject colby;
     public static GameObject rita;
 
+    [Header("ChallengeCompletion")]
+    public bool CHLG_S;
+    public bool CHLG_B;
+    public bool CHLG_C;
+    public bool CHLG_R;
+
     [Header("Suspect Panel Elements")]
     public Image suspectPicture;
     public TMP_Text suspectName;
@@ -53,6 +59,7 @@ public class GameManager : MonoBehaviour
     public Button[] buttons;
     public Button[] mapButtons;
     public GameObject[] clicker;
+    public GameObject researchAreaButton;
     public GameObject magGlass;
     public GameObject mapSelect;
     public GameObject MainMenu;
@@ -82,6 +89,7 @@ public class GameManager : MonoBehaviour
         }
         mapButton.SetActive(false);
         WalkModeToggle();
+        walkButtons.Remove(researchAreaButton.GetComponent<Button>());
     }
 
     //Main Method
