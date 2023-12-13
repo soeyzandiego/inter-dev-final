@@ -1762,7 +1762,7 @@ GameObject:
   - component: {fileID: 128383779}
   - component: {fileID: 128383778}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Challenge text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7719,6 +7719,10 @@ MonoBehaviour:
   suspectPanel: {fileID: 1300699931}
   currentRoom: {fileID: 1753592662}
   fadeToBlack: {fileID: 334899349}
+  CHLG_S: 0
+  CHLG_B: 0
+  CHLG_C: 0
+  CHLG_R: 0
   suspectPicture: {fileID: 1606198689}
   suspectName: {fileID: 1947288966}
   suspectQuote: {fileID: 1397433748}
@@ -7770,6 +7774,7 @@ MonoBehaviour:
   - {fileID: 76226103}
   - {fileID: 737524033}
   - {fileID: 974846297}
+  researchAreaButton: {fileID: 0}
   magGlass: {fileID: 766488358}
   mapSelect: {fileID: 894804098}
   MainMenu: {fileID: 1753592662}
@@ -9078,7 +9083,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -799.99976, y: 0}
+  m_AnchoredPosition: {x: -799.9997, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &883949437
