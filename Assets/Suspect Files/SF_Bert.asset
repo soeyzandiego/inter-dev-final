@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfab7fa1da22a224c865baf26f220a23, type: 3}
   m_Name: SF_Bert
   m_EditorClassIdentifier: 
-  suspectName: Bert
+  suspectName: Bert Ernest
   sprite: {fileID: -547671404, guid: 091cc82666709c34b8b753313d3249a2, type: 3}
   quote: "\"The artist! The visionary! The auteur!\r\r\""
   clues:
@@ -22,8 +22,8 @@ MonoBehaviour:
   - unlockId: RS_B_2
     text: Plans to destroy the research area to search for a temple.
     picture: {fileID: 21300000, guid: e4d9e12341a3f154fa8ae4001a6a3170, type: 3}
-  challengeUnlockID: 
-  challengeSolvedID: 
+  challengeUnlockID: B_CHAL
+  challengeSolvedID: B_CHAL_SOLVED
   challengeUnlocked: Colby said he heard Bert make a phone call recently talking
     about some temple...
   challengeSolved: Bert knows about the temple and is in fact planning and or wanting

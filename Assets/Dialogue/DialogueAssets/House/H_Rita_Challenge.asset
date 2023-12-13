@@ -122,4 +122,4 @@ MonoBehaviour:
     dialogue: "#The area the researcher has blocked off. Follow the animals and you
       will find the entrance.\r"
     choices: []
-    unlockID: 
+    unlockID: R_CHAL_SOLVED

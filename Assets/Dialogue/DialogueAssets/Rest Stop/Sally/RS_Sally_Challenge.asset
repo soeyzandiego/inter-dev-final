@@ -89,4 +89,4 @@ MonoBehaviour:
     dialogue: ")\u2026You\u2019re right\u2026 =Although, now I\u2019m not going to
       rule anything out going forward."
     choices: []
-    unlockID: 
+    unlockID: S_CHAL_SOLVED

@@ -32,8 +32,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text suspectName;
     public TMP_Text suspectQuote;
     public TMP_Text challengeText;
+    public TMP_Text challengeIndicator;
     public SuspectClueUI[] clueElements;
-
 
     [Header("Audio")]
     public AudioClip unloadPanelSound;
@@ -280,15 +280,18 @@ public class GameManager : MonoBehaviour
         {
             challengeText.enabled = true;
             challengeText.text = curSuspect.challengeSolved;
+            challengeIndicator.text = "SOLVED!";
         }
         else if (suspectClues.Contains(curSuspect.challengeUnlockID))
         {
             challengeText.enabled = true;
             challengeText.text = curSuspect.challengeUnlocked;
+            challengeIndicator.text = "Unlocked";
         }
         else
         {
             challengeText.enabled = false;
+            challengeIndicator.text = "???";
         }
     }
 

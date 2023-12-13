@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfab7fa1da22a224c865baf26f220a23, type: 3}
   m_Name: SF_Researcher
   m_EditorClassIdentifier: 
-  suspectName: Bert
+  suspectName: Colby Stevens
   sprite: {fileID: 2085956812, guid: df3f7ae1e8d93604da1ce14bd7b07262, type: 3}
   quote: '"It was the clueless expression on your face."'
   clues:
@@ -28,8 +28,8 @@ MonoBehaviour:
   - unlockId: RS_C_4
     text: He blocked off an area behind the town just for his research.
     picture: {fileID: 21300000, guid: 7a509a4732d77474185e3474fbcb0db5, type: 3}
-  challengeUnlockID: 
-  challengeSolvedID: 
+  challengeUnlockID: C_CHAL
+  challengeSolvedID: C_CHAL_SOLVED
   challengeUnlocked: Rita gave me some drawings of rare and exotic animals...
   challengeSolved: He might be trying to uncover the mysteries surrounding the town
     and the desert by posing as a researcher

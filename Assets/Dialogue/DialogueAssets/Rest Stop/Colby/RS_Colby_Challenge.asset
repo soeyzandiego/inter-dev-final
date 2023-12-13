@@ -91,4 +91,4 @@ MonoBehaviour:
     dialogue: '&It seems like you have already made up your mind detective, so I
       have nothing else I can say to you.'
     choices: []
-    unlockID: 
+    unlockID: C_CHAL_SOLVED

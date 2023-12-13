@@ -66,4 +66,4 @@ MonoBehaviour:
     dialogue: "%Blasphemy! You have nothing! I am just here to\u2026 to work on my
       art! Now leave me alone!"
     choices: []
-    unlockID: 
+    unlockID: B_CHAL_SOLVED
