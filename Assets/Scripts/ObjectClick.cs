@@ -13,6 +13,7 @@ public class ObjectClick : MonoBehaviour
     public GameObject dialogueBox; // Reference to the dialogue box UI GameObject
     public Button continueButton; // Reference to the "Continue" button 
     public Image grimoireBox; // Reference to the Image for the dialogue 
+    public GameObject map;
 
     [Header("Audio")]
     public AudioClip clickSound;
@@ -25,7 +26,7 @@ public class ObjectClick : MonoBehaviour
     private void Start()
     {
         gameManager = GetComponent<GameManager>();
-
+        map = GameObject.FindGameObjectWithTag("map");
         if (dialogueBox != null)
         {
             dialogueBox.SetActive(false);
@@ -140,6 +141,7 @@ public class ObjectClick : MonoBehaviour
         if(objectName.Equals("map"))
         {
             gameManager.unlockMap();
+            map.SetActive(false);
         }
 
         // Show the "Continue" button

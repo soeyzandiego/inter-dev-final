@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
     public GameObject currentRoom;
     [SerializeField] GameObject fadeToBlack;
 
+    [Header("Characters")]
+    public static GameObject sally;
+    public static GameObject bert;
+    public static GameObject colby;
+    public static GameObject rita;
+
     [Header("Suspect Panel Elements")]
     public Image suspectPicture;
     public TMP_Text suspectName;
@@ -298,5 +304,11 @@ public class GameManager : MonoBehaviour
     public void unlockMap()
     {
         mapButton.SetActive(true);
+    }
+
+    public static void disappearBertColby()
+    {
+        bert.SetActive(false);
+        colby.SetActive(false);
     }
 }
