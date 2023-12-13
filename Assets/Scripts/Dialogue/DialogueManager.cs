@@ -416,6 +416,7 @@ public class DialogueManager : MonoBehaviour
 
     public void LesterBeaumont()
     {
+        Debug.Log("lester played");
         typing = false;
         textToPlay = null;
         curAsset = talkingTo.lesterBeaumontAsset;
@@ -526,7 +527,7 @@ public class DialogueManager : MonoBehaviour
 
                 case "/":
                     // messes with the invis tag, fix later
-                    //bodyText.text = textToPlay.Substring(0, charIndex) + clueColorTag + textToPlay.Substring(charIndex);
+                    bodyText.text = textToPlay.Substring(0, charIndex) + clueColorTag + textToPlay.Substring(charIndex) + "</color>";
                 break;
 
                 default:
