@@ -30,6 +30,8 @@ public class DialogueClick : MonoBehaviour
     public GameObject sidebarButton;
     public GameObject profileButton;
 
+    bool finished = false;
+
     private void Awake()
     {
         if (profileButton != null) { profileButton.SetActive(false); }
@@ -80,13 +82,18 @@ public class DialogueClick : MonoBehaviour
         DialogueManager.PlayDialogue(asset, lineIndex, this);
     }
 
-    public void ExitDialogue(int newIndex)
+    public void FinishDialogue()
     {
-        lineIndex = newIndex;
+        finished = true; 
     }
 
     public void SetAsset(DialogueAsset newAsset)
     {
         asset = newAsset;
+    }
+
+    public bool IsFinished()
+    {
+        return finished;
     }
 }

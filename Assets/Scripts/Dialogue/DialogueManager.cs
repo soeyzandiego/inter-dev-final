@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Investigate Panel")]
     public GameObject investigatePanel;
     public GameObject[] unlockableElements;
+    public GameObject challengeChains;
 
     [Header("Text Writing")]
     public float delayTime = 0.1f;
@@ -143,6 +144,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         characterSprite.sprite = GetSprite(textToPlay[0].ToString());
                         GetComponent<Animator>().SetTrigger("SpriteAppear");
+                        characterSprite.enabled = true;
                     }
 
                     // start typing
@@ -191,18 +193,18 @@ public class DialogueManager : MonoBehaviour
                     GetComponent<Animator>().SetTrigger("SpriteChange");
 
                     // TODO lambda expression doesn't work with local variable from for loop, so... figure that out
-                    Button but1 = choiceElements[0].GetComponentInChildren<Button>();
+                    Button but1 = choiceElements[0].GetComponent<Button>();
                     but1.onClick.AddListener(() => ChooseOption(0));
-                    Button but2 = choiceElements[1].GetComponentInChildren<Button>();
+                    Button but2 = choiceElements[1].GetComponent<Button>();
                     but2.onClick.AddListener(() => ChooseOption(1));
-                    Button but3 = choiceElements[2].GetComponentInChildren<Button>();
+                    Button but3 = choiceElements[2].GetComponent<Button>();
                     but3.onClick.AddListener(() => ChooseOption(2));
 
                     for (int i = 0; i < choiceElements.Length; i++)
                     {
                         int index = i;
                         TMP_Text choiceText = choiceElements[i].GetComponentInChildren<TMP_Text>();
-                        Button choiceButton = choiceElements[i].GetComponentInChildren<Button>();
+                        Button choiceButton = choiceElements[i].GetComponent<Button>();
 
                         if (choices[i].text[0].ToString() == "!")
                         {
@@ -244,7 +246,8 @@ public class DialogueManager : MonoBehaviour
         curLineIndex = index;
         talkingTo = clicked;
 
-        state = DialogueStates.TALKING;
+        if (talkingTo.IsFinished()) { state = DialogueStates.INVESTIGATING; }
+        else { state = DialogueStates.TALKING; }
     }
 
     public static void PlayDialogue(DialogueAsset asset, int index, OnLastLine endAction)
@@ -305,6 +308,7 @@ public class DialogueManager : MonoBehaviour
             textToPlay = null;
 
             // we've reached the end of the conversation, show investigate panel
+            talkingTo.FinishDialogue();
             SwitchState(DialogueStates.INVESTIGATING);
             CheckUnlockables();
             //GetComponent<Animator>().SetTrigger("ForceClose");
@@ -333,6 +337,7 @@ public class DialogueManager : MonoBehaviour
             if (GameManager.suspectClues.Contains(ID)) { continue; }
             else { return; }
         }
+        challengeChains.SetActive(false);
         unlockableElements[talkingTo.unlockables.Length + 1].SetActive(true);
     }
 
@@ -499,6 +504,13 @@ public class DialogueManager : MonoBehaviour
                 break;
 
                 case ")":
+                    queuedSprite = GetSprite(character);
+                    if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    charIndex--;
+                break;
+
+                case "-":
                     queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
