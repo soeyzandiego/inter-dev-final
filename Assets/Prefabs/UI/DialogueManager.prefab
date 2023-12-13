@@ -891,14 +891,14 @@ MonoBehaviour:
       - m_Target: {fileID: 7563944610275369578}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: CloseDialogue
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &2142647582975174963
 GameObject:
@@ -1848,6 +1848,10 @@ PrefabInstance:
     - target: {fileID: 1677601263, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1677601263, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1677601263, guid: a66f10e88c7e79d4b9b6771a548469ba, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
