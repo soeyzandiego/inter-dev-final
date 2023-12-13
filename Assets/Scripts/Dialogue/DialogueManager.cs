@@ -323,13 +323,13 @@ public class DialogueManager : MonoBehaviour
             onLastLine();
             SwitchState(DialogueStates.NONE);
         }
-        //else if (curAsset.puzzle != null)
-        //{
-        //    GameObject puzzle = Instantiate(curAsset.puzzle);
-        //    LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
+        else if (curAsset.puzzle != null)
+        {
+            GameObject puzzle = Instantiate(curAsset.puzzle);
+            LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
 
-        //    puzzleManager.canvas = FindObjectOfType<GameManager>().currentRoom.GetComponentInChildren<Canvas>().gameObject;
-        //}
+            puzzleManager.canvas = FindObjectOfType<GameManager>().currentRoom.GetComponentInChildren<Canvas>().gameObject;
+        }
         else
         {
             typing = false;
