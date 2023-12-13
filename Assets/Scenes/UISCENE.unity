@@ -12906,6 +12906,7 @@ MonoBehaviour:
   unloadPanelSound: {fileID: 8300000, guid: 46999780ed3662246b278834b6bbeb85, type: 3}
   walkModeSound: {fileID: 8300000, guid: 1c2164c6cad13474698174485dce4abd, type: 3}
   mapPanelSound: {fileID: 8300000, guid: c8e603bbc9683e741bce075837d3401c, type: 3}
+  challengeSolvedSound: {fileID: 8300000, guid: c314c26adad46034ebe872ead065103d, type: 3}
   suspects:
   - {fileID: 11400000, guid: 3960364e6a69d7a4793fc38b335c5fbd, type: 2}
   - {fileID: 11400000, guid: 9822bbf53f14783499247c41b17d943a, type: 2}
@@ -13968,7 +13969,7 @@ MonoBehaviour:
         m_MethodName: moveToRoom
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 814333015}
+          m_ObjectArgument: {fileID: 264864171}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -48502,6 +48503,7 @@ GameObject:
   - component: {fileID: 1795245530}
   - component: {fileID: 1795245532}
   - component: {fileID: 1795245531}
+  - component: {fileID: 1795245533}
   m_Layer: 0
   m_Name: Glove
   m_TagString: gloves
@@ -48602,6 +48604,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1795245533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795245529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfe219765f854e4f981b74c3ab914ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 2216511898867650515, guid: e4175bef9eefdbf4cbe6e0084523b3b6, type: 3}
+  logicPuzzleCanvas: {fileID: 0}
 --- !u!1 &1822428125
 GameObject:
   m_ObjectHideFlags: 0
@@ -51037,6 +51053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7563944610275369578, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
+      propertyPath: newInfoSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e8505ac1401c11642be4b74659728817, type: 3}
     - target: {fileID: 7563944610275369579, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
       propertyPath: m_RootOrder
       value: 8

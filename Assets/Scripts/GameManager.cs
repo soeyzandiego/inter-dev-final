@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public AudioClip unloadPanelSound;
     public AudioClip walkModeSound;
     public AudioClip mapPanelSound;
+    public AudioClip challengeSolvedSound;
 
     [Header("Suspect Profiles")]
     public SuspectFile[] suspects;

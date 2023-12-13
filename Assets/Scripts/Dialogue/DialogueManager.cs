@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Audio")]
     public AudioClip skipSound;
     public AudioClip buttonSound;
+    public AudioClip newInfoSound;
 
     [Header("UI Elements")]
     public GameObject dialoguePanel;
@@ -190,6 +191,7 @@ public class DialogueManager : MonoBehaviour
                         {
                             // update case file indicator
                             GetComponent<Animator>().SetTrigger("SuspectUpdated");
+                            if (newInfoSound != null) { SoundManager.PlaySound(newInfoSound); }
                         }
                     }
 

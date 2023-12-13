@@ -39,6 +39,7 @@ public class DialogueClick : MonoBehaviour
 
     private void Update()
     {
+        if (LogicPuzzleManager.logicOpen) { return; }
         // if there's a conversation going on, don't look for dialogue clicks
         if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
         // if a panel is open, don't look for dialogue clicks

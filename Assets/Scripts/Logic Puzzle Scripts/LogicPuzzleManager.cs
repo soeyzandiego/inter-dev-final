@@ -32,15 +32,11 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] public GameObject canvas; // associated canvas object's game object.
     [SerializeField] public GameManager gameManager;
 
+    [HideInInspector] static public bool logicOpen;
+
     void Start()
     {
-        foreach (GameObject clicker in gameManager.clicker)
-        {
-            if (clicker.GetComponent<Collider2D>() != null)
-            {
-                clicker.GetComponent<Collider2D>().enabled = false;
-            }
-        }
+        logicOpen = true;
 
         confirmButton = Instantiate(confirmButtonPrefab, canvas.transform);
         confirmButton.GetComponent<Button>().onClick.AddListener(() => { CheckCorrect(); });
@@ -158,6 +154,7 @@ public class LogicPuzzleManager : MonoBehaviour
 
         Debug.Log("correct");
         GameManager.UnlockClue(clueID);
+        SoundManager.PlaySound(FindObjectOfType<GameManager>().challengeSolvedSound);
         Destroy(gameObject);
 
         return;
@@ -165,13 +162,7 @@ public class LogicPuzzleManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach (GameObject clicker in gameManager.clicker)
-        {
-            if (clicker.GetComponent<Collider2D>() != null)
-            {
-                clicker.GetComponent<Collider2D>().enabled = true;
-            }
-        }
+        logicOpen = false;
 
         foreach (GameObject o in logicSlot)
         {
