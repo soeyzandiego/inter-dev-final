@@ -176,7 +176,7 @@ MonoBehaviour:
     unlockID: 
   - character: {fileID: 0}
     dialogue: "\rColby makes a run for it, but luckily Detective Grimoire was already
-      one step ahead.\r He grabs the camel and runs after Colby.\n"
+      one step ahead. He grabs the camel and runs after Colby.\n"
     choices: []
     unlockID: 
   - character: {fileID: 0}

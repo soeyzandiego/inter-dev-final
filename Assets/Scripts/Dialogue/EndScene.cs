@@ -40,9 +40,14 @@ public class EndScene : MonoBehaviour, ICutscenePlayer
     void StartDialogue()
     {
         onLastLine = EndAction;
+        FindObjectOfType<DialogueManager>().ToggleEndChallengeMode(true, RemoveIndicators()); // TODO um different way to do this plz
         DialogueManager.PlayDialogue(asset, 0, onLastLine);
-        string lastLineText = asset.lines[asset.lines.Count].dialogue;
-        FindObjectOfType<DialogueManager>().ToggleEndChallengeMode(true, lastLineText); // TODO um different way to do this plz
+    }
+
+    string RemoveIndicators()
+    {
+        string lastLineText = asset.lines[asset.lines.Count - 1].dialogue;
+        return lastLineText.Substring(1);
     }
 
     public void EndAction()
