@@ -346,6 +346,7 @@ public class DialogueManager : MonoBehaviour
         else if (curAsset.puzzle != null)
         {
             CloseDialogue(true);
+            SwitchState(DialogueStates.NONE);
 
             GameObject puzzle = Instantiate(curAsset.puzzle, logicPuzzleCanvas.transform);
             LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
