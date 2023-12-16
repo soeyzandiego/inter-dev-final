@@ -8759,7 +8759,7 @@ GameObject:
   - component: {fileID: 326437893}
   m_Layer: 0
   m_Name: toRoom5
-  m_TagString: WalkButton
+  m_TagString: researchAreaButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12912,7 +12912,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9822bbf53f14783499247c41b17d943a, type: 2}
   - {fileID: 11400000, guid: 8c7e12d6974603f4b83f91bc048070fc, type: 2}
   - {fileID: 11400000, guid: 01e5e74d9d8eed8489c192f808c74e9c, type: 2}
-  walkButtons: []
   buttons:
   - {fileID: 0}
   mapButtons:
@@ -12948,7 +12947,6 @@ MonoBehaviour:
   - {fileID: 1822428125}
   - {fileID: 12705895}
   - {fileID: 969857144}
-  researchAreaButton: {fileID: 326437891}
   magGlass: {fileID: 766488358}
   mapSelect: {fileID: 894804098}
   MainMenu: {fileID: 1753592662}
