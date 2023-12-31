@@ -89,11 +89,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicWheelDesc.Array.data[5]
-      value: when Coby didn't.
+      value: when Colby didn't.
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicWheelDesc.Array.data[6]
-      value: when Bret didn't.
+      value: when Bert didn't.
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicWheelDesc.Array.data[7]
@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicObjectDesc.Array.data[4]
-      value: Bret
+      value: Bert
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicObjectDesc.Array.data[5]

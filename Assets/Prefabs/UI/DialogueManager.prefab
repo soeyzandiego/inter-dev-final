@@ -1793,6 +1793,7 @@ MonoBehaviour:
     unlockID: 
   skipSound: {fileID: 8300000, guid: d8cd25d58913fdc4e8b0f217976e4d74, type: 3}
   buttonSound: {fileID: 8300000, guid: 46999780ed3662246b278834b6bbeb85, type: 3}
+  newInfoSound: {fileID: 0}
   dialoguePanel: {fileID: 5195058801442881808}
   characterSprite: {fileID: 5195058801506163335}
   talkPanel: {fileID: 5195058802620452246}
@@ -1810,7 +1811,7 @@ MonoBehaviour:
   - {fileID: 4824680810514535300}
   challengeChains: {fileID: 2142647582975174963}
   delayTime: 0.045
-  endTime: 1.5
+  endTime: 1.8
   spriteIndicators:
   - '#'
   - $

@@ -6,6 +6,11 @@ using TMPro;
 
 public class LogicPuzzleManager : MonoBehaviour
 {
+    [Header("Audio")]
+    [SerializeField] AudioClip incorrectSound;
+    [SerializeField] AudioClip correctSound;
+
+    [Header("Logic")]
     [SerializeField] GameObject logicObjectPrefab; // Prefab for the draggable evidence pieces.
     [SerializeField] GameObject logicSlotPrefab; // Prefab for the empty evidence slot that the evidence pieces should snap to.
     [SerializeField] GameObject logicWheelPrefab; // Prefab for the logic wheel (e.g "has always had permission from", "only recently got permission from", etc.
@@ -36,6 +41,8 @@ public class LogicPuzzleManager : MonoBehaviour
 
     void Start()
     {
+        if (FindObjectOfType<DialogueManager>() != null) { FindObjectOfType<DialogueManager>().CloseDialogue(false); }
+        if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(false); }
         logicOpen = true;
 
         confirmButton = Instantiate(confirmButtonPrefab, canvas.transform);
@@ -139,7 +146,7 @@ public class LogicPuzzleManager : MonoBehaviour
 
     public void CheckCorrect()
     {
-        Debug.Log("Works");
+        //Debug.Log("checking");
 
         for (int i = 0; i < 2; i++)
         {
@@ -148,13 +155,15 @@ public class LogicPuzzleManager : MonoBehaviour
 
             if (!tempSlot.CheckEvidence() || !tempWheel.correctEvidence)
             {
+                SoundManager.PlaySound(incorrectSound);
                 return;
             }
         }
 
-        Debug.Log("correct");
+        //Debug.Log("correct");
+        //Debug.Log(clueID);
         GameManager.UnlockClue(clueID);
-        SoundManager.PlaySound(FindObjectOfType<GameManager>().challengeSolvedSound);
+        SoundManager.PlaySound(correctSound, 1.5f);
         Destroy(gameObject);
 
         return;
@@ -163,6 +172,7 @@ public class LogicPuzzleManager : MonoBehaviour
     private void OnDestroy()
     {
         logicOpen = false;
+        if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(true); }
 
         foreach (GameObject o in logicSlot)
         {

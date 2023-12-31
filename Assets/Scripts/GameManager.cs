@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         researchAreaButton = GameObject.FindGameObjectWithTag("researchAreaButton");
+
         transform.position = currentRoom.transform.position;
 
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
@@ -96,13 +97,12 @@ public class GameManager : MonoBehaviour
         if (loadPanel)
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(0.1f, 0, 0), Time.deltaTime * 5);
-            walkModeButton.SetActive(false);
+            SetWalkModeButtonActive(false);
         }
 
         else
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-18, 0, 0), Time.deltaTime * 5);
-            walkModeButton.SetActive(true);
         }
 
         if (Input.GetMouseButtonDown(0) && currentRoom.name == "Thank You") { moveToRoom(MainMenu); }
@@ -186,7 +186,6 @@ public class GameManager : MonoBehaviour
     //Method to move from room to room
     public void moveToRoom(GameObject room)
     {
-        Debug.Log(room.layer);
         if (room.layer == LayerMask.NameToLayer("NoDust")) { dustParticles.StopDust(); }
         else { dustParticles.StartDust(); }
 
@@ -226,6 +225,7 @@ public class GameManager : MonoBehaviour
         cluesPanel.SetActive(false);
         mapPanel.SetActive(false);
         suspectPanel.SetActive(false);
+        SetWalkModeButtonActive(true);
 
         if (unloadPanelSound != null) { SoundManager.PlaySound(unloadPanelSound); }
     }
@@ -273,7 +273,7 @@ public class GameManager : MonoBehaviour
         
         for (int i = 0; i < clueElements.Length; i++)
         {
-            // if the GameManager has unlocked the ID for the clue
+            // if the GameManager has unlocked the ID for the clue, show the clue
             if (curSuspect.clues.Length > i && suspectClues.Contains(curSuspect.clues[i].unlockId))
             {
                 clueElements[i].SetClue(curSuspect.clues[i].picture, curSuspect.clues[i].text);
@@ -312,27 +312,33 @@ public class GameManager : MonoBehaviour
             suspectClues.Add(_id);
         }
 
-        if(_id.Equals("R_CHAL"))
+        if(_id.Equals("R_CHAL_SOLVED"))
         {
+            Debug.Log("research area unlocked");
             researchAreaButton.SetActive(true);
             walkButtons.Add(researchAreaButton.GetComponent<Button>());
         }
         return wasUnlocked;
     }
 
-    public void unlockMap()
+    public void UnlockMap()
     {
         mapButton.SetActive(true);
     }
 
-    public static void disappearBertColby()
+    public void SetWalkModeButtonActive(bool active)
     {
-        bert.SetActive(false);
-        colby.SetActive(false);
+        walkModeButton.SetActive(active);
     }
 
-    public void unlockResearchArea()
-    {
-        walkButtons.Add(researchAreaButton.GetComponent<Button>());
-    }
+    //public static void disappearBertColby()
+    //{
+    //    bert.SetActive(false);
+    //    colby.SetActive(false);
+    //}
+
+    //public void unlockResearchArea()
+    //{
+    //    walkButtons.Add(researchAreaButton.GetComponent<Button>());
+    //}
 }

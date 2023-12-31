@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfab7fa1da22a224c865baf26f220a23, type: 3}
-  m_Name: SF_Researcher
+  m_Name: SF_Colby
   m_EditorClassIdentifier: 
   suspectName: Colby Stevens
   sprite: {fileID: 2085956812, guid: df3f7ae1e8d93604da1ce14bd7b07262, type: 3}

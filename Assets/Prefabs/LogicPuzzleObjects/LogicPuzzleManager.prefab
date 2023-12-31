@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6628910c06bdfb440b9e8037bcf6d122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  incorrectSound: {fileID: 8300000, guid: 5848bb1bb9233724d8da4fa5e2c726fa, type: 3}
+  correctSound: {fileID: 8300000, guid: c314c26adad46034ebe872ead065103d, type: 3}
   logicObjectPrefab: {fileID: 5827238663057444350, guid: ac492e834d18ad541b37fbd2b4b532b1, type: 3}
   logicSlotPrefab: {fileID: 1954820145386000621, guid: b69778122f6dc8448830a9200c424c90, type: 3}
   logicWheelPrefab: {fileID: 7422991683388347869, guid: 6dec5cdec2fea4e4fbf3e80f353dd284, type: 3}
@@ -96,9 +98,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  hLobjectOffset: {x: 3, y: 0}
-  vLobjectOffset: {x: 0, y: 1.75}
+  hLobjectOffset: {x: 3, y: 0, z: 0}
+  vLobjectOffset: {x: 0, y: 1.75, z: 0}
   confirmButton: {fileID: 0}
   question: {fileID: 0}
   background: {fileID: 0}
+  clueID: 
   canvas: {fileID: 0}
+  gameManager: {fileID: 0}

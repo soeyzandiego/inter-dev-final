@@ -261,7 +261,6 @@ public class DialogueManager : MonoBehaviour
                     choicePanel.SetActive(false);
                     investigatePanel.SetActive(true);
 
-                    Debug.Log("investigate");
                     // turn off challenge mode
                     challengeMode = false;
 
@@ -321,7 +320,6 @@ public class DialogueManager : MonoBehaviour
         // we've reached the end of the conversation, 
         // either play the stored delegate, start a logic puzzle, or go to investigate panel
 
-
         // IDK FIX THIS LATER
         if (endChallengeMode)
         {
@@ -338,7 +336,6 @@ public class DialogueManager : MonoBehaviour
                 return;
             }
         }
-        // DISREGARD THIS ^^^^^
 
         if (onLastLine != null)
         {

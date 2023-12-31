@@ -146,7 +146,7 @@ public class ObjectClick : MonoBehaviour
 
         if(objectName.Equals("map"))
         {
-            gameManager.unlockMap();
+            gameManager.UnlockMap();
             gameManager.clicker.Remove(map);
             Destroy(map);
         }

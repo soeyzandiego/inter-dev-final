@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dfab7fa1da22a224c865baf26f220a23, type: 3}
-  m_Name: SF_OldLady
+  m_Name: SF_Rita
   m_EditorClassIdentifier: 
   suspectName: Rita Weber
   sprite: {fileID: 562155336, guid: 31ef9e3ab5271fb47a584815fcb8333a, type: 3}
