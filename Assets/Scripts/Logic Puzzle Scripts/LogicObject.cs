@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LogicObject : MonoBehaviour
 {
-    public GameObject logicSlot;
-    public Vector3 startPos;
-    public Vector3 targetPos;
-    public int evidenceNum;
+    [HideInInspector] public GameObject logicSlot;
+    [HideInInspector] public Vector3 startPos;
+    [HideInInspector] public Vector3 targetPos;
+    [HideInInspector] public int evidenceNum;
 
     private void Start()
     {
@@ -18,16 +19,19 @@ public class LogicObject : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("LogicSlot"))
         {
-            Debug.Log("collided");
-            GameObject tmp = collision.gameObject;
-            if(tmp.GetComponent<LogicSlot>().logicObject != null)
+            LogicSlot slot = collision.gameObject.GetComponent<LogicSlot>();
+            if(slot.logicObject != null)
             {
-                tmp.GetComponent<LogicSlot>().logicObject.GetComponent<LogicObject>().logicSlot = null;
-                tmp.GetComponent<LogicSlot>().logicObject.GetComponent<LogicObject>().targetPos = tmp.GetComponent<LogicSlot>().logicObject.GetComponent<LogicObject>().startPos;
+                //Debug.Log("swapped logic objects");
+                LogicObject curObject = slot.logicObject;
+                curObject.targetPos = curObject.startPos;
+                curObject.transform.position = curObject.targetPos;
+                
+                slot.logicObject.logicSlot = null;
             }
             logicSlot = collision.gameObject;
             targetPos = collision.transform.position + new Vector3(0, 0, -1);
-            logicSlot.GetComponent<LogicSlot>().logicObject = this.gameObject;
+            logicSlot.GetComponent<LogicSlot>().logicObject = this;
             logicSlot.GetComponent<LogicSlot>().currentEvidence = evidenceNum;
         }
     }

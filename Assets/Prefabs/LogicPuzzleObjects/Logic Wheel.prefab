@@ -253,6 +253,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentIndex: 0
+  scrollSound: {fileID: 8300000, guid: 433ca4fb508a7254c808d8f3f2352225, type: 3}
 --- !u!1 &9095801618679667741
 GameObject:
   m_ObjectHideFlags: 0

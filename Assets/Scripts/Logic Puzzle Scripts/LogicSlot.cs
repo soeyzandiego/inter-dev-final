@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LogicSlot : MonoBehaviour
 {
-    public GameObject logicObject;
+    public LogicObject logicObject;
     public int currentEvidence = 9;
     public int rightEvidence;
 
@@ -16,7 +16,7 @@ public class LogicSlot : MonoBehaviour
         {
             return false;
         }
-        currentEvidence = logicObject.GetComponent<LogicObject>().evidenceNum;
+        currentEvidence = logicObject.evidenceNum;
         if (currentEvidence == rightEvidence )
         {
             Debug.Log("correct noun");

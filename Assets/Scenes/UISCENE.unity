@@ -47527,7 +47527,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4658258961b09f1498c7e6aab6c85f33, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.27
+  m_Volume: 0.22
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -49139,12 +49139,12 @@ GameObject:
   - component: {fileID: 1872703547}
   - component: {fileID: 1872703546}
   m_Layer: 5
-  m_Name: Unload Panel Button (2)
+  m_Name: Drop Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1872703545
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50056,7 +50056,7 @@ GameObject:
   - component: {fileID: 1980874245}
   - component: {fileID: 1980874244}
   m_Layer: 5
-  m_Name: Profile Background Shadow
+  m_Name: Panel Drop Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50079,7 +50079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -38.810066, y: -5.5049996}
+  m_AnchoredPosition: {x: -23.1, y: -5.5049996}
   m_SizeDelta: {x: 542, y: 421.94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1980874244

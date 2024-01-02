@@ -197,7 +197,7 @@ public class GameManager : MonoBehaviour
             button.gameObject.SetActive(walkMode);
             button.interactable = walkMode;
         }
-        GameObject.FindGameObjectWithTag("WalkModeToggle").GetComponent<Button>().interactable = true;
+        walkModeButton.GetComponent<Button>().interactable = true;
     }
 
     // Method to swap out the gate button after puzzle has been completed.

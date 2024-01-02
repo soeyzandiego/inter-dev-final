@@ -9,6 +9,8 @@ public class LogicPuzzleManager : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioClip incorrectSound;
     [SerializeField] AudioClip correctSound;
+    [SerializeField] AudioClip pickUpSound;
+    [SerializeField] AudioClip slotSound;
 
     [Header("Logic")]
     [SerializeField] GameObject logicObjectPrefab; // Prefab for the draggable evidence pieces.
@@ -108,15 +110,26 @@ public class LogicPuzzleManager : MonoBehaviour
             Collider2D selectedObject = Physics2D.OverlapPoint(mousePosition);
             if (selectedObject != null && selectedObject.gameObject.tag.Equals("LogicObject"))
             {
-                selectedItem = selectedObject.transform.gameObject;
+                SoundManager.PlaySound(pickUpSound, 0.65f);
+                selectedItem = selectedObject.gameObject;
                 selectOffset = selectedItem.transform.position - mousePosition;
             }
         }
 
         if (Input.GetMouseButtonUp(0) && selectedItem != null)
         {
+            if (selectedItem.tag.Equals("LogicObject"))
+            {
+                // if mouse is released while logic object touching the logic slot
+                if (selectedItem.GetComponent<LogicObject>().logicSlot != null)
+                {
+                    SoundManager.PlaySound(slotSound, 0.65f);
+                }
+            }
+
             selectedItem.transform.position = selectedItem.GetComponent<LogicObject>().targetPos;
             selectedItem = null;
+
         }
 
         if (selectedItem != null)

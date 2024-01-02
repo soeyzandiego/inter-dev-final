@@ -28,6 +28,8 @@ public class LogicWheel : MonoBehaviour
 
     [SerializeField] int currentIndex; // the index currently being displayed
 
+    [Header("Audio")]
+    [SerializeField] AudioClip scrollSound;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +62,8 @@ public class LogicWheel : MonoBehaviour
     // Increments current index and displays the text by editing the previous displayedString object.
     public void ScrollUp()
     {
+        SoundManager.PlaySound(scrollSound, 0.5f);
+
         currentIndex++;
         if(currentIndex >= evidence.Length)
         {
@@ -79,6 +83,8 @@ public class LogicWheel : MonoBehaviour
     }
     public void ScrollDown()
     {
+        SoundManager.PlaySound(scrollSound, 0.5f);
+
         currentIndex--;
         if (currentIndex < 0)
         {
