@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class DialogueClick : MonoBehaviour
 {
+    [SerializeField] Sprite hoverSprite;
+    Sprite defaultSprite;
+
     [Header("Dialogue")]
-    public DialogueAsset asset;
-    public DialogueAsset yourJobAsset;
-    public DialogueAsset lesterBeaumontAsset;
-    public DialogueUnlockable[] unlockables;
-    public DialogueUnlockable challenge;
+    [SerializeField] public DialogueAsset asset;
+    [SerializeField] public DialogueAsset yourJobAsset;
+    [SerializeField] public DialogueAsset lesterBeaumontAsset;
+    [SerializeField] public DialogueUnlockable[] unlockables;
+    [SerializeField] public DialogueUnlockable challenge;
 
     [Header("Audio")]
-    public AudioClip clickSound;
+    [SerializeField] AudioClip clickSound;
 
     [System.Serializable]
     public class DialogueUnlockable
@@ -21,20 +24,27 @@ public class DialogueClick : MonoBehaviour
         public string investigatePanelText;
         public DialogueAsset dialogue;
         public string[] unlockIds;
-        [HideInInspector] public bool unlocked = false;
     }
 
-    int lineIndex = 0;
-
     [Header("UI Elements")]
-    public GameObject sidebarButton;
-    public GameObject profileButton;
+    [SerializeField] GameObject sidebarButton;
+    [SerializeField] GameObject profileButton;
 
+    int lineIndex = 0;
     bool finished = false;
+
+    SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         if (profileButton != null) { profileButton.SetActive(false); }
+    }
+
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        defaultSprite = spriteRenderer.sprite;
     }
 
     private void Update()
@@ -47,25 +57,32 @@ public class DialogueClick : MonoBehaviour
         // if walk mode is active, don't look for dialogue clicks
         if (GameManager.walkMode) { return; }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            // raycast bs
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Ray2D ray = new Ray2D(mousePosition, Vector2.zero);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Ray2D ray = new Ray2D(mousePosition, Vector2.zero);
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-            if (hit.collider != null)
+        if (hit.collider != null)
+        {
+            if (hit.collider.gameObject == gameObject) 
             {
-                if (hit.collider.gameObject == gameObject)
+                // hovering
+                spriteRenderer.sprite = hoverSprite;
+
+                if (Input.GetMouseButtonDown(0))
                 {
                     if (clickSound != null) { SoundManager.PlaySound(clickSound); }
+                    spriteRenderer.sprite = defaultSprite;
                     StartDialogue();
                 }
             }
         }
+        else
+        {
+            spriteRenderer.sprite = defaultSprite;
+        }
     }
 
-    // TODO look into, OnMouseDown can't raycast to this collider when the overlay camera is active
+    // TODO look into, OnMouse functions can't raycast to this collider when the overlay camera is active
     //void OnMouseDown()
     //{
     //    Debug.Log("pressed");

@@ -6,41 +6,43 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Sprite choiceCharSprite; // the sprite to display when the choice menu is open
-    public DialogueAsset tempAsset; // used to store assets with new choice lines
-    public DialogueAsset.DialogueLine tempLine; // used to add a line after making a choice
+    [SerializeField] Sprite choiceCharSprite; // the sprite to display when the choice menu is open
+    [SerializeField] DialogueAsset tempAsset; // used to store assets with new choice lines
+    [SerializeField] DialogueAsset.DialogueLine tempLine; // used to add a line after making a choice
     [Space(10)]
 
     [Header("Audio")]
-    public AudioClip skipSound;
-    public AudioClip buttonSound;
-    public AudioClip newInfoSound;
+    [SerializeField] AudioClip skipSound;
+    [SerializeField] AudioClip buttonSound;
+    [SerializeField] AudioClip newInfoSound;
+    [SerializeField] AudioClip rightAnswerSound;
+    [SerializeField] AudioClip wrongAnswerSound;
 
     [Header("UI Elements")]
-    public GameObject dialoguePanel;
-    public Image characterSprite;
+    [SerializeField] GameObject dialoguePanel;
+    [SerializeField] Image characterSprite;
 
     [Header("Talk Panel")]
-    public GameObject talkPanel;
-    public TMP_Text bodyText;
-    public TMP_Text nameText;
+    [SerializeField] GameObject talkPanel;
+    [SerializeField] TMP_Text bodyText;
+    [SerializeField] TMP_Text nameText;
 
     [Header("Choice Panel")]
-    public GameObject choicePanel;
-    public GameObject[] choiceElements;
+    [SerializeField] GameObject choicePanel;
+    [SerializeField] GameObject[] choiceElements;
 
     [Header("Investigate Panel")]
-    public GameObject investigatePanel;
-    public GameObject[] unlockableElements;
-    public GameObject challengeChains;
+    [SerializeField] GameObject investigatePanel;
+    [SerializeField] GameObject[] unlockableElements;
+    [SerializeField] GameObject challengeChains;
 
     [Header("Text Writing")]
-    public float delayTime = 0.1f;
-    public float endTime = 1.2f;
-    public string[] spriteIndicators; // possible sprite indicators
+    [SerializeField] float delayTime = 0.1f;
+    [SerializeField] float endTime = 1.2f;
+    [SerializeField] string[] spriteIndicators; // possible sprite indicators
 
     [Header("Logic Puzzle")]
-    public GameObject logicPuzzleCanvas;
+    [SerializeField] GameObject logicPuzzleCanvas;
     
     string textToPlay = "";
     bool lineDone = false;
@@ -320,7 +322,6 @@ public class DialogueManager : MonoBehaviour
         // we've reached the end of the conversation, 
         // either play the stored delegate, start a logic puzzle, or go to investigate panel
 
-        // IDK FIX THIS LATER
         if (endChallengeMode)
         {
             Debug.Log("end challenge");
@@ -429,6 +430,7 @@ public class DialogueManager : MonoBehaviour
             {
                 // add the "not right line" as the only line so it goes straight back to INVESTIGATING
 
+                SoundManager.PlaySound(wrongAnswerSound);
                 Debug.Log("wrong answer");
 
                 tempAsset.lines.Clear();
@@ -441,6 +443,8 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
+                if (challengeMode) { SoundManager.PlaySound(rightAnswerSound); }
+
                 if (curAsset == tempAsset)
                 {
                     tempLine.dialogue = choices[choice].fullText;

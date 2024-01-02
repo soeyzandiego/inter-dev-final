@@ -517,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d3d995b32c08140b2cb13f2fa09066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverSprite: {fileID: 21300000, guid: db05bee05d62ce54695dcc857fea6f6d, type: 3}
   asset: {fileID: 11400000, guid: a46dabd634f69cb43ad6b9e1a94d6193, type: 2}
   yourJobAsset: {fileID: 11400000, guid: fe64c36ac620ae44cbdceb24e6c703b3, type: 2}
   lesterBeaumontAsset: {fileID: 11400000, guid: 2b5696706f045bc419abe14d6ce79e12, type: 2}
@@ -525,18 +526,15 @@ MonoBehaviour:
     dialogue: {fileID: 11400000, guid: 69ef8c9628ba4a7449e458def0471600, type: 2}
     unlockIds:
     - H_R_3
-    unlocked: 0
   - investigatePanelText: '"Temple?"'
     dialogue: {fileID: 11400000, guid: dfcc2af36f5fe41488152ebed9df393f, type: 2}
     unlockIds:
     - RS_S_2
-    unlocked: 0
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: 34129eb9c6305794da10d3f0953a9e7f, type: 2}
     unlockIds:
     - R_CHAL
-    unlocked: 0
   clickSound: {fileID: 8300000, guid: 7595fb35ba5d24e4e94e731d9de31749, type: 3}
   sidebarButton: {fileID: 1954154987}
   profileButton: {fileID: 164768973}
@@ -6533,7 +6531,7 @@ GameObject:
   - component: {fileID: 114204021}
   - component: {fileID: 114204020}
   m_Layer: 0
-  m_Name: toRoom3
+  m_Name: toOutsideRestStop
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8673,7 +8671,7 @@ GameObject:
   - component: {fileID: 326437894}
   - component: {fileID: 326437893}
   m_Layer: 0
-  m_Name: toRoom5
+  m_Name: toResearchArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10535,7 +10533,7 @@ GameObject:
   - component: {fileID: 503938311}
   - component: {fileID: 503938310}
   m_Layer: 0
-  m_Name: toRoom5
+  m_Name: toResearchArea
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12985,7 +12983,7 @@ GameObject:
   - component: {fileID: 788624852}
   - component: {fileID: 788624851}
   m_Layer: 0
-  m_Name: toRoom7
+  m_Name: toRestStop
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13807,7 +13805,7 @@ GameObject:
   - component: {fileID: 852500925}
   - component: {fileID: 852500928}
   m_Layer: 0
-  m_Name: toRoom3
+  m_Name: toOutsideRestStop
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15232,6 +15230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d3d995b32c08140b2cb13f2fa09066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverSprite: {fileID: 21300000, guid: 31dc423ce2fc9b047848ca4a3aaa31ae, type: 3}
   asset: {fileID: 11400000, guid: eb0322fb0be20984ab8484b1613ef0e4, type: 2}
   yourJobAsset: {fileID: 11400000, guid: 5d87b7016fbf9de4bbd220cc16b703c7, type: 2}
   lesterBeaumontAsset: {fileID: 11400000, guid: 98f314bde9d1c8b488a9fe0ec539a6d3, type: 2}
@@ -15240,18 +15239,15 @@ MonoBehaviour:
     dialogue: {fileID: 11400000, guid: 1f138ed9512468c409f7f4542fe9082a, type: 2}
     unlockIds:
     - H_R_3
-    unlocked: 0
   - investigatePanelText: '"Temple?"'
     dialogue: {fileID: 11400000, guid: 31a02d86418978b4cabc1fb64106e857, type: 2}
     unlockIds:
     - RS_S_2
-    unlocked: 0
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: f451858c1f9e1ee40aa2bed8c90ac896, type: 2}
     unlockIds:
     - S_CHAL
-    unlocked: 0
   clickSound: {fileID: 8300000, guid: 7595fb35ba5d24e4e94e731d9de31749, type: 3}
   sidebarButton: {fileID: 95015108}
   profileButton: {fileID: 520901801}
@@ -15894,7 +15890,7 @@ GameObject:
   - component: {fileID: 1032594615}
   - component: {fileID: 1032594614}
   m_Layer: 0
-  m_Name: toRoom3
+  m_Name: toOutsideRestStop
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23093,7 +23089,7 @@ GameObject:
   - component: {fileID: 1221344159}
   - component: {fileID: 1221344158}
   m_Layer: 0
-  m_Name: toRoom6
+  m_Name: toTemple
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34617,7 +34613,7 @@ GameObject:
   - component: {fileID: 1394223168}
   - component: {fileID: 1394223167}
   m_Layer: 0
-  m_Name: toRoom2
+  m_Name: toEntrance
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36342,7 +36338,7 @@ GameObject:
   - component: {fileID: 1555481958}
   - component: {fileID: 1555481957}
   m_Layer: 0
-  m_Name: toRoom4 (1)
+  m_Name: toOutsideRestStop
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47949,6 +47945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d3d995b32c08140b2cb13f2fa09066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverSprite: {fileID: 21300000, guid: 14923648c6b322e40beece7cbc0f7046, type: 3}
   asset: {fileID: 11400000, guid: 35b97bae0c5047349b9b41390db4e77d, type: 2}
   yourJobAsset: {fileID: 11400000, guid: 508b3db9acb2de541abef3298aafc88f, type: 2}
   lesterBeaumontAsset: {fileID: 11400000, guid: adb70ac70c2723a4fabc95e6392a3b87, type: 2}
@@ -47957,18 +47954,15 @@ MonoBehaviour:
     dialogue: {fileID: 11400000, guid: 730044e41a6b79941b8716185b5f1d85, type: 2}
     unlockIds:
     - H_R_3
-    unlocked: 0
   - investigatePanelText: '"Temple?"'
     dialogue: {fileID: 11400000, guid: 4fe43140a11323a4d9aee09d62e9e97e, type: 2}
     unlockIds:
     - RS_S_2
-    unlocked: 0
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: 8b397727b7ee33c4b9659d9f047d3bcc, type: 2}
     unlockIds:
     - B_CHAL
-    unlocked: 0
   clickSound: {fileID: 8300000, guid: 7595fb35ba5d24e4e94e731d9de31749, type: 3}
   sidebarButton: {fileID: 298994718}
   profileButton: {fileID: 1613516988}
@@ -48577,6 +48571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d3d995b32c08140b2cb13f2fa09066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverSprite: {fileID: 21300000, guid: b9e36dee9c67a4048b2bb61e5d2a1685, type: 3}
   asset: {fileID: 11400000, guid: 1c604afc2a3ecf64eb91d8557c8d929f, type: 2}
   yourJobAsset: {fileID: 11400000, guid: 93f5b1ad014433b4e8cfb3f04cf18de2, type: 2}
   lesterBeaumontAsset: {fileID: 11400000, guid: eee7c4cad1255674aa022704b7280536, type: 2}
@@ -48585,18 +48580,15 @@ MonoBehaviour:
     dialogue: {fileID: 11400000, guid: 1113ebc4cc0adc048bebba1dc689004c, type: 2}
     unlockIds:
     - H_R_3
-    unlocked: 0
   - investigatePanelText: '"Temple?"'
     dialogue: {fileID: 11400000, guid: 65dab7386f7f1b049854e1e3a460198f, type: 2}
     unlockIds:
     - RS_S_2
-    unlocked: 0
   challenge:
     investigatePanelText: 
     dialogue: {fileID: 11400000, guid: b1e3a8b7adbc89c4987a8d55b5363f30, type: 2}
     unlockIds:
     - C_CHAL
-    unlocked: 0
   clickSound: {fileID: 8300000, guid: 7595fb35ba5d24e4e94e731d9de31749, type: 3}
   sidebarButton: {fileID: 292794549}
   profileButton: {fileID: 1365558690}
@@ -49572,7 +49564,7 @@ GameObject:
   - component: {fileID: 1947011835}
   - component: {fileID: 1947011834}
   m_Layer: 0
-  m_Name: toRoom4
+  m_Name: toHouse
   m_TagString: WalkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51022,10 +51014,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7563944610275369578, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
-      propertyPath: newInfoSound
-      value: 
-      objectReference: {fileID: 8300000, guid: e8505ac1401c11642be4b74659728817, type: 3}
     - target: {fileID: 7563944610275369579, guid: 34580b35372c61a4da866af1fa3f8ef8, type: 3}
       propertyPath: m_RootOrder
       value: 8
