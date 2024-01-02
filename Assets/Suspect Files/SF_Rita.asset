@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   suspectName: Rita Weber
   sprite: {fileID: 562155336, guid: 31ef9e3ab5271fb47a584815fcb8333a, type: 3}
-  quote: "\"You just walked straight into my house did you?\r\""
+  quote: '"You just walked straight into my house did you?'
   clues:
   - unlockId: H_R_1
     text: She has lived here for 60 years.

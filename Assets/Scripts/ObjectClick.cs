@@ -126,7 +126,7 @@ public class ObjectClick : MonoBehaviour
     IEnumerator delay(string name)
     {
         yield return new WaitForSecondsRealtime(0.5f);
-        Debug.Log(name);
+        //Debug.Log(name);
         SpawnObjectDialogue(name);
 
     }

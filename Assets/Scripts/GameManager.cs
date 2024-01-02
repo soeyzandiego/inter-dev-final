@@ -23,12 +23,6 @@ public class GameManager : MonoBehaviour
     public GameObject currentRoom;
     [SerializeField] GameObject fadeToBlack;
 
-    [Header("Characters")]
-    public static GameObject sally;
-    public static GameObject bert;
-    public static GameObject colby;
-    public static GameObject rita;
-
     [Header("Suspect Panel Elements")]
     public Image suspectPicture;
     public TMP_Text suspectName;
@@ -49,14 +43,13 @@ public class GameManager : MonoBehaviour
     //Initialize variables
     public static bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
     public static bool walkMode = false;
-    [SerializeField] public static List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
+    public static List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
 
     [Header("List of Buttons")]
     [HideInInspector] public Button[] buttons;
     public Button[] mapButtons;
     public List<GameObject> clicker;
-    public static GameObject researchAreaButton;
     public GameObject magGlass;
     public GameObject mapSelect;
     public GameObject MainMenu;
@@ -72,8 +65,6 @@ public class GameManager : MonoBehaviour
     //deactivate all walk buttons on game start.
     private void Start()
     {
-        researchAreaButton = GameObject.FindGameObjectWithTag("researchAreaButton");
-
         transform.position = currentRoom.transform.position;
 
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
@@ -87,7 +78,6 @@ public class GameManager : MonoBehaviour
             walkButtons.Add(g.GetComponent<Button>());
         }
         mapButton.SetActive(false);
-        researchAreaButton.SetActive(false);
     }
 
     //Main Method
@@ -312,12 +302,8 @@ public class GameManager : MonoBehaviour
             suspectClues.Add(_id);
         }
 
-        if(_id.Equals("R_CHAL_SOLVED"))
-        {
-            Debug.Log("research area unlocked");
-            researchAreaButton.SetActive(true);
-            walkButtons.Add(researchAreaButton.GetComponent<Button>());
-        }
+        EventManager.CheckFlag(_id);
+
         return wasUnlocked;
     }
 
@@ -330,15 +316,4 @@ public class GameManager : MonoBehaviour
     {
         walkModeButton.SetActive(active);
     }
-
-    //public static void disappearBertColby()
-    //{
-    //    bert.SetActive(false);
-    //    colby.SetActive(false);
-    //}
-
-    //public void unlockResearchArea()
-    //{
-    //    walkButtons.Add(researchAreaButton.GetComponent<Button>());
-    //}
 }

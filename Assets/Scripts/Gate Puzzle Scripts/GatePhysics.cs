@@ -18,7 +18,7 @@ public class GatePhysics : MonoBehaviour
             Collider2D selectedObject = Physics2D.OverlapPoint(mousePosition);
             if (selectedObject != null )
             {
-                Debug.Log(selectedObject.transform.name);
+                //Debug.Log(selectedObject.transform.name);
             }
             if (selectedObject != null && selectedObject.gameObject.tag.Equals("GatePuzzleCircles"))
             {
