@@ -8,7 +8,6 @@ public class LogicSlot : MonoBehaviour
     public int currentEvidence = 9;
     public int rightEvidence;
 
-
     public bool CheckEvidence()
     {
         Debug.Log("checked noun");
@@ -17,7 +16,7 @@ public class LogicSlot : MonoBehaviour
             return false;
         }
         currentEvidence = logicObject.evidenceNum;
-        if (currentEvidence == rightEvidence )
+        if (currentEvidence == rightEvidence)
         {
             Debug.Log("correct noun");
             return true;

@@ -10,35 +10,34 @@ using JetBrains.Annotations;
 public class GameManager : MonoBehaviour
 {
     //Receive Game Objects
-    public GameObject Panel;
+    [SerializeField] GameObject Panel;
 
-    public GameObject profilePanel;
-    public GameObject cluesPanel;
-    public GameObject mapPanel;
-    public GameObject suspectPanel;
-    public DustController dustParticles;
-    public GameObject walkModeButton;
+    [SerializeField] GameObject profilePanel;
+    [SerializeField] GameObject cluesPanel;
+    [SerializeField] GameObject mapPanel;
+    [SerializeField] GameObject suspectPanel;
+    [SerializeField] DustController dustParticles;
+    [SerializeField] GameObject walkModeButton;
 
     [Header("Room Transition")]
-    public GameObject currentRoom;
+    [SerializeField] public GameObject currentRoom;
     [SerializeField] GameObject fadeToBlack;
 
     [Header("Suspect Panel Elements")]
-    public Image suspectPicture;
-    public TMP_Text suspectName;
-    public TMP_Text suspectQuote;
-    public TMP_Text challengeText;
-    public TMP_Text challengeIndicator;
-    public SuspectClueUI[] clueElements;
+    [SerializeField] Image suspectPicture;
+    [SerializeField] TMP_Text suspectName;
+    [SerializeField] TMP_Text suspectQuote;
+    [SerializeField] TMP_Text challengeText;
+    [SerializeField] TMP_Text challengeIndicator;
+    [SerializeField] SuspectClueUI[] clueElements;
 
     [Header("Audio")]
-    public AudioClip unloadPanelSound;
-    public AudioClip walkModeSound;
-    public AudioClip mapPanelSound;
-    public AudioClip challengeSolvedSound;
+    [SerializeField] AudioClip unloadPanelSound;
+    [SerializeField] AudioClip walkModeSound;
+    [SerializeField] AudioClip mapPanelSound;
 
     [Header("Suspect Profiles")]
-    public SuspectFile[] suspects;
+    [SerializeField] SuspectFile[] suspects;
 
     //Initialize variables
     public static bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
@@ -48,14 +47,13 @@ public class GameManager : MonoBehaviour
 
     [Header("List of Buttons")]
     [HideInInspector] public Button[] buttons;
-    public Button[] mapButtons;
+    [SerializeField] Button[] mapButtons;
     public List<GameObject> clicker;
-    public GameObject magGlass;
-    public GameObject mapSelect;
-    public GameObject MainMenu;
-    public GameObject UI;
-    public GameObject mapButton;
-    SpriteRenderer UISprite;
+    [SerializeField] public GameObject magGlass;
+    [SerializeField] GameObject mapSelect;
+    [SerializeField] GameObject MainMenu;
+    [SerializeField] GameObject UI;
+    [SerializeField] GameObject mapButton;
 
     [Header("GateButton Replacement")]
     [SerializeField] GameObject gatePuzzleManager;
@@ -68,8 +66,6 @@ public class GameManager : MonoBehaviour
         transform.position = currentRoom.transform.position;
 
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
-
-        UISprite = UI.GetComponent<SpriteRenderer>();
 
         buttons = FindObjectsOfType<Button>();
         GameObject[] temp = GameObject.FindGameObjectsWithTag("WalkButton");

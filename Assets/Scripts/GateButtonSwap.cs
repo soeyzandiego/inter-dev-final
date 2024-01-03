@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GateButtonSwap : MonoBehaviour
 {
-    public GameObject room;
+    [SerializeField] public GameObject room;
 }

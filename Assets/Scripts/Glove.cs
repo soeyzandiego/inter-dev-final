@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Glove : MonoBehaviour
 {
-    public GameObject puzzle;
-    public GameObject logicPuzzleCanvas;
+    [SerializeField] GameObject puzzle;
+    [SerializeField] GameObject logicPuzzleCanvas;
 
     void Start()
     {

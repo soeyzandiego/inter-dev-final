@@ -9,22 +9,22 @@ using Unity.Burst.CompilerServices;
 public class ObjectClick : MonoBehaviour
 {
     [Header("Dialogue")]
-    public TMP_Text dialogueText; // Reference to the TextMeshPro Text component for dialogue
-    public GameObject dialogueBox; // Reference to the dialogue box UI GameObject
-    public Button continueButton; // Reference to the "Continue" button 
-    public Image grimoireBox; // Reference to the Image for the dialogue 
-    public GameObject map;
+    [SerializeField] TMP_Text dialogueText; // Reference to the TextMeshPro Text component for dialogue
+    [SerializeField] GameObject dialogueBox; // Reference to the dialogue box UI GameObject
+    [SerializeField] Button continueButton; // Reference to the "Continue" button 
+    [SerializeField] Image grimoireBox; // Reference to the Image for the dialogue 
+    [SerializeField] GameObject map;
 
     [Header("Audio")]
-    public AudioClip clickSound;
-    public GameObject room;
+    [SerializeField] AudioClip clickSound;
+    [SerializeField] GameObject room;
 
     GameManager gameManager;
 
     // all the game objects in the scene go here
-    private Dictionary<string, string> objectDialogues = new Dictionary<string, string>();
+    Dictionary<string, string> objectDialogues = new Dictionary<string, string>();
 
-    private void Start()
+    void Start()
     {
         gameManager = GetComponent<GameManager>();
         map = GameObject.FindGameObjectWithTag("map");

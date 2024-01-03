@@ -131,6 +131,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         // skip to the end of the current line
                         StopCoroutine(typeCo);
+                        bool coloringText = false;
 
                         // remove any sprite indicators before setting text
                         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
@@ -142,6 +143,19 @@ public class DialogueManager : MonoBehaviour
                                     textToPlay = textToPlay.Remove(charIndex, 1);
                                     charIndex--;
                                 }
+                            }
+                            if (textToPlay[charIndex].ToString() == "/")
+                            {
+                                textToPlay = textToPlay.Remove(charIndex, 1);
+                                coloringText = !coloringText;
+                                string tagToAdd;
+
+                                if (coloringText) { tagToAdd = clueColorTag; }
+                                else { tagToAdd = "</color>"; }
+
+                                textToPlay = textToPlay.Substring(0, charIndex) + tagToAdd + textToPlay.Substring(charIndex);
+                                charIndex += tagToAdd.Length;
+                                charIndex--;
                             }
                         }
 
@@ -534,6 +548,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator WriteText()
     {
         bodyText.text = "";
+        bool coloringText = false;
         //int wordIndex = -1;
         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
         {
@@ -605,14 +620,27 @@ public class DialogueManager : MonoBehaviour
                 break;
 
                 case "/":
-                    // messes with the invis tag, fix later
-                    bodyText.text = textToPlay.Substring(0, charIndex) + clueColorTag + textToPlay.Substring(charIndex) + "</color>";
-                break;
+                    coloringText = !coloringText;
+                    textToPlay = textToPlay.Remove(charIndex, 1);
+                    string tagToAdd;
 
+                    if (coloringText) { tagToAdd = clueColorTag; }
+                    else { tagToAdd = "</color>"; }
+
+                    textToPlay = textToPlay.Substring(0, charIndex) + tagToAdd + textToPlay.Substring(charIndex);
+                    charIndex += tagToAdd.Length;
+                    charIndex--;
+                    break;
                 default:
-                    // if no sprite indicator, just add text
-                    //bodyText.text += textToPlay[charIndex].ToString();
-                    bodyText.text = textToPlay.Substring(0, charIndex) + invisTag + textToPlay.Substring(charIndex);
+                    // if no sprite indicator, just move invis tag
+                    if (coloringText)
+                    {
+                        bodyText.text = textToPlay.Substring(0, charIndex) + "</color>" + invisTag + textToPlay.Substring(charIndex);
+                    }
+                    else
+                    {
+                        bodyText.text = textToPlay.Substring(0, charIndex) + invisTag + textToPlay.Substring(charIndex);
+                    }
                 break;
             }
             

@@ -8,21 +8,21 @@ public class SuspectFile : ScriptableObject
     [System.Serializable]
     public class SuspectClue
     {
-        public string unlockId;
+        [SerializeField] public string unlockId;
         [TextArea(3, 5)] public string text;
-        public Sprite picture;
+        [SerializeField] public Sprite picture;
     }
 
-    public string suspectName;
-    public Sprite sprite;
-    [TextArea(3,5)] public string quote;
-    public SuspectClue[] clues;
+    [SerializeField] public string suspectName;
+    [SerializeField] public Sprite sprite;
+    [TextArea(3,5)] [SerializeField] public string quote;
+    [SerializeField] public SuspectClue[] clues;
 
     [Header("Challenge Information")]
-    public string challengeUnlockID;
-    public string challengeSolvedID;
-    [TextArea(4,4)] public string challengeUnlocked;
-    [TextArea(4, 4)] public string challengeSolved;
+    [SerializeField] public string challengeUnlockID;
+    [SerializeField] public string challengeSolvedID;
+    [TextArea(4,4)] [SerializeField] public string challengeUnlocked;
+    [TextArea(4, 4)] [SerializeField] public string challengeSolved;
 
 
     // if restructuring so DialogueClick points to a SuspectFile

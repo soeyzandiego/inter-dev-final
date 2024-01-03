@@ -12819,7 +12819,6 @@ MonoBehaviour:
   unloadPanelSound: {fileID: 8300000, guid: 46999780ed3662246b278834b6bbeb85, type: 3}
   walkModeSound: {fileID: 8300000, guid: 1c2164c6cad13474698174485dce4abd, type: 3}
   mapPanelSound: {fileID: 8300000, guid: c8e603bbc9683e741bce075837d3401c, type: 3}
-  challengeSolvedSound: {fileID: 8300000, guid: c314c26adad46034ebe872ead065103d, type: 3}
   suspects:
   - {fileID: 11400000, guid: 3960364e6a69d7a4793fc38b335c5fbd, type: 2}
   - {fileID: 11400000, guid: 9822bbf53f14783499247c41b17d943a, type: 2}
@@ -13880,7 +13879,7 @@ MonoBehaviour:
         m_MethodName: moveToRoom
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 612368181}
+          m_ObjectArgument: {fileID: 814333015}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -14245,7 +14244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -799.99963, y: 0}
+  m_AnchoredPosition: {x: -799.99976, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &883949437

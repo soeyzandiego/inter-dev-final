@@ -6,7 +6,7 @@ using TMPro;
 
 public class SuspectClueUI : MonoBehaviour
 {
-    public Image cluePicture;
+    [SerializeField] Image cluePicture;
 
     TMP_Text clueText;
 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EndScene : MonoBehaviour, ICutscenePlayer
 {
-    public DialogueAsset asset;
-    public GameObject endRoom;
-    public AudioClip clickSound;
+    [SerializeField] DialogueAsset asset;
+    [SerializeField] GameObject endRoom;
+    [SerializeField] AudioClip clickSound;
     DialogueManager.OnLastLine onLastLine;
 
     // Update is called once per frame

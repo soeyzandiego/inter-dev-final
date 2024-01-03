@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SidebarEnable : MonoBehaviour
 {
-    public GameObject sidebarButton;
+    [SerializeField] GameObject sidebarButton;
     private void OnDisable()
     {
         if(!gameObject.activeSelf)

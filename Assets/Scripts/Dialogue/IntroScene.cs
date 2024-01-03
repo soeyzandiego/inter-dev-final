@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IntroScene : MonoBehaviour, ICutscenePlayer
 {
-    public DialogueAsset asset;
+    [SerializeField] DialogueAsset asset;
     DialogueManager.OnLastLine onLastLine;
 
     float countdown = 1.5f;
