@@ -40,10 +40,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] SuspectFile[] suspects;
 
     //Initialize variables
-    public static bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
-    public static bool walkMode = false;
-    public static List<Button> walkButtons = new List<Button>(); //List of game objects to be iterated through when walkmode is turned on
+    bool loadPanel = false; // public and static so ObjectClick and DialogueClick can check
+    bool walkMode = true;
+    public static List<Button> walkButtons = new List<Button>(); // list of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
+    static List<Clickable> clickables = new List<Clickable>(); 
 
     [Header("List of Buttons")]
     [HideInInspector] public Button[] buttons;
@@ -59,15 +60,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gatePuzzleManager;
     [SerializeField] Button gateButton;
 
-    
+
     //deactivate all walk buttons on game start.
     private void Start()
     {
+        Clickable[] clickablesToAdd = FindObjectsOfType<Clickable>();
+        foreach (Clickable c in clickablesToAdd) { clickables.Add(c); }
+
         transform.position = currentRoom.transform.position;
 
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
 
         buttons = FindObjectsOfType<Button>();
+        //WalkModeToggle();
+
         GameObject[] temp = GameObject.FindGameObjectsWithTag("WalkButton");
         foreach(GameObject g in temp)
         {
@@ -93,7 +99,6 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && currentRoom.name == "Thank You") { moveToRoom(MainMenu); }
     }
-
 
     //Coroutine for screen transition
     //Loops for 2 seconds, lowering opacity, swaps currentRoom object, and makes the new object visible.
@@ -175,7 +180,8 @@ public class GameManager : MonoBehaviour
         if (room.layer == LayerMask.NameToLayer("NoDust")) { dustParticles.StopDust(); }
         else { dustParticles.StartDust(); }
 
-        StartCoroutine(RoomTransition(room)); UnloadPanel(); 
+        StartCoroutine(RoomTransition(room)); 
+        UnloadPanel(); 
     }
 
     //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
@@ -184,6 +190,10 @@ public class GameManager : MonoBehaviour
         if (walkModeSound != null) { SoundManager.PlaySound(walkModeSound); }
 
         walkMode = !walkMode;
+
+        if (walkMode) { DisableClickables(); }
+        else { EnableClickables(); }
+
         foreach (Button button in buttons)
         {
             button.interactable = !walkMode;
@@ -206,6 +216,8 @@ public class GameManager : MonoBehaviour
     //Method to Load the UI Panels
     public void UnloadPanel()
     {
+        EnableClickables();
+
         loadPanel = false;
         profilePanel.SetActive(false);
         cluesPanel.SetActive(false);
@@ -218,6 +230,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadProfilePanel()
     {
+        DisableClickables();
+
         loadPanel = true;
         profilePanel.SetActive(true);
         cluesPanel.SetActive(false);
@@ -227,6 +241,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadCluesPanel()
     {
+        DisableClickables();
+
         loadPanel = true;
         cluesPanel.SetActive(true);
         mapPanel.SetActive(false);
@@ -236,6 +252,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadMapPanel()
     {
+        DisableClickables();
+
         if (mapPanelSound != null) { SoundManager.PlaySound(mapPanelSound); }
         loadPanel = true;
         mapPanel.SetActive(true);
@@ -246,6 +264,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadSuspectPanel(int suspectIndex)
     {
+        DisableClickables();
+
         loadPanel = true;
         suspectPanel.SetActive(true);
         mapPanel.SetActive(false);
@@ -312,4 +332,7 @@ public class GameManager : MonoBehaviour
     {
         walkModeButton.SetActive(active);
     }
+
+    static public void EnableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(true); } }
+    static public void DisableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(false); } }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Glove : MonoBehaviour
+public class Glove : Clickable
 {
     [SerializeField] GameObject puzzle;
     [SerializeField] GameObject logicPuzzleCanvas;
@@ -15,10 +15,7 @@ public class Glove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LogicPuzzleManager.logicOpen) { return; }
-        if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
-        if (GameManager.loadPanel) { return; }
-        if (GameManager.walkMode) { return; }
+        if (!clickable) { return; }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -32,12 +29,17 @@ public class Glove : MonoBehaviour
                 if (hit.collider.gameObject == gameObject)
                 {
                     GameObject newPuzzle = Instantiate(puzzle, logicPuzzleCanvas.transform);
-                    LogicPuzzleManager puzzleManager = puzzle.GetComponent<LogicPuzzleManager>();
+                    LogicPuzzleManager puzzleManager = newPuzzle.GetComponent<LogicPuzzleManager>();
                     puzzleManager.gameManager = FindObjectOfType<GameManager>();
 
                     puzzleManager.canvas = logicPuzzleCanvas;
                 }
             }
         }
+    }
+
+    public override void SetClickable(bool _clickable)
+    {
+        clickable = _clickable;
     }
 }

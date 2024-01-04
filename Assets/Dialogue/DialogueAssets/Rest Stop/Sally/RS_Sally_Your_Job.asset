@@ -25,7 +25,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}
-    dialogue: $I only /started working here this year/ anyway...
+    dialogue: $I only /started working here this year anyway...
     choices: []
     unlockID: RS_S_1
   - character: {fileID: 11400000, guid: d29a77c604dcac54eb8bae2bbf4fcfba, type: 2}

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEditor;
 using Unity.Burst.CompilerServices;
 
-public class ObjectClick : MonoBehaviour
+public class ObjectClick : Clickable
 {
     [Header("Dialogue")]
     [SerializeField] TMP_Text dialogueText; // Reference to the TextMeshPro Text component for dialogue
@@ -78,13 +78,7 @@ public class ObjectClick : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         mousePos.z = 0;
 
-        if (LogicPuzzleManager.logicOpen) { return; }
-        // if there's a conversation going on, don't look for object clicks
-        if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
-        // if a panel is open, don't look for dialogue clicks
-        if (GameManager.loadPanel) { return; }
-        // if walkmode is toggled, don't look for dialogue clicks.
-        if (GameManager.walkMode) { return; }
+        if (!clickable) { return; }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -128,7 +122,6 @@ public class ObjectClick : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         //Debug.Log(name);
         SpawnObjectDialogue(name);
-
     }
 
     public void SpawnObjectDialogue(string objectName)
@@ -176,5 +169,10 @@ public class ObjectClick : MonoBehaviour
             gameManager.moveToRoom(room);
             gameManager.WalkModeToggle();
         }
+    }
+
+    public override void SetClickable(bool _clickable)
+    {
+        clickable = _clickable;
     }
 }

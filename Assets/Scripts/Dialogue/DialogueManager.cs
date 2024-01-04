@@ -94,7 +94,7 @@ public class DialogueManager : MonoBehaviour
             case DialogueStates.NONE:
                 if (!updated)
                 {
-                    //updated = true;
+                    updated = true;
                     dialoguePanel.SetActive(false);
                     typing = false;
                     talkingTo = null;
@@ -293,6 +293,8 @@ public class DialogueManager : MonoBehaviour
         curLineIndex = index;
         talkingTo = clicked;
 
+        GameManager.DisableClickables();
+
         if (talkingTo.IsFinished()) { state = DialogueStates.INVESTIGATING; }
         else { state = DialogueStates.TALKING; }
     }
@@ -302,6 +304,8 @@ public class DialogueManager : MonoBehaviour
         curAsset = asset;
         curLineIndex = index;
         onLastLine = endAction;
+
+        GameManager.DisableClickables();
 
         state = DialogueStates.TALKING;
     }
@@ -493,6 +497,7 @@ public class DialogueManager : MonoBehaviour
         if (typeCo != null) { StopCoroutine(typeCo); }
         if (endCo != null) { StopCoroutine(endCo); }
         SwitchState(DialogueStates.NONE);
+        GameManager.EnableClickables();
         if (clearLastLine) { onLastLine = null; }
     }
 

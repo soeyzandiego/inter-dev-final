@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueClick : MonoBehaviour
+public class DialogueClick : Clickable
 {
     [SerializeField] Sprite hoverSprite;
     Sprite defaultSprite;
@@ -49,31 +49,18 @@ public class DialogueClick : MonoBehaviour
 
     private void Update()
     {
-        if (LogicPuzzleManager.logicOpen) { return; }
-        // if there's a conversation going on, don't look for dialogue clicks
-        if (DialogueManager.state != DialogueManager.DialogueStates.NONE) { return; }
-        // if a panel is open, don't look for dialogue clicks
-        if (GameManager.loadPanel) { return; }
-        // if walk mode is active, don't look for dialogue clicks
-        if (GameManager.walkMode) { return; }
+        if (!clickable) { return; }
 
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Ray2D ray = new Ray2D(mousePosition, Vector2.zero);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-
-        if (hit.collider != null)
+        if (HoveringThis())
         {
-            if (hit.collider.gameObject == gameObject) 
-            {
-                // hovering
-                spriteRenderer.sprite = hoverSprite;
+            // outline sprite
+            spriteRenderer.sprite = hoverSprite;
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    if (clickSound != null) { SoundManager.PlaySound(clickSound); }
-                    spriteRenderer.sprite = defaultSprite;
-                    StartDialogue();
-                }
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (clickSound != null) { SoundManager.PlaySound(clickSound); }
+                spriteRenderer.sprite = defaultSprite;
+                StartDialogue();
             }
         }
         else
@@ -115,5 +102,10 @@ public class DialogueClick : MonoBehaviour
     public bool IsFinished()
     {
         return finished;
+    }
+
+    public override void SetClickable(bool _clickable)
+    {
+        clickable = _clickable;
     }
 }

@@ -39,13 +39,12 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] public GameObject canvas; // associated canvas object's game object.
     [SerializeField] public GameManager gameManager;
 
-    [HideInInspector] static public bool logicOpen;
-
     void Start()
     {
         if (FindObjectOfType<DialogueManager>() != null) { FindObjectOfType<DialogueManager>().CloseDialogue(false); }
         if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(false); }
-        logicOpen = true;
+       
+        GameManager.DisableClickables();
 
         confirmButton = Instantiate(confirmButtonPrefab, canvas.transform);
         confirmButton.GetComponent<Button>().onClick.AddListener(() => { CheckCorrect(); });
@@ -177,6 +176,8 @@ public class LogicPuzzleManager : MonoBehaviour
         //Debug.Log(clueID);
         GameManager.UnlockClue(clueID);
         SoundManager.PlaySound(correctSound, 1.5f);
+        GameManager.EnableClickables();
+
         Destroy(gameObject);
 
         return;
@@ -184,7 +185,7 @@ public class LogicPuzzleManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        logicOpen = false;
+        
         if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(true); }
 
         foreach (GameObject o in logicSlot)
