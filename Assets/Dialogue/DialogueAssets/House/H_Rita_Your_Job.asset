@@ -45,7 +45,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '#Sixty years. Something like that.'
+    dialogue: '#/Sixty years./ Something like that.'
     choices: []
     unlockID: H_R_1
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
@@ -87,7 +87,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 316923714c86081488bc8a3c70391ad6, type: 2}
-    dialogue: '%He is not who he says he is. '
+    dialogue: '%/He is not who he says he is. '
     choices: []
     unlockID: H_C_3
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}

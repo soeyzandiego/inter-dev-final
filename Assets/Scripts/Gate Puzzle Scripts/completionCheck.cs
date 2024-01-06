@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class CompletionCheck : MonoBehaviour
 {
-    [SerializeField] GameObject gameManager;
+    [SerializeField] GameObject entrance;
+    [SerializeField] GameManager gameManager;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("GatePuzzleCircles"))
         {
-            gameManager.GetComponent<GameManager>().PuzzleComplete();
+            gameManager.PuzzleComplete();
             gameManager.GetComponent<ObjectClick>().SpawnObjectDialogue("gatecomplete");
+
+            ObjectClick.OnContinue onContinue = GoBackToEntrance;
+            gameManager.GetComponent<ObjectClick>().SetOnContinue(onContinue);
             Destroy(gameObject);
         }
+    }
+
+    void GoBackToEntrance()
+    {
+        gameManager.moveToRoom(entrance);
+        gameManager.WalkModeToggle();
     }
 }

@@ -84,7 +84,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
-    dialogue: '#You know the other day I found him snooping around and he scared
+    dialogue: '#You know the other day I found him /snooping around and he scared
       away a Canis Falsifatus!
 
 '

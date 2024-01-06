@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text suspectName;
     [SerializeField] TMP_Text suspectQuote;
     [SerializeField] TMP_Text challengeText;
-    [SerializeField] TMP_Text challengeIndicator;
+    [SerializeField] Image challengeIndicator;
+    [SerializeField] Sprite[] challengeIndicatorSprites;
     [SerializeField] SuspectClueUI[] clueElements;
 
     [Header("Audio")]
@@ -44,12 +45,12 @@ public class GameManager : MonoBehaviour
     bool walkMode = true;
     public static List<Button> walkButtons = new List<Button>(); // list of game objects to be iterated through when walkmode is turned on
     public static List<string> suspectClues = new List<string>(); // holds all the unlocked suspect clues (their ID, not the actual text)
+    public static bool clickable = true;
     static List<Clickable> clickables = new List<Clickable>(); 
 
     [Header("List of Buttons")]
     [HideInInspector] public Button[] buttons;
     [SerializeField] Button[] mapButtons;
-    public List<GameObject> clicker;
     [SerializeField] public GameObject magGlass;
     [SerializeField] GameObject mapSelect;
     [SerializeField] GameObject MainMenu;
@@ -72,7 +73,9 @@ public class GameManager : MonoBehaviour
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
 
         buttons = FindObjectsOfType<Button>();
-        //WalkModeToggle();
+
+        gateButton.onClick.AddListener(() => { moveToRoom(gateButton.GetComponent<GateButtonSwap>().gateRoom); });
+
 
         GameObject[] temp = GameObject.FindGameObjectsWithTag("WalkButton");
         foreach(GameObject g in temp)
@@ -191,6 +194,8 @@ public class GameManager : MonoBehaviour
 
         walkMode = !walkMode;
 
+        //Debug.Log("toggled to " + walkMode);
+
         if (walkMode) { DisableClickables(); }
         else { EnableClickables(); }
 
@@ -210,7 +215,7 @@ public class GameManager : MonoBehaviour
     public void PuzzleComplete()
     {
         gateButton.onClick.RemoveAllListeners();
-        gateButton.onClick.AddListener(() => { moveToRoom(gateButton.GetComponent<GateButtonSwap>().room); });
+        gateButton.onClick.AddListener(() => { moveToRoom(gateButton.GetComponent<GateButtonSwap>().roomSwap); });
     }
 
     //Method to Load the UI Panels
@@ -295,18 +300,18 @@ public class GameManager : MonoBehaviour
         {
             challengeText.enabled = true;
             challengeText.text = curSuspect.challengeSolved;
-            challengeIndicator.text = "SOLVED!";
+            challengeIndicator.sprite = challengeIndicatorSprites[0];
         }
         else if (suspectClues.Contains(curSuspect.challengeUnlockID))
         {
             challengeText.enabled = true;
             challengeText.text = curSuspect.challengeUnlocked;
-            challengeIndicator.text = "Unlocked";
+            challengeIndicator.sprite = challengeIndicatorSprites[1];
         }
         else
         {
             challengeText.enabled = false;
-            challengeIndicator.text = "???";
+            challengeIndicator.sprite = challengeIndicatorSprites[2];
         }
     }
 
@@ -333,6 +338,6 @@ public class GameManager : MonoBehaviour
         walkModeButton.SetActive(active);
     }
 
-    static public void EnableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(true); } }
-    static public void DisableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(false); } }
+    static public void EnableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(true); } clickable = true; }
+    static public void DisableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(false); } clickable = false; }
 }

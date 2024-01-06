@@ -38,6 +38,7 @@ TagManager:
   - MainCanvas
   - LogicPuzzleCanvas
   - lesters
+  - gate
   layers:
   - Default
   - TransparentFX

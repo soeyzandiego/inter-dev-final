@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c803fd5dcef80444c8e1c235e87cda04, type: 3}
   m_Name: RS_Colby_Temple
   m_EditorClassIdentifier: 
+  puzzle: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: fb47278d81865c943a1d856966e6d63a, type: 2}
     dialogue: "&So what\u2019s this I hear about some ancient temple?\r"
@@ -48,7 +49,7 @@ MonoBehaviour:
     unlockID: 
   - character: {fileID: 11400000, guid: a5fa95793c9d2774087e7fe9487f6e0e, type: 2}
     dialogue: '#I of course did not care for what he was talking about other than
-      the fact that he said he was going to destroy my research area to search for
+      the fact that he said he was going to /destroy my research area to search for
       some temple. '
     choices: []
     unlockID: RS_B_2

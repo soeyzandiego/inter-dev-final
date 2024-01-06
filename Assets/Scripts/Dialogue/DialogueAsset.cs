@@ -26,6 +26,5 @@ public class DialogueAsset : ScriptableObject
     // if a logic puzzle will play at the end of this dialogue
     public GameObject puzzle;
 
-    //public DialogueLine[] lines;
     public List<DialogueLine> lines;
 }

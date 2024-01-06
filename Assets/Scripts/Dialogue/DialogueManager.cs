@@ -41,8 +41,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] float endTime = 1.2f;
     [SerializeField] string[] spriteIndicators; // possible sprite indicators
 
-    [Header("Logic Puzzle")]
-    [SerializeField] GameObject logicPuzzleCanvas;
+    GameObject logicPuzzleCanvas;
     
     string textToPlay = "";
     bool lineDone = false;
@@ -68,7 +67,7 @@ public class DialogueManager : MonoBehaviour
         INVESTIGATING
     };
 
-    bool updated = false; // so certain lines will only run once at the beginning of a state switch (similar to bool typing)
+    static bool updated = false; // so certain lines will only run once at the beginning of a state switch (similar to bool typing)
 
     public static DialogueStates state = DialogueStates.NONE;
 
@@ -133,17 +132,9 @@ public class DialogueManager : MonoBehaviour
                         StopCoroutine(typeCo);
                         bool coloringText = false;
 
-                        // remove any sprite indicators before setting text
+                        // remove any sprite or highlight indicators before setting text
                         for (int charIndex = 0; charIndex < textToPlay.Length; charIndex++)
                         {
-                            foreach (string indicator in spriteIndicators)
-                            {
-                                if (textToPlay[charIndex].ToString() == indicator)
-                                {
-                                    textToPlay = textToPlay.Remove(charIndex, 1);
-                                    charIndex--;
-                                }
-                            }
                             if (textToPlay[charIndex].ToString() == "/")
                             {
                                 textToPlay = textToPlay.Remove(charIndex, 1);
@@ -155,7 +146,30 @@ public class DialogueManager : MonoBehaviour
 
                                 textToPlay = textToPlay.Substring(0, charIndex) + tagToAdd + textToPlay.Substring(charIndex);
                                 charIndex += tagToAdd.Length;
-                                charIndex--;
+                            }
+                            // so it won't remove the # from a <color=#F7C6A4> tag
+                            else if (textToPlay[charIndex].ToString() == "#")
+                            {
+                                if (textToPlay[charIndex - 1].ToString() == "=")
+                                {
+                                    coloringText = true;
+                                }
+                                else
+                                {
+                                    textToPlay = textToPlay.Remove(charIndex, 1);
+                                    charIndex--;
+                                }
+                            }
+                            else
+                            {
+                                foreach (string indicator in spriteIndicators)
+                                {
+                                    if (textToPlay[charIndex].ToString() == indicator)
+                                    {
+                                        textToPlay = textToPlay.Remove(charIndex, 1);
+                                        charIndex--;
+                                    }
+                                }
                             }
                         }
 
@@ -295,8 +309,8 @@ public class DialogueManager : MonoBehaviour
 
         GameManager.DisableClickables();
 
-        if (talkingTo.IsFinished()) { state = DialogueStates.INVESTIGATING; }
-        else { state = DialogueStates.TALKING; }
+        if (talkingTo.IsFinished()) { SwitchState(DialogueStates.INVESTIGATING); }
+        else { SwitchState(DialogueStates.TALKING); }
     }
 
     public static void PlayDialogue(DialogueAsset asset, int index, OnLastLine endAction)
@@ -307,7 +321,7 @@ public class DialogueManager : MonoBehaviour
 
         GameManager.DisableClickables();
 
-        state = DialogueStates.TALKING;
+        SwitchState(DialogueStates.TALKING);
     }
 
     void NextLine()
@@ -454,6 +468,7 @@ public class DialogueManager : MonoBehaviour
                 tempAsset.lines.Clear();
                 tempLine.dialogue = choices[choice].fullText;
                 tempAsset.lines.Insert(0, tempLine);
+                tempAsset.puzzle = null;
                     
                 curAsset = tempAsset;
                 curLineIndex = 0;
@@ -544,7 +559,7 @@ public class DialogueManager : MonoBehaviour
         SwitchState(DialogueStates.TALKING);
     }
     #endregion
-    void SwitchState(DialogueStates newState)
+    static void SwitchState(DialogueStates newState)
     {
         updated = false;
         state = newState;
@@ -610,14 +625,14 @@ public class DialogueManager : MonoBehaviour
                     charIndex--;
                 break;
 
-                case "=":
+                case "_":
                     queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
-                case "+":
+                case "=":
                     queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);

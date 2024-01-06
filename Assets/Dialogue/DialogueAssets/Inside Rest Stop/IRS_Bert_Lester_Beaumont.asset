@@ -44,7 +44,7 @@ MonoBehaviour:
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
     dialogue: '#I would never stay in this town for an extended period willingly!
-      I am Bert Earnest!'
+      I am Bert Ernest!'
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
@@ -59,7 +59,7 @@ MonoBehaviour:
     choices: []
     unlockID: 
   - character: {fileID: 11400000, guid: 9daabb7646dcc89419a8244dd58b1a9f, type: 2}
-    dialogue: '$Well because my camel has gone missing.
+    dialogue: '$Well because /my camel has gone missing.
 
 '
     choices: []

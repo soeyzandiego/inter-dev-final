@@ -49,8 +49,6 @@ public class DialogueClick : Clickable
 
     private void Update()
     {
-        if (!clickable) { return; }
-
         if (HoveringThis())
         {
             // outline sprite
@@ -102,10 +100,5 @@ public class DialogueClick : Clickable
     public bool IsFinished()
     {
         return finished;
-    }
-
-    public override void SetClickable(bool _clickable)
-    {
-        clickable = _clickable;
     }
 }

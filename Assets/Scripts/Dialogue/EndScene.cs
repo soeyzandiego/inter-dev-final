@@ -12,8 +12,6 @@ public class EndScene : Clickable, ICutscenePlayer
     // Update is called once per frame
     void Update()
     {
-        if (!clickable) { return; }
-
         if (Input.GetMouseButtonDown(0))
         {
             if (HoveringThis())
@@ -40,10 +38,5 @@ public class EndScene : Clickable, ICutscenePlayer
     public void EndAction()
     {
         FindObjectOfType<GameManager>().moveToRoom(endRoom);
-    }
-
-    public override void SetClickable(bool _clickable)
-    {
-        clickable = _clickable;
     }
 }

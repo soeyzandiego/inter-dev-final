@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEditor;
 using Unity.Burst.CompilerServices;
 
-public class ObjectClick : Clickable
+public class ObjectClick : MonoBehaviour
 {
     [Header("Dialogue")]
     [SerializeField] TMP_Text dialogueText; // Reference to the TextMeshPro Text component for dialogue
@@ -17,9 +17,11 @@ public class ObjectClick : Clickable
 
     [Header("Audio")]
     [SerializeField] AudioClip clickSound;
-    [SerializeField] GameObject room;
 
     GameManager gameManager;
+
+    public delegate void OnContinue();
+    OnContinue onContinue;
 
     // all the game objects in the scene go here
     Dictionary<string, string> objectDialogues = new Dictionary<string, string>();
@@ -35,7 +37,7 @@ public class ObjectClick : Clickable
         }
 
         // add the objects here with ("objectTag", "Dialogue...");
-        objectDialogues.Add("rock", "It looks like a locked gate?");
+        objectDialogues.Add("gate", "It looks like a locked gate?");
         objectDialogues.Add("post", "Straight to the point, aren't we.");
         objectDialogues.Add("skull", "Glad to know the town name is based off... something...");
         objectDialogues.Add("cacti", "Awe look, some small cacti.");
@@ -73,12 +75,11 @@ public class ObjectClick : Clickable
 
     private void Update()
     {
+        if (!GameManager.clickable) { return; }
 
         Vector3 mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
         mousePos.z = 0;
-
-        if (!clickable) { return; }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -105,13 +106,6 @@ public class ObjectClick : Clickable
                         button.interactable = false;
                     }
                     continueButton.interactable = true;
-                    foreach (GameObject clicker in gameManager.clicker)
-                    {
-                        if (clicker.GetComponent<Collider2D>() != null)
-                        { 
-                            clicker.GetComponent<Collider2D>().enabled = false;
-                        }
-                    }
                 }
             }
         }
@@ -126,6 +120,7 @@ public class ObjectClick : Clickable
 
     public void SpawnObjectDialogue(string objectName)
     {
+        GameManager.DisableClickables();
         if (clickSound != null) { SoundManager.PlaySound(clickSound); }
 
         // set the dialouge box to active
@@ -140,7 +135,6 @@ public class ObjectClick : Clickable
         if(objectName.Equals("map"))
         {
             gameManager.UnlockMap();
-            gameManager.clicker.Remove(map);
             Destroy(map);
         }
 
@@ -157,22 +151,14 @@ public class ObjectClick : Clickable
         {
             button.interactable = true;
         }
-        foreach (GameObject clicker in gameManager.clicker)
-        {
-            if (clicker.GetComponent<Collider2D>() != null)
-            {
-                clicker.GetComponent<Collider2D>().enabled = true;
-            }
-        }
-        if (gameManager.currentRoom.name.Equals("Gate"))
-        {
-            gameManager.moveToRoom(room);
-            gameManager.WalkModeToggle();
-        }
+        GameManager.EnableClickables();
+
+        if (onContinue != null) { onContinue(); }
+        onContinue = null;
     }
 
-    public override void SetClickable(bool _clickable)
+    public void SetOnContinue(OnContinue function)
     {
-        clickable = _clickable;
+        onContinue = function;
     }
 }
