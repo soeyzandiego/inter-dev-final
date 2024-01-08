@@ -22,6 +22,7 @@ public class EventManager : MonoBehaviour
 
     public static void CheckFlag(string _id)
     {
+        if (flags == null) { return; }
         foreach (EventFlag flag in flags)
         {
             if (flag.ClueID == _id)

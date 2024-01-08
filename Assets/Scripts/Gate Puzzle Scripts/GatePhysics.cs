@@ -40,7 +40,7 @@ public class GatePhysics : MonoBehaviour
             Vector3 lerp = (mousePosition + selectOffset) - selectedItem.transform.parent.position;
             selectedItem.GetComponentInParent<Rigidbody2D>().velocity = lerp*2;
             Debug.DrawLine(selectedItem.transform.parent.position, selectedItem.transform.parent.position + lerp);
-            Debug.Log("Moving!");
+            //Debug.Log("Moving!");
         }
     }
 }

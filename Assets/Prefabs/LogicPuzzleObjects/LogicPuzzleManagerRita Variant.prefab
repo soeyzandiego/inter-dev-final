@@ -64,6 +64,10 @@ PrefabInstance:
       value: R_CHAL
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: suspect
+      value: 
+      objectReference: {fileID: 11400000, guid: 3960364e6a69d7a4793fc38b335c5fbd, type: 2}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicQuestion
       value: Someone seems to know more than they let on...
       objectReference: {fileID: 0}

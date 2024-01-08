@@ -68,14 +68,14 @@ public class GameManager : MonoBehaviour
         Clickable[] clickablesToAdd = FindObjectsOfType<Clickable>();
         foreach (Clickable c in clickablesToAdd) { clickables.Add(c); }
 
+        
         transform.position = currentRoom.transform.position;
 
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
 
-        buttons = FindObjectsOfType<Button>();
+        buttons = FindObjectsOfType<Button>(true);
 
         gateButton.onClick.AddListener(() => { moveToRoom(gateButton.GetComponent<GateButtonSwap>().gateRoom); });
-
 
         GameObject[] temp = GameObject.FindGameObjectsWithTag("WalkButton");
         foreach(GameObject g in temp)
@@ -83,6 +83,8 @@ public class GameManager : MonoBehaviour
             walkButtons.Add(g.GetComponent<Button>());
         }
         mapButton.SetActive(false);
+
+        WalkModeToggle(false);
     }
 
     //Main Method
@@ -100,7 +102,7 @@ public class GameManager : MonoBehaviour
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(-18, 0, 0), Time.deltaTime * 5);
         }
 
-        if (Input.GetMouseButtonDown(0) && currentRoom.name == "Thank You") { moveToRoom(MainMenu); }
+        if (Input.GetMouseButtonDown(0) && currentRoom.name == "Thank You") { FindObjectOfType<SceneLoader>().QueueScene(0); }
     }
 
     //Coroutine for screen transition
@@ -108,10 +110,7 @@ public class GameManager : MonoBehaviour
     IEnumerator RoomTransition(GameObject room)
     {
         WalkModeToggle();
-        foreach (Button button in buttons)
-        {
-            button.interactable = false;
-        }
+        SetButtonsActive(false);
         Time.timeScale = 0;
 
         for (float i = 0; i < 1; i += Time.unscaledDeltaTime * 2)
@@ -171,10 +170,7 @@ public class GameManager : MonoBehaviour
 
 
         Time.timeScale = 1;
-        foreach (Button button in buttons)
-        {
-            button.interactable = true;
-        }
+        SetButtonsActive(true);
     }
 
     //Method to move from room to room
@@ -188,9 +184,9 @@ public class GameManager : MonoBehaviour
     }
 
     //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
-    public void WalkModeToggle()
+    public void WalkModeToggle(bool sound = true)
     {
-        if (walkModeSound != null) { SoundManager.PlaySound(walkModeSound); }
+        if (walkModeSound != null && sound) { SoundManager.PlaySound(walkModeSound); }
 
         walkMode = !walkMode;
 
@@ -336,6 +332,14 @@ public class GameManager : MonoBehaviour
     public void SetWalkModeButtonActive(bool active)
     {
         walkModeButton.SetActive(active);
+    }
+
+    public void SetButtonsActive(bool active)
+    {
+        foreach (Button button in buttons)
+        {
+            button.interactable = active;
+        }
     }
 
     static public void EnableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(true); } clickable = true; }

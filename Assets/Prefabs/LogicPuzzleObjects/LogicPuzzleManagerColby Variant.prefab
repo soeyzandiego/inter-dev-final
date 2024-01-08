@@ -64,6 +64,10 @@ PrefabInstance:
       value: C_CHAL
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: suspect
+      value: 
+      objectReference: {fileID: 11400000, guid: 9822bbf53f14783499247c41b17d943a, type: 2}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicQuestion
       value: None of these animals look familiar...
       objectReference: {fileID: 0}

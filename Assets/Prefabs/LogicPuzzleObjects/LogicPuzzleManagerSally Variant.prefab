@@ -76,6 +76,10 @@ PrefabInstance:
       value: S_CHAL
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: suspect
+      value: 
+      objectReference: {fileID: 11400000, guid: 8c7e12d6974603f4b83f91bc048070fc, type: 2}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: textPrefab
       value: 
       objectReference: {fileID: 6457790880208806533, guid: aab6e31d594e65c4eaf0f570eb5e8541, type: 3}

@@ -11,6 +11,12 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] AudioClip correctSound;
     [SerializeField] AudioClip pickUpSound;
     [SerializeField] AudioClip slotSound;
+    [SerializeField] AudioClip closeSound;
+
+    [Header("Challenge Unlock")]
+    [SerializeField] SuspectFile suspect;
+    [SerializeField] public string clueID;
+    [SerializeField] GameObject challengeUnlockedPrefab; // Prefab for the unlocked indicator
 
     [Header("Logic")]
     [SerializeField] GameObject logicObjectPrefab; // Prefab for the draggable evidence pieces.
@@ -32,17 +38,17 @@ public class LogicPuzzleManager : MonoBehaviour
     [SerializeField] GameObject[] logicObjects = new GameObject[8]; // Reference to logicObjects (possibly not necessary?)
     [SerializeField] Vector3 hLobjectOffset = new Vector3(3, 0, 0); // horizontal spacing for instantiating logic objects.
     [SerializeField] Vector3 vLobjectOffset = new Vector3(0, 1.75f, 0);  // vertical spacing for instantiating logic objects.
-    [SerializeField] GameObject confirmButton;
-    [SerializeField] GameObject question;
-    [SerializeField] GameObject background;
-    [SerializeField] public string clueID;
+    GameObject confirmButton;
+    GameObject question;
+    GameObject background;
+    GameObject indicator;
     [SerializeField] public GameObject canvas; // associated canvas object's game object.
     [SerializeField] public GameManager gameManager;
 
     void Start()
     {
         if (FindObjectOfType<DialogueManager>() != null) { FindObjectOfType<DialogueManager>().CloseDialogue(false); }
-        if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(false); }
+        if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(false); FindObjectOfType<GameManager>().SetButtonsActive(false); }
        
         GameManager.DisableClickables();
 
@@ -62,7 +68,7 @@ public class LogicPuzzleManager : MonoBehaviour
             {
                 logicObjects[count] = Instantiate(logicObjectPrefab, canvas.transform);
                 LogicObject temp = logicObjects[count].GetComponent<LogicObject>(); //assigns the current evidence piece to temp, to instantiate fields in LogicObject
-                temp.transform.position = transform.position + hLobjectOffset * (j - 1.5f) - Vector3.right + vLobjectOffset * (i + 0.25f);
+                temp.transform.position = transform.position + hLobjectOffset * (j - 1.5f) - Vector3.right + vLobjectOffset * (i + 0.05f);
                 //temp.GetComponent<SpriteRenderer>().sprite = logicObjectSprites[count]; Commented out for testing. PLEASE UNCOMMENT THIS WHEN U NEED TO PUT IN UR DESCRIPTIONS N WHATNOT.
                 temp.GetComponentInChildren<TMP_Text>().text = logicObjectDesc[count];
                 temp.evidenceNum = count; //assigns evidence number identifier, to be used when checking the logic puzzle for correctness.
@@ -73,7 +79,7 @@ public class LogicPuzzleManager : MonoBehaviour
             {
                 logicObjects[count] = Instantiate(logicObjectPrefab, canvas.transform);
                 LogicObject temp = logicObjects[count].GetComponent<LogicObject>(); //assigns the current evidence piece to temp, to instantiate fields in LogicObject
-                temp.transform.position = transform.position + hLobjectOffset * (j + 0.5f) + Vector3.right + vLobjectOffset * (i + 0.25f);
+                temp.transform.position = transform.position + hLobjectOffset * (j + 0.5f) + Vector3.right + vLobjectOffset * (i + 0.05f);
                 //temp.GetComponent<SpriteRenderer>().sprite = logicObjectSprites[count]; Commented out for testing. PLEASE UNCOMMENT THIS WHEN U NEED TO PUT IN UR DESCRIPTIONS N WHATNOT.
                 temp.GetComponentInChildren<TMP_Text>().text = logicObjectDesc[count];
                 temp.evidenceNum = count; //assigns evidence number identifier, to be used when checking the logic puzzle for correctness.
@@ -175,19 +181,19 @@ public class LogicPuzzleManager : MonoBehaviour
         //Debug.Log("correct");
         //Debug.Log(clueID);
         GameManager.UnlockClue(clueID);
-        SoundManager.PlaySound(correctSound, 1.5f);
-        GameManager.EnableClickables();
+        SoundManager.PlaySound(correctSound, 1f);
 
-        Destroy(gameObject);
+        ChallengeUnlocked();
+
+        // replace the function of the confirm button
+        confirmButton.GetComponent<Button>().onClick.RemoveAllListeners();
+        confirmButton.GetComponent<Button>().onClick.AddListener(() => { ClosePuzzle(); });
 
         return;
     }
 
-    private void OnDestroy()
+    void ChallengeUnlocked()
     {
-        
-        if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(true); }
-
         foreach (GameObject o in logicSlot)
         {
             Destroy(o);
@@ -200,6 +206,40 @@ public class LogicPuzzleManager : MonoBehaviour
         {
             Destroy(o);
         }
+
+        indicator = Instantiate(challengeUnlockedPrefab, canvas.transform);
+        indicator.transform.position = transform.position + new Vector3(-2.8f, -3.8f, 0);
+        TMP_Text[] texts = indicator.GetComponentsInChildren<TMP_Text>();
+        texts[0].text = suspect.challengeUnlocked;
+
+        string firstName = suspect.suspectName;
+        // get rid of last name if suspect has one
+        for (int i = 0; i < suspect.suspectName.Length; i++)
+        {
+            if (suspect.suspectName[i].ToString() == " ") 
+            {
+                firstName = suspect.suspectName.Substring(0, i);
+                break; 
+            }
+        }
+
+        texts[1].text = "The CHALLENGE topic is now available when talking to " + firstName + ". Find the truth!";
+    }
+
+    public void ClosePuzzle()
+    {
+        GameManager.EnableClickables();
+        SoundManager.PlaySound(closeSound, 0.55f);
+        if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetButtonsActive(true); }
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        
+        if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(true); }
+
+        Destroy(indicator);
         Destroy(question);
         Destroy(confirmButton);
         Destroy(background);

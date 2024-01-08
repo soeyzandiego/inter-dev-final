@@ -64,6 +64,10 @@ PrefabInstance:
       value: B_CHAL
       objectReference: {fileID: 0}
     - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
+      propertyPath: suspect
+      value: 
+      objectReference: {fileID: 11400000, guid: 01e5e74d9d8eed8489c192f808c74e9c, type: 2}
+    - target: {fileID: 933005947336020214, guid: 00ec6b5b4579dac49a7ee667ed61fbab, type: 3}
       propertyPath: logicQuestion
       value: Looks like tensions are heated...
       objectReference: {fileID: 0}

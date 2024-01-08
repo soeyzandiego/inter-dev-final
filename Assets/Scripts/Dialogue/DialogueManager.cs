@@ -137,28 +137,31 @@ public class DialogueManager : MonoBehaviour
                         {
                             if (textToPlay[charIndex].ToString() == "/")
                             {
-                                textToPlay = textToPlay.Remove(charIndex, 1);
-                                coloringText = !coloringText;
-                                string tagToAdd;
-
-                                if (coloringText) { tagToAdd = clueColorTag; }
-                                else { tagToAdd = "</color>"; }
-
-                                textToPlay = textToPlay.Substring(0, charIndex) + tagToAdd + textToPlay.Substring(charIndex);
-                                charIndex += tagToAdd.Length;
-                            }
-                            // so it won't remove the # from a <color=#F7C6A4> tag
-                            else if (textToPlay[charIndex].ToString() == "#")
-                            {
-                                if (textToPlay[charIndex - 1].ToString() == "=")
-                                {
-                                    coloringText = true;
-                                }
+                                // if it's the </color> tag, skip
+                                if (textToPlay[charIndex - 1].ToString() == "<") { }
                                 else
                                 {
                                     textToPlay = textToPlay.Remove(charIndex, 1);
-                                    charIndex--;
+                                    coloringText = !coloringText;
+                                    string tagToAdd;
+
+                                    if (coloringText) { tagToAdd = clueColorTag; }
+                                    else { tagToAdd = "</color>"; }
+
+                                    textToPlay = textToPlay.Substring(0, charIndex) + tagToAdd + textToPlay.Substring(charIndex);
+                                    charIndex += tagToAdd.Length;
                                 }
+                            }
+                            // so it won't remove the = or # from a <color=#F7C6A4> tag
+                            else if (textToPlay[charIndex].ToString() == "=")
+                            {
+                                if (textToPlay[charIndex + 1].ToString() == "#") { coloringText = true; }
+                                else { textToPlay = textToPlay.Remove(charIndex, 1); charIndex--; }
+                            }
+                            else if (textToPlay[charIndex].ToString() == "#")
+                            {
+                                if (textToPlay[charIndex - 1].ToString() == "=") {  }
+                                else { textToPlay = textToPlay.Remove(charIndex, 1); charIndex--; }
                             }
                             else
                             {
@@ -625,14 +628,14 @@ public class DialogueManager : MonoBehaviour
                     charIndex--;
                 break;
 
-                case "_":
+                case "=":
                     queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
                     charIndex--;
                 break;
 
-                case "=":
+                case "+":
                     queuedSprite = GetSprite(character);
                     if (characterSprite.sprite != queuedSprite) { GetComponent<Animator>().SetTrigger("SpriteChange"); }
                     textToPlay = textToPlay.Remove(charIndex, 1);
