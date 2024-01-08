@@ -17,6 +17,7 @@ public class ObjectClick : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] AudioClip clickSound;
+    [SerializeField] AudioClip continueSound;
 
     GameManager gameManager;
 
@@ -100,6 +101,8 @@ public class ObjectClick : MonoBehaviour
                     var glass = Instantiate(gameManager.magGlass, new Vector3(mousePos.x, mousePos.y, mousePos.z), Quaternion.identity);
                     Destroy(glass, 0.6f);
 
+                    if (clickSound != null) { SoundManager.PlaySound(clickSound, 0.9f); }
+
                     StartCoroutine(delay(objectName));
                     foreach (Button button in gameManager.buttons)
                     {
@@ -121,7 +124,6 @@ public class ObjectClick : MonoBehaviour
     public void SpawnObjectDialogue(string objectName)
     {
         GameManager.DisableClickables();
-        if (clickSound != null) { SoundManager.PlaySound(clickSound); }
 
         // set the dialouge box to active
         dialogueBox.SetActive(true);
@@ -144,6 +146,7 @@ public class ObjectClick : MonoBehaviour
 
     private void OnContinueButtonClicked()
     {
+        if (continueSound != null) { SoundManager.PlaySound(continueSound, 0.9f); }
         dialogueBox.SetActive(false);
         continueButton.gameObject.SetActive(false);
         grimoireBox.gameObject.SetActive(false);

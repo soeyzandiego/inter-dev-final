@@ -94,7 +94,8 @@ public class GameManager : MonoBehaviour
         if (loadPanel)
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(0.1f, 0, 0), Time.deltaTime * 5);
-            SetWalkModeButtonActive(false);
+            // instead, moved button behind panel elements
+            //SetWalkModeButtonActive(false);
         }
 
         else
@@ -224,7 +225,7 @@ public class GameManager : MonoBehaviour
         cluesPanel.SetActive(false);
         mapPanel.SetActive(false);
         suspectPanel.SetActive(false);
-        SetWalkModeButtonActive(true);
+        //SetWalkModeButtonActive(true);
 
         if (unloadPanelSound != null) { SoundManager.PlaySound(unloadPanelSound); }
     }

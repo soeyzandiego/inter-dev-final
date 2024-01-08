@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    static SceneLoader instance;
+
     int queuedSceneIndex;
 
     // Start is called before the first frame update

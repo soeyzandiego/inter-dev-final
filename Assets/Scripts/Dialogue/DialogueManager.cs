@@ -138,7 +138,8 @@ public class DialogueManager : MonoBehaviour
                             if (textToPlay[charIndex].ToString() == "/")
                             {
                                 // if it's the </color> tag, skip
-                                if (textToPlay[charIndex - 1].ToString() == "<") { }
+                                // TODO separate index > 0 check and previous character check, because this will run a null error if "/" is the first character
+                                if (charIndex > 0 && textToPlay[charIndex - 1].ToString() == "<") { }
                                 else
                                 {
                                     textToPlay = textToPlay.Remove(charIndex, 1);
@@ -294,6 +295,9 @@ public class DialogueManager : MonoBehaviour
                     choicePanel.SetActive(false);
                     investigatePanel.SetActive(true);
 
+                    CheckUnlockables();
+                    CheckChallenge();
+
                     // turn off challenge mode
                     challengeMode = false;
 
@@ -400,8 +404,6 @@ public class DialogueManager : MonoBehaviour
             // we've reached the end of the conversation, show investigate panel
             talkingTo.FinishDialogue();
             SwitchState(DialogueStates.INVESTIGATING);
-            CheckUnlockables();
-            CheckChallenge();
             //GetComponent<Animator>().SetTrigger("ForceClose");
         }
     }
@@ -415,7 +417,7 @@ public class DialogueManager : MonoBehaviour
             foreach (string ID in unlockable.unlockIds)
             {
                 if (GameManager.suspectClues.Contains(ID)) { continue; }
-                else { return; }
+                else { unlockableElements[i].SetActive(false); return; }
             }
             // if we've found every ID, unlock
             unlockableElements[i].SetActive(true);
@@ -428,8 +430,14 @@ public class DialogueManager : MonoBehaviour
         if (talkingTo.challenge.unlockIds[0].Length <= 0) { return; }
         if (GameManager.suspectClues.Contains(talkingTo.challenge.unlockIds[0]))
         {
+            //Debug.Log("unlocked challenge");
             challengeChains.SetActive(false);
             unlockableElements[talkingTo.unlockables.Length].SetActive(true);
+        }
+        else
+        {
+            challengeChains.SetActive(true);
+            unlockableElements[talkingTo.unlockables.Length].SetActive(false);
         }
         //for (int i = 0; i < talkingTo.challenge.unlockIds.Length - 1; i++)
         //{

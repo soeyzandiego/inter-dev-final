@@ -13929,7 +13929,7 @@ MonoBehaviour:
   - {fileID: 4824680811420236037}
   challengeChains: {fileID: 0}
   delayTime: 0.045
-  endTime: 1.5
+  endTime: 1.85
   spriteIndicators:
   - '#'
   - $
