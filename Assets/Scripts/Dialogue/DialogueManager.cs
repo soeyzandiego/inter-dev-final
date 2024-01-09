@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] AudioClip newInfoSound;
     [SerializeField] AudioClip rightAnswerSound;
     [SerializeField] AudioClip wrongAnswerSound;
+    [SerializeField] AudioClip challengeStartSound;
 
     [Header("UI Elements")]
     [SerializeField] GameObject dialoguePanel;
@@ -86,7 +87,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         // turns on the object containing all the panels
-        if (state != DialogueStates.NONE) { dialoguePanel.SetActive(true); }
+        //if (state != DialogueStates.NONE) { dialoguePanel.SetActive(true); }
 
         switch (state)
         {
@@ -101,6 +102,7 @@ public class DialogueManager : MonoBehaviour
                     curAsset = null;
                     textToPlay = null;
                     //onLastLine = null;
+                    challengeMode = false;
                     endChallengeMode = false;
 
                     
@@ -114,6 +116,8 @@ public class DialogueManager : MonoBehaviour
                 if (!updated)
                 {
                     updated = true;
+
+                    dialoguePanel.SetActive(true);
                     choicePanel.SetActive(false);
                     investigatePanel.SetActive(false);
                     talkPanel.SetActive(true);
@@ -252,6 +256,8 @@ public class DialogueManager : MonoBehaviour
                 if (!updated)
                 {
                     updated = true;
+                    dialoguePanel.SetActive(true);
+
                     DialogueAsset.DialogueChoice[] choices = curAsset.lines[curLineIndex].choices;
 
                     queuedSprite = choiceCharSprite;
@@ -291,6 +297,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     updated = true;
 
+                    dialoguePanel.SetActive(true);
                     talkPanel.SetActive(false);
                     choicePanel.SetActive(false);
                     investigatePanel.SetActive(true);
@@ -363,12 +370,12 @@ public class DialogueManager : MonoBehaviour
 
         if (endChallengeMode)
         {
-            Debug.Log("end challenge");
             if (textToPlay == trueLastLine)
             {
                 Debug.Log("true last line");
+                CloseDialogue(false);
                 onLastLine();
-                SwitchState(DialogueStates.NONE);
+                return;
             }
             else
             {
@@ -393,6 +400,7 @@ public class DialogueManager : MonoBehaviour
 
             puzzleManager.canvas = logicPuzzleCanvas;
 
+            GameManager.DisableClickables();
         }
         else
         {
@@ -473,7 +481,7 @@ public class DialogueManager : MonoBehaviour
             {
                 // add the "not right line" as the only line so it goes straight back to INVESTIGATING
 
-                SoundManager.PlaySound(wrongAnswerSound);
+                SoundManager.PlaySound(wrongAnswerSound, 0.85f);
                 Debug.Log("wrong answer");
 
                 tempAsset.lines.Clear();
@@ -487,7 +495,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                if (challengeMode) { SoundManager.PlaySound(rightAnswerSound); }
+                if (challengeMode) { SoundManager.PlaySound(rightAnswerSound, 0.55f); }
 
                 if (curAsset == tempAsset)
                 {
@@ -522,6 +530,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (typeCo != null) { StopCoroutine(typeCo); }
         if (endCo != null) { StopCoroutine(endCo); }
+        //Debug.Log("closed dialogue");
         SwitchState(DialogueStates.NONE);
         GameManager.EnableClickables();
         if (clearLastLine) { onLastLine = null; }
@@ -565,6 +574,8 @@ public class DialogueManager : MonoBehaviour
         typing = false;
         textToPlay = null;
         curAsset = talkingTo.challenge.dialogue;
+
+        if (challengeStartSound != null) { SoundManager.PlaySound(challengeStartSound); }
 
         curLineIndex = 0;
         SwitchState(DialogueStates.TALKING);
@@ -715,6 +726,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ToggleEndChallengeMode(bool onOff, string lastLineText) 
     { 
+        if (challengeStartSound != null) { SoundManager.PlaySound(challengeStartSound); }
         endChallengeMode = onOff;
         challengeMode = onOff;
         trueLastLine = lastLineText;

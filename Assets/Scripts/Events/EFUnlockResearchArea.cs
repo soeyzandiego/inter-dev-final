@@ -18,7 +18,6 @@ public class EFUnlockResearchArea : EventFlag
         set { clueID = value; }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         researchAreaButton.SetActive(false);

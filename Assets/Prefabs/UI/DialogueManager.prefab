@@ -1796,6 +1796,7 @@ MonoBehaviour:
   newInfoSound: {fileID: 8300000, guid: e8505ac1401c11642be4b74659728817, type: 3}
   rightAnswerSound: {fileID: 8300000, guid: 396023f3ca1bfd84cb917d49fc81d0a2, type: 3}
   wrongAnswerSound: {fileID: 8300000, guid: 5848bb1bb9233724d8da4fa5e2c726fa, type: 3}
+  challengeStartSound: {fileID: 8300000, guid: e641107e02459ab4783d843d8702bfed, type: 3}
   dialoguePanel: {fileID: 5195058801442881808}
   characterSprite: {fileID: 5195058801506163335}
   talkPanel: {fileID: 5195058802620452246}

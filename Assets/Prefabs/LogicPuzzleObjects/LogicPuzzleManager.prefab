@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6628910c06bdfb440b9e8037bcf6d122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startSound: {fileID: 8300000, guid: 4c328d24e0bab2a429278fc80f42a33a, type: 3}
   incorrectSound: {fileID: 8300000, guid: 5848bb1bb9233724d8da4fa5e2c726fa, type: 3}
   correctSound: {fileID: 8300000, guid: c314c26adad46034ebe872ead065103d, type: 3}
   pickUpSound: {fileID: 8300000, guid: 22622b2b58f8f194e938d56bc53bea47, type: 3}

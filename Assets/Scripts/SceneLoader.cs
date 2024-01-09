@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
     static SceneLoader instance;
 
+    bool loading = false;
     int queuedSceneIndex;
 
     // Start is called before the first frame update
@@ -18,7 +20,10 @@ public class SceneLoader : MonoBehaviour
 
     public void QueueScene(int index)
     {
+        if (loading) { Debug.Log("already loading scene"); return; }
+
         queuedSceneIndex = index;
+        loading = true;
         GetComponent<Animator>().SetTrigger("FadeOut");
     }
 
@@ -26,6 +31,10 @@ public class SceneLoader : MonoBehaviour
     public void LoadQueued()
     {
         SceneManager.LoadScene(queuedSceneIndex);
+
+        if (queuedSceneIndex == 0) { GameManager.ResetGame(); }
+
+        loading = false;
     }
 
     public void QuitGame()

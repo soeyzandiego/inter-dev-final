@@ -67,8 +67,8 @@ public class GameManager : MonoBehaviour
     {
         Clickable[] clickablesToAdd = FindObjectsOfType<Clickable>();
         foreach (Clickable c in clickablesToAdd) { clickables.Add(c); }
+        EnableClickables();
 
-        
         transform.position = currentRoom.transform.position;
 
         foreach (Button button in mapButtons) { button.gameObject.SetActive(false); }
@@ -94,8 +94,6 @@ public class GameManager : MonoBehaviour
         if (loadPanel)
         {
             Panel.transform.position = Vector3.Lerp(Panel.transform.position, transform.position + new Vector3(0.1f, 0, 0), Time.deltaTime * 5);
-            // instead, moved button behind panel elements
-            //SetWalkModeButtonActive(false);
         }
 
         else
@@ -111,6 +109,7 @@ public class GameManager : MonoBehaviour
     IEnumerator RoomTransition(GameObject room)
     {
         WalkModeToggle();
+        DisableClickables();
         SetButtonsActive(false);
         Time.timeScale = 0;
 
@@ -171,6 +170,7 @@ public class GameManager : MonoBehaviour
 
 
         Time.timeScale = 1;
+        EnableClickables();
         SetButtonsActive(true);
     }
 
@@ -180,8 +180,8 @@ public class GameManager : MonoBehaviour
         if (room.layer == LayerMask.NameToLayer("NoDust")) { dustParticles.StopDust(); }
         else { dustParticles.StartDust(); }
 
-        StartCoroutine(RoomTransition(room)); 
         UnloadPanel(); 
+        StartCoroutine(RoomTransition(room)); 
     }
 
     //Method to toggle walking mode. Runs through for loop to set buttons to active, and deactivates them when walk mode is toggled again.
@@ -225,7 +225,6 @@ public class GameManager : MonoBehaviour
         cluesPanel.SetActive(false);
         mapPanel.SetActive(false);
         suspectPanel.SetActive(false);
-        //SetWalkModeButtonActive(true);
 
         if (unloadPanelSound != null) { SoundManager.PlaySound(unloadPanelSound); }
     }
@@ -343,6 +342,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    static public void EnableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(true); } clickable = true; }
-    static public void DisableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(false); } clickable = false; }
+    static public void EnableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(true); } clickable = true; Debug.Log("enabled clickables"); }
+    static public void DisableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(false); } clickable = false; Debug.Log("disabled clickables"); }
+
+    static public void ResetGame()
+    {
+        clickables.Clear();
+        suspectClues.Clear();
+        walkButtons.Clear();
+    }
 }

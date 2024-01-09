@@ -21,6 +21,8 @@ public class Glove : Clickable
             {
                 ObjectClick.OnContinue onContinue = SpawnPuzzle;
                 FindObjectOfType<ObjectClick>().SetOnContinue(onContinue);
+                GetComponent<Collider2D>().enabled = false;
+                GetComponent<SpriteRenderer>().enabled = false;
             }
         }
     }

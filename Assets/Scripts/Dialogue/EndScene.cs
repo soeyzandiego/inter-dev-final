@@ -7,7 +7,13 @@ public class EndScene : Clickable, ICutscenePlayer
     [SerializeField] DialogueAsset asset;
     [SerializeField] GameObject endRoom;
     [SerializeField] AudioClip clickSound;
+    [SerializeField] GameObject bert;
     DialogueManager.OnLastLine onLastLine;
+
+    void Start()
+    {
+        GetComponent<Collider2D>().enabled = true;
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,6 +43,11 @@ public class EndScene : Clickable, ICutscenePlayer
 
     public void EndAction()
     {
+        //Debug.Log("can't click end scene");
+        GameManager.DisableClickables();
+        GetComponent<Collider2D>().enabled = false;
+        Destroy(gameObject);
+        Destroy(bert);
         FindObjectOfType<GameManager>().moveToRoom(endRoom);
     }
 }

@@ -61,7 +61,7 @@ public class ObjectClick : MonoBehaviour
         objectDialogues.Add("light", "All the better to see you with my dear.");
         objectDialogues.Add("area", "You would think with all this space to build, the place would maybe be.... bigger?");
         objectDialogues.Add("skull2", "Is this what she meant by follow the animals?");
-        objectDialogues.Add("entrance", "Is this the entrance to the temple?\r\nIt looks like some of the stuff that was covering it was broken.");
+        objectDialogues.Add("entrance", "Is this the entrance to the temple? It looks like some of the stuff that was covering it was broken.");
         objectDialogues.Add("gloves", "What's this?\r\nIs this one of sally's gloves?");
         objectDialogues.Add("rocks", "Epic, something else other than sand.");
         objectDialogues.Add("gatecomplete", "There's that! That wasn't so bad. I'll have to get one of these for myself...");

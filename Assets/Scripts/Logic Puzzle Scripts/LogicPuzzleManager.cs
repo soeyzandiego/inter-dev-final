@@ -7,6 +7,7 @@ using TMPro;
 public class LogicPuzzleManager : MonoBehaviour
 {
     [Header("Audio")]
+    [SerializeField] AudioClip startSound;
     [SerializeField] AudioClip incorrectSound;
     [SerializeField] AudioClip correctSound;
     [SerializeField] AudioClip pickUpSound;
@@ -50,6 +51,8 @@ public class LogicPuzzleManager : MonoBehaviour
         if (FindObjectOfType<DialogueManager>() != null) { FindObjectOfType<DialogueManager>().CloseDialogue(false); }
         if (FindObjectOfType<GameManager>() != null) { FindObjectOfType<GameManager>().SetWalkModeButtonActive(false); FindObjectOfType<GameManager>().SetButtonsActive(false); }
        
+        if (startSound != null) { SoundManager.PlaySound(startSound, 0.9f); }
+
         GameManager.DisableClickables();
 
         confirmButton = Instantiate(confirmButtonPrefab, canvas.transform);
@@ -126,15 +129,14 @@ public class LogicPuzzleManager : MonoBehaviour
             if (selectedItem.tag.Equals("LogicObject"))
             {
                 // if mouse is released while logic object touching the logic slot
-                if (selectedItem.GetComponent<LogicObject>().logicSlot != null)
+                if (selectedItem.GetComponent<LogicObject>().touchingSlot != null)
                 {
                     SoundManager.PlaySound(slotSound, 0.65f);
                 }
             }
 
-            selectedItem.transform.position = selectedItem.GetComponent<LogicObject>().targetPos;
+            selectedItem.GetComponent<LogicObject>().MoveToTarget();
             selectedItem = null;
-
         }
 
         if (selectedItem != null)
