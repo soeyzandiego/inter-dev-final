@@ -342,8 +342,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    static public void EnableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(true); } clickable = true; Debug.Log("enabled clickables"); }
-    static public void DisableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(false); } clickable = false; Debug.Log("disabled clickables"); }
+    static public void EnableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(true); } clickable = true; }
+    static public void DisableClickables() { foreach (Clickable clickable in clickables) { clickable.SetClickable(false); } clickable = false; }
 
     static public void ResetGame()
     {

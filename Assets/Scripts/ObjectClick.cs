@@ -24,6 +24,8 @@ public class ObjectClick : MonoBehaviour
     public delegate void OnContinue();
     OnContinue onContinue;
 
+    public delegate void SpawnBox(string objectName);
+
     // all the game objects in the scene go here
     Dictionary<string, string> objectDialogues = new Dictionary<string, string>();
 
@@ -78,10 +80,6 @@ public class ObjectClick : MonoBehaviour
     {
         if (!GameManager.clickable) { return; }
 
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        mousePos.z = 0;
-
         if (Input.GetMouseButtonDown(0))
         {
             // raycast bs
@@ -92,18 +90,21 @@ public class ObjectClick : MonoBehaviour
             // if the mouse is colliding with somehting with a box collider
             if (hit.collider != null)
             {
-                // get the string of the tag of hte object
+                // get the string of the tag of the object
                 string objectName = hit.collider.gameObject.tag;
 
                 // if then the objectDialogues Dictionary has that object tag and dialouge with it
                 if (objectDialogues.ContainsKey(objectName))
                 {
-                    var glass = Instantiate(gameManager.magGlass, new Vector3(mousePos.x, mousePos.y, mousePos.z), Quaternion.identity);
-                    Destroy(glass, 0.6f);
+                    //var glass = Instantiate(gameManager.magGlass, new Vector3(mousePos.x, mousePos.y, mousePos.z), Quaternion.identity);
+                    //Destroy(glass, 0.6f);
+                    //StartCoroutine(delay(objectName));
+
+                    SpawnBox dialogueBox = SpawnObjectDialogue;
+                    MagGlass.ActivateGlass(SpawnObjectDialogue, objectName, mousePosition);
 
                     if (clickSound != null) { SoundManager.PlaySound(clickSound, 0.9f); }
 
-                    StartCoroutine(delay(objectName));
                     foreach (Button button in gameManager.buttons)
                     {
                         button.interactable = false;
@@ -114,12 +115,12 @@ public class ObjectClick : MonoBehaviour
         }
     }
 
-    IEnumerator delay(string name)
-    {
-        yield return new WaitForSecondsRealtime(0.5f);
-        //Debug.Log(name);
-        SpawnObjectDialogue(name);
-    }
+    //IEnumerator delay(string name)
+    //{
+    //    yield return new WaitForSecondsRealtime(0.5f);
+    //    //Debug.Log(name);
+    //    SpawnObjectDialogue(name);
+    //}
 
     public void SpawnObjectDialogue(string objectName)
     {

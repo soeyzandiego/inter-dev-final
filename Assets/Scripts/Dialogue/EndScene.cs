@@ -43,7 +43,6 @@ public class EndScene : Clickable, ICutscenePlayer
 
     public void EndAction()
     {
-        //Debug.Log("can't click end scene");
         GameManager.DisableClickables();
         GetComponent<Collider2D>().enabled = false;
         Destroy(gameObject);
